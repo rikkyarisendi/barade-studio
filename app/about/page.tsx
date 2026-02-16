@@ -51,7 +51,7 @@ export default function About() {
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center p-8 border-2 border-brand-dark hover-lift">
+            <div className="text-center p-8 border-2 border-brand-dark hover-lift rounded-xl">
               <div className="text-5xl mb-4">🎯</div>
               <h3 className="font-display text-2xl font-bold mb-4 text-brand-dark">Excellence</h3>
               <p className="text-brand-dark/70">
@@ -59,7 +59,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="text-center p-8 border-2 border-brand-dark hover-lift">
+            <div className="text-center p-8 border-2 border-brand-dark hover-lift rounded-xl">
               <div className="text-5xl mb-4">🤝</div>
               <h3 className="font-display text-2xl font-bold mb-4 text-brand-dark">Collaboration</h3>
               <p className="text-brand-dark/70">
@@ -67,7 +67,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="text-center p-8 border-2 border-brand-dark hover-lift">
+            <div className="text-center p-8 border-2 border-brand-dark hover-lift rounded-xl">
               <div className="text-5xl mb-4">💡</div>
               <h3 className="font-display text-2xl font-bold mb-4 text-brand-dark">Innovation</h3>
               <p className="text-brand-dark/70">
@@ -92,7 +92,7 @@ export default function About() {
               { name: 'Mike Chen', role: 'Web Developer', emoji: '👨‍💻' },
               { name: 'Emma Davis', role: 'Project Manager', emoji: '👩‍💼' },
             ].map((member, index) => (
-              <div key={index} className="text-center p-6 bg-brand-cream border-2 border-brand-dark hover-lift">
+              <div key={index} className="text-center p-6 bg-brand-cream border-2 border-brand-dark hover-lift rounded-xl">
                 <div className="text-6xl mb-4">{member.emoji}</div>
                 <h3 className="font-display text-xl font-bold mb-2 text-brand-dark">{member.name}</h3>
                 <p className="text-brand-dark/70">{member.role}</p>

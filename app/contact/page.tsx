@@ -64,8 +64,8 @@ export default function Contact() {
                 <div className="text-3xl mr-4">📧</div>
                 <div>
                   <h3 className="font-display text-xl font-bold mb-2 text-brand-dark">Email</h3>
-                  <a href="mailto:hello@baradestudio.com" className="text-brand-dark/80 hover:text-brand-lime transition-colors">
-                    hello@baradestudio.com
+                  <a href="mailto:baradedesign@gmail.com" className="text-brand-dark/80 hover:text-brand-lime transition-colors">
+                    baradedesign@gmail.com
                   </a>
                 </div>
               </div>
@@ -74,8 +74,8 @@ export default function Contact() {
                 <div className="text-3xl mr-4">📱</div>
                 <div>
                   <h3 className="font-display text-xl font-bold mb-2 text-brand-dark">Phone</h3>
-                  <a href="tel:+6281234567890" className="text-brand-dark/80 hover:text-brand-lime transition-colors">
-                    +62 812 3456 7890
+                  <a href="tel:+6288970909446" className="text-brand-dark/80 hover:text-brand-lime transition-colors">
+                    +62 889 7090 9446
                   </a>
                 </div>
               </div>
@@ -85,9 +85,7 @@ export default function Contact() {
                 <div>
                   <h3 className="font-display text-xl font-bold mb-2 text-brand-dark">Location</h3>
                   <p className="text-brand-dark/80">
-                    Jl. Sukajadi No. 123<br />
-                    Bandung, West Java 40162<br />
-                    Indonesia
+                    Bandung, West Java, Indonesia
                   </p>
                 </div>
               </div>
@@ -115,7 +113,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-brand-gray/30 p-8 rounded-lg border-2 border-brand-dark">
+          <div className="bg-brand-gray/30 p-8 rounded-lg border-2 border-brand-dark rounded-lg">
             <h3 className="font-display text-3xl font-bold mb-6 text-brand-dark">
               SEND US A MESSAGE
             </h3>
@@ -132,7 +130,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream"
+                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream rounded-lg"
                   placeholder="Your name"
                 />
               </div>
@@ -148,7 +146,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream"
+                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream rounded-lg"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -163,7 +161,7 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream"
+                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream rounded-lg"
                   placeholder="+62 812 3456 7890"
                 />
               </div>
@@ -178,7 +176,7 @@ export default function Contact() {
                   value={formData.service}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream"
+                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream rounded-lg"
                 >
                   <option value="">Select a service</option>
                   <option value="graphic-design">Graphic Design</option>
@@ -206,7 +204,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark"
+                className="w-full bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark rounded-lg"
               >
                 SEND MESSAGE
               </button>

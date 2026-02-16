@@ -81,16 +81,16 @@ export default function Portfolio() {
       <section className="pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap gap-4 justify-center">
-            <button className="px-6 py-3 bg-brand-lime text-brand-dark font-bold border-2 border-brand-dark hover:bg-brand-dark hover:text-brand-lime transition-all duration-300">
+            <button className="px-6 py-3 bg-brand-lime text-brand-dark font-bold border-2 border-brand-dark hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 rounded-lg">
               All Projects
             </button>
-            <button className="px-6 py-3 bg-brand-cream text-brand-dark font-bold border-2 border-brand-dark hover:bg-brand-dark hover:text-brand-lime transition-all duration-300">
+            <button className="px-6 py-3 bg-brand-cream text-brand-dark font-bold border-2 border-brand-dark hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 rounded-lg">
               Branding
             </button>
-            <button className="px-6 py-3 bg-brand-cream text-brand-dark font-bold border-2 border-brand-dark hover:bg-brand-dark hover:text-brand-lime transition-all duration-300">
+            <button className="px-6 py-3 bg-brand-lime text-brand-dark font-bold border-2 border-brand-dark hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 rounded-lg">
               Web Development
             </button>
-            <button className="px-6 py-3 bg-brand-cream text-brand-dark font-bold border-2 border-brand-dark hover:bg-brand-dark hover:text-brand-lime transition-all duration-300">
+            <button className="px-6 py-3 bg-brand-lime text-brand-dark font-bold border-2 border-brand-dark hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 rounded-lg">
               Graphic Design
             </button>
           </div>
@@ -107,7 +107,7 @@ export default function Portfolio() {
                 className="group cursor-pointer hover-lift"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={`${project.color} aspect-square rounded-lg mb-4 flex items-center justify-center border-2 border-brand-dark overflow-hidden relative`}>
+                <div className={`${project.color} aspect-square rounded-xl mb-4 flex items-center justify-center border-2 border-brand-dark overflow-hidden relative`}>
                   <div className="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-brand-lime font-display text-2xl font-bold">View Project</span>
                   </div>
@@ -141,7 +141,7 @@ export default function Portfolio() {
           </p>
           <a 
             href="/contact" 
-            className="inline-block bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-cream transition-all duration-300 border-2 border-brand-lime"
+            className="inline-block bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-cream transition-all duration-300 border-2 border-brand-lime rounded-lg"
           >
             START YOUR PROJECT
           </a>

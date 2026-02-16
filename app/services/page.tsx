@@ -55,7 +55,7 @@ export default function Services() {
                   <span>Illustration & Custom Graphics</span>
                 </li>
               </ul>
-              <Link href="/contact" className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark">
+              <Link href="/contact" className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg">
                 GET STARTED
               </Link>
             </div>
@@ -96,7 +96,7 @@ export default function Services() {
                   <span>Website Maintenance & Support</span>
                 </li>
               </ul>
-              <Link href="/contact" className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark">
+              <Link href="/contact" className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg">
                 GET STARTED
               </Link>
             </div>
@@ -137,7 +137,7 @@ export default function Services() {
                   <span>Brand Refresh & Rebranding</span>
                 </li>
               </ul>
-              <Link href="/contact" className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark">
+              <Link href="/contact" className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg">
                 GET STARTED
               </Link>
             </div>

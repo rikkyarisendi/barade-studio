@@ -28,13 +28,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link 
                 href="/portfolio" 
-                className="bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark hover-lift w-full sm:w-auto text-center"
+                className="bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark hover-lift rounded-lg"
               >
                 VIEW OUR WORK
               </Link>
               <Link 
                 href="/contact" 
-                className="bg-transparent text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-dark hover:text-brand-cream transition-all duration-300 border-2 border-brand-dark w-full sm:w-auto text-center"
+                className="bg-transparent text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-dark hover:text-brand-cream transition-all duration-300 border-2 border-brand-dark rounded-lg"
               >
                 GET IN TOUCH
               </Link>
@@ -72,7 +72,7 @@ export default function Home() {
           
           <div className="grid md:grid-cols-3 gap-8">
             {/* Graphic Design */}
-            <div className="group p-8 border-2 border-brand-lime/30 hover:border-brand-lime transition-all duration-300 hover-lift">
+            <div className="group p-8 border-2 border-brand-lime/30 hover:border-brand-lime transition-all duration-300 hover-lift rounded-xl">
               <div className="text-5xl mb-4">🎨</div>
               <h3 className="font-display text-2xl font-bold mb-4 text-brand-lime">Graphic Design</h3>
               <p className="text-brand-gray mb-4">
@@ -84,7 +84,7 @@ export default function Home() {
             </div>
 
             {/* Web Development */}
-            <div className="group p-8 border-2 border-brand-lime/30 hover:border-brand-lime transition-all duration-300 hover-lift">
+            <div className="group p-8 border-2 border-brand-lime/30 hover:border-brand-lime transition-all duration-300 hover-lift rounded-xl">
               <div className="text-5xl mb-4">💻</div>
               <h3 className="font-display text-2xl font-bold mb-4 text-brand-lime">Web Development</h3>
               <p className="text-brand-gray mb-4">
@@ -96,7 +96,7 @@ export default function Home() {
             </div>
 
             {/* Branding */}
-            <div className="group p-8 border-2 border-brand-lime/30 hover:border-brand-lime transition-all duration-300 hover-lift">
+            <div className="group p-8 border-2 border-brand-lime/30 hover:border-brand-lime transition-all duration-300 hover-lift rounded-xl">
               <div className="text-5xl mb-4">✨</div>
               <h3 className="font-display text-2xl font-bold mb-4 text-brand-lime">Brand Strategy</h3>
               <p className="text-brand-gray mb-4">
@@ -121,7 +121,7 @@ export default function Home() {
           </p>
           <Link 
             href="/contact" 
-            className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark"
+            className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg"
           >
             CONTACT US NOW
           </Link>
