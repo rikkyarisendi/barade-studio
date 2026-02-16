@@ -55,6 +55,17 @@ export const projects: Project[] = [
     challenge: 'Kopi Kita Cafe approached us with a vision to create a modern coffee shop that would appeal to young professionals while maintaining a warm, community-focused atmosphere. They were entering a highly competitive market dominated by international chains and needed a distinctive brand identity that would help them stand out. The challenge was to balance professionalism with approachability, modern aesthetics with warmth, and create a brand that felt both premium and accessible.',
     solution: 'We developed a comprehensive brand identity centered around the concept of "modern warmth." The visual identity features a custom wordmark with rounded, friendly letterforms paired with a minimalist geometric icon. The color palette combines warm earth tones (terracotta, cream, and coffee brown) with a fresh sage green accent, creating a balance between comfort and contemporary style. We created a modular brand system that includes hand-drawn illustrations of coffee beans, leaves, and steam patterns that can be mixed and matched across different applications. The packaging design uses kraft paper with selective spot colors, emphasizing sustainability while maintaining a premium feel.',
     results: '150% increase in brand recognition within the first 3 months of launch. The cafe was featured in Jakarta Design Magazine and won the "Best New Cafe Brand 2024" award from the Indonesian Coffee Association. Customer base grew by 40%, with 65% of new customers citing the brand aesthetic as a key factor in their first visit. Social media following increased from 0 to 25,000 followers in 4 months, with user-generated content featuring the branded packaging appearing organically.',
+
+      // 🖼️ GAMBAR
+  /*   thumbnail: '/projects/coffee-shop/hero.jpg',
+    images: [
+      '/projects/coffee-shop/hero.jpg',        // Main showcase
+      '/projects/coffee-shop/logo.jpg',        // Logo variations
+      '/projects/coffee-shop/packaging.jpg',   // Packaging design
+      '/projects/coffee-shop/interior.jpg',    // Interior signage
+      '/projects/coffee-shop/menu.jpg',        // Menu design
+    ], */
+
     testimonial: {
       quote: "BARADE STUDIO didn't just design a logo – they crafted our entire brand story. The identity they created perfectly captures who we are and has been instrumental in our success. Customers tell us daily how much they love our branding!",
       author: 'Sarah Wijaya',
@@ -87,6 +98,15 @@ export const projects: Project[] = [
     challenge: 'PayFlow, a fintech startup, needed to establish credibility and trust in the competitive digital payment space. They required a website that would not only look modern and professional but also communicate security, reliability, and ease of use. The platform needed to handle sensitive financial information, meet strict security requirements, and provide an intuitive user experience for both individual users and business clients. Additionally, the site needed to load quickly and perform well even on slower internet connections, considering Indonesia\'s diverse connectivity landscape.',
     solution: 'We built a high-performance web application using Next.js 14 with Server-Side Rendering for optimal loading speeds and SEO. The design language emphasizes trust through clean lines, ample white space, and a professional blue-and-white color scheme with strategic use of green to indicate security and success states. We implemented a comprehensive security infrastructure including SSL encryption, two-factor authentication, and compliance with PCI DSS standards. The user interface features intuitive dashboards, real-time transaction tracking, and clear visual hierarchy. We created separate user flows for individual and business accounts, each optimized for their specific needs. Performance optimizations included code splitting, lazy loading, image optimization, and strategic caching, resulting in a PageSpeed score of 95+.',
     results: '200% increase in user registrations within the first quarter post-launch. The platform processed over $5 million in transactions in the first 3 months. User satisfaction rating of 4.8/5 based on 1,000+ reviews. 60% reduction in customer support tickets related to usability issues compared to the old platform. The website was featured on Product Hunt and received "Website of the Day" recognition. Monthly active users grew from 5,000 to 45,000 in 6 months.',
+
+ /*    // 📸 IMAGES
+    images: [
+      '/projects/fintech-startup/hero.jpg',
+      '/projects/fintech-startup/dashboard.jpg',
+      '/projects/fintech-startup/transactions.jpg',
+      '/projects/fintech-startup/security.jpg',
+    ], */
+
     testimonial: {
       quote: "The website BARADE STUDIO built for us exceeded all expectations. Not only is it beautiful, but it's incredibly fast and secure. Our conversion rate doubled, and users constantly compliment the experience. Best investment we've made.",
       author: 'Michael Tan',
@@ -120,6 +140,17 @@ export const projects: Project[] = [
     challenge: 'Elegance by Amara, a luxury fashion brand targeting sophisticated millennials and Gen Z consumers, needed a brand identity that would communicate exclusivity and refinement while remaining accessible and contemporary. The brand was entering a crowded market where established luxury names dominated. They needed to differentiate themselves and create a memorable impression that would resonate with fashion-forward consumers who value both aesthetics and authenticity. The challenge was to create an identity that felt premium without being pretentious, modern without being trendy.',
     solution: 'We created a minimalist yet distinctive brand identity built around the concept of "understated luxury." The logo features a custom serif wordmark with elegant, elongated letterforms and refined curves. We developed a sophisticated color palette of ivory, charcoal, and rose gold, with strategic use of deep burgundy as a signature accent. The typography system pairs a refined serif for headlines with a clean, modern sans-serif for body text. We designed a flexible visual system incorporating abstract floral motifs and geometric patterns that can be adapted across various touchpoints. The brand guidelines include detailed specifications for photography style (soft natural light, minimal compositions), tone of voice, and application across digital and print media.',
     results: 'Brand successfully launched at Jakarta Fashion Week with widespread media coverage. Instagram following grew from 2,000 to 50,000 in the first month, with engagement rates of 8.5% (well above industry average of 1-3%). First collection sold out within 48 hours of launch. The brand was featured in Vogue Indonesia, Harper\'s Bazaar, and Elle Magazine. Collaboration requests from international retailers increased by 300%. Brand recognition surveys showed 73% awareness among target demographic within 3 months.',
+
+      // 🖼️ GAMBAR
+  /*   thumbnail: '/projects/coffee-shop/hero.jpg',
+    images: [
+      '/projects/coffee-shop/hero.jpg',        // Main showcase
+      '/projects/coffee-shop/logo.jpg',        // Logo variations
+      '/projects/coffee-shop/packaging.jpg',   // Packaging design
+      '/projects/coffee-shop/interior.jpg',    // Interior signage
+      '/projects/coffee-shop/menu.jpg',        // Menu design
+    ], */
+
     testimonial: {
       quote: "BARADE STUDIO captured the essence of luxury we envisioned. The brand identity is timeless, elegant, and perfectly positions us in the market. Our launch exceeded all expectations thanks to their exceptional work.",
       author: 'Amara Putri',
@@ -153,6 +184,17 @@ export const projects: Project[] = [
     challenge: 'BazaarHub, an established multi-vendor marketplace, was struggling with an outdated platform that had poor user experience, slow loading times, and limited vendor management capabilities. They were losing market share to competitors and receiving complaints about checkout abandonment (85% rate), difficult product discovery, and vendor frustration with the management interface. The platform needed a complete overhaul while maintaining business continuity and migrating existing data from 500+ vendors and 100,000+ products without disruption.',
     solution: 'We executed a phased redesign and redevelopment using a headless commerce architecture with Next.js for the frontend and a custom Node.js backend. We conducted extensive UX research including user interviews, heat mapping analysis, and A/B testing to identify pain points. The new design features an intuitive navigation system, advanced filtering and search with AI-powered recommendations, streamlined checkout process, and separate optimized dashboards for customers, vendors, and administrators. We implemented a progressive web app (PWA) for mobile users, real-time inventory synchronization, automated vendor onboarding, and comprehensive analytics. We migrated data in stages during low-traffic periods and ran the old and new systems in parallel for 2 weeks to ensure stability.',
     results: 'Checkout abandonment reduced from 85% to 23% – an 85% improvement. Sales increased by 165% in the first quarter. Average session duration increased from 2 minutes to 8 minutes. Vendor satisfaction scores improved from 3.2/5 to 4.7/5. Platform now handles 10,000+ concurrent users without performance degradation (previously struggled with 1,000). Mobile conversion rate improved by 340%. Customer support tickets related to technical issues decreased by 70%. Monthly active vendors increased from 500 to 1,200.',
+
+          // 🖼️ GAMBAR
+  /*   thumbnail: '/projects/coffee-shop/hero.jpg',
+    images: [
+      '/projects/coffee-shop/hero.jpg',        // Main showcase
+      '/projects/coffee-shop/logo.jpg',        // Logo variations
+      '/projects/coffee-shop/packaging.jpg',   // Packaging design
+      '/projects/coffee-shop/interior.jpg',    // Interior signage
+      '/projects/coffee-shop/menu.jpg',        // Menu design
+    ], */
+
     testimonial: {
       quote: "The transformation BARADE STUDIO delivered is incredible. Our marketplace went from barely functional to best-in-class. Revenue has more than doubled, and both our customers and vendors are thrilled with the new experience.",
       author: 'David Kusuma',
@@ -162,7 +204,7 @@ export const projects: Project[] = [
       website: 'https://bazaarhub.example.com',
     },
   },
-  {
+    {
     id: 5,
     slug: 'restaurant-brand-refresh',
     title: 'Restaurant Brand Refresh',
@@ -190,6 +232,15 @@ export const projects: Project[] = [
       author: 'Giovanni Rossi',
       position: 'Owner, La Bella Cucina',
     },
+    thumbnail: '/projects/restaurant-brand-refresh/hero.jpg',
+    images: [
+      '/projects/restaurant-brand-refresh/hero.jpg',
+      '/projects/restaurant-brand-refresh/logo.png',
+      '/projects/restaurant-brand-refresh/packaging.png',
+      '/projects/restaurant-brand-refresh/menu.png',
+      '/projects/restaurant-brand-refresh/sketch.png',
+      '/projects/restaurant-brand-refresh/brand-guidelines.png',
+    ],
   },
   {
     id: 6,
@@ -214,6 +265,17 @@ export const projects: Project[] = [
     challenge: 'Stratosphere Consulting, a B2B management consulting firm, was relying on an outdated website that failed to generate qualified leads or adequately showcase their expertise. Despite having impressive credentials and successful case studies, their digital presence didn\'t reflect their caliber. They needed to establish thought leadership, build trust with C-level executives, and create a lead generation engine. The challenge was to create a sophisticated, professional website that would resonate with their executive audience while clearly communicating complex consulting services and demonstrating proven results.',
     solution: 'We developed a content-first website strategy that positions the firm as thought leaders through detailed case studies, white papers, and insights. The design uses a sophisticated, minimal aesthetic with a navy, silver, and white color scheme that communicates professionalism and trust. We implemented a comprehensive lead generation system with strategic CTAs, gated premium content, newsletter signup, and consultation booking. Each service page features detailed methodology explanations, relevant case studies, and client testimonials. We built a custom CMS that allows easy content updates and integrated advanced analytics to track user journeys and conversion paths. The site is optimized for search with detailed schema markup and content optimization for industry-specific keywords.',
     results: 'Qualified lead generation increased by 312% in the first quarter. Website traffic grew 185% through improved SEO rankings (now ranking page 1 for 15+ key industry terms). Average session duration increased from 1:23 to 5:47 minutes. Case study downloads increased 425%. Consultation booking rate improved by 240%. The website contributed to closing 12 major contracts worth $2.3M in the first 6 months. Client acquisition cost decreased by 35%. Bounce rate reduced from 68% to 32%.',
+
+          // 🖼️ GAMBAR
+  /*   thumbnail: '/projects/coffee-shop/hero.jpg',
+    images: [
+      '/projects/coffee-shop/hero.jpg',        // Main showcase
+      '/projects/coffee-shop/logo.jpg',        // Logo variations
+      '/projects/coffee-shop/packaging.jpg',   // Packaging design
+      '/projects/coffee-shop/interior.jpg',    // Interior signage
+      '/projects/coffee-shop/menu.jpg',        // Menu design
+    ], */
+
     testimonial: {
       quote: "BARADE STUDIO transformed our digital presence completely. The website not only looks exceptional but has become our most effective business development tool. We're closing bigger deals with better-qualified leads.",
       author: 'Jennifer Morrison',
@@ -244,6 +306,17 @@ export const projects: Project[] = [
     challenge: 'Pure Leaf Organics, an organic tea company, was launching a new premium line of single-origin teas targeting health-conscious, environmentally aware consumers. They needed packaging that would stand out on crowded retail shelves while communicating their commitment to sustainability, quality, and transparency. The challenge was to create packaging that felt premium and artisanal while using only eco-friendly materials, maintaining cost-effectiveness for wholesale distribution, and differentiating each tea variety clearly while maintaining brand cohesion across the line.',
     solution: 'We designed a packaging system using 100% recycled kraft paper with biodegradable inner pouches and compostable labels. Each tea variety features custom botanical illustrations hand-drawn to represent the tea\'s origin and flavor profile – delicate cherry blossoms for Japanese green tea, bold tropical leaves for Ceylon black tea, etc. The color-coding system uses natural, muted tones that complement the kraft base while ensuring easy variety identification. We created a clear information hierarchy featuring origin maps, brewing instructions, and transparency information about sourcing. The cylindrical packaging shape is distinctive yet efficient for shipping, with minimal waste. Each package includes a QR code linking to the farmer\'s story and sustainability impact.',
     results: 'Product line launched in 200+ premium retailers across Indonesia and Singapore. First production run of 50,000 units sold out in 6 weeks (projected timeline was 6 months). Packaging won Bronze at the 2024 Asia Pacific Design Awards in the Sustainable Packaging category. Social media engagement increased 380% with customers sharing unboxing experiences. Retail buyers reported 40% higher sell-through rate compared to competitors. Brand was featured in Green Living Magazine and Eco-Warrior Blog. Customer reviews consistently mention packaging as a key differentiator, with 85% stating it influenced their purchase decision.',
+
+          // 🖼️ GAMBAR
+  /*   thumbnail: '/projects/coffee-shop/hero.jpg',
+    images: [
+      '/projects/coffee-shop/hero.jpg',        // Main showcase
+      '/projects/coffee-shop/logo.jpg',        // Logo variations
+      '/projects/coffee-shop/packaging.jpg',   // Packaging design
+      '/projects/coffee-shop/interior.jpg',    // Interior signage
+      '/projects/coffee-shop/menu.jpg',        // Menu design
+    ], */
+
     testimonial: {
       quote: "The packaging BARADE STUDIO created is a work of art that perfectly represents our values. Customers tell us they keep the tins even after the tea is gone! It's helped us compete with much bigger brands.",
       author: 'Maya Dewi',
@@ -276,6 +349,17 @@ export const projects: Project[] = [
     challenge: 'FitQuest wanted to enter the competitive fitness app market with a unique approach: gamification that actually motivates long-term behavior change rather than short-term engagement. They needed to solve common fitness app problems including high user drop-off rates (70% of users abandon within first week), lack of sustained motivation, and overwhelming complexity. The challenge was to create an app that would be engaging for beginners without alienating serious fitness enthusiasts, provide personalized experiences at scale, and maintain motivation through plateaus and setbacks.',
     solution: 'We developed a comprehensive UX strategy based on behavioral psychology research and extensive user testing with 50+ fitness enthusiasts of varying levels. The app features a quest-based progression system where users unlock new challenges, earn badges, and level up their avatar. The UI uses bold, energetic colors (electric blue, vibrant orange, lime green) with smooth animations that celebrate achievements. We designed personalized workout plans that adapt based on user performance and preferences, with clear visual progress tracking through charts, streaks, and milestone celebrations. The social features allow friendly competition without pressure. We created a comprehensive design system with reusable components and clear guidelines for future development.',
     results: '100,000+ downloads in the first 2 months post-launch. User retention rate of 68% after 30 days (industry average is 30%). Average daily active usage of 23 minutes. App Store rating of 4.7/5 based on 8,000+ reviews. Featured in App Store "New Apps We Love" and Google Play "Editor\'s Choice." 45% of users upgraded to premium subscription within first month. Social sharing of achievements generated 25,000+ organic social media posts. App was covered by TechCrunch, Lifehacker, and The Verge.',
+
+          // 🖼️ GAMBAR
+  /*   thumbnail: '/projects/coffee-shop/hero.jpg',
+    images: [
+      '/projects/coffee-shop/hero.jpg',        // Main showcase
+      '/projects/coffee-shop/logo.jpg',        // Logo variations
+      '/projects/coffee-shop/packaging.jpg',   // Packaging design
+      '/projects/coffee-shop/interior.jpg',    // Interior signage
+      '/projects/coffee-shop/menu.jpg',        // Menu design
+    ], */
+    
     testimonial: {
       quote: "BARADE STUDIO didn't just design an app – they designed an experience that changes lives. The retention numbers speak for themselves. Users are staying engaged because the app actually works and feels amazing to use.",
       author: 'Ryan Martinez',
@@ -309,6 +393,17 @@ export const projects: Project[] = [
     challenge: 'SoundWave, a new 3-day music festival, needed to establish itself in a market dominated by established festivals. They required a brand identity that would appeal to Gen Z and young millennials, communicate the festival\'s eclectic lineup (from indie to electronic to hip-hop), create shareable moments for social media, and work across diverse applications from giant stage banners to tiny wristbands. The brand needed to be energetic and bold enough to capture attention but flexible enough to accommodate multiple music genres and evolving lineups.',
     solution: 'We created a dynamic, modular brand system built around the concept of "visual frequency." The logo features custom geometric letterforms that can be animated to pulse with music. The color palette is vibrant and diverse – electric purple, hot pink, cyan, and lime green – allowing different combinations for different stages and music genres. We designed a library of animated graphic elements (waveforms, particles, gradients) that can be customized and layered. The typography system pairs a bold, condensed display font with a clean geometric sans-serif. We created templates for poster designs, social media content, stage designs, merchandise, and sponsor materials. The brand system is designed to evolve year-to-year while maintaining core recognition.',
     results: 'Festival sold out all 10,000 tickets in 5 days (previous local festivals averaged 30 days to sell out). Social media campaign generated 15 million impressions with 250,000+ engagements before the event. #SoundWaveFest trended on Twitter during the festival weekend. Merchandise sales exceeded projections by 185%. Post-event survey showed 92% brand recognition among attendees. The festival secured 15 major sponsors (double the initial goal). Festival was featured in Rolling Stone Indonesia, Billboard, and major music blogs. 88% of attendees said they would attend next year. The branding won Gold at the Indonesian Design Awards.',
+
+          // 🖼️ GAMBAR
+  /*   thumbnail: '/projects/coffee-shop/hero.jpg',
+    images: [
+      '/projects/coffee-shop/hero.jpg',        // Main showcase
+      '/projects/coffee-shop/logo.jpg',        // Logo variations
+      '/projects/coffee-shop/packaging.jpg',   // Packaging design
+      '/projects/coffee-shop/interior.jpg',    // Interior signage
+      '/projects/coffee-shop/menu.jpg',        // Menu design
+    ], */
+
     testimonial: {
       quote: "The branding BARADE STUDIO created became the soul of our festival. Every touchpoint was perfect – from the massive stage designs to the tiny details on wristbands. The visual identity helped us compete with festivals that have been around for decades.",
       author: 'Alex Chen',

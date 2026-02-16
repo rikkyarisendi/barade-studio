@@ -104,17 +104,17 @@ export default function Portfolio() {
       {/* Modal Preview */}
       {selectedProject && (
         <div 
-          className="fixed inset-0 bg-brand-dark/95 z-50 flex items-center justify-center p-4 animate-fade-in"
+          className="fixed inset-0 bg-brand-dark/95 z-50 flex items-center justify-center p-4 animate-fade-in overflow-y-auto"
           onClick={() => setSelectedProject(null)}
         >
           <div 
-            className="bg-brand-cream max-w-4xl w-full max-h-[85vh] overflow-y-auto rounded-2xl border-4 border-brand-lime p-6 md:p-8 relative shadow-2xl"
+            className="bg-brand-cream max-w-5xl w-full my-8 rounded-2xl border-4 border-brand-lime p-6 md:p-10 relative max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button 
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 text-3xl md:text-4xl font-bold text-brand-dark hover:text-brand-lime transition-colors leading-none z-10 bg-brand-cream hover:bg-brand-lime rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center border-2 border-brand-dark"
+              className="sticky top-0 float-right -mt-2 -mr-2 md:-mt-4 md:-mr-4 text-4xl md:text-5xl font-bold text-brand-dark hover:text-brand-lime transition-colors leading-none z-10 bg-brand-cream rounded-full w-12 h-12 flex items-center justify-center border-2 border-brand-dark hover:border-brand-lime"
               aria-label="Close"
             >
               ×
@@ -125,7 +125,7 @@ export default function Portfolio() {
               {selectedProject.category}
             </div>
             
-            <h2 className="font-display text-2xl md:text-4xl font-bold text-brand-dark mb-3 pr-12">
+            <h2 className="font-display text-2xl md:text-4xl font-bold text-brand-dark mb-3 pr-8">
               {selectedProject.title}
             </h2>
             
@@ -156,11 +156,11 @@ export default function Portfolio() {
             {/* Short Summary */}
             <div className="mb-6">
               <h3 className="font-display text-lg md:text-xl font-bold mb-3 text-brand-dark">Quick Overview</h3>
-              <p className="text-brand-dark/70 text-sm md:text-base mb-3">
-                <strong>Challenge:</strong> {selectedProject.challenge.substring(0, 200)}...
+              <p className="text-brand-dark/70 text-sm md:text-base mb-3 line-clamp-2">
+                <strong>Challenge:</strong> {selectedProject.challenge.substring(0, 150)}...
               </p>
-              <p className="text-brand-dark/70 text-sm md:text-base">
-                <strong>Solution:</strong> {selectedProject.solution.substring(0, 200)}...
+              <p className="text-brand-dark/70 text-sm md:text-base line-clamp-2">
+                <strong>Solution:</strong> {selectedProject.solution.substring(0, 150)}...
               </p>
             </div>
 
@@ -172,7 +172,7 @@ export default function Portfolio() {
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col sm:flex-row gap-3 sticky bottom-0 bg-brand-cream pt-4 -mx-6 md:-mx-10 px-6 md:px-10 pb-2">
               <Link 
                 href={`/portfolio/${selectedProject.slug}`}
                 className="flex-1 bg-brand-lime text-brand-dark px-6 py-3 font-bold text-base md:text-lg text-center hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark rounded-lg"
