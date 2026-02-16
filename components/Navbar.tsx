@@ -10,18 +10,25 @@ export default function Navbar() {
     <nav className="fixed w-full top-0 z-50 bg-brand-cream/95 backdrop-blur-sm border-b-2 border-brand-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <div className="relative">
-              <span className="font-display text-3xl font-bold text-brand-dark tracking-tight">
-                BARADE
-              </span>
-              <span className="font-display text-3xl font-bold text-brand-lime ml-1">
-                STUDIO
-              </span>
-              <div className="absolute -bottom-1 left-0 w-0 h-1 bg-brand-lime group-hover:w-full transition-all duration-300"></div>
-            </div>
-          </Link>
+         {/* Logo */}
+<Link href="/" className="flex items-center gap-3 group">
+  <img 
+    src="/logo.png" 
+    alt="BARADE STUDIO Logo" 
+    className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+  />
+  
+  {/* Text - Hidden on mobile, show on desktop */}
+  <div className="relative hidden md:block">
+    <span className="font-display text-3xl font-bold text-brand-dark tracking-tight">
+      BARADE
+    </span>
+    <span className="font-display text-3xl font-bold text-brand-lime ml-1">
+      STUDIO
+    </span>
+    <div className="absolute -bottom-1 left-0 w-0 h-1 bg-brand-lime group-hover:w-full transition-all duration-300"></div>
+  </div>
+</Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
