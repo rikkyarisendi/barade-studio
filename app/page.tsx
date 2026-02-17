@@ -44,20 +44,20 @@ export default function Home() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pb-16 animate-slide-in">
             <div className="text-center">
-              <p className="font-display text-4xl md:text-5xl font-bold text-brand-lime">150+</p>
-              <p className="text-brand-dark mt-2">Projects</p>
+              <p className="font-display text-4xl md:text-5xl font-bold text-brand-dark">150+</p>
+              <p className="bg-brand-dark text-brand-lime px-1 py-1 text-brand-dark mt-2 border-2 border-brand-dark w-full sm:w-auto text-center rounded-lg">Projects</p>
             </div>
             <div className="text-center">
-              <p className="font-display text-4xl md:text-5xl font-bold text-brand-lime">50+</p>
-              <p className="text-brand-dark mt-2">Clients</p>
+              <p className="font-display text-4xl md:text-5xl font-bold text-brand-dark">50+</p>
+              <p className="bg-brand-dark text-brand-lime px-1 py-1 text-brand-dark mt-2 border-2 border-brand-dark w-full sm:w-auto text-center rounded-lg">Clients</p>
             </div>
             <div className="text-center">
-              <p className="font-display text-4xl md:text-5xl font-bold text-brand-lime">5+</p>
-              <p className="text-brand-dark mt-2">Years</p>
+              <p className="font-display text-4xl md:text-5xl font-bold text-brand-dark">5+</p>
+              <p className="bg-brand-dark text-brand-lime px-1 py-1 text-brand-dark mt-2 border-2 border-brand-dark w-full sm:w-auto text-center rounded-lg">Years</p>
             </div>
             <div className="text-center">
-              <p className="font-display text-4xl md:text-5xl font-bold text-brand-lime">100%</p>
-              <p className="text-brand-dark mt-2">Satisfaction</p>
+              <p className="font-display text-4xl md:text-5xl font-bold text-brand-dark">100%</p>
+              <p className="bg-brand-dark text-brand-lime px-1 py-1 text-brand-dark mt-2 border-2 border-brand-dark w-full sm:w-auto text-center rounded-lg">Satisfaction</p>
             </div>
           </div>
         </div>

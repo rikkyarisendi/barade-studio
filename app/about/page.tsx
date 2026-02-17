@@ -79,7 +79,7 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-gray/30">
+{/*       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-gray/30">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-center text-brand-dark">
             MEET THE <span className="text-brand-lime">TEAM</span>
@@ -100,7 +100,7 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </>

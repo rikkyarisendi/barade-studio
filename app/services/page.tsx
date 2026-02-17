@@ -42,28 +42,38 @@ export default function Services() {
                 Create a lasting impression with stunning visual designs. From brand identity to marketing materials, we craft designs that speak to your audience.
               </p>
               <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Logo Design & Brand Identity</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Print Design (Brochures, Flyers, Business Cards)</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Social Media Graphics</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Packaging Design</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Illustration & Custom Graphics</span>
                 </li>
               </ul>
-              <Link href="/contact" className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg">
+              <Link href="/contact" className="inline-block bg-brand-lime text-brand-dark px-8 py-4 font-bold hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark rounded-lg">
                 GET STARTED
               </Link>
             </div>
@@ -95,28 +105,38 @@ export default function Services() {
                 Build your online presence with modern, responsive websites. We create fast, beautiful, and user-friendly web experiences.
               </p>
               <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Custom Website Development</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>E-commerce Solutions</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Responsive Design</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>CMS Integration</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Website Maintenance & Support</span>
                 </li>
               </ul>
-              <Link href="/contact" className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg">
+              <Link href="/contact" className="inline-block bg-brand-lime text-brand-dark px-8 py-4 font-bold hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark rounded-lg">
                 GET STARTED
               </Link>
             </div>
@@ -148,28 +168,38 @@ export default function Services() {
                 Define and strengthen your brand identity. We help you create a cohesive brand that resonates with your target audience.
               </p>
               <ul className="space-y-3 mb-8">
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Brand Discovery & Research</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Brand Positioning & Messaging</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Visual Identity System</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Brand Guidelines</span>
                 </li>
-                <li className="flex items-start">
-                  <span className="text-brand-lime mr-3 text-xl">✓</span>
+                <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+  <span className="text-brand-dark text-sm font-bold">✓</span>
+</div>
                   <span>Brand Refresh & Rebranding</span>
                 </li>
               </ul>
-              <Link href="/contact" className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg">
+              <Link href="/contact" className="inline-block bg-brand-lime text-brand-dark px-8 py-4 font-bold hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark rounded-lg">
                 GET STARTED
               </Link>
             </div>
