@@ -46,7 +46,7 @@ export default function Navbar() {
             <Link href="/portfolio" className="text-brand-dark hover:text-brand-lime transition-colors duration-300 font-medium">
               Portfolio
             </Link>
-            <Link href="/contact" className="bg-brand-lime text-brand-dark px-6 py-3 font-bold hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark rounded-lg">
+            <Link href="/contact" className="bg-brand-lime text-brand-dark px-2 py-1 font-bold hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark rounded-lg">
               Contact
             </Link>
           </div>

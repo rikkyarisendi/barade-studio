@@ -24,10 +24,10 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
             href="/portfolio" 
             className="inline-flex items-center text-brand-dark hover:text-brand-dark/70 mb-6 font-bold transition-colors group"
           >
-            <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span> Back to Portfolio
+            <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span> Back to Portfolio |
           </Link>
           
-          <div className="inline-block bg-brand-dark text-brand-lime px-4 py-2 text-sm font-bold mb-6 rounded-lg">
+          <div className="ml-2 inline-block bg-brand-dark text-brand-lime px-2 py-1 text-sm font-bold mb-6 rounded-lg">
             {project.category}
           </div>
           
