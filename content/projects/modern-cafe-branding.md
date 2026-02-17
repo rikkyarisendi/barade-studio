@@ -1,12 +1,54 @@
 ---
-id: 1
+# ============================================
+# 🆔 BASIC INFO
+# ============================================
 title: "Modern Cafe Branding"
-category: "Branding"
+slug: "modern-cafe-branding"
+date: "2025-01-20"                    # ✅ Format: YYYY-MM-DD (untuk sorting)
+
+# ============================================
+# 🏷️ KATEGORI & TAGS
+# ============================================
+category: "Branding"                  # Kategori utama (wajib, satu saja)
+tags:                                 # ✅ Label tambahan untuk filter (bisa banyak)
+  - "F&B"
+  - "Indonesian Brand"                # ✅ Sama kayak Misil Tactical → buat tes filter!
+  - "Logo Design"
+  - "Packaging"
+
+# ============================================
+# 📝 DESKRIPSI & INFO PROJECT
+# ============================================
 description: "Complete brand identity for a contemporary coffee shop"
 color: "bg-amber-100"
 client: "Kopi Kita Cafe"
 year: "2024"
 duration: "3 months"
+
+# ============================================
+# 🖼️ IMAGE STRUCTURE
+# ============================================
+# 1. Thumbnail untuk Card Portfolio (1:1 Square)
+thumbnail: "/projects/cafe-branding/thumb.png"
+
+# 2. Quick View Modal Image (16:9 Landscape)
+quickViewImage: "/projects/cafe-branding/hero.png"
+
+# 3. Full Case Study Images
+projectShowcase: "/projects/cafe-branding/hero.png"        # 16:9 - Hero/Showcase utama
+designDetail: "/projects/cafe-branding/detail-1.png"       # 1:1 - Logo & color palette
+implementation: "/projects/cafe-branding/detail-2.png"     # 1:1 - Packaging mockup
+
+# 4. Additional Images (Opsional - Grid Auto)
+# additionalImages:
+#   - path: "/projects/cafe-branding/extra-1.jpg"
+#     alt: "Social media templates"
+#   - path: "/projects/cafe-branding/extra-2.jpg"
+#     alt: "Brand guidelines preview"
+
+# ============================================
+# 📋 SERVICES & CONTENT
+# ============================================
 services:
   - "Brand Strategy & Positioning"
   - "Logo & Visual Identity Design"
@@ -14,13 +56,12 @@ services:
   - "Marketing Materials"
   - "Social Media Templates"
   - "Brand Guidelines"
-thumbnail: "/projects/cafe-branding/hero.jpg"
-images:
-  - "/projects/cafe-branding/hero.jpg"
+
 testimonial:
   quote: "BARADE STUDIO didn't just design a logo – they crafted our entire brand story. The identity they created perfectly captures who we are and has been instrumental in our success. Customers tell us daily how much they love our branding!"
   author: "Sarah Wijaya"
   position: "Founder, Kopi Kita Cafe"
+
 externalLinks:
   behance: "https://behance.net/gallery/kopi-kita-branding"
   website: "https://kopikita.example.com"

@@ -1,8 +1,45 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getProjectBySlug, getRelatedProjects } from '@/lib/projects';
+import { getProjectBySlug, getRelatedProjects, AdditionalImage } from '@/lib/projects';
+
+// ✅ Component untuk Additional Images (Grid Layout - Opsional)
+function AdditionalImagesGrid({ images, title }: { images: AdditionalImage[]; title: string }) {
+  if (!images || images.length === 0) return null;
+
+  return (
+    <div className="mt-20">
+      <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 text-brand-dark">
+        More From This Project
+      </h2>
+      
+      {/* Grid: Auto adjust 1-3 columns based on screen size */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {images.map((img, idx) => (
+          <div 
+            key={idx} 
+            className="relative aspect-square rounded-2xl border-4 border-brand-dark overflow-hidden group hover:scale-[1.02] transition-transform duration-300"
+          >
+            <Image
+              src={img.path}
+              alt={img.alt || `${title} - Image ${idx + 1}`}
+              fill
+              className="object-cover"
+            />
+            {/* Caption on Hover */}
+            {img.alt && (
+              <div className="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+                <span className="text-brand-lime font-bold text-center text-sm">{img.alt}</span>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function ProjectDetail({ params }: { params: { slug: string } }) {
   const project = getProjectBySlug(params.slug);
@@ -24,7 +61,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
             href="/portfolio" 
             className="inline-flex items-center text-brand-dark hover:text-brand-dark/70 mb-6 font-bold transition-colors group"
           >
-            <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span> Back to Portfolio |
+            <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span> Back to Portfolio | 
           </Link>
           
           <div className="ml-2 inline-block bg-brand-dark text-brand-lime px-2 py-1 text-sm font-bold mb-6 rounded-lg">
@@ -97,12 +134,22 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
             </p>
           </div>
 
-          {/* Visual Placeholder 1 */}
-          <div className={`${project.color} aspect-video rounded-2xl border-4 border-brand-dark flex flex-col items-center justify-center relative overflow-hidden group`}>
-            <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/5 to-transparent"></div>
-            <span className="font-display text-6xl md:text-8xl text-brand-dark/10 font-bold relative z-10">01</span>
-            <span className="text-brand-dark/40 font-bold mt-2 relative z-10">Project Showcase</span>
-          </div>
+          {/* ✅ 1. PROJECT SHOWCASE (16:9) - Badge hover, tipis */}
+          {project.projectShowcase && (
+            <div className="relative aspect-video rounded-2xl border-4 border-brand-dark overflow-hidden group">
+              <Image
+                src={project.projectShowcase}
+                alt={`${project.title} - Showcase`}
+                fill
+                priority
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              {/* ✅ Badge - Bottom Left, Lime, Tipis, Hover Only */}
+              <div className="absolute bottom-4 left-4 bg-brand-lime text-brand-dark px-2 py-0.5 rounded text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Project Showcase
+              </div>
+            </div>
+          )}
 
           {/* Our Solution */}
           <div>
@@ -114,19 +161,48 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
             </p>
           </div>
 
-          {/* Visual Grid Placeholder */}
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className={`${project.color} aspect-square rounded-2xl border-4 border-brand-dark flex flex-col items-center justify-center relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300`}>
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/5 to-transparent"></div>
-              <span className="font-display text-6xl md:text-7xl text-brand-dark/10 font-bold relative z-10">02</span>
-              <span className="text-brand-dark/40 font-bold mt-2 relative z-10 text-sm">Design Detail</span>
+          {/* ✅ 2 & 3. DESIGN DETAIL + IMPLEMENTATION (1:1) - Badge hover, tipis */}
+          {(project.designDetail || project.implementation) && (
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Design Detail */}
+              {project.designDetail && (
+                <div className="relative aspect-square rounded-2xl border-4 border-brand-dark overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+                  <Image
+                    src={project.designDetail}
+                    alt={`${project.title} - Design Detail`}
+                    fill
+                    className="object-cover"
+                  />
+                  {/* ✅ Badge - Bottom Left, Lime, Tipis, Hover Only */}
+                  <div className="absolute bottom-4 left-4 bg-brand-lime text-brand-dark px-2 py-0.5 rounded text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Design Detail
+                  </div>
+                </div>
+              )}
+
+              {/* Implementation */}
+              {project.implementation && (
+                <div className="relative aspect-square rounded-2xl border-4 border-brand-dark overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+                  <Image
+                    src={project.implementation}
+                    alt={`${project.title} - Implementation`}
+                    fill
+                    className="object-cover"
+                  />
+                  {/* ✅ Badge - Bottom Left, Lime, Tipis, Hover Only */}
+                  <div className="absolute bottom-4 left-4 bg-brand-lime text-brand-dark px-2 py-0.5 rounded text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Implementation
+                  </div>
+                </div>
+              )}
             </div>
-            <div className={`${project.color} aspect-square rounded-2xl border-4 border-brand-dark flex flex-col items-center justify-center relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300`}>
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-dark/5 to-transparent"></div>
-              <span className="font-display text-6xl md:text-7xl text-brand-dark/10 font-bold relative z-10">03</span>
-              <span className="text-brand-dark/40 font-bold mt-2 relative z-10 text-sm">Implementation</span>
-            </div>
-          </div>
+          )}
+
+          {/* ✅ 4. ADDITIONAL IMAGES (Auto Grid - Optional) */}
+          <AdditionalImagesGrid 
+            images={project.additionalImages || []} 
+            title={project.title} 
+          />
 
           {/* Results & Impact */}
           <div className="bg-brand-lime p-8 md:p-12 rounded-2xl border-4 border-brand-dark relative overflow-hidden">
@@ -206,6 +282,17 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     <span>View on GitHub</span>
                   </a>
                 )}
+                {project.externalLinks.instagram && (
+                  <a 
+                    href={project.externalLinks.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-6 py-4 bg-brand-dark text-brand-cream font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark hover:scale-105"
+                  >
+                    <span className="text-2xl">📸</span> 
+                    <span>View on Instagram</span>
+                  </a>
+                )}
               </div>
             </div>
           )}
@@ -238,14 +325,27 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                   href={`/portfolio/${relatedProject.slug}`}
                   className="group cursor-pointer hover-lift block"
                 >
-                  <div className={`${relatedProject.color} aspect-square rounded-xl mb-4 flex items-center justify-center border-2 border-brand-dark overflow-hidden relative`}>
-                    <div className="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="text-brand-lime font-display text-xl font-bold">View Project</span>
+                  {/* Related Project Thumbnail */}
+                  {relatedProject.thumbnail ? (
+                    <div className="relative aspect-square rounded-xl mb-4 border-2 border-brand-dark overflow-hidden">
+                      <Image
+                        src={relatedProject.thumbnail}
+                        alt={relatedProject.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span className="text-brand-lime font-display text-xl font-bold">View Project</span>
+                      </div>
                     </div>
-                    <span className="font-display text-5xl font-bold text-brand-dark/20">
-                      {String(relatedProject.id).padStart(2, '0')}
-                    </span>
-                  </div>
+                  ) : (
+                    <div className={`${relatedProject.color} aspect-square rounded-xl mb-4 flex items-center justify-center border-2 border-brand-dark`}>
+                      <span className="font-display text-5xl font-bold text-brand-dark/20">
+                        {String(relatedProject.id).padStart(2, '0')}
+                      </span>
+                    </div>
+                  )}
+                  
                   <div className="inline-block bg-brand-lime px-3 py-1 text-xs font-bold mb-2 rounded">
                     {relatedProject.category}
                   </div>

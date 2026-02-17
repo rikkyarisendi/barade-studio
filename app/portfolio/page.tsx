@@ -3,6 +3,18 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { getAllProjects } from '@/lib/projects';
 import PortfolioClient from '@/components/PortfolioClient';
+import { Metadata } from 'next';
+
+// ✅ SEO Metadata
+export const metadata: Metadata = {
+  title: 'Portfolio | Baradé Studio',
+  description: 'Explore our recent work in branding, web development, and digital design.',
+  openGraph: {
+    title: 'Portfolio | Baradé Studio',
+    description: 'Explore our recent work in branding, web development, and digital design.',
+    type: 'website',
+  },
+};
 
 export default function Portfolio() {
   const projects = getAllProjects();
@@ -26,7 +38,13 @@ export default function Portfolio() {
       </section>
 
       {/* Client Component - handles filter + modal */}
-      <PortfolioClient projects={projects} />
+      {projects.length > 0 ? (
+        <PortfolioClient projects={projects} />
+      ) : (
+        <section className="py-20 px-4 text-center">
+          <p className="text-xl text-brand-dark/60">No projects available yet. Check back soon!</p>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-dark text-brand-cream">
