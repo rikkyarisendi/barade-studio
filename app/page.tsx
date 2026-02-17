@@ -8,7 +8,7 @@ export default function Home() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center pt-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center pt-40 md:pt-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         {/* Decorative Background */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-brand-lime/20 rounded-full blur-3xl"></div>
@@ -17,7 +17,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-fade-in">
-            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
               <span className="text-brand-dark">WE CREATE</span>
               <br />
               <span className="text-brand-lime">VISUAL MAGIC</span>
@@ -25,16 +25,16 @@ export default function Home() {
             <p className="text-lg sm:text-xl md:text-2xl text-brand-dark/80 mb-8 max-w-3xl mx-auto">
               Transform your brand with stunning graphic design and cutting-edge web development. We turn your vision into reality.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Link 
                 href="/portfolio" 
-                className="bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark hover-lift rounded-lg"
+                className="bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark hover-lift w-full sm:w-auto text-center rounded-lg"
               >
                 VIEW OUR WORK
               </Link>
               <Link 
                 href="/contact" 
-                className="bg-transparent text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-dark hover:text-brand-cream transition-all duration-300 border-2 border-brand-dark rounded-lg"
+                className="bg-transparent text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-dark hover:text-brand-cream transition-all duration-300 border-2 border-brand-dark w-full sm:w-auto text-center rounded-lg"
               >
                 GET IN TOUCH
               </Link>
@@ -42,7 +42,7 @@ export default function Home() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-slide-in">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pb-16 animate-slide-in">
             <div className="text-center">
               <p className="font-display text-4xl md:text-5xl font-bold text-brand-lime">150+</p>
               <p className="text-brand-dark mt-2">Projects</p>
@@ -121,7 +121,7 @@ export default function Home() {
           </p>
           <Link 
             href="/contact" 
-            className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg"
+            className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-xl"
           >
             CONTACT US NOW
           </Link>

@@ -24,12 +24,20 @@ export default function Services() {
         <div className="max-w-7xl mx-auto space-y-20">
           
           {/* Graphic Design */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-brand-lime px-4 py-2 mb-4 font-bold">01</div>
-              <h2 className="font-display text-4xl font-bold mb-6 text-brand-dark">
-                GRAPHIC DESIGN
-              </h2>
+          <div className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
+            <div className="order-1">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-brand-lime px-4 py-2 font-bold rounded">01</div>
+                <h2 className="font-display text-4xl font-bold text-brand-dark">
+                  GRAPHIC DESIGN
+                </h2>
+              </div>
+              
+              {/* Image - Show on mobile only */}
+              <div className="md:hidden relative h-80 bg-brand-dark rounded-2xl flex items-center justify-center mb-6">
+                <span className="font-display text-8xl font-bold text-brand-lime/20">🎨</span>
+              </div>
+              
               <p className="text-brand-dark/80 mb-6">
                 Create a lasting impression with stunning visual designs. From brand identity to marketing materials, we craft designs that speak to your audience.
               </p>
@@ -59,18 +67,30 @@ export default function Services() {
                 GET STARTED
               </Link>
             </div>
-            <div className="relative h-96 bg-brand-dark rounded-lg flex items-center justify-center">
-              <span className="font-display text-9xl font-bold text-brand-lime/20">🎨</span>
+            
+            {/* Image - Show on desktop only */}
+            <div className="hidden md:block order-2">
+              <div className="relative h-96 bg-brand-dark rounded-2xl flex items-center justify-center">
+                <span className="font-display text-9xl font-bold text-brand-lime/20">🎨</span>
+              </div>
             </div>
           </div>
 
           {/* Web Development */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="md:order-2">
-              <div className="inline-block bg-brand-lime px-4 py-2 mb-4 font-bold">02</div>
-              <h2 className="font-display text-4xl font-bold mb-6 text-brand-dark">
-                WEB DEVELOPMENT
-              </h2>
+          <div className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
+            <div className="order-1 md:order-2">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-brand-lime px-4 py-2 font-bold rounded">02</div>
+                <h2 className="font-display text-4xl font-bold text-brand-dark">
+                  WEB DEVELOPMENT
+                </h2>
+              </div>
+              
+              {/* Image - Show on mobile only */}
+              <div className="md:hidden relative h-80 bg-brand-dark rounded-2xl flex items-center justify-center mb-6">
+                <span className="font-display text-8xl font-bold text-brand-lime/20">💻</span>
+              </div>
+              
               <p className="text-brand-dark/80 mb-6">
                 Build your online presence with modern, responsive websites. We create fast, beautiful, and user-friendly web experiences.
               </p>
@@ -100,18 +120,30 @@ export default function Services() {
                 GET STARTED
               </Link>
             </div>
-            <div className="relative h-96 bg-brand-dark rounded-lg flex items-center justify-center md:order-1">
-              <span className="font-display text-9xl font-bold text-brand-lime/20">💻</span>
+            
+            {/* Image - Show on desktop only */}
+            <div className="hidden md:block order-2 md:order-1">
+              <div className="relative h-96 bg-brand-dark rounded-2xl flex items-center justify-center">
+                <span className="font-display text-9xl font-bold text-brand-lime/20">💻</span>
+              </div>
             </div>
           </div>
 
           {/* Branding */}
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-block bg-brand-lime px-4 py-2 mb-4 font-bold">03</div>
-              <h2 className="font-display text-4xl font-bold mb-6 text-brand-dark">
-                BRAND STRATEGY
-              </h2>
+          <div className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
+            <div className="order-1">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-brand-lime px-4 py-2 font-bold rounded">03</div>
+                <h2 className="font-display text-4xl font-bold text-brand-dark">
+                  BRAND STRATEGY
+                </h2>
+              </div>
+              
+              {/* Image - Show on mobile only */}
+              <div className="md:hidden relative h-80 bg-brand-dark rounded-2xl flex items-center justify-center mb-6">
+                <span className="font-display text-8xl font-bold text-brand-lime/20">✨</span>
+              </div>
+              
               <p className="text-brand-dark/80 mb-6">
                 Define and strengthen your brand identity. We help you create a cohesive brand that resonates with your target audience.
               </p>
@@ -141,8 +173,12 @@ export default function Services() {
                 GET STARTED
               </Link>
             </div>
-            <div className="relative h-96 bg-brand-dark rounded-lg flex items-center justify-center">
-              <span className="font-display text-9xl font-bold text-brand-lime/20">✨</span>
+            
+            {/* Image - Show on desktop only */}
+            <div className="hidden md:block order-2">
+              <div className="relative h-96 bg-brand-dark rounded-2xl flex items-center justify-center">
+                <span className="font-display text-9xl font-bold text-brand-lime/20">✨</span>
+              </div>
             </div>
           </div>
 
