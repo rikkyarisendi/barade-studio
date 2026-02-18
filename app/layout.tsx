@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ThemeProvider } from "@/components/ThemeProvider"; // ✅ Import ini
 
 export const metadata: Metadata = {
   title: "BARADE STUDIO - Creative Design & Web Development",
@@ -13,8 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
-      <body>{children}</body>
+    <html lang="id" suppressHydrationWarning> {/* ✅ Tambahin suppressHydrationWarning */}
+      <body className="antialiased"> {/* ✅ Jangan kasih bg hardcoded di sini */}
+        <ThemeProvider> {/* ✅ Wrap children dengan ThemeProvider */}
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

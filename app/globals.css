@@ -7,6 +7,26 @@
 :root {
   --font-display: 'Syne', sans-serif;
   --font-body: 'Space Mono', monospace;
+
+  /* Light mode colors */
+  --bg-primary: #f9f9ed;
+  --bg-secondary: #ebebe1;
+  --text-primary: #3f3f3f;
+  --text-secondary: #3f3f3f;
+  --text-muted: #3f3f3f/70;
+  --border-color: #3f3f3f;
+  --accent-lime: #DCF900;
+}
+
+/* Dark mode colors */
+.dark {
+  --bg-primary: #202020;
+  --bg-secondary: #2a2a2a;
+  --text-primary: #e5e5e5;
+  --text-secondary: #e5e5e5;
+  --text-muted: #e5e5e5/70;
+  --border-color: #4a4a4a;
+  --accent-lime: #DCF900;
 }
 
 * {
@@ -16,10 +36,11 @@
 }
 
 body {
-  background-color: #f9f9ed;
-  color: #3f3f3f;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: var(--font-body);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .animate-fade-in {
@@ -31,6 +52,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -46,6 +68,7 @@ body {
     opacity: 0;
     transform: translateX(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -53,7 +76,7 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #DCF900 0%, #3f3f3f 100%);
+  background: linear-gradient(135deg, var(--accent-lime) 0%, var(--text-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -67,20 +90,63 @@ body {
   transform: translateY(-5px);
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Light mode */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #d9d9d9;
+  background: var(--bg-secondary);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3f3f3f;
+  background: var(--border-color);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #DCF900;
+  background: var(--accent-lime);
+}
+
+/* Custom scrollbar - Dark mode */
+.dark ::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-lime);
+}
+
+/* Utility classes for common patterns */
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.border-primary {
+  border-color: var(--border-color);
+}
+
+/* Smooth transition for theme switch */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: ease;
+  transition-duration: 200ms;
 }

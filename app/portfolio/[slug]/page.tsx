@@ -11,7 +11,7 @@ function AdditionalImagesGrid({ images, title }: { images: AdditionalImage[]; ti
 
   return (
     <div className="mt-20">
-      <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 text-brand-dark">
+      <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 text-[var(--text-primary)]">
         More From This Project
       </h2>
       
@@ -20,7 +20,7 @@ function AdditionalImagesGrid({ images, title }: { images: AdditionalImage[]; ti
         {images.map((img, idx) => (
           <div 
             key={idx} 
-            className="relative aspect-square rounded-2xl border-4 border-brand-dark overflow-hidden group hover:scale-[1.02] transition-transform duration-300"
+            className="relative aspect-square rounded-2xl border-4 border-[var(--border-color)] overflow-hidden group hover:scale-[1.02] transition-transform duration-300 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]"
           >
             <Image
               src={img.path}
@@ -30,7 +30,7 @@ function AdditionalImagesGrid({ images, title }: { images: AdditionalImage[]; ti
             />
             {/* Caption on Hover */}
             {img.alt && (
-              <div className="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
+              <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4">
                 <span className="text-brand-lime font-bold text-center text-sm">{img.alt}</span>
               </div>
             )}
@@ -61,7 +61,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
             href="/portfolio" 
             className="inline-flex items-center text-brand-dark hover:text-brand-dark/70 mb-6 font-bold transition-colors group"
           >
-            <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span> Back to Portfolio | 
+            <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span> Back to Portfolio
           </Link>
           
           <div className="ml-2 inline-block bg-brand-dark text-brand-lime px-2 py-1 text-sm font-bold mb-6 rounded-lg">
@@ -78,24 +78,24 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
         </div>
       </section>
 
-      {/* Project Info Bar */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-brand-dark text-brand-cream">
+      {/* Project Info Bar - Dark Mode Support */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-lime uppercase tracking-wide">Client</h3>
-            <p className="text-brand-gray text-sm md:text-base">{project.client}</p>
+            <p className="text-[var(--text-muted)] text-sm md:text-base">{project.client}</p>
           </div>
           <div>
             <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-lime uppercase tracking-wide">Year</h3>
-            <p className="text-brand-gray text-sm md:text-base">{project.year}</p>
+            <p className="text-[var(--text-muted)] text-sm md:text-base">{project.year}</p>
           </div>
           <div>
             <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-lime uppercase tracking-wide">Duration</h3>
-            <p className="text-brand-gray text-sm md:text-base">{project.duration}</p>
+            <p className="text-[var(--text-muted)] text-sm md:text-base">{project.duration}</p>
           </div>
           <div>
             <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-lime uppercase tracking-wide">Category</h3>
-            <p className="text-brand-gray text-sm md:text-base">{project.category}</p>
+            <p className="text-[var(--text-muted)] text-sm md:text-base">{project.category}</p>
           </div>
         </div>
       </section>
@@ -106,19 +106,19 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
           
           {/* Services Provided */}
           <div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 text-brand-dark">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 text-[var(--text-primary)]">
               Services Provided
             </h2>
             <div className="grid md:grid-cols-2 gap-4">
               {project.services.map((service, idx) => (
                 <div 
                   key={idx} 
-                  className="flex items-start gap-3 p-4 bg-brand-cream border-2 border-brand-dark rounded-xl hover:border-brand-lime transition-colors duration-300 group"
+                  className="flex items-start gap-3 p-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] border-2 border-[var(--border-color)] rounded-xl hover:border-brand-lime transition-colors duration-300 group"
                 >
                   <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
                     <span className="text-brand-dark text-sm font-bold">✓</span>
                   </div>
-                  <span className="text-brand-dark font-medium">{service}</span>
+                  <span className="text-[var(--text-primary)] font-medium">{service}</span>
                 </div>
               ))}
             </div>
@@ -126,17 +126,17 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
 
           {/* The Challenge */}
           <div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-[var(--text-primary)]">
               The Challenge
             </h2>
-            <p className="text-brand-dark/80 text-lg leading-relaxed">
+            <p className="text-[var(--text-muted)] text-lg leading-relaxed">
               {project.challenge}
             </p>
           </div>
 
           {/* ✅ 1. PROJECT SHOWCASE (16:9) - Badge hover, tipis */}
           {project.projectShowcase && (
-            <div className="relative aspect-video rounded-2xl border-4 border-brand-dark overflow-hidden group">
+            <div className="relative aspect-video rounded-2xl border-4 border-[var(--border-color)] overflow-hidden group bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
               <Image
                 src={project.projectShowcase}
                 alt={`${project.title} - Showcase`}
@@ -145,7 +145,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               {/* ✅ Badge - Bottom Left, Lime, Tipis, Hover Only */}
-              <div className="absolute bottom-4 left-4 bg-brand-lime text-brand-dark px-2 py-0.5 rounded text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute bottom-4 left-4 bg-brand-lime text-brand-dark px-2 py-0.5 rounded text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0">
                 Project Showcase
               </div>
             </div>
@@ -153,10 +153,10 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
 
           {/* Our Solution */}
           <div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-[var(--text-primary)]">
               Our Solution
             </h2>
-            <p className="text-brand-dark/80 text-lg leading-relaxed">
+            <p className="text-[var(--text-muted)] text-lg leading-relaxed">
               {project.solution}
             </p>
           </div>
@@ -166,7 +166,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
             <div className="grid md:grid-cols-2 gap-6">
               {/* Design Detail */}
               {project.designDetail && (
-                <div className="relative aspect-square rounded-2xl border-4 border-brand-dark overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+                <div className="relative aspect-square rounded-2xl border-4 border-[var(--border-color)] overflow-hidden group hover:scale-[1.02] transition-transform duration-300 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
                   <Image
                     src={project.designDetail}
                     alt={`${project.title} - Design Detail`}
@@ -174,7 +174,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     className="object-cover"
                   />
                   {/* ✅ Badge - Bottom Left, Lime, Tipis, Hover Only */}
-                  <div className="absolute bottom-4 left-4 bg-brand-lime text-brand-dark px-2 py-0.5 rounded text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 bg-brand-lime text-brand-dark px-2 py-0.5 rounded text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0">
                     Design Detail
                   </div>
                 </div>
@@ -182,7 +182,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
 
               {/* Implementation */}
               {project.implementation && (
-                <div className="relative aspect-square rounded-2xl border-4 border-brand-dark overflow-hidden group hover:scale-[1.02] transition-transform duration-300">
+                <div className="relative aspect-square rounded-2xl border-4 border-[var(--border-color)] overflow-hidden group hover:scale-[1.02] transition-transform duration-300 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
                   <Image
                     src={project.implementation}
                     alt={`${project.title} - Implementation`}
@@ -190,7 +190,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     className="object-cover"
                   />
                   {/* ✅ Badge - Bottom Left, Lime, Tipis, Hover Only */}
-                  <div className="absolute bottom-4 left-4 bg-brand-lime text-brand-dark px-2 py-0.5 rounded text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-4 left-4 bg-brand-lime text-brand-dark px-2 py-0.5 rounded text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0">
                     Implementation
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
             title={project.title} 
           />
 
-          {/* Results & Impact */}
+          {/* Results & Impact - Lime Background */}
           <div className="bg-brand-lime p-8 md:p-12 rounded-2xl border-4 border-brand-dark relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-dark/5 rounded-full blur-3xl"></div>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-brand-dark relative z-10">
@@ -215,17 +215,17 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
             </p>
           </div>
 
-          {/* Client Testimonial */}
+          {/* Client Testimonial - Dark Mode Support */}
           {project.testimonial && (
-            <div className="bg-brand-dark p-8 md:p-12 rounded-2xl border-4 border-brand-lime text-brand-cream relative">
+            <div className="bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] p-8 md:p-12 rounded-2xl border-4 border-brand-lime relative">
               <div className="absolute top-8 left-8 text-brand-lime/20 text-9xl font-display leading-none">"</div>
               <div className="relative z-10">
-                <p className="text-xl md:text-2xl leading-relaxed mb-8 italic">
+                <p className="text-xl md:text-2xl leading-relaxed mb-8 italic text-[var(--text-primary)]">
                   {project.testimonial.quote}
                 </p>
                 <div className="border-t-2 border-brand-lime/30 pt-6">
                   <p className="font-display text-xl font-bold text-brand-lime">{project.testimonial.author}</p>
-                  <p className="text-brand-gray">{project.testimonial.position}</p>
+                  <p className="text-[var(--text-muted)]">{project.testimonial.position}</p>
                 </div>
               </div>
             </div>
@@ -233,8 +233,8 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
 
           {/* External Links Section */}
           {project.externalLinks && Object.keys(project.externalLinks).length > 0 && (
-            <div className="border-t-4 border-brand-dark/10 pt-12">
-              <h3 className="font-display text-2xl md:text-3xl font-bold mb-6 text-brand-dark">
+            <div className="border-t-4 border-[var(--border-color)]/10 pt-12">
+              <h3 className="font-display text-2xl md:text-3xl font-bold mb-6 text-[var(--text-primary)]">
                 View on Other Platforms
               </h3>
               <div className="flex flex-wrap gap-4">
@@ -243,7 +243,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     href={project.externalLinks.behance}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-6 py-4 bg-brand-dark text-brand-cream font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark hover:scale-105"
+                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
                   >
                     <span className="text-2xl">🎨</span> 
                     <span>View on Behance</span>
@@ -254,7 +254,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     href={project.externalLinks.dribbble}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-6 py-4 bg-brand-dark text-brand-cream font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark hover:scale-105"
+                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
                   >
                     <span className="text-2xl">🏀</span> 
                     <span>View on Dribbble</span>
@@ -265,7 +265,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     href={project.externalLinks.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-6 py-4 bg-brand-dark text-brand-cream font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark hover:scale-105"
+                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
                   >
                     <span className="text-2xl">🌐</span> 
                     <span>Visit Live Website</span>
@@ -276,7 +276,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     href={project.externalLinks.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-6 py-4 bg-brand-dark text-brand-cream font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark hover:scale-105"
+                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
                   >
                     <span className="text-2xl">💻</span> 
                     <span>View on GitHub</span>
@@ -287,7 +287,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     href={project.externalLinks.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-6 py-4 bg-brand-dark text-brand-cream font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark hover:scale-105"
+                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
                   >
                     <span className="text-2xl">📸</span> 
                     <span>View on Instagram</span>
@@ -298,10 +298,10 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
           )}
 
           {/* Project Navigation */}
-          <div className="border-t-4 border-brand-dark/10 pt-12">
+          <div className="border-t-4 border-[var(--border-color)]/10 pt-12">
             <Link 
               href="/portfolio"
-              className="inline-flex items-center gap-2 text-brand-dark hover:text-brand-lime font-bold text-lg transition-colors group"
+              className="inline-flex items-center gap-2 text-[var(--text-primary)] hover:text-brand-lime font-bold text-lg transition-colors group"
             >
               <span className="group-hover:-translate-x-1 transition-transform">←</span>
               View All Projects
@@ -310,11 +310,11 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
         </div>
       </section>
 
-      {/* Related Projects */}
+      {/* Related Projects - Dark Mode Support */}
       {relatedProjects.length > 0 && (
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-gray/30">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
           <div className="max-w-7xl mx-auto">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-12 text-center text-brand-dark">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-12 text-center text-[var(--text-primary)]">
               More <span className="text-brand-lime">{project.category}</span> Projects
             </h2>
             
@@ -327,20 +327,20 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                 >
                   {/* Related Project Thumbnail */}
                   {relatedProject.thumbnail ? (
-                    <div className="relative aspect-square rounded-xl mb-4 border-2 border-brand-dark overflow-hidden">
+                    <div className="relative aspect-square rounded-xl mb-4 border-2 border-[var(--border-color)] overflow-hidden bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
                       <Image
                         src={relatedProject.thumbnail}
                         alt={relatedProject.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-brand-dark/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
                         <span className="text-brand-lime font-display text-xl font-bold">View Project</span>
                       </div>
                     </div>
                   ) : (
-                    <div className={`${relatedProject.color} aspect-square rounded-xl mb-4 flex items-center justify-center border-2 border-brand-dark`}>
-                      <span className="font-display text-5xl font-bold text-brand-dark/20">
+                    <div className={`${relatedProject.color} aspect-square rounded-xl mb-4 flex items-center justify-center border-2 border-[var(--border-color)] bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]`}>
+                      <span className="font-display text-5xl font-bold text-[var(--text-muted)]">
                         {String(relatedProject.id).padStart(2, '0')}
                       </span>
                     </div>
@@ -349,10 +349,10 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                   <div className="inline-block bg-brand-lime px-3 py-1 text-xs font-bold mb-2 rounded">
                     {relatedProject.category}
                   </div>
-                  <h3 className="font-display text-xl font-bold mb-2 text-brand-dark group-hover:text-brand-lime transition-colors">
+                  <h3 className="font-display text-xl font-bold mb-2 text-[var(--text-primary)] group-hover:text-brand-lime transition-colors">
                     {relatedProject.title}
                   </h3>
-                  <p className="text-brand-dark/70 text-sm">
+                  <p className="text-[var(--text-muted)] text-sm">
                     {relatedProject.description}
                   </p>
                 </Link>
@@ -362,18 +362,18 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
         </section>
       )}
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-dark text-brand-cream">
+      {/* CTA Section - Dark Mode Support */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]">
             INTERESTED IN <span className="text-brand-lime">WORKING TOGETHER?</span>
           </h2>
-          <p className="text-xl text-brand-gray mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-[var(--text-muted)] mb-8 max-w-2xl mx-auto">
             Let's create something amazing for your brand. Whether you need branding, web development, or design services, we're here to help.
           </p>
           <Link 
             href="/contact" 
-            className="inline-block bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-cream transition-all duration-300 border-2 border-brand-lime rounded-lg hover:scale-105"
+            className="inline-block bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg hover:scale-105"
           >
             START YOUR PROJECT →
           </Link>

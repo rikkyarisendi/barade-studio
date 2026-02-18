@@ -55,7 +55,7 @@ export default function Contact() {
           
           {/* Contact Info */}
           <div>
-            <h2 className="font-display text-4xl font-bold mb-8 text-brand-dark">
+            <h2 className="font-display text-4xl font-bold mb-8 text-[var(--text-primary)]">
               GET IN <span className="text-brand-lime">TOUCH</span>
             </h2>
             
@@ -63,8 +63,8 @@ export default function Contact() {
               <div className="flex items-start">
                 <div className="text-3xl mr-4">📧</div>
                 <div>
-                  <h3 className="font-display text-xl font-bold mb-2 text-brand-dark">Email</h3>
-                  <a href="mailto:baradedesign@gmail.com" className="text-brand-dark/80 hover:text-brand-lime transition-colors">
+                  <h3 className="font-display text-xl font-bold mb-2 text-[var(--text-primary)]">Email</h3>
+                  <a href="mailto:baradedesign@gmail.com" className="text-[var(--text-muted)] hover:text-brand-lime transition-colors">
                     baradedesign@gmail.com
                   </a>
                 </div>
@@ -73,8 +73,8 @@ export default function Contact() {
               <div className="flex items-start">
                 <div className="text-3xl mr-4">📱</div>
                 <div>
-                  <h3 className="font-display text-xl font-bold mb-2 text-brand-dark">Phone</h3>
-                  <a href="tel:+6288970909446" className="text-brand-dark/80 hover:text-brand-lime transition-colors">
+                  <h3 className="font-display text-xl font-bold mb-2 text-[var(--text-primary)]">Phone</h3>
+                  <a href="tel:+6288970909446" className="text-[var(--text-muted)] hover:text-brand-lime transition-colors">
                     +62 889 7090 9446
                   </a>
                 </div>
@@ -83,19 +83,20 @@ export default function Contact() {
               <div className="flex items-start">
                 <div className="text-3xl mr-4">📍</div>
                 <div>
-                  <h3 className="font-display text-xl font-bold mb-2 text-brand-dark">Location</h3>
-                  <p className="text-brand-dark/80">
+                  <h3 className="font-display text-xl font-bold mb-2 text-[var(--text-primary)]">Location</h3>
+                  <p className="text-[var(--text-muted)]">
                     Bandung, West Java, Indonesia
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-brand-dark p-8 rounded-lg">
+            {/* Business Hours Card - Dark Mode Support */}
+            <div className="bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] p-8 rounded-lg border-2 border-[var(--border-color)]">
               <h3 className="font-display text-2xl font-bold mb-4 text-brand-lime">
                 BUSINESS HOURS
               </h3>
-              <div className="space-y-2 text-brand-cream">
+              <div className="space-y-2 text-[var(--text-primary)]">
                 <p className="flex justify-between">
                   <span>Monday - Friday:</span>
                   <span className="font-bold">9:00 AM - 6:00 PM</span>
@@ -112,15 +113,15 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-brand-gray/30 p-8 rounded-lg border-2 border-brand-dark rounded-lg">
-            <h3 className="font-display text-3xl font-bold mb-6 text-brand-dark">
+          {/* Contact Form - Dark Mode Support */}
+          <div className="bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] p-8 rounded-lg border-2 border-[var(--border-color)]">
+            <h3 className="font-display text-3xl font-bold mb-6 text-[var(--text-primary)]">
               SEND US A MESSAGE
             </h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block font-bold mb-2 text-brand-dark">
+                <label htmlFor="name" className="block font-bold mb-2 text-[var(--text-primary)]">
                   Name *
                 </label>
                 <input
@@ -130,13 +131,13 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream rounded-lg"
+                  className="w-full px-4 py-3 border-2 border-[var(--border-color)] focus:border-brand-lime focus:outline-none bg-[var(--bg-primary)] dark:bg-[#1a1a1a] text-[var(--text-primary)] rounded-lg placeholder-[var(--text-muted)]"
                   placeholder="Your name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block font-bold mb-2 text-brand-dark">
+                <label htmlFor="email" className="block font-bold mb-2 text-[var(--text-primary)]">
                   Email *
                 </label>
                 <input
@@ -146,13 +147,13 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream rounded-lg"
+                  className="w-full px-4 py-3 border-2 border-[var(--border-color)] focus:border-brand-lime focus:outline-none bg-[var(--bg-primary)] dark:bg-[#1a1a1a] text-[var(--text-primary)] rounded-lg placeholder-[var(--text-muted)]"
                   placeholder="your.email@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="phone" className="block font-bold mb-2 text-brand-dark">
+                <label htmlFor="phone" className="block font-bold mb-2 text-[var(--text-primary)]">
                   Phone
                 </label>
                 <input
@@ -161,13 +162,13 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream rounded-lg"
+                  className="w-full px-4 py-3 border-2 border-[var(--border-color)] focus:border-brand-lime focus:outline-none bg-[var(--bg-primary)] dark:bg-[#1a1a1a] text-[var(--text-primary)] rounded-lg placeholder-[var(--text-muted)]"
                   placeholder="+62 812 3456 7890"
                 />
               </div>
 
               <div>
-                <label htmlFor="service" className="block font-bold mb-2 text-brand-dark">
+                <label htmlFor="service" className="block font-bold mb-2 text-[var(--text-primary)]">
                   Service Interested In *
                 </label>
                 <select
@@ -176,7 +177,7 @@ export default function Contact() {
                   value={formData.service}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream rounded-lg"
+                  className="w-full px-4 py-3 border-2 border-[var(--border-color)] focus:border-brand-lime focus:outline-none bg-[var(--bg-primary)] dark:bg-[#1a1a1a] text-[var(--text-primary)] rounded-lg"
                 >
                   <option value="">Select a service</option>
                   <option value="graphic-design">Graphic Design</option>
@@ -187,7 +188,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block font-bold mb-2 text-brand-dark">
+                <label htmlFor="message" className="block font-bold mb-2 text-[var(--text-primary)]">
                   Message *
                 </label>
                 <textarea
@@ -197,14 +198,14 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 border-2 border-brand-dark focus:border-brand-lime focus:outline-none bg-brand-cream resize-none"
+                  className="w-full px-4 py-3 border-2 border-[var(--border-color)] focus:border-brand-lime focus:outline-none bg-[var(--bg-primary)] dark:bg-[#1a1a1a] text-[var(--text-primary)] resize-none placeholder-[var(--text-muted)]"
                   placeholder="Tell us about your project..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-brand-dark hover:text-brand-lime transition-all duration-300 border-2 border-brand-dark rounded-lg"
+                className="w-full bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
               >
                 SEND MESSAGE
               </button>
@@ -214,7 +215,11 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map placeholder */}
+      {/* 
+      ============================================
+      MAP SECTION - DISABLED (Commented Out)
+      Uncomment when ready to add Google Maps
+      ============================================
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-7xl mx-auto">
           <div className="bg-brand-dark rounded-lg h-96 flex items-center justify-center border-4 border-brand-lime">
@@ -230,6 +235,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      */}
 
       <Footer />
     </>
