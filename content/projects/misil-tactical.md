@@ -53,7 +53,6 @@ services:
   - "UI/UX Design"
   - "Content Strategy"
   - "Domain & Hosting Management"
-  - "Product Photography Direction"
   - "Annual Maintenance Support"
 
 testimonial:

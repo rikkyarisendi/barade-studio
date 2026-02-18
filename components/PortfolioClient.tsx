@@ -43,7 +43,7 @@ export default function PortfolioClient({ projects }: { projects: Project[] }) {
                 className={`px-3 py-1 text-sm sm:px-4 sm:py-1 sm:text-base font-bold border-2 transition-all duration-300 rounded-lg ${
                   activeFilter === category
                     ? 'bg-brand-lime text-brand-dark border-brand-dark'
-                    : 'bg-[var(--bg-primary)] text-[var(--text-primary)] border-[var(--border-color)] hover:bg-[var(--border-color)] hover:text-[var(--accent-lime)]'
+                    : 'bg-[var(--bg-primary)] text-[var(--text-primary)] border-[var(--border-color)] hover:bg-[var(--border-color)] hover:text-brand-lime'
                 }`}
               >
                 {category}
@@ -68,7 +68,7 @@ export default function PortfolioClient({ projects }: { projects: Project[] }) {
                 style={{ animationDelay: `${index * 0.1}s` }}
                 onClick={() => setSelectedProject(project)}
               >
-                {/* ✅ Card Thumbnail - FIX: Explicit background untuk kontras */}
+                {/* ✅ Card Thumbnail */}
                 <div className={`${project.color} aspect-square rounded-xl mb-3 border-2 border-[var(--border-color)] overflow-hidden relative flex items-center justify-center bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]`}>
                   {project.thumbnail ? (
                     <Image
@@ -88,25 +88,25 @@ export default function PortfolioClient({ projects }: { projects: Project[] }) {
                     {project.category}
                   </div>
 
-                  {/* ✅ Quick View Overlay - FIX: Pakai black biar kontras di both modes */}
+                  {/* ✅ Quick View Overlay */}
                   <div className="absolute inset-0 bg-black/70 dark:bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
                     <span className="text-brand-lime font-display text-2xl font-bold">Quick View</span>
                   </div>
                 </div>
 
-                {/* Tags */}
+                {/* ✅ Tags - FIXED: Visible Border & Background */}
                 {project.tags && project.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-1 mb-2">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     {project.tags.slice(0, 4).map((tag, idx) => (
                       <span 
                         key={idx}
-                        className="bg-[var(--border-color)]/10 text-[var(--text-muted)] px-2 py-0.5 rounded text-[10px] sm:text-xs font-bold"
+                        className="bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] px-2 py-1 rounded text-[10px] sm:text-xs font-light border-[var(--border-color)]/40"
                       >
                         {tag}
                       </span>
                     ))}
                     {project.tags.length > 4 && (
-                      <span className="bg-[var(--border-color)]/5 text-[var(--text-muted)]/50 px-2 py-0.5 rounded text-[10px] sm:text-xs">
+                      <span className="bg-[var(--bg-secondary)]/50 dark:bg-[#2a2a2a]/50 text-[var(--text-muted)] px-2 py-1 rounded text-[10px] sm:text-xs border border-[var(--border-color)]/20">
                         +{project.tags.length - 4}
                       </span>
                     )}
@@ -136,7 +136,7 @@ export default function PortfolioClient({ projects }: { projects: Project[] }) {
             <div className="text-center mt-12">
               <button
                 onClick={handleLoadMore}
-                className="inline-block bg-[var(--border-color)] text-brand-lime px-2 py-1 font-normal text-sm hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+                className="inline-block bg-[var(--border-color)] text-brand-lime px-4 py-2 font-bold text-sm hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
               >
                 LOAD MORE PROJECTS →
               </button>

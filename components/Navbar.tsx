@@ -4,24 +4,22 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
+import Logo from '@/components/Logo';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [bgScheme, setBgScheme] = useState<'light' | 'dark' | 'lime'>('light');
   const pathname = usePathname();
 
-  // ✅ Helper: Cek apakah path aktif
   const isActive = (path: string) => {
     if (path === '/' && pathname === '/') return true;
     if (path !== '/' && pathname?.startsWith(path)) return true;
     return false;
   };
 
-  // ✅ Detect background section yang sedang di bawah navbar
   useEffect(() => {
     const detectBackground = () => {
       const navbarHeight = 80;
-      
       const elementBelow = document.elementFromPoint(
         window.innerWidth / 2,
         navbarHeight + 10
@@ -55,11 +53,9 @@ export default function Navbar() {
             return;
           }
         }
-        
         targetElement = targetElement.parentElement;
         depth++;
       }
-      
       setBgScheme('light');
     };
 
@@ -84,22 +80,17 @@ export default function Navbar() {
     };
   }, []);
 
-  // ✅ Auto-close mobile menu saat scroll (dengan smooth delay)
   useEffect(() => {
     const handleCloseOnScroll = () => {
-      if (isOpen) {
-        setIsOpen(false);
-      }
+      if (isOpen) setIsOpen(false);
     };
-
     window.addEventListener('scroll', handleCloseOnScroll, { passive: true });
-    
     return () => window.removeEventListener('scroll', handleCloseOnScroll);
   }, [isOpen]);
 
   const isOverBrightBg = bgScheme === 'lime';
-
-  // ✅ Menu items dengan stagger animation
+  const isDarkMode = bgScheme === 'dark';
+  
   const menuItems = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
@@ -109,58 +100,22 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ✅ Animasi Keyframes untuk Mobile Menu */}
       <style jsx global>{`
         @keyframes menuSlideDown {
-          from {
-            opacity: 0;
-            transform: translateY(-10px) scaleY(0.95);
-            transform-origin: top;
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0) scaleY(1);
-            transform-origin: top;
-          }
+          from { opacity: 0; transform: translateY(-10px) scaleY(0.95); transform-origin: top; }
+          to { opacity: 1; transform: translateY(0) scaleY(1); transform-origin: top; }
         }
-        
         @keyframes menuSlideUp {
-          from {
-            opacity: 1;
-            transform: translateY(0) scaleY(1);
-            transform-origin: top;
-          }
-          to {
-            opacity: 0;
-            transform: translateY(-10px) scaleY(0.95);
-            transform-origin: top;
-          }
+          from { opacity: 1; transform: translateY(0) scaleY(1); transform-origin: top; }
+          to { opacity: 0; transform: translateY(-10px) scaleY(0.95); transform-origin: top; }
         }
-        
         @keyframes menuItemFadeIn {
-          from {
-            opacity: 0;
-            transform: translateX(-8px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+          from { opacity: 0; transform: translateX(-8px); }
+          to { opacity: 1; transform: translateX(0); }
         }
-        
-        .menu-open {
-          animation: menuSlideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        
-        .menu-close {
-          animation: menuSlideUp 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-        
-        .menu-item {
-          opacity: 0;
-          animation: menuItemFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        
+        .menu-open { animation: menuSlideDown 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .menu-close { animation: menuSlideUp 0.2s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+        .menu-item { opacity: 0; animation: menuItemFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         .menu-item:nth-child(1) { animation-delay: 0.05s; }
         .menu-item:nth-child(2) { animation-delay: 0.1s; }
         .menu-item:nth-child(3) { animation-delay: 0.15s; }
@@ -171,49 +126,46 @@ export default function Navbar() {
       <nav className={`fixed w-full top-0 z-50 border-b-2 transition-all duration-300 ${
         isOverBrightBg
           ? 'bg-brand-lime/95 backdrop-blur-md border-brand-dark' 
-          : 'bg-[var(--bg-primary)]/95 backdrop-blur-md border-[var(--border-color)]'
+          : isDarkMode
+            ? 'bg-[var(--bg-primary)]/95 backdrop-blur-md border-[var(--border-color)]'
+            : 'bg-[var(--bg-primary)]/95 backdrop-blur-md border-[var(--border-color)]'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
 
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
-              <img 
-                src="/logo.png" 
-                alt="BARADE STUDIO Logo" 
-                className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-110"
+              <Logo 
+                className={`h-10 sm:h-12 w-auto transition-colors duration-300 ${
+                  isOverBrightBg ? 'text-brand-dark' : 'text-[var(--text-primary)]'
+                }`} 
               />
               <div className="relative">
                 <span className={`font-display text-xl sm:text-2xl md:text-3xl font-bold tracking-tight transition-colors duration-300 ${
                   isOverBrightBg ? 'text-brand-dark' : 'text-[var(--text-primary)]'
                 }`}>
-                  BARADE
+                  BARADE STUDIO
                 </span>
-                <span className={`font-display text-xl sm:text-2xl md:text-3xl font-bold ml-1 transition-colors duration-300 ${
-                  isOverBrightBg ? 'text-brand-dark' : 'text-brand-lime'
-                }`}>
-                  STUDIO
-                </span>
-                <div className={`absolute -bottom-1 left-0 w-0 h-1 ${
+                <div className={`absolute -bottom-1 left-0 h-0.5 ${
                   isOverBrightBg ? 'bg-brand-dark' : 'bg-brand-lime'
-                } group-hover:w-full transition-all duration-300`}></div>
+                } w-0 group-hover:w-full transition-all duration-300`}></div>
               </div>
             </Link>
 
-            {/* Desktop Menu */}
+            {/* Desktop Menu - FIXED: Active = dark (light/lime bg) or lime (dark bg) */}
             <div className="hidden md:flex items-center space-x-8">
               {menuItems.map((item) => (
                 <Link 
                   key={item.href}
                   href={item.href} 
                   className={`transition-colors duration-300 ${
-                    isOverBrightBg
-                      ? isActive(item.href) 
-                        ? 'font-bold text-brand-dark' 
-                        : 'font-medium text-brand-dark hover:text-brand-dark/70'
-                      : isActive(item.href)
-                        ? 'font-bold text-brand-lime'
-                        : 'font-medium text-[var(--text-primary)] hover:text-brand-lime'
+                    isActive(item.href) 
+                      ? `font-bold ${isDarkMode ? 'text-brand-lime' : 'text-brand-dark'}`  // ✅ Active: dark atau lime sesuai bg
+                      : `font-medium ${
+                          isOverBrightBg 
+                            ? 'text-brand-dark hover:text-brand-dark/70' 
+                            : 'text-[var(--text-primary)] hover:text-brand-lime'
+                        }`
                   }`}
                 >
                   {item.label}
@@ -257,7 +209,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* ✅ Mobile Menu dengan Premium Animation */}
+          {/* Mobile Menu - FIXED: Active = dark (light/lime bg) or lime (dark bg) */}
           {isOpen && (
             <div 
               className={`md:hidden px-4 pb-4 border-t-2 overflow-hidden ${
@@ -266,20 +218,19 @@ export default function Navbar() {
                   : 'bg-[var(--bg-primary)]/95 backdrop-blur-md border-[var(--border-color)]'
               } menu-open`}
             >
-              {/* Menu Items dengan Stagger Animation */}
               <div className="space-y-1 pt-3">
-                {menuItems.map((item, index) => (
+                {menuItems.map((item) => (
                   <Link 
                     key={item.href}
                     href={item.href} 
                     className={`menu-item block py-3 pl-2 font-medium transition-colors duration-200 border-l-2 border-transparent hover:border-brand-lime ${
-                      isOverBrightBg
-                        ? isActive(item.href)
-                          ? 'font-bold text-brand-dark border-brand-dark'
-                          : 'text-brand-dark hover:text-brand-dark/70'
-                        : isActive(item.href)
-                          ? 'font-bold text-brand-lime border-brand-lime'
-                          : 'text-[var(--text-primary)] hover:text-brand-lime'
+                      isActive(item.href)
+                        ? `font-bold ${isDarkMode ? 'text-brand-lime border-brand-lime' : 'text-brand-dark border-brand-dark'}`  // ✅ Active: dark atau lime sesuai bg
+                        : `${
+                            isOverBrightBg 
+                              ? 'text-brand-dark hover:text-brand-dark/70' 
+                              : 'text-[var(--text-primary)] hover:text-brand-lime'
+                          }`
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
@@ -287,14 +238,13 @@ export default function Navbar() {
                   </Link>
                 ))}
                 
-                {/* Contact Button - Last item with extra delay */}
                 <div className="menu-item pt-2" style={{ animationDelay: '0.25s' }}>
                   <Link 
                     href="/contact" 
                     className={`block w-full px-6 py-3 font-bold text-center rounded-lg transition-all duration-300 border-2 ${
                       isOverBrightBg
-                        ? 'bg-brand-dark text-brand-lime border-brand-dark hover:bg-brand-lime hover:text-brand-dark'
-                        : 'bg-brand-lime text-brand-dark border-[var(--border-color)] hover:bg-[var(--border-color)] hover:text-brand-lime'
+                        ? 'bg-brand-dark text-brand-lime border-brand-dark'
+                        : 'bg-brand-lime text-brand-dark border-[var(--border-color)]'
                     }`}
                     onClick={() => setIsOpen(false)}
                   >

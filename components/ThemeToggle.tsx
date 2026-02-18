@@ -16,9 +16,13 @@ export default function ThemeToggle({ bgScheme }: ThemeToggleProps) {
     setMounted(true);
   }, []);
 
-  // ✅ Determine icon color based on bgScheme
+  // ✅ Determine if over bright background
   const isOverBrightBg = bgScheme === 'lime';
-  const iconColor = isOverBrightBg ? '#3f3f3f' : theme === 'dark' ? '#e5e5e5' : '#3f3f3f';
+  
+  // ✅ Icon color class: dark when over lime, adaptive otherwise
+  const iconColorClass = isOverBrightBg 
+    ? 'stroke-brand-dark' 
+    : 'stroke-[var(--text-primary)]';
 
   if (!mounted) {
     return (
@@ -62,20 +66,19 @@ export default function ThemeToggle({ bgScheme }: ThemeToggleProps) {
         aria-label="Toggle theme"
       >
         {theme === 'dark' ? (
-          // ☀️ Sun icon - Adaptive color + subtle rotate + hover glow
+          // ☀️ Sun icon - Adaptive color + subtle rotate + hover to black
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
             viewBox="0 0 24 24"
             fill="none"
-            className="transition-all duration-300 group-hover:stroke-brand-dark group-hover:animate-[hoverGlow_1.5s_ease-in-out_infinite]"
+            className={`${iconColorClass} group-hover:stroke-brand-dark transition-all duration-300 group-hover:animate-[hoverGlow_1.5s_ease-in-out_infinite]`}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
             style={{
               animation: 'idleRotate 2s ease-in-out infinite',
-              stroke: iconColor,
             }}
           >
             <circle cx="12" cy="12" r="5" />
@@ -89,20 +92,19 @@ export default function ThemeToggle({ bgScheme }: ThemeToggleProps) {
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
           </svg>
         ) : (
-          // 🌙 Moon icon - Adaptive color + subtle rotate + hover glow
+          // 🌙 Moon icon - Adaptive color + subtle rotate + hover to black
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
             height="20"
             viewBox="0 0 24 24"
             fill="none"
-            className="transition-all duration-300 group-hover:stroke-brand-dark group-hover:animate-[hoverGlow_1.5s_ease-in-out_infinite]"
+            className={`${iconColorClass} group-hover:stroke-brand-dark transition-all duration-300 group-hover:animate-[hoverGlow_1.5s_ease-in-out_infinite]`}
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
             style={{
               animation: 'idleRotate 2s ease-in-out infinite',
-              stroke: iconColor,
             }}
           >
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
