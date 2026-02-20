@@ -61,7 +61,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
             href="/portfolio" 
             className="inline-flex items-center text-brand-dark hover:text-brand-dark/70 mb-6 font-bold transition-colors group"
           >
-            <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span> Back to Portfolio
+            <span className="mr-2 group-hover:-translate-x-1 transition-transform">←</span> Back to Portfolio | 
           </Link>
           
           <div className="ml-2 inline-block bg-brand-dark text-brand-lime px-2 py-1 text-sm font-bold mb-6 rounded-lg">
@@ -82,19 +82,19 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-lime uppercase tracking-wide">Client</h3>
+            <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-dark dark:text-brand-lime uppercase tracking-wide">Client</h3>
             <p className="text-[var(--text-muted)] text-sm md:text-base">{project.client}</p>
           </div>
           <div>
-            <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-lime uppercase tracking-wide">Year</h3>
+            <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-dark dark:text-brand-lime uppercase tracking-wide">Year</h3>
             <p className="text-[var(--text-muted)] text-sm md:text-base">{project.year}</p>
           </div>
           <div>
-            <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-lime uppercase tracking-wide">Duration</h3>
+            <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-dark dark:text-brand-lime uppercase tracking-wide">Duration</h3>
             <p className="text-[var(--text-muted)] text-sm md:text-base">{project.duration}</p>
           </div>
           <div>
-            <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-lime uppercase tracking-wide">Category</h3>
+            <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-dark dark:text-brand-lime uppercase tracking-wide">Category</h3>
             <p className="text-[var(--text-muted)] text-sm md:text-base">{project.category}</p>
           </div>
         </div>
@@ -218,13 +218,13 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
           {/* Client Testimonial - Dark Mode Support */}
           {project.testimonial && (
             <div className="bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] p-8 md:p-12 rounded-2xl border-4 border-brand-lime relative">
-              <div className="absolute top-8 left-8 text-brand-lime/20 text-9xl font-display leading-none">"</div>
+              <div className="absolute top-8 left-8 text-brand-dark/20 dark:text-brand-lime/20 text-9xl font-display leading-none">"</div>
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl leading-relaxed mb-8 italic text-[var(--text-primary)]">
                   {project.testimonial.quote}
                 </p>
-                <div className="border-t-2 border-brand-lime/30 pt-6">
-                  <p className="font-display text-xl font-bold text-brand-lime">{project.testimonial.author}</p>
+                <div className="border-t-2 border-brand-dark/30 dark:border-brand-lime/30 pt-6">
+                  <p className="font-display text-xl font-bold text-brand-dark dark:text-brand-lime">{project.testimonial.author}</p>
                   <p className="text-[var(--text-muted)]">{project.testimonial.position}</p>
                 </div>
               </div>
@@ -243,7 +243,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     href={project.externalLinks.behance}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
+                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:dark:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
                   >
                     <span className="text-2xl">🎨</span> 
                     <span>View on Behance</span>
@@ -254,7 +254,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     href={project.externalLinks.dribbble}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
+                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:dark:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
                   >
                     <span className="text-2xl">🏀</span> 
                     <span>View on Dribbble</span>
@@ -265,7 +265,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     href={project.externalLinks.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
+                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:dark:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
                   >
                     <span className="text-2xl">🌐</span> 
                     <span>Visit Live Website</span>
@@ -346,7 +346,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     </div>
                   )}
                   
-                  <div className="inline-block bg-brand-lime px-3 py-1 text-xs font-bold mb-2 rounded">
+                  <div className="inline-block bg-brand-lime px-3 py-1 text-xs font-bold mb-2 rounded dark:text-brand-dark">
                     {relatedProject.category}
                   </div>
                   <h3 className="font-display text-xl font-bold mb-2 text-[var(--text-primary)] group-hover:text-brand-lime transition-colors">

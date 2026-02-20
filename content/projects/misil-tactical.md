@@ -4,41 +4,41 @@
 # ============================================
 title: "Misil Tactical Digital Presence"
 slug: "misil-tactical-digital-presence"
-date: "2026-01-15"                    # ✅ Format: YYYY-MM-DD (untuk sorting)
+date: "2026-01-15"                    # ✅ Format: YYYY-MM-DD (for sorting)
 
 # ============================================
-# 🏷️ KATEGORI & TAGS
+# 🏷️ CATEGORY & TAGS
 # ============================================
-category: "Web Development"           # Kategori utama (wajib, satu saja)
-tags:                                 # ✅ Label tambahan untuk filter (bisa banyak)
+category: "Web Development"           # Main category (required, single value)
+tags:                                 # ✅ Additional labels for filtering (multiple allowed)
   - "E-Commerce"
   - "Indonesian Brand"
   - "Tactical Gear"
 
 # ============================================
-# 📝 DESKRIPSI & INFO PROJECT
+# 📝 DESCRIPTION & PROJECT INFO
 # ============================================
-description: "Pembangunan identitas digital dan landing page profesional untuk brand perlengkapan taktis."
+description: "Building a professional digital identity and landing page for a tactical gear brand."
 color: "bg-zinc-900"
 client: "Misil Tactical"
 year: "2026"
-duration: "Ongoing (Maintenance Mode)"
+duration: "Ongoing (Maintenance Phase)"
 
 # ============================================
 # 🖼️ IMAGE STRUCTURE
 # ============================================
-# 1. Thumbnail untuk Card Portfolio (1:1 Square)
+# 1. Thumbnail for Portfolio Card (1:1 Square)
 thumbnail: "/projects/misil-tactical/thumb.png"
 
 # 2. Quick View Modal Image (16:9 Landscape)
 quickViewImage: "/projects/misil-tactical/hero.png"
 
 # 3. Full Case Study Images
-projectShowcase: "/projects/misil-tactical/hero.png"      # 16:9 - Hero/Showcase utama
-designDetail: "/projects/misil-tactical/detail-1.png"     # 1:1 - UI/UX Design detail
+projectShowcase: "/projects/misil-tactical/hero.png"      # 16:9 - Main hero/showcase
+designDetail: "/projects/misil-tactical/detail-1.png"     # 1:1 - UI/UX design detail
 implementation: "/projects/misil-tactical/detail-2.png"   # 1:1 - Technical implementation
 
-# 4. Additional Images (Opsional - Grid Auto)
+# 4. Additional Images (Optional - Auto Grid)
 # additionalImages:
 #   - path: "/projects/misil-tactical/extra-1.jpg"
 #     alt: "Mobile responsive view"
@@ -56,8 +56,8 @@ services:
   - "Annual Maintenance Support"
 
 testimonial:
-  quote: "Kerja sama dengan Baradé Studio sangat membantu kami dalam mengelola kebutuhan teknis website yang tadinya membingungkan menjadi sangat transparan dan mudah dipahami."
-  author: "Client Misil Tactical"
+  quote: "Working with Baradé Studio has been instrumental in helping us manage our website's technical needs—transforming what was once confusing into a transparent and easy-to-understand process."
+  author: "Misil Tactical Client"
   position: "Owner"
 
 externalLinks:
@@ -66,12 +66,12 @@ externalLinks:
 
 ## The Challenge
 
-Misil Tactical sebagai brand perlengkapan taktis membutuhkan platform digital yang mampu merepresentasikan kualitas produk mereka yang tangguh dan profesional. Tantangan utamanya adalah mengorganisir katalog produk yang variatif ke dalam struktur website yang bersih (clean), serta memastikan infrastruktur web tetap aman dan stabil. Selain itu, manajemen pemeliharaan tahunan menjadi fokus penting agar operasional bisnis digital klien tidak terganggu oleh urusan teknis yang rumit.
+Misil Tactical, as a tactical gear brand, needed a digital platform capable of representing the tough and professional quality of their products. The main challenge was organizing a diverse product catalog into a clean and structured website, while ensuring the web infrastructure remained secure and stable. Additionally, annual maintenance management was a key focus to ensure the client's digital business operations wouldn't be disrupted by complex technical matters.
 
 ## Our Solution
 
-Kami menerapkan pendekatan desain "Rugged Professionalism" dengan menggunakan palet warna bertema gelap (Zinc & Army Green) untuk memperkuat identitas brand militeristik. Dari sisi teknis, Baradé Studio membangun sistem manajemen domain dan hosting yang transparan dengan markup biaya yang kompetitif bagi klien. Kami juga menyusun SOP arahan konten agar aset visual yang dihasilkan selaras dengan layout website, serta memastikan navigasi yang responsif agar pelanggan bisa beralih dari katalog produk ke pemesanan WhatsApp secara instan.
+We implemented a "Rugged Professionalism" design approach, utilizing a dark-themed color palette (Zinc & Army Green) to reinforce the militaristic brand identity. On the technical side, Baradé Studio built a transparent domain and hosting management system with competitive cost markups for the client. We also developed content guideline SOPs to ensure visual assets aligned with the website layout, and implemented responsive navigation so customers could seamlessly transition from product catalogs to WhatsApp ordering instantly.
 
 ## Results
 
-Berhasil mengamankan identitas digital brand melalui manajemen domain yang tepat dan aman. Website dirancang dengan skalabilitas tinggi, siap untuk menerima pembaruan katalog produk secara massal kapan saja. Implementasi sistem invoice tahunan yang terintegrasi memastikan transparansi biaya operasional bagi klien, yang pada akhirnya menciptakan hubungan kerja sama jangka panjang yang saling percaya antara Misil Tactical dan Baradé Studio.
+Successfully secured the brand's digital identity through proper and secure domain management. The website was designed with high scalability, ready to accommodate bulk product catalog updates at any time. The implementation of an integrated annual invoice system ensures cost transparency for the client's operational expenses, ultimately fostering a long-term, trust-based partnership between Misil Tactical and Baradé Studio.
