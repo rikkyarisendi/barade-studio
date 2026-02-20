@@ -276,7 +276,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     href={project.externalLinks.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
+                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:dark:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
                   >
                     <span className="text-2xl">💻</span> 
                     <span>View on GitHub</span>
@@ -287,7 +287,7 @@ export default function ProjectDetail({ params }: { params: { slug: string } }) 
                     href={project.externalLinks.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
+                    className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:dark:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
                   >
                     <span className="text-2xl">📸</span> 
                     <span>View on Instagram</span>

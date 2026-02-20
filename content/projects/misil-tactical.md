@@ -3,7 +3,7 @@
 # 🆔 BASIC INFO
 # ============================================
 title: "Misil Tactical Digital Presence"
-slug: "misil-tactical-digital-presence"
+slug: "misil-tactical"
 date: "2026-01-15"                    # ✅ Format: YYYY-MM-DD (for sorting)
 
 # ============================================
@@ -21,7 +21,7 @@ tags:                                 # ✅ Additional labels for filtering (mul
 description: "Building a professional digital identity and landing page for a tactical gear brand."
 color: "bg-zinc-900"
 client: "Misil Tactical"
-year: "2026"
+year: "2025-2026"
 duration: "Ongoing (Maintenance Phase)"
 
 # ============================================
