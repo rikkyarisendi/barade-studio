@@ -27,15 +27,15 @@ duration: "6 Months+ (Active Management)"
 # 🖼️ IMAGE STRUCTURE
 # ============================================
 # 1. Thumbnail untuk Card Portfolio (1:1 Square)
-# thumbnail: "/projects/cafe-branding/thumb.png"
+thumbnail: "/projects/brotrher-boots/thumb.png"
 
 # 2. Quick View Modal Image (16:9 Landscape)
-# quickViewImage: "/projects/cafe-branding/hero.png"
+quickViewImage: "/projects/brotrher-boots/hero.png"
 
 # 3. Full Case Study Images
-# projectShowcase: "/projects/cafe-branding/hero.png"        # 16:9 - Hero/Showcase utama
-# designDetail: "/projects/cafe-branding/detail-1.png"       # 1:1 - Logo & color palette
-# implementation: "/projects/cafe-branding/detail-2.png"     # 1:1 - Packaging mockup
+projectShowcase: "/projects/brotrher-boots/hero2.png"        # 16:9 - Hero/Showcase utama
+designDetail: "/projects/brotrher-boots/detail1.png"       # 1:1 - Logo & color palette
+implementation: "/projects/brotrher-boots/detail2.png"     # 1:1 - Packaging mockup
 
 # 4. Additional Images (Opsional - Grid Auto)
 # additionalImages:
