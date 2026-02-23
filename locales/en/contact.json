@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "title": "LET'S TALK",
+    "subtitle": "Ready to start your project? Get in touch and let's create something amazing together."
+  },
+  "info": {
+    "title_part1": "GET IN",
+    "title_part2": "TOUCH",
+    "email_label": "Email",
+    "phone_label": "Phone",
+    "location_label": "Location",
+    "location_value": "Bandung, West Java, Indonesia",
+    "hours_title": "BUSINESS HOURS",
+    "hours_weekday_label": "Monday - Friday:",
+    "hours_saturday_label": "Saturday:",
+    "hours_sunday_label": "Sunday:",
+    "hours_closed": "Closed"
+  },
+  "form": {
+    "title": "SEND US A MESSAGE",
+    "name_label": "Name",
+    "name_placeholder": "Your name",
+    "email_label": "Email",
+    "email_placeholder": "name@example.com",
+    "service_label": "Service Interested In",
+    "service_placeholder": "Select a service",
+    "message_label": "Message",
+    "message_placeholder": "Tell us about your project...",
+    "send_message": "SEND MESSAGE",
+    "sending": "Sending...",
+    "success_message": "Thank you! Your message has been sent. We'll get back to you soon.",
+    "services": {
+      "graphic_design": "Graphic Design",
+      "web_development": "Web Development",
+      "branding": "Brand Strategy",
+      "other": "Other"
+    }
+  },
+  "errors": {
+    "invalid_email": "Please enter a valid email address",
+    "invalid_country": "Please select a valid country code",
+    "invalid_phone": "Please enter a valid {country} phone number"
+  }
+}

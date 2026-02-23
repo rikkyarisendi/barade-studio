@@ -1,0 +1,30 @@
+{
+  "back_to_portfolio": "Kembali ke Portfolio",
+  "client_label": "Klien",
+  "year_label": "Tahun",
+  "duration_label": "Durasi",
+  "category_label": "Kategori",
+  "services_title": "Layanan yang Diberikan",
+  "challenge_title": "Tantangan",
+  "solution_title": "Solusi Kami",
+  "results_title": "Hasil & Dampak",
+  "external_links_title": "Lihat di Platform Lain",
+  "more_title_part1": "Proyek",
+  "more_title_part2": "Lainnya",
+  "view_project": "Lihat Proyek",
+  "view_all_projects": "Lihat Semua Proyek",
+  "cta_title_part1": "TERTARIK",
+  "cta_title_part2": "BERKOLABORASI?",
+  "cta_subtitle": "Mari ciptakan sesuatu yang luar biasa untuk brand Anda. Baik Anda butuh branding, pengembangan web, atau layanan desain, kami siap membantu.",
+  "badge_showcase": "Project Showcase",
+  "badge_design": "Design Detail",
+  "badge_implementation": "Implementasi",
+  "more_from_project": "Lebih Banyak dari Proyek Ini",
+  "platforms": {
+    "behance": "Lihat di Behance",
+    "dribbble": "Lihat di Dribbble",
+    "website": "Kunjungi Website",
+    "github": "Lihat di GitHub",
+    "instagram": "Lihat di Instagram"
+  }
+}

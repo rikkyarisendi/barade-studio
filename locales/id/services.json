@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "title": "LAYANAN KAMI",
+    "subtitle": "Solusi kreatif komprehensif yang dirancang untuk meningkatkan brand Anda dan mendorong hasil."
+  },
+  "graphic_design": {
+    "title": "DESAIN GRAFIS",
+    "description": "Ciptakan kesan abadi dengan desain visual yang memukau. Dari identitas brand hingga materi pemasaran, kami membuat desain yang berbicara kepada audiens Anda.",
+    "features": [
+      "Desain Logo & Identitas Brand",
+      "Desain Cetak (Brosur, Flyer, Kartu Nama)",
+      "Grafik Media Sosial",
+      "Desain Kemasan",
+      "Ilustrasi & Grafik Kustom"
+    ]
+  },
+  "web_development": {
+    "title": "PENGEMBANGAN WEB",
+    "description": "Bangun kehadiran online Anda dengan website modern dan responsif. Kami menciptakan pengalaman web yang cepat, indah, dan ramah pengguna.",
+    "features": [
+      "Pengembangan Website Kustom",
+      "Solusi E-commerce",
+      "Desain Responsif",
+      "Integrasi CMS",
+      "Maintenance & Support Website"
+    ]
+  },
+  "brand_strategy": {
+    "title": "STRATEGI BRAND",
+    "description": "Definisikan dan perkuat identitas brand Anda. Kami membantu Anda menciptakan brand yang kohesif dan beresonansi dengan target audiens.",
+    "features": [
+      "Riset & Discovery Brand",
+      "Positioning & Messaging Brand",
+      "Sistem Identitas Visual",
+      "Panduan Brand (Brand Guidelines)",
+      "Refresh & Rebranding"
+    ]
+  },
+  "process": {
+    "title_part1": "PROSES",
+    "title_part2": "KAMI",
+    "steps": [
+      { "num": 1, "title": "Riset", "desc": "Kami mempelajari bisnis, tujuan, dan target audiens Anda." },
+      { "num": 2, "title": "Strategi", "desc": "Kami mengembangkan strategi kreatif yang disesuaikan dengan kebutuhan Anda." },
+      { "num": 3, "title": "Desain", "desc": "Kami mewujudkan visi Anda dengan visual yang memukau." },
+      { "num": 4, "title": "Peluncuran", "desc": "Kami mengirimkan dan mendukung kesuksesan proyek Anda." }
+    ]
+  }
+}

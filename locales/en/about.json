@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title_part1": "ABOUT",
+    "title_part2": "BARADE STUDIO",
+    "subtitle": "We are a creative studio passionate about transforming ideas into visual masterpieces. Based in Bandung, we serve clients worldwide."
+  },
+  "story": {
+    "title": "OUR STORY",
+    "p1": "Founded in 2020, BARADE STUDIO emerged from a passion to create meaningful design that tells stories and drives results. What started as a small team has grown into a full-service creative studio.",
+    "p2": "We believe in the power of great design to transform businesses. Our approach combines strategic thinking with creative execution, ensuring every project not only looks amazing but also achieves its goals.",
+    "p3": "Today, we're proud to work with clients across Indonesia and beyond, from startups to established brands, helping them stand out in a crowded digital landscape."
+  },
+  "values": {
+    "title_part1": "OUR",
+    "title_part2": "VALUES",
+    "excellence": {
+      "title": "Excellence",
+      "desc": "We never compromise on quality. Every pixel, every line of code matters to us."
+    },
+    "collaboration": {
+      "title": "Collaboration",
+      "desc": "Your success is our success. We work closely with you every step of the way."
+    },
+    "innovation": {
+      "title": "Innovation",
+      "desc": "We stay ahead of trends and bring fresh, creative solutions to every project."
+    }
+  },
+  "cta": {
+    "title": "LET'S WORK TOGETHER",
+    "subtitle": "Ready to bring your vision to life?"
+  }
+}

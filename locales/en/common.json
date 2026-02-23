@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "footer": {
+    "copyright": "© {{year}} Barade Studio. All rights reserved.",
+    "made_with": "Made with ❤️ by Rikky A",
+    "quick_links": "Quick Links",
+    "contact_info": "Contact",
+    "tagline": "Transforming ideas into stunning visual experiences. We specialize in graphic design and web development that makes your brand stand out."
+  },
+  "buttons": {
+    "view_work": "View Our Work",
+    "get_in_touch": "Get In Touch",
+    "learn_more": "Learn More",
+    "contact_now": "Contact Us Now",
+    "start_project": "Start Your Project"
+  },
+  "stats": {
+    "projects": "Projects",
+    "clients": "Clients",
+    "years": "Years",
+    "satisfaction": "Satisfaction"
+  }
+}

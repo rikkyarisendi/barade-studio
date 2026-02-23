@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "title": "MARI BERBICARA",
+    "subtitle": "Siap memulai proyek Anda? Hubungi kami dan mari ciptakan sesuatu yang luar biasa bersama."
+  },
+  "info": {
+    "title_part1": "HUBUNGI",
+    "title_part2": "KAMI",
+    "email_label": "Email",
+    "phone_label": "Telepon",
+    "location_label": "Lokasi",
+    "location_value": "Bandung, Jawa Barat, Indonesia",
+    "hours_title": "JAM OPERASIONAL",
+    "hours_weekday_label": "Senin - Jumat:",
+    "hours_saturday_label": "Sabtu:",
+    "hours_sunday_label": "Minggu:",
+    "hours_closed": "Tutup"
+  },
+  "form": {
+    "title": "KIRIM PESAN",
+    "name_label": "Nama",
+    "name_placeholder": "Nama Anda",
+    "email_label": "Email",
+    "email_placeholder": "nama@contoh.com",
+    "service_label": "Layanan yang Diminati",
+    "service_placeholder": "Pilih layanan",
+    "message_label": "Pesan",
+    "message_placeholder": "Ceritakan tentang proyek Anda...",
+    "send_message": "KIRIM PESAN",
+    "sending": "Mengirim...",
+    "success_message": "Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.",
+    "services": {
+      "graphic_design": "Desain Grafis",
+      "web_development": "Pengembangan Web",
+      "branding": "Strategi Brand",
+      "other": "Lainnya"
+    }
+  },
+  "errors": {
+    "invalid_email": "Masukkan alamat email yang valid",
+    "invalid_country": "Pilih kode negara yang valid",
+    "invalid_phone": "Masukkan nomor telepon {country} yang valid"
+  }
+}

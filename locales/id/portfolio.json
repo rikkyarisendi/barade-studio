@@ -1,0 +1,46 @@
+{
+   "seo": {
+    "title": "Portfolio",
+    "description": "Jelajahi karya terbaru kami dalam branding, pengembangan web, dan desain digital."
+  },
+  "hero": {
+    "title_part1": "KARYA",
+    "title_part2": "KAMI",
+    "subtitle": "Jelajahi karya terbaru kami dan lihat bagaimana kami membantu brand menonjol dan sukses."
+  },
+  "filters": {
+    "all": "Semua Proyek",
+    "branding": "Branding",
+    "web": "Desain Web",
+    "graphic": "Desain Grafis"
+  },
+  "modal": {
+    "quick_view": "Lihat Cepat",
+    "close": "Tutup",
+    "quick_overview": "Ringkasan Cepat",
+    "challenge": "Tantangan",
+    "solution": "Solusi",
+    "results": "Hasil",
+    "view_case_study": "LIHAT STUDI KASUS LENGKAP",
+    "start_project": "MULAI PROYEK ANDA"
+  },
+  "messages": {
+    "showing": "Menampilkan",
+    "of": "dari",
+    "project": "proyek",
+    "projects": "proyek",
+    "no_projects": "Tidak ada proyek untuk filter ini",
+    "load_more": "MUAT LEBIH BANYAK PROYEK",
+    "view_all": "LIHAT SEMUA PROYEK"
+  },
+  "tags": {
+    "branding": "Branding",
+    "web_design": "Desain Web",
+    "development": "Pengembangan",
+    "graphic_design": "Desain Grafis",
+    "social_media": "Media Sosial",
+    "packaging": "Kemasan",
+    "logo": "Logo",
+    "ui_ux": "UI/UX"
+  }
+}

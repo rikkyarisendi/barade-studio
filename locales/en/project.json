@@ -1,0 +1,30 @@
+{
+  "back_to_portfolio": "Back to Portfolio",
+  "client_label": "Client",
+  "year_label": "Year",
+  "duration_label": "Duration",
+  "category_label": "Category",
+  "services_title": "Services Provided",
+  "challenge_title": "The Challenge",
+  "solution_title": "Our Solution",
+  "results_title": "Results & Impact",
+  "external_links_title": "View on Other Platforms",
+  "more_title_part1": "More",
+  "more_title_part2": "Projects",
+  "view_project": "View Project",
+  "view_all_projects": "View All Projects",
+  "cta_title_part1": "INTERESTED IN",
+  "cta_title_part2": "WORKING TOGETHER?",
+  "cta_subtitle": "Let's create something amazing for your brand. Whether you need branding, web development, or design services, we're here to help.",
+  "badge_showcase": "Project Showcase",
+  "badge_design": "Design Detail",
+  "badge_implementation": "Implementation",
+  "more_from_project": "More From This Project",
+  "platforms": {
+    "behance": "View on Behance",
+    "dribbble": "View on Dribbble",
+    "website": "Visit Live Website",
+    "github": "View on GitHub",
+    "instagram": "View on Instagram"
+  }
+}

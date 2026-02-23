@@ -1,0 +1,49 @@
+{
+  "hero": {
+    "title": "OUR SERVICES",
+    "subtitle": "Comprehensive creative solutions tailored to elevate your brand and drive results."
+  },
+  "graphic_design": {
+    "title": "GRAPHIC DESIGN",
+    "description": "Create a lasting impression with stunning visual designs. From brand identity to marketing materials, we craft designs that speak to your audience.",
+    "features": [
+      "Logo Design & Brand Identity",
+      "Print Design (Brochures, Flyers, Business Cards)",
+      "Social Media Graphics",
+      "Packaging Design",
+      "Illustration & Custom Graphics"
+    ]
+  },
+  "web_development": {
+    "title": "WEB DEVELOPMENT",
+    "description": "Build your online presence with modern, responsive websites. We create fast, beautiful, and user-friendly web experiences.",
+    "features": [
+      "Custom Website Development",
+      "E-commerce Solutions",
+      "Responsive Design",
+      "CMS Integration",
+      "Website Maintenance & Support"
+    ]
+  },
+  "brand_strategy": {
+    "title": "BRAND STRATEGY",
+    "description": "Define and strengthen your brand identity. We help you create a cohesive brand that resonates with your target audience.",
+    "features": [
+      "Brand Discovery & Research",
+      "Brand Positioning & Messaging",
+      "Visual Identity System",
+      "Brand Guidelines",
+      "Brand Refresh & Rebranding"
+    ]
+  },
+  "process": {
+    "title_part1": "OUR",
+    "title_part2": "PROCESS",
+    "steps": [
+      { "num": 1, "title": "Discovery", "desc": "We learn about your business, goals, and target audience." },
+      { "num": 2, "title": "Strategy", "desc": "We develop a creative strategy tailored to your needs." },
+      { "num": 3, "title": "Design", "desc": "We bring your vision to life with stunning visuals." },
+      { "num": 4, "title": "Launch", "desc": "We deliver and support your project's success." }
+    ]
+  }
+}

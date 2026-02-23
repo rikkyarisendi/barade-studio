@@ -1,44 +1,28 @@
 ---
 # ============================================
-# 🆔 BASIC INFO
+# 🆔 BASIC INFO (Tech Fields - Same for all locales)
 # ============================================
-title: "SBA Trans Digital Infrastructure"
 slug: "sba-trans"
-date: "2023-07-22"                         # ✅ Latest update date
-
-# ============================================
-# 🏷️ CATEGORY & TAGS
-# ============================================
-category: "Web Development"             # Main category
-tags:                                   # ✅ Additional labels for filtering
+date: "2023-07-22"
+category: "Web Development"
+tags:
   - "Logistics & Transport"
   - "Corporate Website"
-
-# ============================================
-# 📝 DESCRIPTION & PROJECT INFO
-# ============================================
-description: "Transforming digital identity and managing web infrastructure for a premium bus transportation company."
-color: "bg-blue-900"                        # Corporate transport brand color
+color: "bg-blue-900"
 client: "SBA Trans"
 year: "2023"
-duration: "Maintenance & Optimization Phase"
 
 # ============================================
-# 🖼️ IMAGE STRUCTURE
+# 🖼️ IMAGE STRUCTURE (Same for all locales)
 # ============================================
-# 1. Thumbnail for Portfolio Card (1:1 Square)
 thumbnail: "/projects/sba-trans/thumb.png"
-
-# 2. Quick View Modal Image (16:9 Landscape)
 quickViewImage: "/projects/sba-trans/hero.png"
-
-# 3. Full Case Study Images
-projectShowcase: "/projects/sba-trans/hero.png"      # 16:9 - Main fleet & web showcase
-designDetail: "/projects/sba-trans/detail1.png"     # 1:1 - Reservation/contact feature detail
-implementation: "/projects/sba-trans/detail2.png"   # 1:1 - Server/domain management detail
+projectShowcase: "/projects/sba-trans/hero.png"
+designDetail: "/projects/sba-trans/detail1.png"
+implementation: "/projects/sba-trans/detail2.png"
 
 # ============================================
-# 📋 SERVICES & CONTENT
+# 📋 SERVICES (Same for all locales - technical terms)
 # ============================================
 services:
   - "Corporate Web Development"
@@ -47,15 +31,55 @@ services:
   - "Security & Performance Tuning"
   - "Google Maps Optimization"
 
-testimonial:
-  quote: "Baradé Studio has given us peace of mind in managing our digital assets. Technical matters such as service renewals and website stability are now far more measurable and transparent."
-  author: "SBA Trans Management"
-  position: "Operational Manager"
+# ============================================
+# 🌐 TRANSLATED FIELDS (Object Format: {id, en})
+# ============================================
+title:
+  id: "SBA Trans Digital Infrastructure"
+  en: "SBA Trans Digital Infrastructure"
 
+description:
+  id: "Transformasi identitas digital dan manajemen infrastruktur web untuk perusahaan transportasi bus premium."
+  en: "Transforming digital identity and managing web infrastructure for a premium bus transportation company."
+
+duration:
+  id: "Fase Maintenance & Optimasi"
+  en: "Maintenance & Optimization Phase"
+
+# Testimonial dengan translated fields
+testimonial:
+  quote:
+    id: "Baradé Studio memberikan kami ketenangan dalam mengelola aset digital. Hal-hal teknis seperti perpanjangan layanan dan stabilitas website kini jauh lebih terukur dan transparan."
+    en: "Baradé Studio has given us peace of mind in managing our digital assets. Technical matters such as service renewals and website stability are now far more measurable and transparent."
+  author: "SBA Trans Management"
+  position:
+    id: "Manajer Operasional"
+    en: "Operational Manager"
+
+# External links (URLs tetap string, labels opsional)
 externalLinks:
   website: "https://sbatrans.co.id"
+  website_label:
+    id: "Kunjungi Website"
+    en: "Visit Website"
 ---
 
+<!-- ===== ID CONTENT ===== -->
+<!--id-->
+## Tantangan
+
+Sebagai perusahaan jasa transportasi yang terus berkembang, SBA Trans membutuhkan kehadiran digital yang stabil dan terpercaya untuk menjangkau klien korporat maupun ritel. Tantangan utamanya terletak pada pengelolaan infrastruktur web yang harus menjaga ketersediaan tinggi, memastikan informasi armada dapat diakses kapan saja tanpa gangguan teknis. Manajemen maintenance yang transparan sangat penting untuk mengelola biaya perpanjangan domain .co.id dan hosting secara efisien oleh tim internal secara berkala.
+
+## Solusi Kami
+
+Baradé Studio hadir untuk merapikan seluruh ekosistem digital SBA Trans. Kami memigrasi dan mengoptimalkan infrastruktur hosting mereka untuk meningkatkan kecepatan akses dan keamanan data. Selain itu, kami menerapkan sistem manajemen maintenance tahunan yang terstandarisasi—memastikan biaya perpanjangan yang transparan dan menyediakan dukungan teknis yang responsif. Kami juga memberikan arahan konten untuk menonjolkan profesionalisme armada bus pariwisata mereka melalui visual yang bersih dan navigasi yang berfokus pada reservasi.
+
+## Hasil
+
+Berhasil mengamankan identitas digital resmi perusahaan melalui manajemen domain .co.id yang terorganisir dengan baik. Infrastruktur website kini beroperasi dengan performa yang lebih stabil dan terlindungi dari masalah teknis berulang. Pendekatan manajemen layanan yang transparan yang diterapkan telah memberikan kepercayaan penuh kepada SBA Trans untuk fokus mengembangkan operasional transportasi mereka, sementara Baradé Studio menjaga keberlanjutan jangka panjang aset digital mereka.
+
+<!-- ===== EN CONTENT ===== -->
+<!--en-->
 ## The Challenge
 
 As a growing transportation services company, SBA Trans needed a stable and trustworthy digital presence to reach both corporate and retail clients. The main challenge lay in managing web infrastructure that must maintain high availability, ensuring fleet information could be accessed anytime without technical disruptions. Transparent maintenance management was essential to efficiently manage .co.id domain renewal and hosting costs by the internal team on a regular basis.

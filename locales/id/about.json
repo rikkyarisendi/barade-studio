@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title_part1": "TENTANG",
+    "title_part2": "BARADE STUDIO",
+    "subtitle": "Kami adalah studio kreatif yang berpassion mengubah ide menjadi mahakarya visual. Berbasis di Bandung, kami melayani klien di seluruh dunia."
+  },
+  "story": {
+    "title": "CERITA KAMI",
+    "p1": "Didirikan tahun 2020, BARADE STUDIO lahir dari passion untuk menciptakan desain bermakna yang bercerita dan memberikan hasil. Dari tim kecil, kami tumbuh menjadi studio kreatif layanan lengkap.",
+    "p2": "Kami percaya kekuatan desain hebat dapat mengubah bisnis. Pendekatan kami menggabungkan pemikiran strategis dengan eksekusi kreatif, memastikan setiap proyek tidak hanya terlihat menakjubkan tapi juga mencapai tujuannya.",
+    "p3": "Kini, kami bangga bekerja dengan klien di seluruh Indonesia dan luar negeri, dari startup hingga brand established, membantu mereka menonjol di lanskap digital yang padat."
+  },
+  "values": {
+    "title_part1": "NILAI",
+    "title_part2": "KAMI",
+    "excellence": {
+      "title": "Keunggulan",
+      "desc": "Kami tidak pernah kompromi dengan kualitas. Setiap piksel, setiap baris kode penting bagi kami."
+    },
+    "collaboration": {
+      "title": "Kolaborasi",
+      "desc": "Kesuksesan Anda adalah kesuksesan kami. Kami bekerja erat dengan Anda di setiap langkah."
+    },
+    "innovation": {
+      "title": "Inovasi",
+      "desc": "Kami tetap terdepan dalam tren dan membawa solusi kreatif segar ke setiap proyek."
+    }
+  },
+  "cta": {
+    "title": "MARI BERKOLABORASI",
+    "subtitle": "Siap mewujudkan visi Anda?"
+  }
+}

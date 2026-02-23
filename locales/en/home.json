@@ -1,0 +1,26 @@
+{
+  "hero": {
+    "title_part1": "WE CREATE",
+    "title_part2": "VISUAL MAGIC",
+    "subtitle": "Transform your brand with stunning graphic design and cutting-edge web development. We turn your vision into reality."
+  },
+  "services": {
+    "title": "WHAT WE DO",
+    "graphic_design": {
+      "title": "Graphic Design",
+      "desc": "From logos to complete brand identities, we create visuals that capture your essence and resonate with your audience."
+    },
+    "web_development": {
+      "title": "Web Development",
+      "desc": "Modern, responsive websites built with the latest technologies. Fast, beautiful, and optimized for success."
+    },
+    "brand_strategy": {
+      "title": "Brand Strategy",
+      "desc": "Build a powerful brand that stands out. We help you define your identity and connect with your customers."
+    }
+  },
+  "cta": {
+    "title": "READY TO START YOUR PROJECT?",
+    "subtitle": "Let's collaborate and create something amazing together."
+  }
+}
