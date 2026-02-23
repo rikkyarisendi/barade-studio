@@ -1,6 +1,7 @@
 // app/[lang]/services/page.tsx
 import Link from 'next/link';
-import { getTranslations, Locale } from '@/lib/i18n';
+import { getTranslations } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n';
 
 // Helper: bikin path dengan locale prefix
 const path = (lang: string, segment: string) => `/${lang}${segment}`;

@@ -6,7 +6,9 @@ import { useFormState, useFormStatus } from 'react-dom';
 import { useState, useEffect, useRef } from 'react';
 import { COUNTRIES, DEFAULT_COUNTRY, validatePhoneByCountry, type Country } from '@/lib/countries';
 
+// ✅ Regex patterns untuk validasi
 const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const PHONE_REGEX = /^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.\/0-9]*$/;  // ✅ TAMBAHIN INI
 
 // ✅ PhoneInput Component (sama seperti sebelumnya)
 function PhoneInput({
@@ -150,22 +152,26 @@ export default function ContactForm({
     }
   }, [state, isSuccess]);
 
-  const validateEmail = (email: string): string | undefined => {
-    if (!email) return undefined;
-    if (!EMAIL_REGEX.test(email)) return t?.errors?.invalid_email || 'Please enter a valid email address';
-    return undefined;
-  };
+ // ContactForm.tsx line 155
+// ✅ Langsung string fallback, nggak akses t.errors
+const validateEmail = (email: string): string | undefined => {
+  if (!email) return undefined;
+  if (!EMAIL_REGEX.test(email)) return 'Please enter a valid email address';
+  return undefined;
+};
 
-  const validatePhone = (fullPhone: string): string | undefined => {
-    if (!fullPhone) return undefined;
-    const country = COUNTRIES.find(c => fullPhone.startsWith(c.dialCode));
-    if (!country) return t?.errors?.invalid_country || 'Please select a valid country code';
-    const numberPart = fullPhone.replace(country.dialCode, '').replace(/[\s\-\(\)]/g, '');
-    if (!validatePhoneByCountry(numberPart, country)) {
-      return t?.errors?.invalid_phone?.replace('{country}', country.name) || `Please enter a valid ${country.name} phone number`;
-    }
-    return undefined;
-  };
+// Lakukan hal sama untuk validasi lain:
+const validatePhone = (phone: string, country?: string): string | undefined => {
+  if (!phone) return undefined;
+  
+  // ✅ Pakai PHONE_REGEX yang udah kita tambahin
+  if (!PHONE_REGEX.test(phone)) {
+    // ✅ Kalau country nggak ada, pakai default text
+    const countryName = country || 'phone';
+    return `Please enter a valid ${countryName} number`;
+  }
+  return undefined;
+};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;

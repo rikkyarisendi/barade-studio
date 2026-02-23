@@ -8,7 +8,8 @@ import {
   getAllProjectSlugs,
   AdditionalImage 
 } from '@/lib/projects';
-import { getTranslations, Locale } from '@/lib/i18n';
+import { getTranslations } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n';
 
 // ============================================================================
 // ✅ HELPERS

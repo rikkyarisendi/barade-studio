@@ -2,7 +2,16 @@
 import { Syne, Space_Mono } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import { getTranslations, Locale } from '@/lib/i18n'  // ✅ Import getTranslations
+import { getTranslations } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n';
+
+// app/[lang]/layout.tsx - Tambahin metadata export
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  // ... other metadata jika ada
+};
 
 const syne = Syne({ 
   subsets: ['latin'], 

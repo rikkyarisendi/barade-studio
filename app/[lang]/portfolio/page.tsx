@@ -2,7 +2,8 @@
 import Link from 'next/link';
 import { getAllProjects } from '@/lib/projects';
 import PortfolioClient from '@/components/PortfolioClient';
-import { getTranslations, Locale } from '@/lib/i18n';
+import { getTranslations } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n';
 import { Metadata } from 'next';
 
 // Helper: bikin path dengan locale prefix
