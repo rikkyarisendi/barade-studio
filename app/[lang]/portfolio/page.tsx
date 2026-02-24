@@ -83,7 +83,7 @@ export default async function PortfolioPage({
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]">
+          <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]">
             {t.portfolio?.cta?.title_part1 || 'LIKE WHAT YOU SEE?'}
           </h2>
           <p className="text-xl text-[var(--text-muted)] mb-8">
@@ -91,7 +91,7 @@ export default async function PortfolioPage({
           </p>
           <Link
             href={path(lang, '/contact')}
-            className="inline-block bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+            className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
           >
             {t.common?.buttons?.start_project || 'START YOUR PROJECT'}
           </Link>

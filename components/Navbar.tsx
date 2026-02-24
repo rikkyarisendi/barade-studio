@@ -283,7 +283,7 @@ export default function Navbar({ lang, t }: NavbarProps) {
                 <div className="menu-item pt-2" style={{ animationDelay: '0.25s' }}>
                   <Link 
                     href={path('/contact')} 
-                    className={`block w-full px-6 py-3 font-bold text-center rounded-lg transition-all duration-300 border-2 ${
+                    className={`block w-full px-4 py-2 font-bold text-center rounded-lg transition-all duration-300 border-2 ${
                       isOverBrightBg
                         ? 'bg-brand-dark text-brand-lime border-brand-dark'
                         : 'bg-brand-lime text-brand-dark border-[var(--border-color)]'

@@ -190,7 +190,7 @@ export default async function ProjectDetailPage({
 
           {/* Project Showcase */}
           {project.projectShowcase && (
-            <figure className="relative aspect-video rounded-2xl border-4 border-[var(--border-color)] overflow-hidden group bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
+            <figure className="relative aspect-video rounded-2xl border-2 border-[var(--border-color)] overflow-hidden group bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
               <Image
                 src={project.projectShowcase}
                 alt={`${project.title} - Showcase`}
@@ -219,7 +219,7 @@ export default async function ProjectDetailPage({
           {(project.designDetail || project.implementation) && (
             <div className="grid md:grid-cols-2 gap-6">
               {project.designDetail && (
-                <figure className="relative aspect-square rounded-2xl border-4 border-[var(--border-color)] overflow-hidden group hover:scale-[1.02] transition-transform duration-300 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
+                <figure className="relative aspect-square rounded-2xl border-2 border-[var(--border-color)] overflow-hidden group hover:scale-[1.02] transition-transform duration-300 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
                   <Image 
                     src={project.designDetail} 
                     alt={`${project.title} - Design Detail`} 
@@ -233,7 +233,7 @@ export default async function ProjectDetailPage({
                 </figure>
               )}
               {project.implementation && (
-                <figure className="relative aspect-square rounded-2xl border-4 border-[var(--border-color)] overflow-hidden group hover:scale-[1.02] transition-transform duration-300 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
+                <figure className="relative aspect-square rounded-2xl border-2 border-[var(--border-color)] overflow-hidden group hover:scale-[1.02] transition-transform duration-300 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
                   <Image 
                     src={project.implementation} 
                     alt={`${project.title} - Implementation`} 
@@ -257,7 +257,7 @@ export default async function ProjectDetailPage({
           />
 
           {/* Results & Impact */}
-          <div className="bg-brand-lime p-8 md:p-12 rounded-2xl border-4 border-brand-dark relative overflow-hidden">
+          <div className="bg-brand-lime p-8 md:p-12 rounded-2xl border-2 border-brand-dark relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-dark/5 rounded-full blur-3xl" aria-hidden="true"></div>
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-brand-dark relative z-10">
               {t.project?.results_title || 'Results & Impact'}
@@ -269,7 +269,7 @@ export default async function ProjectDetailPage({
 
           {/* Client Testimonial */}
           {project.testimonial && (
-            <blockquote className="bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] p-8 md:p-12 rounded-2xl border-4 border-brand-lime relative">
+            <blockquote className="bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] p-8 md:p-12 rounded-2xl border-2 border-brand-lime relative">
               <span className="absolute top-8 left-8 text-brand-dark/20 dark:text-brand-lime/20 text-9xl font-display leading-none" aria-hidden="true">"</span>
               <div className="relative z-10">
                 <p className="text-xl md:text-2xl leading-relaxed mb-8 italic text-[var(--text-primary)]">
@@ -285,7 +285,7 @@ export default async function ProjectDetailPage({
 
           {/* External Links */}
           {project.externalLinks && Object.keys(project.externalLinks).length > 0 && (
-            <div className="border-t-4 border-[var(--border-color)]/10 pt-12">
+            <div className="border-t-2 border-[var(--border-color)]/10 pt-12">
               <h3 className="font-display text-2xl md:text-3xl font-bold mb-6 text-[var(--text-primary)]">
                 {t.project?.external_links_title || 'View on Other Platforms'}
               </h3>
@@ -310,10 +310,10 @@ export default async function ProjectDetailPage({
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-3 px-6 py-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-bold rounded-xl hover:bg-brand-lime hover:dark:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
+                      className="inline-flex items-center gap-1 px-2 py-1 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-semibold rounded-xl hover:bg-brand-lime hover:dark:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
                       aria-label={plat.label}
                     >
-                      <span className="text-2xl" aria-hidden="true">{plat.icon}</span> 
+                      <span className="text-1xl" aria-hidden="true">{plat.icon}</span> 
                       <span>{plat.label}</span>
                     </a>
                   );
@@ -340,7 +340,7 @@ export default async function ProjectDetailPage({
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]" aria-labelledby="related-projects-heading">
           <div className="max-w-7xl mx-auto">
             <h2 id="related-projects-heading" className="font-display text-3xl md:text-4xl font-bold mb-12 text-center text-[var(--text-primary)]">
-              {t.project?.more_title_part1 || 'More'} <span className="text-brand-lime">{project.category}</span> {t.project?.more_title_part2 || 'Projects'}
+              {t.project?.more_title_part1 || 'More'} <span className="text-brand-dark dark:text-brand-lime">{project.category}</span> {t.project?.more_title_part2 || 'Projects'}
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
@@ -390,17 +390,17 @@ export default async function ProjectDetailPage({
       )}
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-primary)] dark:bg-[var(--bg-primary)]">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]">
-            {t.project?.cta_title_part1 || 'INTERESTED IN'} <span className="text-brand-lime">{t.project?.cta_title_part2 || 'WORKING TOGETHER?'}</span>
+          <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]">
+            {t.project?.cta_title_part1 || 'INTERESTED IN'} <br/><span className="text-brand-lime bg-brand-dark rounded-lg py-0 px-2 dark:text-brand-lime">{t.project?.cta_title_part2 || 'WORKING TOGETHER?'}</span>
           </h2>
           <p className="text-xl text-[var(--text-muted)] mb-8 max-w-2xl mx-auto">
             {t.project?.cta_subtitle || 'Let\'s create something amazing for your brand. Whether you need branding, web development, or design services, we\'re here to help.'}
           </p>
           <Link 
             href={path(lang, 'contact')} 
-            className="inline-block bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg hover:scale-105"
+            className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg hover:scale-105"
           >
             {t.common?.buttons?.start_project || 'START YOUR PROJECT'} →
           </Link>

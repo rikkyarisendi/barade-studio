@@ -46,7 +46,7 @@ export default async function AboutPage({
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="font-display text-4xl font-bold mb-6 text-brand-dark dark:text-brand-lime">
+            <h2 className="font-display text-3xl font-bold mb-6 text-brand-dark dark:text-brand-lime">
               {t.about?.story?.title || 'OUR STORY'}
             </h2>
             <p className="text-[var(--text-muted)] mb-4">
@@ -70,7 +70,7 @@ export default async function AboutPage({
       {/* Values Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
+          <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
             {t.about?.values?.title_part1 || 'OUR'} <span className="text-brand-lime">{t.about?.values?.title_part2 || 'VALUES'}</span>
           </h2>
           
@@ -96,7 +96,7 @@ export default async function AboutPage({
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-lime">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-brand-dark">
+          <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-brand-dark">
             {t.about?.cta?.title || 'LET\'S WORK TOGETHER'}
           </h2>
           <p className="text-xl text-brand-dark/80 mb-8">
@@ -104,7 +104,7 @@ export default async function AboutPage({
           </p>
           <Link 
             href={path(lang, '/contact')} 
-            className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-xl"
+            className="inline-block bg-brand-dark text-brand-cream px-4 py-2 font-bold text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg"
           >
             {t.common?.buttons?.contact_now || 'CONTACT US NOW'}
           </Link>

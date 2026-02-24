@@ -242,7 +242,7 @@ export default function PortfolioClient({
           aria-labelledby="modal-title"
         >
           <div
-            className="bg-[var(--bg-primary)] max-w-4xl w-full max-h-[85vh] overflow-y-auto rounded-2xl border-4 border-brand-lime p-6 md:p-8 relative shadow-2xl"
+            className="bg-[var(--bg-primary)] max-w-4xl w-full max-h-[85vh] overflow-y-auto rounded-2xl border-2 border-brand-lime p-6 md:p-8 relative shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
@@ -312,7 +312,7 @@ export default function PortfolioClient({
 
             {/* Modal Visual Preview */}
             <div className="mb-6">
-              <div className="relative aspect-video rounded-xl border-4 border-[var(--border-color)] overflow-hidden">
+              <div className="relative aspect-video rounded-xl border-2 border-[var(--border-color)] overflow-hidden">
                 {selectedProject.quickViewImage ? (
                   <Image src={selectedProject.quickViewImage} alt={selectedProject.title} fill priority className="object-cover" />
                 ) : selectedProject.projectShowcase ? (
@@ -333,14 +333,14 @@ export default function PortfolioClient({
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={path(`portfolio/${selectedProject.slug}`)}
-                className="flex-1 bg-brand-lime text-brand-dark px-6 py-3 font-bold text-base md:text-lg text-center hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+                className="flex-1 bg-brand-lime text-brand-dark px-4 py-2 font-bold text-base md:text-lg text-center hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
                 onClick={() => setSelectedProject(null)}
               >
                 {t?.modal?.view_case_study || 'VIEW FULL CASE STUDY'} →
               </Link>
               <Link
                 href={path('contact')}
-                className="flex-1 bg-transparent text-[var(--text-primary)] px-6 py-3 font-bold text-base md:text-lg text-center hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+                className="flex-1 bg-transparent text-[var(--text-primary)] px-4 py-2 font-bold text-base md:text-lg text-center hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
               >
                 {t?.modal?.start_project || 'START YOUR PROJECT'}
               </Link>

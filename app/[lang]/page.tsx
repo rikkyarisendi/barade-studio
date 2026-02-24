@@ -29,7 +29,7 @@ export default async function HomePage({
       {/* ✅ HAPUS <Navbar /> dari sini - udah ada di layout */}
       
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center pt-none md:pt-none px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center pt-10 md:pt-none px-4 sm:px-6 lg:px-8 relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-brand-lime/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-[var(--border-color)]/30 rounded-full blur-3xl"></div>
@@ -48,13 +48,13 @@ export default async function HomePage({
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Link 
                 href={path(lang, '/portfolio')} 
-                className="bg-brand-lime text-brand-dark px-8 py-4 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover-lift w-full sm:w-auto text-center rounded-lg"
+                className="bg-brand-lime text-brand-dark px-4 py-2 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover-lift w-full sm:w-auto text-center rounded-lg"
               >
                 {t.common?.buttons?.view_work || 'VIEW OUR WORK'}
               </Link>
               <Link 
                 href={path(lang, '/contact')} 
-                className="bg-transparent text-[var(--text-primary)] px-8 py-4 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] w-full sm:w-auto text-center rounded-lg"
+                className="bg-transparent text-[var(--text-primary)] px-4 py-2 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] w-full sm:w-auto text-center rounded-lg"
               >
                 {t.common?.buttons?.get_in_touch || 'GET IN TOUCH'}
               </Link>
@@ -120,7 +120,7 @@ export default async function HomePage({
           </p>
           <Link 
             href={path(lang, '/contact')} 
-            className="inline-block bg-brand-dark text-brand-cream px-8 py-4 font-bold text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-xl"
+            className="inline-block bg-brand-dark text-brand-cream px-4 py-2 font-bold text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg"
           >
             {t.common?.buttons?.contact_now || 'CONTACT US NOW'}
           </Link>

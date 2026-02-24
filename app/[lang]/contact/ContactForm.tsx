@@ -226,7 +226,7 @@ const validatePhone = (phone: string, country?: string): string | undefined => {
           
           {/* Contact Info */}
           <div>
-            <h2 className="font-display text-4xl font-bold mb-8 text-[var(--text-primary)]">
+            <h2 className="font-display text-3xl font-bold mb-8 text-[var(--text-primary)]">
               {t?.info?.title_part1 || 'GET IN'} <span className="text-brand-lime">{t?.info?.title_part2 || 'TOUCH'}</span>
             </h2>
             
@@ -277,7 +277,7 @@ const validatePhone = (phone: string, country?: string): string | undefined => {
 
           {/* Contact Form */}
           <div className="bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] p-8 rounded-lg border-2 border-[var(--border-color)]">
-            <h3 className="font-display text-3xl font-bold mb-6 text-[var(--text-primary)]">
+            <h3 className="font-display text-2xl font-bold mb-6 text-[var(--text-primary)]">
               {t?.form?.title || 'SEND US A MESSAGE'}
             </h3>
             

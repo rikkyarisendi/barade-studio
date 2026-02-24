@@ -49,7 +49,7 @@ export default async function ServicesPage({
             <div className="order-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">01</div>
-                <h2 className="font-display text-4xl font-bold text-[var(--text-primary)]">
+                <h2 className="font-display text-3xl font-bold text-[var(--text-primary)]">
                   {t.services?.graphic_design?.title || 'GRAPHIC DESIGN'}
                 </h2>
               </div>
@@ -99,7 +99,7 @@ export default async function ServicesPage({
             <div className="order-1 md:order-2">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">02</div>
-                <h2 className="font-display text-4xl font-bold text-[var(--text-primary)]">
+                <h2 className="font-display text-3xl font-bold text-[var(--text-primary)]">
                   {t.services?.web_development?.title || 'WEB DEVELOPMENT'}
                 </h2>
               </div>
@@ -149,7 +149,7 @@ export default async function ServicesPage({
             <div className="order-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">03</div>
-                <h2 className="font-display text-4xl font-bold text-[var(--text-primary)]">
+                <h2 className="font-display text-3xl font-bold text-[var(--text-primary)]">
                   {t.services?.brand_strategy?.title || 'BRAND STRATEGY'}
                 </h2>
               </div>
@@ -200,7 +200,7 @@ export default async function ServicesPage({
       {/* Process Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
+          <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
             {t.services?.process?.title_part1 || 'OUR'} <span className="text-brand-lime">{t.services?.process?.title_part2 || 'PROCESS'}</span>
           </h2>
           

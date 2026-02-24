@@ -43,7 +43,7 @@ export default function Footer({ lang, t }: FooterProps) {
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <Link href={path('/')} className="flex items-center gap-2 group">
-              <h3 className="font-display text-3xl font-bold mb-4">
+              <h3 className="font-display text-2xl font-bold mb-4">
                 <span className="text-brand-lime">BARADE</span>
                 <span className="text-brand-cream"> STUDIO</span>
               </h3>
