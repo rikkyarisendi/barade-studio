@@ -4,7 +4,7 @@
     "description": "Jelajahi karya terbaru kami dalam branding, pengembangan web, dan desain digital."
   },
   "hero": {
-    "title_part1": "KARYA",
+    "title_part1": "KARYA ",
     "title_part2": "KAMI",
     "subtitle": "Jelajahi karya terbaru kami dan lihat bagaimana kami membantu brand menonjol dan sukses."
   },
@@ -18,9 +18,9 @@
     "quick_view": "Lihat Cepat",
     "close": "Tutup",
     "quick_overview": "Ringkasan Cepat",
-    "challenge": "Tantangan",
-    "solution": "Solusi",
-    "results": "Hasil",
+    "challenge": "Tantangan:",
+    "solution": "Solusi:",
+    "results": "Hasil:",
     "view_case_study": "LIHAT STUDI KASUS LENGKAP",
     "start_project": "MULAI PROYEK ANDA"
   },

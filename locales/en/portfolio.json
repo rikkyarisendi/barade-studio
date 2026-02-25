@@ -4,7 +4,7 @@
     "description": "Explore our recent work in branding, web development, and digital design."
   },
   "hero": {
-    "title_part1": "OUR",
+    "title_part1": "OUR ",
     "title_part2": "PORTFOLIO",
     "subtitle": "Explore our recent work and see how we've helped brands stand out and succeed."
   },
@@ -18,9 +18,9 @@
     "quick_view": "Quick View",
     "close": "Close",
     "quick_overview": "Quick Overview",
-    "challenge": "Challenge",
-    "solution": "Solution",
-    "results": "Results",
+    "challenge": "Challenge:",
+    "solution": "Solution:",
+    "results": "Results:",
     "view_case_study": "VIEW FULL CASE STUDY",
     "start_project": "START YOUR PROJECT"
   },

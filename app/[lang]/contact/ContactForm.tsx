@@ -227,7 +227,7 @@ const validatePhone = (phone: string, country?: string): string | undefined => {
           {/* Contact Info */}
           <div>
             <h2 className="font-display text-3xl font-bold mb-8 text-[var(--text-primary)]">
-              {t?.info?.title_part1 || 'GET IN'} <span className="text-brand-lime">{t?.info?.title_part2 || 'TOUCH'}</span>
+              {t?.info?.title_part1 || 'GET IN'} <span className="text-brand-dark dark:text-brand-lime">{t?.info?.title_part2 || 'TOUCH'}</span>
             </h2>
             
             <div className="space-y-6 mb-8">

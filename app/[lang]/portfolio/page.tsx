@@ -54,9 +54,8 @@ export default async function PortfolioPage({
       <section className="pt-12 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            <span className="text-[var(--text-primary)]">{t.portfolio?.hero?.title_part1 || 'OUR'}</span>
-            <br />
-            <span className="text-brand-lime">{t.portfolio?.hero?.title_part2 || 'PORTFOLIO'}</span>
+            <span className="text-[var(--text-primary)]">{t.portfolio?.hero?.title_part1 || 'OUR '}</span>
+            <span className="text-brand-dark dark:text-brand-lime">{t.portfolio?.hero?.title_part2 || 'PORTFOLIO'}</span>
           </h1>
           <p className="text-xl md:text-2xl text-[var(--text-muted)] max-w-3xl animate-slide-in">
             {t.portfolio?.hero?.subtitle || 'Explore our recent work and see how we\'ve helped brands stand out and succeed.'}

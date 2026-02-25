@@ -46,7 +46,7 @@ export default async function LangLayout({
       {/* ✅ Pass lang & translations ke Navbar */}
       <Navbar lang={lang} t={t.common} />
       
-      <main className="flex-1 pt-20">
+      <main className="flex-1 pt-20 mt-0">
         {children}
       </main>
       

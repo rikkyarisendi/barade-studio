@@ -110,7 +110,7 @@ export default async function ProjectDetailPage({
       {/* ✅ JANGAN tambah <Navbar /> - udah ada di layout */}
 
       {/* Hero Section */}
-      <section className="pt-12 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime">
+      <section className="pt-8 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime">
         <div className="max-w-7xl mx-auto">
           <Link 
             href={path(lang, 'portfolio')} 

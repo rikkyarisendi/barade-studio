@@ -34,7 +34,7 @@ export default async function AboutPage({
           <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
             <span className="text-[var(--text-primary)]">{t.about?.hero?.title_part1 || 'ABOUT'}</span>
             <br />
-            <span className="text-brand-lime">{t.about?.hero?.title_part2 || 'BARADE STUDIO'}</span>
+            <span className="text-brand-dark dark:text-brand-lime">{t.about?.hero?.title_part2 || 'BARADE STUDIO'}</span>
           </h1>
           <p className="text-xl md:text-2xl text-[var(--text-muted)] max-w-3xl animate-slide-in">
             {t.about?.hero?.subtitle || 'We are a creative studio passionate about transforming ideas into visual masterpieces...'}
@@ -71,7 +71,7 @@ export default async function AboutPage({
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
-            {t.about?.values?.title_part1 || 'OUR'} <span className="text-brand-lime">{t.about?.values?.title_part2 || 'VALUES'}</span>
+            {t.about?.values?.title_part1 || 'OUR'} <span className="text-brand-dark dark:text-brand-lime">{t.about?.values?.title_part2 || 'VALUES'}</span>
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
