@@ -18,7 +18,7 @@ year: "2025-2026"
 # ============================================
 thumbnail: "/projects/misil-tactical/thumb.png"
 quickViewImage: "/projects/misil-tactical/detail2.png"
-projectShowcase: "/projects/misil-tactical/hero.png"
+projectShowcase: "/projects/misil-tactical/hero1.png"
 designDetail: "/projects/misil-tactical/detail3.png"
 implementation: "/projects/misil-tactical/detail4.png"
 #additionalImages:
