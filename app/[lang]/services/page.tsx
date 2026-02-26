@@ -201,7 +201,7 @@ export default async function ServicesPage({
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
-            {t.services?.process?.title_part1 || 'OUR'} <span className="text-brand-lime">{t.services?.process?.title_part2 || 'PROCESS'}</span>
+            {t.services?.process?.title_part1 || 'OUR'} <span className="text-brand-dark dark:text-brand-lime">{t.services?.process?.title_part2 || 'PROCESS'}</span>
           </h2>
           
           <div className="grid md:grid-cols-4 gap-8">
@@ -212,7 +212,7 @@ export default async function ServicesPage({
               { num: 4, title: 'Launch', desc: 'We deliver and support your project\'s success.' },
             ]).map((step: any, idx: number) => (
               <div key={idx} className="text-center">
-                <div className="w-16 h-16 bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-4 font-display text-2xl font-bold text-brand-dark">
+                <div className="w-16 h-16 bg-brand-dark dark:bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-4 font-display text-2xl font-bold text-brand-lime dark:text-brand-dark">
                   {step.num}
                 </div>
                 <h3 className="font-display text-xl font-bold mb-3 text-brand-dark dark:text-brand-lime">{step.title}</h3>

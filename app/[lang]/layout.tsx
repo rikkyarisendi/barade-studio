@@ -1,5 +1,5 @@
 // app/[lang]/layout.tsx
-import { Syne, Space_Mono } from 'next/font/google'
+import { Syne, Space_Mono, Plus_Jakarta_Sans } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { getTranslations } from '@/lib/i18n';
@@ -19,10 +19,16 @@ const syne = Syne({
   display: 'swap',
 })
 
+const jakartaSans = Plus_Jakarta_Sans({ 
+  subsets: ['latin'],
+  variable: '--font-space-mono', 
+  display: 'swap',
+})
+
 const spaceMono = Space_Mono({ 
   weight: ['400', '700'], 
   subsets: ['latin'],
-  variable: '--font-space-mono',
+  variable: '--font-mono',
   display: 'swap',
 })
 

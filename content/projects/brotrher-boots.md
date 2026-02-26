@@ -36,26 +36,26 @@ services:
 # 🌐 TRANSLATED FIELDS (Object Format: {id, en})
 # ============================================
 title:
-  id: "Brotrher Unified Brand Ecosystem"
-  en: "Brotrher Unified Brand Ecosystem"
+  id: "Brotrher - Unified Brand Ecosystem"
+  en: "Brotrher - Unified Brand Ecosystem"
 
 description:
   id: "Membangun identitas brand yang konsisten dan mengintegrasikan infrastruktur digital di seluruh platform (Web, Media Sosial, Marketplace)."
   en: "Building a consistent brand identity and integrating digital infrastructure across platforms (Web, Social Media, Marketplace)."
 
 duration:
-  id: "6 Bulan+ (Manajemen Aktif)"
-  en: "6 Months+ (Active Management)"
+  id: "Berjalan (Manajemen Aktif)"
+  en: "Ongoing (Active Management)"
 
 # Testimonial dengan translated fields
 testimonial:
   quote:
     id: "Baradé Studio tidak hanya membuatkan website—mereka benar-benar membangun identitas bisnis kami di seluruh platform digital. Kini, Brotrher tampil jauh lebih profesional dan kohesif di mata pelanggan."
     en: "Baradé Studio didn't just build us a website—they truly established our business identity across all digital platforms. Today, Brotrher presents a far more professional and cohesive image in the eyes of our customers."
-  author: "Brotrher Founder"
+  author: "Jajang Rahman"
   position:
-    id: "Managing Director"
-    en: "Managing Director"
+    id: "Pemilik"
+    en: "Owner"
 
 # External links (URLs tetap string, labels opsional)
 externalLinks:

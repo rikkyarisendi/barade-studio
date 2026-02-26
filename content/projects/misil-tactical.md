@@ -42,8 +42,8 @@ services:
 # 🌐 TRANSLATED FIELDS (Object Format: {id, en})
 # ============================================
 title:
-  id: "Misil Tactical Digital Presence"
-  en: "Misil Tactical Digital Presence"  # Same in this case
+  id: "Misil Tactical - Digital Presence"
+  en: "Misil Tactical - Digital Presence"  # Same in this case
 
 description:
   id: "Membangun identitas digital profesional dan landing page untuk brand tactical gear."
