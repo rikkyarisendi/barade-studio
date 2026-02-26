@@ -17,10 +17,16 @@ year: "2025-2026"
 # 🖼️ IMAGE STRUCTURE (Same for all locales)
 # ============================================
 thumbnail: "/projects/misil-tactical/thumb.png"
-quickViewImage: "/projects/misil-tactical/hero.png"
+quickViewImage: "/projects/misil-tactical/detail2.png"
 projectShowcase: "/projects/misil-tactical/hero.png"
-designDetail: "/projects/misil-tactical/detail-1.png"
-implementation: "/projects/misil-tactical/detail-2.png"
+designDetail: "/projects/misil-tactical/detail3.png"
+implementation: "/projects/misil-tactical/detail4.png"
+#additionalImages:
+#  - path: '/projects/misil-tactical/detail-2.png'
+#    alt: 'ini detail 2'
+#  - path: '/projects/misil-tactical/detail-1.png'
+#  - path: '/projects/misil-tactical/thumb.png'
+#  - path: '/projects/misil-tactical/detail2.png'
 
 # ============================================
 # 📋 SERVICES (Same for all locales - technical terms)
@@ -52,7 +58,7 @@ testimonial:
   quote:
     id: "Bekerja sama dengan Baradé Studio sangat membantu kami mengelola kebutuhan teknis website—mengubah yang sebelumnya membingungkan menjadi proses yang transparan dan mudah dipahami."
     en: "Working with Baradé Studio has been instrumental in helping us manage our website's technical needs—transforming what was once confusing into a transparent and easy-to-understand process."
-  author: "Misil Tactical Client"
+  author: "Pian Ristopal"
   position:
     id: "Pemilik"
     en: "Owner"
@@ -73,7 +79,7 @@ Misil Tactical, sebagai brand tactical gear, membutuhkan platform digital yang m
 
 ## Solusi Kami
 
-Kami mengimplementasikan pendekatan desain "Rugged Professionalism", memanfaatkan palet warna bertema gelap (Zinc & Army Green) untuk memperkuat identitas brand yang militeristik. Di sisi teknis, Baradé Studio membangun sistem manajemen domain dan hosting yang transparan dengan markup biaya yang kompetitif untuk klien. Kami juga mengembangkan SOP panduan konten untuk memastikan aset visual selaras dengan tata letak website, serta mengimplementasikan navigasi responsif sehingga pelanggan dapat beralih mulus dari katalog produk ke pemesanan WhatsApp secara instan.
+Kami mengimplementasikan pendekatan desain "Rugged Professionalism", memanfaatkan palet warna bertema gelap (Zinc & Lime) untuk memperkuat identitas brand yang militeristik dan modern. Di sisi teknis, Baradé Studio membangun sistem manajemen domain dan hosting yang transparan dengan markup biaya yang kompetitif untuk klien. Kami juga mengembangkan SOP panduan konten untuk memastikan aset visual selaras dengan tata letak website, serta mengimplementasikan navigasi responsif sehingga pelanggan dapat beralih mulus dari katalog produk ke pemesanan WhatsApp secara instan.
 
 ## Hasil
 
@@ -87,7 +93,7 @@ Misil Tactical, as a tactical gear brand, needed a digital platform capable of r
 
 ## Our Solution
 
-We implemented a "Rugged Professionalism" design approach, utilizing a dark-themed color palette (Zinc & Army Green) to reinforce the militaristic brand identity. On the technical side, Baradé Studio built a transparent domain and hosting management system with competitive cost markups for the client. We also developed content guideline SOPs to ensure visual assets aligned with the website layout, and implemented responsive navigation so customers could seamlessly transition from product catalogs to WhatsApp ordering instantly.
+We implemented a "Rugged Professionalism" design approach, utilizing a dark-themed color palette (Zinc & Lime) to reinforce the militaristic and modern brand identity. On the technical side, Baradé Studio built a transparent domain and hosting management system with competitive cost markups for the client. We also developed content guideline SOPs to ensure visual assets aligned with the website layout, and implemented responsive navigation so customers could seamlessly transition from product catalogs to WhatsApp ordering instantly.
 
 ## Results
 
