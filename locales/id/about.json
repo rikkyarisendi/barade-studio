@@ -2,32 +2,37 @@
   "hero": {
     "title_part1": "TENTANG",
     "title_part2": "BARADE STUDIO",
-    "subtitle": "Kami adalah studio kreatif yang berpassion mengubah ide menjadi mahakarya visual. Berbasis di Bandung, kami melayani klien di seluruh dunia."
+    "subtitle": "Partner desain produk dan identitas visual berbasis di Bandung, Indonesia. Membantu bisnis membangun kehadiran digital melalui desain yang fungsional dan terstruktur."
   },
   "story": {
-    "title": "CERITA KAMI",
-    "p1": "Didirikan tahun 2020, BARADE STUDIO lahir dari passion untuk menciptakan desain bermakna yang bercerita dan memberikan hasil. Dari tim kecil, kami tumbuh menjadi studio kreatif layanan lengkap.",
-    "p2": "Kami percaya kekuatan desain hebat dapat mengubah bisnis. Pendekatan kami menggabungkan pemikiran strategis dengan eksekusi kreatif, memastikan setiap proyek tidak hanya terlihat menakjubkan tapi juga mencapai tujuannya.",
-    "p3": "Kini, kami bangga bekerja dengan klien di seluruh Indonesia dan luar negeri, dari startup hingga brand established, membantu mereka menonjol di lanskap digital yang padat."
+    "title": "PENDEKATAN KERJA",
+    "p1": "Baradé Studio berdiri sejak 2020 dengan fokus pada kualitas eksekusi yang konsisten. Saya melihat banyak bisnis yang secara operasional sudah matang, namun belum memiliki identitas visual yang sejalan dengan kualitas layanan mereka.",
+    "p2": "Sebagai desainer, saya tidak hanya fokus pada estetika, tapi juga pada bagaimana desain tersebut bekerja untuk bisnis Anda. Dari perancangan antarmuka (UI) hingga struktur pengalaman pengguna (UX), setiap elemen dikonstruksi untuk memperkuat branding dan mempermudah interaksi pelanggan.",
+    "p3": "Bekerja bersama Baradé Studio berarti Anda berdiskusi langsung dengan desainer yang mengeksekusi proyek Anda. Hal ini memastikan setiap visi bisnis diterjemahkan secara akurat ke dalam produk digital."
+  },
+  "founder": {
+    "name": "Rikky Arisendi",
+    "role": "Visual & Product Designer",
+    "bio": "Desainer yang mengombinasikan logika teknis dengan estetika visual. Rikky berfokus pada penciptaan produk digital yang tidak hanya menarik secara visual, tetapi juga efisien secara fungsi dan struktur."
   },
   "values": {
-    "title_part1": "NILAI",
-    "title_part2": "KAMI",
+    "title_part1": "STANDAR",
+    "title_part2": "DESAIN",
     "excellence": {
-      "title": "Keunggulan",
-      "desc": "Kami tidak pernah kompromi dengan kualitas. Setiap piksel, setiap baris kode penting bagi kami."
+      "title": "Desain Berbasis Fungsi",
+      "desc": "Setiap keputusan visual memiliki alasan teknis dan tujuan bisnis. Saya memastikan desain tidak hanya bagus dilihat, tapi juga praktis saat digunakan."
     },
     "collaboration": {
-      "title": "Kolaborasi",
-      "desc": "Kesuksesan Anda adalah kesuksesan kami. Kami bekerja erat dengan Anda di setiap langkah."
+      "title": "Partner Diskusi",
+      "desc": "Saya terlibat langsung dalam membedah kebutuhan brand Anda sebelum masuk ke tahap desain, memastikan hasil akhir relevan dengan target pasar Anda."
     },
     "innovation": {
-      "title": "Inovasi",
-      "desc": "Kami tetap terdepan dalam tren dan membawa solusi kreatif segar ke setiap proyek."
+      "title": "Kualitas Terjaga",
+      "desc": "Dengan menangani proyek secara mandiri, saya menjamin setiap detail—dari tipografi hingga alur navigasi—memenuhi standar kualitas yang tinggi."
     }
   },
   "cta": {
-    "title": "MARI BERKOLABORASI",
-    "subtitle": "Siap mewujudkan visi Anda?"
+    "title": "MULAI DISKUSI",
+    "subtitle": "Siap memperkuat identitas visual dan produk digital bisnis Anda?"
   }
 }

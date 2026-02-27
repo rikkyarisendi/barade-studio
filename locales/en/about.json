@@ -2,32 +2,37 @@
   "hero": {
     "title_part1": "ABOUT",
     "title_part2": "BARADE STUDIO",
-    "subtitle": "We are a creative studio passionate about transforming ideas into visual masterpieces. Based in Bandung, we serve clients worldwide."
+    "subtitle": "An independent product design and visual identity partner based in Bandung, Indonesia. Helping businesses build a digital presence through functional and structured design."
   },
   "story": {
-    "title": "OUR STORY",
-    "p1": "Founded in 2020, BARADE STUDIO emerged from a passion to create meaningful design that tells stories and drives results. What started as a small team has grown into a full-service creative studio.",
-    "p2": "We believe in the power of great design to transform businesses. Our approach combines strategic thinking with creative execution, ensuring every project not only looks amazing but also achieves its goals.",
-    "p3": "Today, we're proud to work with clients across Indonesia and beyond, from startups to established brands, helping them stand out in a crowded digital landscape."
+    "title": "WORKING APPROACH",
+    "p1": "Established in 2020, Baradé Studio focuses on delivering consistent execution quality. I have observed many businesses with mature operations that yet lack a visual identity aligned with the quality of their services.",
+    "p2": "As a designer, my focus goes beyond aesthetics; I prioritize how design performs for your business. From User Interface (UI) design to User Experience (UX) structure, every element is constructed to strengthen branding and simplify customer interaction.",
+    "p3": "Working with Baradé Studio means you collaborate directly with the designer executing your project. This ensures every business vision is accurately translated into a digital product."
+  },
+  "founder": {
+    "name": "Rikky Arisendi",
+    "role": "Visual & Product Designer",
+    "bio": "A designer who combines technical logic with visual aesthetics. Rikky focuses on creating digital products that are not only visually engaging but also efficient in function and structure."
   },
   "values": {
-    "title_part1": "OUR",
-    "title_part2": "VALUES",
+    "title_part1": "DESIGN",
+    "title_part2": "STANDARDS",
     "excellence": {
-      "title": "Excellence",
-      "desc": "We never compromise on quality. Every pixel, every line of code matters to us."
+      "title": "Function-Based Design",
+      "desc": "Every visual decision is backed by technical reasoning and business objectives. I ensure designs are not just visually appealing but also practical in use."
     },
     "collaboration": {
-      "title": "Collaboration",
-      "desc": "Your success is our success. We work closely with you every step of the way."
+      "title": "Strategic Partner",
+      "desc": "I am directly involved in dissecting your brand's needs before moving into the design phase, ensuring the final result is relevant to your target market."
     },
     "innovation": {
-      "title": "Innovation",
-      "desc": "We stay ahead of trends and bring fresh, creative solutions to every project."
+      "title": "Quality Assurance",
+      "desc": "By managing projects independently, I guarantee that every detail—from typography to navigation flow—meets a high standard of quality."
     }
   },
   "cta": {
-    "title": "LET'S WORK TOGETHER",
-    "subtitle": "Ready to bring your vision to life?"
+    "title": "START A DISCUSSION",
+    "subtitle": "Ready to strengthen your brand identity and digital products?"
   }
 }

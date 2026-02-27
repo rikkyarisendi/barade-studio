@@ -1,49 +1,49 @@
 {
   "hero": {
-    "title": "LAYANAN KAMI",
-    "subtitle": "Solusi kreatif komprehensif yang dirancang untuk meningkatkan brand Anda dan mendorong hasil."
+    "title": "LAYANAN",
+    "subtitle": "Solusi desain dan pengembangan produk digital yang berfokus pada hasil dan efektivitas bisnis."
   },
   "graphic_design": {
-    "title": "DESAIN GRAFIS",
-    "description": "Ciptakan kesan abadi dengan desain visual yang memukau. Dari identitas brand hingga materi pemasaran, kami membuat desain yang berbicara kepada audiens Anda.",
+    "title": "IDENTITAS VISUAL",
+    "description": "Membangun impresi yang konsisten melalui sistem desain yang kuat. Dari identitas brand hingga aset pemasaran, setiap elemen dibuat untuk memperkuat pesan Anda.",
     "features": [
       "Desain Logo & Identitas Brand",
-      "Desain Cetak (Brosur, Flyer, Kartu Nama)",
-      "Grafik Media Sosial",
-      "Desain Kemasan",
-      "Ilustrasi & Grafik Kustom"
+      "Sistem Tipografi & Palet Warna",
+      "Aset Media Sosial",
+      "Desain Kemasan Produk",
+      "Grafis Kustom & Ilustrasi"
     ]
   },
   "web_development": {
     "title": "PENGEMBANGAN WEB",
-    "description": "Bangun kehadiran online Anda dengan website modern dan responsif. Kami menciptakan pengalaman web yang cepat, indah, dan ramah pengguna.",
+    "description": "Membangun kehadiran digital dengan website yang modern dan responsif. Menitikberatkan pada kecepatan akses, keamanan, dan pengalaman pengguna.",
     "features": [
-      "Pengembangan Website Kustom",
+      "Pengembangan Web Kustom",
       "Solusi E-commerce",
-      "Desain Responsif",
-      "Integrasi CMS",
-      "Maintenance & Support Website"
+      "Desain Responsif & Mobile-First",
+      "Integrasi Sistem & CMS",
+      "Pemeliharaan & Dukungan Teknis"
     ]
   },
   "brand_strategy": {
-    "title": "STRATEGI BRAND",
-    "description": "Definisikan dan perkuat identitas brand Anda. Kami membantu Anda menciptakan brand yang kohesif dan beresonansi dengan target audiens.",
+    "title": "DESAIN PRODUK (UI/UX)",
+    "description": "Merancang alur digital yang efisien. Saya membantu bisnis mendefinisikan pengalaman pengguna yang memudahkan konversi dan interaksi pelanggan.",
     "features": [
-      "Riset & Discovery Brand",
-      "Positioning & Messaging Brand",
-      "Sistem Identitas Visual",
-      "Panduan Brand (Brand Guidelines)",
-      "Refresh & Rebranding"
+      "Riset & Analisis Pengguna",
+      "User Flow & Wireframing",
+      "High-Fidelity Prototyping",
+      "Desain Antarmuka (UI) Interaktif",
+      "Audit & Optimasi UX"
     ]
   },
   "process": {
-    "title_part1": "PROSES",
-    "title_part2": "KAMI",
+    "title_part1": "ALUR",
+    "title_part2": "KERJA",
     "steps": [
-      { "num": 1, "title": "Riset", "desc": "Kami mempelajari bisnis, tujuan, dan target audiens Anda." },
-      { "num": 2, "title": "Strategi", "desc": "Kami mengembangkan strategi kreatif yang disesuaikan dengan kebutuhan Anda." },
-      { "num": 3, "title": "Desain", "desc": "Kami mewujudkan visi Anda dengan visual yang memukau." },
-      { "num": 4, "title": "Peluncuran", "desc": "Kami mengirimkan dan mendukung kesuksesan proyek Anda." }
+      { "num": 1, "title": "Analisis", "desc": "Membedah kebutuhan bisnis, target audiens, dan kendala teknis yang ada." },
+      { "num": 2, "title": "Arsitektur", "desc": "Menyusun struktur informasi dan strategi visual sebelum masuk ke tahap eksekusi." },
+      { "num": 3, "title": "Eksekusi", "desc": "Proses desain dan pengembangan sistem dengan standar kualitas yang terjaga." },
+      { "num": 4, "title": "Implementasi", "desc": "Peluncuran produk dan pemantauan untuk memastikan performa berjalan optimal." }
     ]
   }
 }

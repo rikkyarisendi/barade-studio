@@ -1,26 +1,26 @@
 {
   "hero": {
-    "title_part1": "KAMI MENCIPTAKAN",
-    "title_part2": "SULAP VISUAL",
-    "subtitle": "Transformasi brand Anda dengan desain grafis memukau dan pengembangan web terkini. Kami wujudkan visi Anda menjadi kenyataan."
+    "title_part1": "MEMBANGUN",
+    "title_part2": "PRODUK DIGITAL",
+    "subtitle": "Transformasi bisnis melalui desain produk dan identitas visual yang terukur. Fokus pada fungsi, struktur, dan hasil yang berdampak."
   },
   "services": {
-    "title": "APA YANG KAMI LAKUKAN",
+    "title": "LAYANAN",
     "graphic_design": {
-      "title": "Desain Grafis",
-      "desc": "Dari logo hingga identitas brand lengkap, kami menciptakan visual yang menangkap esensi Anda dan beresonansi dengan audiens."
+      "title": "Identitas Visual",
+      "desc": "Membangun sistem visual yang konsisten, mulai dari logo hingga panduan brand yang merepresentasikan nilai bisnis Anda."
     },
     "web_development": {
       "title": "Pengembangan Web",
-      "desc": "Website modern dan responsif yang dibangun dengan teknologi terkini. Cepat, indah, dan dioptimalkan untuk kesuksesan."
+      "desc": "Eksekusi teknis untuk antarmuka web yang responsif dan efisien. Memastikan performa tetap optimal di berbagai perangkat."
     },
     "brand_strategy": {
-      "title": "Strategi Brand",
-      "desc": "Bangun brand kuat yang menonjol. Kami bantu Anda mendefinisikan identitas dan terhubung dengan pelanggan."
+      "title": "Desain Antarmuka (UI/UX)",
+      "desc": "Merancang alur pengguna yang intuitif untuk meningkatkan interaksi pelanggan dan mempermudah operasional digital bisnis."
     }
   },
   "cta": {
-    "title": "SIAP MEMULAI PROYEK ANDA?",
-    "subtitle": "Mari berkolaborasi dan menciptakan sesuatu yang luar biasa bersama."
+    "title": "SIAP UNTUK BERDISKUSI?",
+    "subtitle": "Sampaikan rencana proyek Anda dan mari kita bangun solusi yang tepat."
   }
 }

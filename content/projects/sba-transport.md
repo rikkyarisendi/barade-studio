@@ -1,19 +1,19 @@
 ---
 # ============================================
-# 🆔 BASIC INFO (Tech Fields - Same for all locales)
+# 🆔 BASIC INFO
 # ============================================
 slug: "sba-transport"
 date: "2023-07-22"
 category: "Web Development"
 tags:
-  - "Logistics & Transport"
-  - "Corporate Website"
+  - "Logistics & Supply Chain"
+  - "Corporate Branding"
 color: "bg-blue-900"
 client: "SBA Trans"
 year: "2023"
 
 # ============================================
-# 🖼️ IMAGE STRUCTURE (Same for all locales)
+# 🖼️ IMAGE STRUCTURE
 # ============================================
 thumbnail: "/projects/sba-trans/thumb.png"
 quickViewImage: "/projects/sba-trans/hero.png"
@@ -22,41 +22,40 @@ designDetail: "/projects/sba-trans/detail1.png"
 implementation: "/projects/sba-trans/detail2.png"
 
 # ============================================
-# 📋 SERVICES (Same for all locales - technical terms)
+# 📋 SERVICES
 # ============================================
 services:
-  - "Corporate Web Development"
-  - "Domain & Hosting Migration"
+  - "Corporate Website Development"
+  - "Brand Identity Modernization"
+  - "Information Architecture"
+  - "Digital Infrastructure Migration"
   - "Technical Maintenance Support"
-  - "Security & Performance Tuning"
-  - "Google Maps Optimization"
 
 # ============================================
-# 🌐 TRANSLATED FIELDS (Object Format: {id, en})
+# 🌐 TRANSLATED FIELDS
 # ============================================
 title:
-  id: "SBA Transport - Digital Infrastructure"
-  en: "SBA Transport - Digital Infrastructure"
+  id: "SBA Transport - Modernisasi Website Korporat"
+  en: "SBA Transport - Corporate Website Modernization"
 
 description:
-  id: "Transformasi identitas digital dan manajemen infrastruktur web untuk perusahaan transportasi bus premium."
-  en: "Transforming digital identity and managing web infrastructure for a premium bus transportation company."
+  id: "Transformasi landing page sederhana menjadi website profil korporat yang profesional untuk perusahaan logistik tangki kontainer."
+  en: "Transforming a basic landing page into a professional corporate profile website for a tank container logistics company."
 
 duration:
   id: "Fase Maintenance & Optimasi"
   en: "Maintenance & Optimization Phase"
 
-# Testimonial dengan translated fields
+# Testimonial
 testimonial:
   quote:
-    id: "Baradé Studio memberikan kami ketenangan dalam mengelola aset digital. Hal-hal teknis seperti perpanjangan layanan dan stabilitas website kini jauh lebih terukur dan transparan."
-    en: "Baradé Studio has given us peace of mind in managing our digital assets. Technical matters such as service renewals and website stability are now far more measurable and transparent."
+    id: "Baradé Studio memberikan kami ketenangan dalam mengelola aset digital. Hal-hal teknis seperti perpanjangan layanan dan stabilitas website kini jauh lebih terukur."
+    en: "Baradé Studio provides peace of mind in managing our digital assets. Technical matters like service renewals and website stability are now far more measurable."
   author: "SBA Transport Management"
   position:
-    id: "Manajer Operasional"
+    id: "Operational Manager"
     en: "Operational Manager"
 
-# External links (URLs tetap string, labels opsional)
 externalLinks:
   website: "https://sbatrans.co.id"
   website_label:
@@ -64,30 +63,26 @@ externalLinks:
     en: "Visit Website"
 ---
 
-<!-- ===== ID CONTENT ===== -->
-<!--id-->
 ## Tantangan
 
-Sebagai perusahaan jasa transportasi yang terus berkembang, SBA Transport membutuhkan kehadiran digital yang stabil dan terpercaya untuk menjangkau klien korporat maupun ritel. Tantangan utamanya terletak pada pengelolaan infrastruktur web yang harus menjaga ketersediaan tinggi, memastikan informasi armada dapat diakses kapan saja tanpa gangguan teknis. Manajemen maintenance yang transparan sangat penting untuk mengelola biaya perpanjangan domain .co.id dan hosting secara efisien oleh tim internal secara berkala.
+SBA Transport adalah pemain lama di industri logistik tank kontainer sejak 1994, namun kehadiran digital mereka sebelumnya hanya berupa landing page sederhana yang tidak mencerminkan skala bisnis mereka yang sebenarnya. Masalah utamanya adalah desain yang ketinggalan zaman dan kurangnya identitas visual (branding) yang kuat, sehingga profil perusahaan terasa kurang kompetitif dan kurang profesional di mata klien korporat.
 
 ## Solusi Kami
 
-Baradé Studio hadir untuk merapikan seluruh ekosistem digital SBA Transport. Kami memigrasi dan mengoptimalkan infrastruktur hosting mereka untuk meningkatkan kecepatan akses dan keamanan data. Selain itu, kami menerapkan sistem manajemen maintenance tahunan yang terstandarisasi—memastikan biaya perpanjangan yang transparan dan menyediakan dukungan teknis yang responsif. Kami juga memberikan arahan konten untuk menonjolkan profesionalisme armada bus pariwisata mereka melalui visual yang bersih dan navigasi yang berfokus pada reservasi.
+Baradé Studio melakukan perombakan total dari sisi visual dan struktur informasi. Saya mentransformasi landing page lama mereka menjadi website profil korporat yang komprehensif, menonjolkan sejarah panjang dan spesialisasi mereka di bidang tangki kontainer. Fokus utama saya adalah modernisasi tampilan agar lebih "klik" secara branding tanpa menghilangkan kesan *established* yang mereka miliki. Di sisi teknis, saya memigrasi infrastruktur hosting mereka untuk menjamin performa yang stabil dan transparan.
 
 ## Hasil
 
-Berhasil mengamankan identitas digital resmi perusahaan melalui manajemen domain .co.id yang terorganisir dengan baik. Infrastruktur website kini beroperasi dengan performa yang lebih stabil dan terlindungi dari masalah teknis berulang. Pendekatan manajemen layanan yang transparan yang diterapkan telah memberikan kepercayaan penuh kepada SBA Transport untuk fokus mengembangkan operasional transportasi mereka, sementara Baradé Studio menjaga keberlanjutan jangka panjang aset digital mereka.
+Berhasil mengubah citra digital SBA Transport menjadi lebih modern, kredibel, dan profesional. Website baru ini kini mampu merepresentasikan kapasitas perusahaan sebagai penyedia jasa logistik yang handal secara visual maupun fungsional. Dengan pengelolaan infrastruktur yang lebih teratur di bawah Baradé Studio, tim SBA Transport kini memiliki aset digital yang solid dan mudah dikelola untuk mendukung hubungan bisnis jangka panjang mereka.
 
-<!-- ===== EN CONTENT ===== -->
-<!--en-->
 ## The Challenge
 
-As a growing transportation services company, SBA Transport needed a stable and trustworthy digital presence to reach both corporate and retail clients. The main challenge lay in managing web infrastructure that must maintain high availability, ensuring fleet information could be accessed anytime without technical disruptions. Transparent maintenance management was essential to efficiently manage .co.id domain renewal and hosting costs by the internal team on a regular basis.
+SBA Transport has been a veteran in the tank container logistics industry since 1994, yet their previous digital presence consisted only of a basic landing page that failed to reflect their true business scale. The primary issue was an outdated design and a weak visual identity (branding), which made the company's profile appear less competitive and professional to corporate clients.
 
-## Our Solution
+## The Approach
 
-Baradé Studio stepped in to streamline SBA Transport's entire digital ecosystem. We migrated and optimized their hosting infrastructure to enhance access speed and data security. Additionally, we implemented a standardized annual maintenance management system—ensuring transparent renewal costs and providing responsive technical support. We also provided content direction to highlight the professionalism of their tourist bus fleet through clean visuals and reservation-focused navigation.
+Baradé Studio executed a complete overhaul of both the visuals and information architecture. I transformed their old landing page into a comprehensive corporate profile website, highlighting their long-standing history and specialization in tank containers. My main focus was modernizing the look to be more brand-aligned while maintaining the established feel of the company. On the technical side, I migrated their hosting infrastructure to ensure stable and transparent performance.
 
-## Results
+## Outcome
 
-Successfully secured the company's official digital identity through well-organized .co.id domain management. The website infrastructure now operates with more stable performance and is protected from recurring technical issues. The transparent service management approach implemented has given SBA Transport full confidence to focus on developing their transportation operations, while Baradé Studio maintains the long-term sustainability of their digital assets.
+Successfully transformed SBA Transport's digital image into one that is modern, credible, and professional. The new website now accurately represents the company's capacity as a reliable logistics provider, both visually and functionally. With better-organized infrastructure management under Baradé Studio, the SBA Transport team now possesses a solid and manageable digital asset to support their long-term business relationships.

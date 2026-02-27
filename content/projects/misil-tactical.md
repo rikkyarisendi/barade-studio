@@ -1,69 +1,61 @@
 ---
 # ============================================
-# 🆔 BASIC INFO (Tech Fields - Same for all locales)
+# 🆔 BASIC INFO
 # ============================================
 slug: "misil-tactical"
 date: "2026-01-15"
 category: "Web Development"
 tags:
   - "E-Commerce"
-  - "Indonesian Brand"
   - "Tactical Gear"
+  - "Infrastructure"
 color: "bg-zinc-900"
 client: "Misil Tactical"
 year: "2025-2026"
 
 # ============================================
-# 🖼️ IMAGE STRUCTURE (Same for all locales)
+# 🖼️ IMAGE STRUCTURE
 # ============================================
 thumbnail: "/projects/misil-tactical/thumb.png"
 quickViewImage: "/projects/misil-tactical/detail2.png"
 projectShowcase: "/projects/misil-tactical/hero1.png"
 designDetail: "/projects/misil-tactical/detail3.png"
 implementation: "/projects/misil-tactical/detail4.png"
-#additionalImages:
-#  - path: '/projects/misil-tactical/detail-2.png'
-#    alt: 'ini detail 2'
-#  - path: '/projects/misil-tactical/detail-1.png'
-#  - path: '/projects/misil-tactical/thumb.png'
-#  - path: '/projects/misil-tactical/detail2.png'
 
 # ============================================
-# 📋 SERVICES (Same for all locales - technical terms)
+# 📋 SERVICES
 # ============================================
 services:
-  - "Web Development"
+  - "E-Commerce Development"
+  - "Inventory Management System"
   - "UI/UX Design"
-  - "Content Strategy"
-  - "Domain & Hosting Management"
-  - "Annual Maintenance Support"
+  - "Infrastructure Management"
+  - "Maintenance & Technical Support"
 
 # ============================================
-# 🌐 TRANSLATED FIELDS (Object Format: {id, en})
+# 🌐 TRANSLATED FIELDS
 # ============================================
 title:
-  id: "Misil Tactical - Digital Presence"
-  en: "Misil Tactical - Digital Presence"  # Same in this case
+  id: "Misil Tactical - Platform E-Commerce & Infrastruktur"
+  en: "Misil Tactical - E-Commerce & Digital Infrastructure"
 
 description:
-  id: "Membangun identitas digital profesional dan landing page untuk brand tactical gear."
-  en: "Building a professional digital identity and landing page for a tactical gear brand."
+  id: "Pengembangan platform e-commerce dan manajemen infrastruktur digital untuk brand tactical gear."
+  en: "E-commerce platform development and digital infrastructure management for a tactical gear brand."
 
 duration:
   id: "Berjalan (Fase Maintenance)"
   en: "Ongoing (Maintenance Phase)"
 
-# Testimonial dengan translated fields
 testimonial:
   quote:
-    id: "Bekerja sama dengan Baradé Studio sangat membantu kami mengelola kebutuhan teknis website—mengubah yang sebelumnya membingungkan menjadi proses yang transparan dan mudah dipahami."
-    en: "Working with Baradé Studio has been instrumental in helping us manage our website's technical needs—transforming what was once confusing into a transparent and easy-to-understand process."
+    id: "Baradé Studio sangat membantu kami mengelola kebutuhan teknis website, mengubah proses yang sebelumnya membingungkan menjadi transparan dan mudah dipahami."
+    en: "Baradé Studio has been instrumental in managing our technical needs, transforming a complex process into something transparent and easy to understand."
   author: "Pian Ristopal"
   position:
-    id: "Pemilik"
+    id: "Owner"
     en: "Owner"
 
-# External links labels (optional)
 externalLinks:
   website: "https://misiltactical.com"
   website_label:
@@ -71,30 +63,26 @@ externalLinks:
     en: "Visit Website"
 ---
 
-<!-- ===== ID CONTENT ===== -->
-<!--id-->
 ## Tantangan
 
-Misil Tactical, sebagai brand tactical gear, membutuhkan platform digital yang mampu merepresentasikan kualitas produk mereka yang tangguh dan profesional. Tantangan utamanya adalah mengorganisir katalog produk yang beragam ke dalam website yang rapi dan terstruktur, sekaligus memastikan infrastruktur web tetap aman dan stabil. Selain itu, manajemen maintenance tahunan menjadi fokus penting agar operasional bisnis digital klien tidak terganggu oleh hal-hal teknis yang rumit.
+Misil Tactical membutuhkan platform e-commerce yang mampu menangani katalog produk tactical gear yang luas dengan tetap menjaga citra brand yang tangguh. Masalah utamanya adalah bagaimana menyusun banyaknya varian produk ke dalam navigasi yang intuitif tanpa mengorbankan kecepatan akses. Selain itu, mereka membutuhkan sistem pengelolaan infrastruktur (domain & hosting) yang andal agar operasional penjualan tidak terganggu oleh kendala teknis.
 
 ## Solusi Kami
 
-Kami mengimplementasikan pendekatan desain "Rugged Professionalism", memanfaatkan palet warna bertema gelap (Zinc & Lime) untuk memperkuat identitas brand yang militeristik dan modern. Di sisi teknis, Baradé Studio membangun sistem manajemen domain dan hosting yang transparan dengan markup biaya yang kompetitif untuk klien. Kami juga mengembangkan SOP panduan konten untuk memastikan aset visual selaras dengan tata letak website, serta mengimplementasikan navigasi responsif sehingga pelanggan dapat beralih mulus dari katalog produk ke pemesanan WhatsApp secara instan.
+Baradé Studio membangun website e-commerce yang mengombinasikan estetika militeristik dengan fungsionalitas tinggi. Saya fokus pada arsitektur informasi untuk memastikan pelanggan dapat menemukan produk dengan mudah melalui sistem kategori yang terstruktur. Di sisi backend, saya mengelola seluruh kebutuhan infrastruktur secara transparan dan menyusun alur transaksi yang aman, mulai dari pemilihan katalog hingga integrasi pesanan ke admin untuk proses distribusi.
 
 ## Hasil
 
-Berhasil mengamankan identitas digital brand melalui manajemen domain yang tepat dan aman. Website dirancang dengan skalabilitas tinggi, siap mengakomodasi pembaruan katalog produk massal kapan saja. Implementasi sistem invoice tahunan terintegrasi memastikan transparansi biaya untuk pengeluaran operasional klien, yang pada akhirnya menumbuhkan kemitraan jangka panjang berbasis kepercayaan antara Misil Tactical dan Baradé Studio.
+Platform e-commerce kini berjalan stabil dengan manajemen katalog yang terorganisir. Website dirancang dengan skalabilitas tinggi, memungkinkan Misil Tactical melakukan pembaruan stok atau produk secara massal dengan efisien. Melalui sistem invoice tahunan yang teratur, klien memiliki kontrol penuh atas biaya operasional digital mereka, menciptakan kemitraan jangka panjang yang berbasis pada transparansi teknis.
 
-<!-- ===== EN CONTENT ===== -->
-<!--en-->
 ## The Challenge
 
-Misil Tactical, as a tactical gear brand, needed a digital platform capable of representing the tough and professional quality of their products. The main challenge was organizing a diverse product catalog into a clean and structured website, while ensuring the web infrastructure remained secure and stable. Additionally, annual maintenance management was a key focus to ensure the client's digital business operations wouldn't be disrupted by complex technical matters.
+Misil Tactical required an e-commerce platform capable of handling an extensive tactical gear catalog while maintaining a tough brand image. The primary challenge was organizing lots of product variants into an intuitive navigation system without compromising site speed. Furthermore, they needed a reliable infrastructure management system (domain & hosting) to ensure sales operations were never disrupted by technical issues.
 
-## Our Solution
+## The Approach
 
-We implemented a "Rugged Professionalism" design approach, utilizing a dark-themed color palette (Zinc & Lime) to reinforce the militaristic and modern brand identity. On the technical side, Baradé Studio built a transparent domain and hosting management system with competitive cost markups for the client. We also developed content guideline SOPs to ensure visual assets aligned with the website layout, and implemented responsive navigation so customers could seamlessly transition from product catalogs to WhatsApp ordering instantly.
+Baradé Studio built an e-commerce platform that combines militaristic aesthetics with high-level functionality. I focused on information architecture to ensure customers could easily find products through a structured category system. On the backend, I managed all infrastructure needs transparently and developed a secure transaction flow, from catalog selection to direct admin order integration for distribution.
 
-## Results
+## Outcome
 
-Successfully secured the brand's digital identity through proper and secure domain management. The website was designed with high scalability, ready to accommodate bulk product catalog updates at any time. The implementation of an integrated annual invoice system ensures cost transparency for the client's operational expenses, ultimately fostering a long-term, trust-based partnership between Misil Tactical and Baradé Studio.
+The e-commerce platform now runs stably with an organized catalog management system. The website is built for high scalability, allowing Misil Tactical to efficiently manage bulk inventory or product updates. Through a structured annual invoicing system, the client maintains full control over their digital operational costs, fostering a long-term partnership built on technical transparency.

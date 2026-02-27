@@ -3,27 +3,27 @@
     "home": "Beranda",
     "about": "Tentang",
     "services": "Layanan",
-    "portfolio": "Portfolio",
+    "portfolio": "Portofolio",
     "contact": "Kontak"
   },
   "footer": {
-    "copyright": "© {{year}} Barade Studio. Semua hak dilindungi.",
-    "made_with": "Dibuat dengan ❤️ oleh Rikky A",
-    "quick_links": "Tautan Cepat",
+    "copyright": "© {{year}} Barade Studio. Hak Cipta Dilindungi.",
+    "made_with": "Dikembangkan oleh Rikky Arisendi",
+    "quick_links": "Tautan",
     "contact_info": "Kontak",
-    "tagline": "Mengubah ide menjadi pengalaman visual yang memukau. Kami spesialis desain grafis dan pengembangan web yang membuat brand Anda menonjol."
+    "tagline": "Fokus pada pengembangan desain produk dan identitas visual yang fungsional untuk membantu bisnis tampil lebih konsisten di ranah digital."
   },
-    "buttons": {
-    "view_work": "Lihat Karya Kami",
-    "get_in_touch": "Hubungi Kami",
-    "learn_more": "Pelajari Selengkapnya",
+  "buttons": {
+    "view_work": "Lihat Portofolio",
+    "get_in_touch": "Hubungi Saya",
+    "learn_more": "Selengkapnya",
     "contact_now": "Kontak Sekarang",
     "start_project": "Mulai Proyek"
   },
   "stats": {
-    "projects": "Proyek",
+    "projects": "Proyek Selesai",
     "clients": "Klien",
-    "years": "Tahun",
-    "satisfaction": "Kepuasan"
+    "years": "Tahun Pengalaman",
+    "satisfaction": "Kepuasan Klien"
   }
 }

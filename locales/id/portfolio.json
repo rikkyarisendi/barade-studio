@@ -1,46 +1,46 @@
 {
-   "seo": {
-    "title": "Portfolio",
-    "description": "Jelajahi karya terbaru kami dalam branding, pengembangan web, dan desain digital."
+  "seo": {
+    "title": "Portofolio",
+    "description": "Dokumentasi proyek pilihan dalam desain produk, identitas visual, dan pengembangan web."
   },
   "hero": {
-    "title_part1": "KARYA ",
-    "title_part2": "KAMI",
-    "subtitle": "Jelajahi karya terbaru kami dan lihat bagaimana kami membantu brand menonjol dan sukses."
+    "title_part1": "ARSIP ",
+    "title_part2": "PROYEK",
+    "subtitle": "Kumpulan solusi desain dan teknis yang dikembangkan untuk menjawab berbagai tantangan bisnis."
   },
   "filters": {
-    "all": "Semua Proyek",
-    "branding": "Branding",
-    "web": "Desain Web",
+    "all": "Semua",
+    "branding": "Identitas Visual",
+    "web": "Produk Digital",
     "graphic": "Desain Grafis"
   },
   "modal": {
-    "quick_view": "Lihat Cepat",
+    "quick_view": "Detail Singkat",
     "close": "Tutup",
-    "quick_overview": "Ringkasan Cepat",
-    "challenge": "Tantangan:",
-    "solution": "Solusi:",
-    "results": "Hasil:",
+    "quick_overview": "Ringkasan Proyek",
+    "challenge": "Masalah:",
+    "solution": "Pendekatan:",
+    "results": "Hasil Akhir:",
     "view_case_study": "Lihat Studi Kasus",
-    "start_project": "Mulai Proyek Anda"
+    "start_project": "Diskusikan Proyek Serupa"
   },
   "messages": {
     "showing": "Menampilkan",
     "of": "dari",
     "project": "proyek",
     "projects": "proyek",
-    "no_projects": "Tidak ada proyek untuk filter ini",
-    "load_more": "Muat Lebih Banyak Proyek",
-    "view_all": "Lihat Semua Proyek"
+    "no_projects": "Tidak ada data untuk kategori ini",
+    "load_more": "Muat Proyek Lainnya",
+    "view_all": "Lihat Semua"
   },
   "tags": {
-    "branding": "Branding",
-    "web_design": "Desain Web",
-    "development": "Pengembangan",
-    "graphic_design": "Desain Grafis",
-    "social_media": "Media Sosial",
-    "packaging": "Kemasan",
+    "branding": "Visual Identity",
+    "web_design": "Web Design",
+    "development": "Development",
+    "graphic_design": "Graphic Design",
+    "social_media": "Social Media",
+    "packaging": "Packaging",
     "logo": "Logo",
-    "ui_ux": "UI/UX"
+    "ui_ux": "UI/UX Design"
   }
 }

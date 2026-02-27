@@ -1,44 +1,44 @@
 {
   "hero": {
-    "title": "MARI BERBICARA",
-    "subtitle": "Siap memulai proyek Anda? Hubungi kami dan mari ciptakan sesuatu yang luar biasa bersama."
+    "title": "HUBUNGI SAYA",
+    "subtitle": "Punya ide proyek atau kendala teknis yang ingin didiskusikan? Silakan hubungi saya untuk konsultasi lebih lanjut."
   },
   "info": {
-    "title_part1": "HUBUNGI",
+    "title_part1": "KONTAK",
     "title_part2": "KAMI",
     "email_label": "Email",
     "phone_label": "Telepon",
     "location_label": "Lokasi",
     "location_value": "Bandung, Jawa Barat, Indonesia",
-    "hours_title": "JAM OPERASIONAL",
+    "hours_title": "WAKTU OPERASIONAL",
     "hours_weekday_label": "Senin - Jumat:",
     "hours_saturday_label": "Sabtu:",
     "hours_sunday_label": "Minggu:",
-    "hours_closed": "Tutup"
+    "hours_closed": "Libur"
   },
   "form": {
     "title": "KIRIM PESAN",
     "name_label": "Nama",
-    "name_placeholder": "Nama Anda",
+    "name_placeholder": "Nama lengkap Anda",
     "email_label": "Email",
     "email_placeholder": "nama@contoh.com",
-    "service_label": "Layanan yang Diminati",
-    "service_placeholder": "Pilih layanan",
+    "service_label": "Layanan yang Dibutuhkan",
+    "service_placeholder": "Pilih kategori layanan",
     "message_label": "Pesan",
-    "message_placeholder": "Ceritakan tentang proyek Anda...",
+    "message_placeholder": "Ceritakan singkat tentang rencana proyek Anda...",
     "send_message": "KIRIM PESAN",
     "sending": "Mengirim...",
-    "success_message": "Terima kasih! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.",
+    "success_message": "Terima kasih. Pesan Anda telah saya terima, saya akan segera menghubungi Anda kembali.",
     "services": {
-      "graphic_design": "Desain Grafis",
-      "web_development": "Pengembangan Web",
-      "branding": "Strategi Brand",
+      "graphic_design": "Identitas Visual",
+      "web_development": "Pengembangan Produk Digital",
+      "branding": "Desain UI/UX",
       "other": "Lainnya"
     }
   },
   "errors": {
     "invalid_email": "Masukkan alamat email yang valid",
-    "invalid_country": "Pilih kode negara yang valid",
-    "invalid_phone": "Masukkan nomor telepon {country} yang valid"
+    "invalid_country": "Pilih kode negara yang sesuai",
+    "invalid_phone": "Masukkan nomor telepon yang valid untuk {country}"
   }
 }

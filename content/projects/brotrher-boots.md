@@ -1,6 +1,6 @@
 ---
 # ============================================
-# 🆔 BASIC INFO (Tech Fields - Same for all locales)
+# 🆔 BASIC INFO
 # ============================================
 slug: "brotrher-boots"
 date: "2026-02-17"
@@ -13,7 +13,7 @@ client: "Brotrher"
 year: "2025-2026"
 
 # ============================================
-# 🖼️ IMAGE STRUCTURE (Same for all locales)
+# 🖼️ IMAGE STRUCTURE
 # ============================================
 thumbnail: "/projects/brotrher-boots/thumb.png"
 quickViewImage: "/projects/brotrher-boots/hero.png"
@@ -22,42 +22,39 @@ designDetail: "/projects/brotrher-boots/detail1.png"
 implementation: "/projects/brotrher-boots/detail2.png"
 
 # ============================================
-# 📋 SERVICES (Same for all locales - technical terms)
+# 📋 SERVICES
 # ============================================
 services:
   - "Omnichannel Brand Identity"
-  - "E-commerce Web Development"
-  - "Marketplace Optimization (Shopee/Tokopedia)"
-  - "Social Media Creative Direction"
+  - "E-commerce Development"
+  - "Marketplace Storefront Design"
   - "Content Production SOPs"
-  - "Digital Marketing Strategy"
+  - "Digital Infrastructure Management"
 
 # ============================================
-# 🌐 TRANSLATED FIELDS (Object Format: {id, en})
+# 🌐 TRANSLATED FIELDS
 # ============================================
 title:
-  id: "Brotrher - Unified Brand Ecosystem"
+  id: "Brotrher - Ekosistem Brand Terintegrasi"
   en: "Brotrher - Unified Brand Ecosystem"
 
 description:
-  id: "Membangun identitas brand yang konsisten dan mengintegrasikan infrastruktur digital di seluruh platform (Web, Media Sosial, Marketplace)."
-  en: "Building a consistent brand identity and integrating digital infrastructure across platforms (Web, Social Media, Marketplace)."
+  id: "Integrasi infrastruktur digital dan standarisasi identitas visual di seluruh platform (Web, Sosmed, Marketplace)"
+  en: "Digital infrastructure integration and visual identity standardization across all platforms (Web, Social Media, Marketplace)."
 
 duration:
   id: "Berjalan (Manajemen Aktif)"
   en: "Ongoing (Active Management)"
 
-# Testimonial dengan translated fields
 testimonial:
   quote:
-    id: "Baradé Studio tidak hanya membuatkan website—mereka benar-benar membangun identitas bisnis kami di seluruh platform digital. Kini, Brotrher tampil jauh lebih profesional dan kohesif di mata pelanggan."
-    en: "Baradé Studio didn't just build us a website—they truly established our business identity across all digital platforms. Today, Brotrher presents a far more professional and cohesive image in the eyes of our customers."
+    id: "Baradé Studio tidak hanya membuatkan website, tapi membangun pondasi identitas bisnis kami di semua platform. Kini, Brotrher tampil jauh lebih profesional dan solid di mata pelanggan."
+    en: "Baradé Studio didn't just build a website, but established our business foundation across all platforms. Today, Brotrher looks much more professional and solid to our customers."
   author: "Jajang Rahman"
   position:
-    id: "Pemilik"
+    id: "Owner"
     en: "Owner"
 
-# External links (URLs tetap string, labels opsional)
 externalLinks:
   website: "https://brotrher.com"
   instagram: "https://instagram.com/brotrher_boots"
@@ -69,30 +66,26 @@ externalLinks:
     en: "View Instagram"
 ---
 
-<!-- ===== ID CONTENT ===== -->
-<!--id-->
 ## Tantangan
 
-Brotrher memiliki potensi produk yang kuat di sektor fashion, namun menghadapi tantangan serius dengan identitas brand yang tidak konsisten di berbagai platform. Transisi antara website resmi, media sosial, dan marketplace terasa terputus-putus, menciptakan friksi dalam perjalanan pelanggan dan mengurangi kepercayaan terhadap brand. Tantangannya adalah menyatukan bahasa visual, suara brand, dan sistem operasional untuk menjaga kehadiran yang solid dan profesional di setiap titik interaksi dengan pelanggan.
+Brotrher memiliki produk yang kuat, namun identitas brand-nya tidak konsisten di berbagai platform. Perbedaan gaya visual antara website, media sosial, dan marketplace (Shopee/Tokopedia) membuat brand terlihat kurang profesional dan membingungkan calon pembeli. Kendala utamanya adalah tidak adanya standar operasional dan visual yang menyatukan seluruh titik penjualan digital tersebut.
 
 ## Solusi Kami
 
-Baradé Studio menjalankan sinkronisasi branding komprehensif untuk menciptakan ekosistem digital yang harmonis. Kami menetapkan website sebagai otoritas brand pusat, lalu secara sistematis menerapkan identitas visual di seluruh template media sosial dan storefront marketplace (Shopee & Tokopedia). Di luar konsistensi visual, kami mengembangkan SOP standar untuk manajemen inventaris dan produksi konten untuk memastikan tim internal Brotrher dapat menjaga konsistensi operasional harian tanpa kehilangan arah estetika yang telah ditetapkan.
+Baradé Studio melakukan standarisasi ulang pada seluruh ekosistem digital Brotrher. Website diposisikan sebagai pusat otoritas brand, diikuti dengan penyesuaian visual pada storefront marketplace dan template media sosial agar selaras. Selain aspek visual, saya menyusun SOP produksi konten dan manajemen inventaris untuk memastikan tim internal dapat menjaga konsistensi harian tanpa merusak standar estetika yang sudah dibangun.
 
 ## Hasil
 
-Berhasil membangun citra brand yang eksklusif dan terpercaya, siap bersaing di pasar nasional. Konsistensi visual yang kuat secara signifikan meningkatkan engagement organik di media sosial dan memperkuat kredibilitas toko marketplace, yang secara langsung mendorong tingkat konversi penjualan yang lebih tinggi. Dengan infrastruktur digital yang terstruktur dengan baik, Brotrher kini memiliki fondasi yang solid untuk mengembangkan bisnis ke level berikutnya dengan identitas brand yang kohesif dan terbukti.
+Terciptanya citra brand yang solid dan terpercaya untuk bersaing di pasar nasional. Konsistensi visual ini membantu meningkatkan kepercayaan pelanggan di marketplace dan engagement di media sosial. Dengan infrastruktur yang kini terstruktur rapi, Brotrher memiliki fondasi digital yang kuat untuk pengembangan bisnis jangka panjang.
 
-<!-- ===== EN CONTENT ===== -->
-<!--en-->
 ## The Challenge
 
-Brotrher had strong product potential in the fashion sector, but faced serious challenges with inconsistent brand identity across various platforms. The transition between the official website, social media, and marketplaces felt disconnected, creating friction in the customer journey and diminishing brand trust. The challenge was to unify the visual language, brand voice, and operational systems to maintain a solid, professional presence at every customer touchpoint.
+Brotrher had high-quality products but lacked a consistent brand identity. Visual discrepancies between their website, social media, and marketplace storefronts (Shopee/Tokopedia) made the brand look unprofessional and confused potential customers. The primary issue was the absence of a unified visual and operational standard across all digital touchpoints.
 
-## Our Solution
+## The Approach
 
-Baradé Studio executed a comprehensive branding synchronization to create a harmonious digital ecosystem. We established the website as the central brand authority, then systematically applied the visual identity across social media templates and marketplace storefronts (Shopee & Tokopedia). Beyond visual consistency, we developed standardized SOPs for inventory management and content production to ensure Brotrher's internal team could maintain daily operational consistency without losing the established aesthetic direction.
+Baradé Studio standardized Brotrher's entire digital ecosystem. The website was established as the central brand authority, with marketplace storefronts and social media templates redesigned to match. Beyond visuals, I developed content production and inventory management SOPs to ensure the internal team could maintain daily consistency without compromising the established aesthetic standards.
 
-## Results
+## Outcome
 
-Successfully established an exclusive, trustworthy brand image ready to compete in the national market. Strong visual consistency significantly boosted organic engagement on social media and strengthened marketplace store credibility, directly driving higher sales conversion rates. With a well-structured digital infrastructure now in place, Brotrher has a solid foundation to scale the business to the next level with a proven, cohesive brand identity.
+Established a solid and trustworthy brand image ready for the national market. This visual consistency has significantly improved customer trust on marketplaces and organic engagement on social media. With a well-structured infrastructure now in place, Brotrher has a robust digital foundation for long-term growth.

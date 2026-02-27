@@ -1,49 +1,49 @@
 {
   "hero": {
-    "title": "OUR SERVICES",
-    "subtitle": "Comprehensive creative solutions tailored to elevate your brand and drive results."
+    "title": "SERVICES",
+    "subtitle": "Product design and digital development solutions focused on results and business effectiveness."
   },
   "graphic_design": {
-    "title": "GRAPHIC DESIGN",
-    "description": "Create a lasting impression with stunning visual designs. From brand identity to marketing materials, we craft designs that speak to your audience.",
+    "title": "VISUAL IDENTITY",
+    "description": "Building consistent impressions through robust design systems. From brand identity to marketing assets, every element is crafted to strengthen your message.",
     "features": [
       "Logo Design & Brand Identity",
-      "Print Design (Brochures, Flyers, Business Cards)",
-      "Social Media Graphics",
+      "Typography & Color Systems",
+      "Social Media Assets",
       "Packaging Design",
-      "Illustration & Custom Graphics"
+      "Custom Graphics & Illustration"
     ]
   },
   "web_development": {
     "title": "WEB DEVELOPMENT",
-    "description": "Build your online presence with modern, responsive websites. We create fast, beautiful, and user-friendly web experiences.",
+    "description": "Building a digital presence with modern, responsive websites. Focusing on speed, security, and user experience.",
     "features": [
-      "Custom Website Development",
+      "Custom Web Development)",
       "E-commerce Solutions",
-      "Responsive Design",
-      "CMS Integration",
-      "Website Maintenance & Support"
+      "Responsive & Mobile-First Design",
+      "System & CMS Integration",
+      "Maintenance & Technical Support"
     ]
   },
   "brand_strategy": {
-    "title": "BRAND STRATEGY",
-    "description": "Define and strengthen your brand identity. We help you create a cohesive brand that resonates with your target audience.",
+    "title": "PRODUCT DESIGN (UI/UX)",
+    "description": "Designing efficient digital flows. I help businesses define user experiences that facilitate conversion and customer interaction.",
     "features": [
-      "Brand Discovery & Research",
-      "Brand Positioning & Messaging",
-      "Visual Identity System",
-      "Brand Guidelines",
-      "Brand Refresh & Rebranding"
+      "User Research & Analysis",
+      "User Flow & Wireframing",
+      "High-Fidelity Prototyping",
+      "Interactive Interface Design",
+      "UX Audit & Optimization"
     ]
   },
   "process": {
-    "title_part1": "OUR",
-    "title_part2": "PROCESS",
+    "title_part1": "WORK",
+    "title_part2": "FLOW",
     "steps": [
-      { "num": 1, "title": "Discovery", "desc": "We learn about your business, goals, and target audience." },
-      { "num": 2, "title": "Strategy", "desc": "We develop a creative strategy tailored to your needs." },
-      { "num": 3, "title": "Design", "desc": "We bring your vision to life with stunning visuals." },
-      { "num": 4, "title": "Launch", "desc": "We deliver and support your project's success." }
+      { "num": 1, "title": "Analysis", "desc": "Dissecting business needs, target audience, and existing technical constraints." },
+      { "num": 2, "title": "Architecture", "desc": "Organizing information structure and visual strategy before moving to execution." },
+      { "num": 3, "title": "Execution", "desc": "Designing and developing the system with strictly maintained quality standards." },
+      { "num": 4, "title": "Deployment", "desc": "Product launch and monitoring to ensure optimal performance." }
     ]
   }
 }

@@ -8,22 +8,22 @@
   },
   "footer": {
     "copyright": "© {{year}} Barade Studio. All rights reserved.",
-    "made_with": "Made with ❤️ by Rikky A",
+    "made_with": "Developed by Rikky Arisendi",
     "quick_links": "Quick Links",
     "contact_info": "Contact",
-    "tagline": "Transforming ideas into stunning visual experiences. We specialize in graphic design and web development that makes your brand stand out."
+    "tagline": "Focusing on functional product design and visual identity to help businesses maintain a consistent and professional digital presence."
   },
   "buttons": {
-    "view_work": "View Our Work",
+    "view_work": "View Portfolio",
     "get_in_touch": "Get In Touch",
     "learn_more": "Learn More",
-    "contact_now": "Contact Us Now",
-    "start_project": "Start Your Project"
+    "contact_now": "Contact Now",
+    "start_project": "Start a Project"
   },
   "stats": {
-    "projects": "Projects",
+    "projects": "Projects Completed",
     "clients": "Clients",
-    "years": "Years",
-    "satisfaction": "Satisfaction"
+    "years": "Years of Experience",
+    "satisfaction": "Client Satisfaction"
   }
 }

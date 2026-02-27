@@ -1,46 +1,46 @@
 {
   "seo": {
     "title": "Portfolio",
-    "description": "Explore our recent work in branding, web development, and digital design."
+    "description": "Selected works in product design, visual identity, and web development."
   },
   "hero": {
-    "title_part1": "OUR ",
-    "title_part2": "PORTFOLIO",
-    "subtitle": "Explore our recent work and see how we've helped brands stand out and succeed."
+    "title_part1": "PROJECT ",
+    "title_part2": "ARCHIVE",
+    "subtitle": "A collection of design and technical solutions developed to address various business challenges."
   },
   "filters": {
     "all": "All Projects",
-    "branding": "Branding",
-    "web": "Web Design",
+    "branding": "Visual Identity",
+    "web": "Digital Products",
     "graphic": "Graphic Design"
   },
   "modal": {
-    "quick_view": "Quick View",
+    "quick_view": "Quick Detail",
     "close": "Close",
-    "quick_overview": "Quick Overview",
+    "quick_overview": "Project Overview",
     "challenge": "Challenge:",
-    "solution": "Solution:",
-    "results": "Results:",
+    "solution": "Approach:",
+    "results": "Outcome:",
     "view_case_study": "View Case Study",
-    "start_project": "Start Your Project"
+    "start_project": "Discuss a Similar Project"
   },
   "messages": {
     "showing": "Showing",
     "of": "of",
     "project": "project",
     "projects": "projects",
-    "no_projects": "No projects found for this filter",
+    "no_projects": "No projects found in this category",
     "load_more": "Load More Projects",
-    "view_all": "View All Projects"
+    "view_all": "View All"
   },
   "tags": {
-    "branding": "Branding",
+    "branding": "Visual Identity",
     "web_design": "Web Design",
     "development": "Development",
     "graphic_design": "Graphic Design",
     "social_media": "Social Media",
     "packaging": "Packaging",
     "logo": "Logo",
-    "ui_ux": "UI/UX"
+    "ui_ux": "UI/UX Design"
   }
 }
