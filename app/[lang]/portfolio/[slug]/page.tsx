@@ -208,7 +208,7 @@ export default async function ProjectDetailPage({
           {/* Our Solution */}
           <div>
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-2 text-[var(--text-primary)]">
-              {t.project?.solution_title || 'Our Solution'}
+              {t.project?.solution_title || 'The Approach'}
             </h2>
             <p className="text-[var(--text-muted)] text-lg leading-relaxed">
               {project.solution}
@@ -260,7 +260,7 @@ export default async function ProjectDetailPage({
           <div className="bg-brand-lime p-8 md:p-12 rounded-2xl border-2 border-brand-dark relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-dark/5 rounded-full blur-3xl" aria-hidden="true"></div>
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-2 text-brand-dark relative z-10">
-              {t.project?.results_title || 'Results & Impact'}
+              {t.project?.results_title || 'Outcome & Impact'}
             </h2>
             <p className="text-brand-dark/90 text-lg leading-relaxed relative z-10">
               {project.results}
@@ -393,16 +393,16 @@ export default async function ProjectDetailPage({
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-primary)] dark:bg-[var(--bg-primary)]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]">
-            {t.project?.cta_title_part1 || 'INTERESTED IN'} <br/><span className="text-brand-lime bg-brand-dark rounded-lg py-0 px-2 dark:text-brand-lime">{t.project?.cta_title_part2 || 'WORKING TOGETHER?'}</span>
+            {t.project?.cta_title_part1 || 'READY TO'} <br/><span className="text-brand-lime bg-brand-dark rounded-lg py-0 px-2 dark:text-brand-lime">{t.project?.cta_title_part2 || 'COLLABORATE?'}</span>
           </h2>
           <p className="text-xl text-[var(--text-muted)] mb-8 max-w-2xl mx-auto">
-            {t.project?.cta_subtitle || 'Let\'s create something amazing for your brand. Whether you need branding, web development, or design services, we\'re here to help.'}
+            {t.project?.cta_subtitle || 'Let’s discuss how the right product design and technical solutions can help achieve your business goals.'}
           </p>
           <Link 
             href={path(lang, 'contact')} 
             className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg hover:scale-105"
           >
-            {t.common?.buttons?.start_project || 'START YOUR PROJECT'} →
+            {t.common?.buttons?.start_project || 'Start a Project'} →
           </Link>
         </div>
       </section>

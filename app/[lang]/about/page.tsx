@@ -37,7 +37,7 @@ export default async function AboutPage({
             <span className="text-brand-dark dark:text-brand-lime">{t.about?.hero?.title_part2 || 'BARADE STUDIO'}</span>
           </h1>
           <p className="text-xl md:text-2xl text-[var(--text-muted)] max-w-3xl animate-slide-in">
-            {t.about?.hero?.subtitle || 'We are a creative studio passionate about transforming ideas into visual masterpieces...'}
+            {t.about?.hero?.subtitle || 'An independent product design and visual identity partner based in Bandung, Indonesia. Helping businesses build a digital presence through functional and structured design.'}
           </p>
         </div>
       </section>
@@ -47,16 +47,16 @@ export default async function AboutPage({
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="font-display text-3xl font-bold mb-6 text-brand-dark dark:text-brand-lime">
-              {t.about?.story?.title || 'OUR STORY'}
+              {t.about?.story?.title || 'WORKING APPROACH'}
             </h2>
             <p className="text-[var(--text-muted)] mb-4">
-              {t.about?.story?.p1 || 'Founded in 2020, BARADE STUDIO emerged from a passion to create meaningful design...'}
+              {t.about?.story?.p1 || 'Established in 2020, Baradé Studio focuses on delivering consistent execution quality. I have observed many businesses with mature operations that yet lack a visual identity aligned with the quality of their services.'}
             </p>
             <p className="text-[var(--text-muted)] mb-4">
-              {t.about?.story?.p2 || 'We believe in the power of great design to transform businesses...'}
+              {t.about?.story?.p2 || 'As a designer, my focus goes beyond aesthetics; I prioritize how design performs for your business. From User Interface (UI) design to User Experience (UX) structure, every element is constructed to strengthen branding and simplify customer interaction.'}
             </p>
             <p className="text-[var(--text-muted)]">
-              {t.about?.story?.p3 || 'Today, we\'re proud to work with clients across Indonesia and beyond...'}
+              {t.about?.story?.p3 || 'Working with Baradé Studio means you collaborate directly with the designer executing your project. This ensures every business vision is accurately translated into a digital product.'}
             </p>
           </div>
           <div className="relative">
@@ -71,7 +71,7 @@ export default async function AboutPage({
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
-            {t.about?.values?.title_part1 || 'OUR'} <span className="text-brand-dark dark:text-brand-lime">{t.about?.values?.title_part2 || 'VALUES'}</span>
+            {t.about?.values?.title_part1 || 'DESIGN'} <span className="text-brand-dark dark:text-brand-lime">{t.about?.values?.title_part2 || 'STANDARDS'}</span>
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -97,16 +97,16 @@ export default async function AboutPage({
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-lime">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-brand-dark">
-            {t.about?.cta?.title || 'LET\'S WORK TOGETHER'}
+            {t.about?.cta?.title || 'START A DISCUSSION'}
           </h2>
           <p className="text-xl text-brand-dark/80 mb-8">
-            {t.about?.cta?.subtitle || 'Ready to bring your vision to life?'}
+            {t.about?.cta?.subtitle || 'Ready to strengthen your brand identity and digital presence?'}
           </p>
           <Link 
             href={path(lang, '/contact')} 
             className="inline-block bg-brand-dark text-brand-cream px-4 py-2 font-medium text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg"
           >
-            {t.common?.buttons?.contact_now || 'CONTACT US NOW'}
+            {t.common?.buttons?.contact_now || 'Contact Now'}
           </Link>
         </div>
       </section>

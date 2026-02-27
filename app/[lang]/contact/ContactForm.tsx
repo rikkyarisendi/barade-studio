@@ -215,7 +215,7 @@ const validatePhone = (phone: string, country?: string): string | undefined => {
             {t?.hero?.title || 'LET\'S TALK'}
           </h1>
           <p className="text-xl md:text-2xl text-brand-dark/80 max-w-3xl mx-auto animate-slide-in">
-            {t?.hero?.subtitle || 'Ready to start your project? Get in touch and let\'s create something amazing together.'}
+            {t?.hero?.subtitle || 'Have a project idea or a technical challenge? Get in touch to start a discussion about your needs.'}
           </p>
         </div>
       </section>
@@ -278,7 +278,7 @@ const validatePhone = (phone: string, country?: string): string | undefined => {
           {/* Contact Form */}
           <div className="bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] p-8 rounded-lg border-2 border-[var(--border-color)]">
             <h3 className="font-display text-2xl font-bold mb-6 text-[var(--text-primary)]">
-              {t?.form?.title || 'SEND US A MESSAGE'}
+              {t?.form?.title || 'SEND MESSAGE'}
             </h3>
             
             <form onSubmit={handleSubmit} key={formKey} className="space-y-6" noValidate>
@@ -287,7 +287,7 @@ const validatePhone = (phone: string, country?: string): string | undefined => {
                 <label htmlFor="name" className="block font-bold mb-2 text-[var(--text-primary)]">
                   {t?.form?.name_label || 'Name'} *
                 </label>
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required minLength={2} maxLength={100} className="w-full px-4 py-3 border-2 border-[var(--border-color)] focus:border-brand-lime focus:outline-none bg-[var(--bg-primary)] dark:bg-[#1a1a1a] text-[var(--text-primary)] rounded-lg placeholder-[var(--text-muted)]" placeholder={t?.form?.name_placeholder || 'Your name'} />
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required minLength={2} maxLength={100} className="w-full px-4 py-3 border-2 border-[var(--border-color)] focus:border-brand-lime focus:outline-none bg-[var(--bg-primary)] dark:bg-[#1a1a1a] text-[var(--text-primary)] rounded-lg placeholder-[var(--text-muted)]" placeholder={t?.form?.name_placeholder || 'Your full name'} />
               </div>
 
               {/* Email */}
@@ -305,13 +305,13 @@ const validatePhone = (phone: string, country?: string): string | undefined => {
               {/* Service */}
               <div>
                 <label htmlFor="service" className="block font-bold mb-2 text-[var(--text-primary)]">
-                  {t?.form?.service_label || 'Service Interested In'} *
+                  {t?.form?.service_label || 'Service Required'} *
                 </label>
                 <select id="service" name="service" value={formData.service} onChange={handleChange} required className="w-full px-4 py-3 border-2 border-[var(--border-color)] focus:border-brand-lime focus:outline-none bg-[var(--bg-primary)] dark:bg-[#1a1a1a] text-[var(--text-primary)] rounded-lg">
-                  <option value="">{t?.form?.service_placeholder || 'Select a service'}</option>
-                  <option value="graphic-design">{t?.form?.services?.graphic_design || 'Graphic Design'}</option>
+                  <option value="">{t?.form?.service_placeholder || 'Select a category'}</option>
+                  <option value="graphic-design">{t?.form?.services?.graphic_design || 'Visual Identity'}</option>
                   <option value="web-development">{t?.form?.services?.web_development || 'Web Development'}</option>
-                  <option value="branding">{t?.form?.services?.branding || 'Brand Strategy'}</option>
+                  <option value="branding">{t?.form?.services?.branding || 'UI/UX Design'}</option>
                   <option value="other">{t?.form?.services?.other || 'Other'}</option>
                 </select>
               </div>
@@ -321,12 +321,12 @@ const validatePhone = (phone: string, country?: string): string | undefined => {
                 <label htmlFor="message" className="block font-bold mb-2 text-[var(--text-primary)]">
                   {t?.form?.message_label || 'Message'} *
                 </label>
-                <textarea id="message" name="message" value={formData.message} onChange={handleChange} required minLength={10} maxLength={2000} rows={5} className="w-full px-4 py-3 border-2 border-[var(--border-color)] focus:border-brand-lime focus:outline-none bg-[var(--bg-primary)] dark:bg-[#1a1a1a] text-[var(--text-primary)] resize-none placeholder-[var(--text-muted)]" placeholder={t?.form?.message_placeholder || 'Tell us about your project...'}></textarea>
+                <textarea id="message" name="message" value={formData.message} onChange={handleChange} required minLength={10} maxLength={2000} rows={5} className="w-full px-4 py-3 border-2 border-[var(--border-color)] focus:border-brand-lime focus:outline-none bg-[var(--bg-primary)] dark:bg-[#1a1a1a] text-[var(--text-primary)] resize-none placeholder-[var(--text-muted)]" placeholder={t?.form?.message_placeholder || 'Briefly describe your project goals...'}></textarea>
               </div>
 
               {/* Status Messages */}
               {state?.error && (<p className="text-red-500 font-medium text-center bg-red-500/10 px-4 py-2 rounded-lg border border-red-500/30">❌ {state.error}</p>)}
-              {isSuccess && (<p className="text-brand-dark dark:text-brand-lime font-medium text-center bg-brand-lime/10 px-4 py-2 rounded-lg border border-brand-lime/30">✅ {t?.form?.success_message || 'Thank you! Your message has been sent. We\'ll get back to you soon.'}</p>)}
+              {isSuccess && (<p className="text-brand-dark dark:text-brand-lime font-medium text-center bg-brand-lime/10 px-4 py-2 rounded-lg border border-brand-lime/30">✅ {t?.form?.success_message || 'Thank you. I have received your message and will get back to you shortly.'}</p>)}
 
               {/* Submit Button */}
               <SubmitButton t={t?.form} />

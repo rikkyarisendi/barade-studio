@@ -159,7 +159,7 @@ export default function PortfolioClient({
                   {/* Quick View Overlay */}
                   <div className="absolute inset-0 bg-black/70 dark:bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
                     <span className="text-brand-lime font-display text-2xl font-bold">
-                      {t?.modal?.quick_view || 'Quick View'}
+                      {t?.modal?.quick_view || 'Quick Detail'}
                     </span>
                   </div>
                 </div>
@@ -197,7 +197,7 @@ export default function PortfolioClient({
           {filteredProjects.length === 0 && (
             <div className="text-center py-20">
               <p className="text-2xl text-[var(--text-muted)]/50 font-display">
-                {t?.messages?.no_projects || 'No projects found for this filter'}
+                {t?.messages?.no_projects || 'No projects found for this category.'}
               </p>
             </div>
           )}
@@ -209,7 +209,7 @@ export default function PortfolioClient({
                 onClick={handleLoadMore}
                 className="inline-block bg-[var(--border-color)] text-brand-lime px-4 py-2 font-bold text-sm hover:bg-brand-lime hover:text-brand-dark transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
               >
-                {t?.messages?.load_more || 'LOAD MORE PROJECTS'} →
+                {t?.messages?.load_more || 'Load More Projects'} →
               </button>
             </div>
           )}
@@ -225,7 +225,7 @@ export default function PortfolioClient({
                 }}
                 className="inline-block bg-transparent text-[var(--text-primary)] px-8 py-4 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
               >
-                {t?.messages?.view_all || 'VIEW ALL PROJECTS'}
+                {t?.messages?.view_all || 'View All'}
               </Link>
             </div>
           )}
@@ -292,7 +292,7 @@ export default function PortfolioClient({
             {/* Quick Overview */}
             <div className="mb-6">
               <h3 className="font-display text-lg md:text-xl font-bold mb-3 text-[var(--text-primary)]">
-                {t?.modal?.quick_overview || 'Quick Overview'}
+                {t?.modal?.quick_overview || 'Project Overview'}
               </h3>
               
               <p className="text-[var(--text-muted)] text-sm md:text-base mb-3">
@@ -300,12 +300,12 @@ export default function PortfolioClient({
               </p>
               
               <p className="text-[var(--text-muted)] text-sm md:text-base mb-3">
-                <strong>{t?.modal?.solution || 'Solution:'}</strong> {selectedProject.solutionShort || selectedProject.solution?.substring(0, 100)}
+                <strong>{t?.modal?.solution || 'Approach:'}</strong> {selectedProject.solutionShort || selectedProject.solution?.substring(0, 100)}
               </p>
               
               {selectedProject.resultsShort && (
                 <p className="text-[var(--text-muted)] text-sm md:text-base">
-                  <strong>{t?.modal?.results || 'Results:'}</strong> {selectedProject.resultsShort}
+                  <strong>{t?.modal?.results || 'Outcome:'}</strong> {selectedProject.resultsShort}
                 </p>
               )}
             </div>
@@ -342,7 +342,7 @@ export default function PortfolioClient({
                 href={path('contact')}
                 className="flex-1 bg-transparent text-[var(--text-primary)] px-4 py-2 font-bold text-md md:text-md text-center hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
               >
-                {t?.modal?.start_project || 'Start Your Project'}
+                {t?.modal?.start_project || 'Discuss a Smilar Project'}
               </Link>
             </div>
           </div>

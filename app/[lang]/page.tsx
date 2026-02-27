@@ -38,25 +38,25 @@ export default async function HomePage({
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in">
             <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-              <span className="text-[var(--text-primary)]">{t.home?.hero?.title_part1 || 'WE CREATE'}</span>
+              <span className="text-[var(--text-primary)]">{t.home?.hero?.title_part1 || 'BUILDING'}</span>
               <br />
-              <span className="text-brand-lime">{t.home?.hero?.title_part2 || 'VISUAL MAGIC'}</span>
+              <span className="text-brand-lime">{t.home?.hero?.title_part2 || 'DIGITAL PRODUCTS'}</span>
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-[var(--text-muted)] mb-8 max-w-3xl mx-auto">
-              {t.home?.hero?.subtitle || 'Transform your brand with stunning graphic design...'}
+              {t.home?.hero?.subtitle || 'Transforming businesses through structured product design and visual identity. Focusing on function, structure, and impactful results.'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Link 
                 href={path(lang, '/portfolio')} 
                 className="bg-brand-lime text-brand-dark px-4 py-2 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover-lift w-full sm:w-auto text-center rounded-lg"
               >
-                {t.common?.buttons?.view_work || 'VIEW OUR WORK'}
+                {t.common?.buttons?.view_work || 'View Portfolio'}
               </Link>
               <Link 
                 href={path(lang, '/contact')} 
                 className="bg-transparent text-[var(--text-primary)] px-4 py-2 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover-lift w-full sm:w-auto text-center rounded-lg"
               >
-                {t.common?.buttons?.get_in_touch || 'GET IN TOUCH'}
+                {t.common?.buttons?.get_in_touch || 'Get In Touch'}
               </Link>
             </div>
           </div>
@@ -64,10 +64,10 @@ export default async function HomePage({
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pb-16 animate-slide-in">
             {[
-              { num: '150+', key: 'projects' },
-              { num: '50+', key: 'clients' },
-              { num: '5+', key: 'years' },
-              { num: '100%', key: 'satisfaction' },
+              { num: '150+', key: 'Projects Completed' },
+              { num: '50+', key: 'Clients' },
+              { num: '5+', key: 'Years of Experience' },
+              { num: '100%', key: 'Client Satisfaction' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <p className="font-display text-4xl md:text-5xl font-bold text-[var(--text-primary)]">{stat.num}</p>
@@ -84,14 +84,14 @@ export default async function HomePage({
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
-            <span className="text-brand-dark dark:text-brand-lime">{t.home?.services?.title || 'WHAT WE DO'}</span>
+            <span className="text-brand-dark dark:text-brand-lime">{t.home?.services?.title || 'SERVICES'}</span>
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { icon: '🎨', key: 'graphic_design' },
-              { icon: '💻', key: 'web_development' },
-              { icon: '✨', key: 'brand_strategy' },
+              { icon: '🎨', key: 'Visual Identity' },
+              { icon: '💻', key: 'Web Development' },
+              { icon: '✨', key: 'Interface Design (UI/UX)' },
             ].map((service, i) => {
               const svc = t.home?.services?.[service.key as keyof typeof t.home.services] as any;
               return (
@@ -113,16 +113,16 @@ export default async function HomePage({
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-lime">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-brand-dark">
-            {t.home?.cta?.title || 'READY TO START YOUR PROJECT?'}
+            {t.home?.cta?.title || 'READY TO DISCUSS?'}
           </h2>
           <p className="text-xl text-brand-dark/80 mb-8">
-            {t.home?.cta?.subtitle || 'Let\'s collaborate and create something amazing together.'}
+            {t.home?.cta?.subtitle || 'Tell me about your project and let\'s build the right solution together.'}
           </p>
           <Link 
             href={path(lang, '/contact')} 
             className="inline-block bg-brand-dark text-brand-cream px-4 py-2 font-medium text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg"
           >
-            {t.common?.buttons?.contact_now || 'CONTACT US NOW'}
+            {t.common?.buttons?.contact_now || 'Contact Now'}
           </Link>
         </div>
       </section>

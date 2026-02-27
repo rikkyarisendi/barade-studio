@@ -49,7 +49,7 @@ export default function Footer({ lang, t }: FooterProps) {
               </h3>
             </Link>
             <p className="text-sm mb-4 text-brand-gray">
-              {t?.footer?.tagline || 'Transforming ideas into stunning visual experiences. We specialize in graphic design and web development that makes your brand stand out.'}
+              {t?.footer?.tagline || 'Focusing on functional product design and visual identity to help businesses maintain a consistent and professional digital presence.'}
             </p>
             <div className="flex space-x-4">
               <a 
@@ -99,7 +99,7 @@ export default function Footer({ lang, t }: FooterProps) {
                   href={path('/about')} 
                   className="hover:text-brand-lime transition-colors duration-300"
                 >
-                  {t?.nav?.about || 'About Us'}
+                  {t?.nav?.about || 'About'}
                 </Link>
               </li>
               <li>

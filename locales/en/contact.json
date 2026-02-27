@@ -31,7 +31,7 @@
     "success_message": "Thank you. I have received your message and will get back to you shortly.",
     "services": {
       "graphic_design": "Visual Identity",
-      "web_development": "Digital Product Development",
+      "web_development": "Web Development",
       "branding": "UI/UX Design",
       "other": "Other"
     }

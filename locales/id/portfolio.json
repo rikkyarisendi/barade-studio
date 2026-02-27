@@ -42,5 +42,12 @@
     "packaging": "Packaging",
     "logo": "Logo",
     "ui_ux": "UI/UX Design"
+  },
+  "cta": {
+    "title_part1": "SIAP MEMBANGUN PRODUK ANDA?",
+    "subtitle": "Mari diskusikan bagaimana pendekatan desain dan teknis yang tepat dapat memperkuat bisnis Anda."
+  },
+  "buttons": {
+    "start_project": "Mulai Diskusi"
   }
 }

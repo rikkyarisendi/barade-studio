@@ -10,9 +10,9 @@
   },
   "filters": {
     "all": "All Projects",
-    "branding": "Visual Identity",
+    "branding": "UI/UX Design",
     "web": "Digital Products",
-    "graphic": "Graphic Design"
+    "graphic": "Visual Identity"
   },
   "modal": {
     "quick_view": "Quick Detail",
@@ -42,5 +42,12 @@
     "packaging": "Packaging",
     "logo": "Logo",
     "ui_ux": "UI/UX Design"
+  },
+  "cta": {
+    "title_part1": "READY TO BUILD YOUR PRODUCT?",
+    "subtitle": "Let's discuss how the right design and technical approach can strengthen your business."
+  },
+  "buttons": {
+    "start_project": "Start a Discussion"
   }
 }
