@@ -209,8 +209,8 @@ const validatePhone = (phone: string, country?: string): string | undefined => {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-12 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime -mt-20">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
           <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 animate-fade-in text-brand-dark">
             {t?.hero?.title || 'LET\'S TALK'}
           </h1>
@@ -222,7 +222,7 @@ const validatePhone = (phone: string, country?: string): string | undefined => {
 
       {/* Contact Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 space-y-6 md:space-y-18 lg:space-y-20 grid md:grid-cols-2 gap-12">
           
           {/* Contact Info */}
           <div>
@@ -268,9 +268,9 @@ const validatePhone = (phone: string, country?: string): string | undefined => {
                 {t?.info?.hours_title || 'BUSINESS HOURS'}
               </h3>
               <div className="space-y-2 text-[var(--text-primary)]">
-                <p className="flex justify-between"><span>{t?.info?.hours_weekday_label || 'Monday - Friday:'}</span><span className="font-normal">9:00 AM - 6:00 PM</span></p>
-                <p className="flex justify-between"><span>{t?.info?.hours_saturday_label || 'Saturday:'}</span><span className="font-normal">10:00 AM - 4:00 PM</span></p>
-                <p className="flex justify-between"><span>{t?.info?.hours_sunday_label || 'Sunday:'}</span><span className="font-normal">{t?.info?.hours_closed || 'Closed'}</span></p>
+                <p className="flex justify-between"><span>{t?.info?.hours_weekday_label || 'Monday - Friday:'}</span><span className="font-bold">9:00 AM - 6:00 PM</span></p>
+                <p className="flex justify-between"><span>{t?.info?.hours_saturday_label || 'Saturday:'}</span><span className="font-bold">10:00 AM - 4:00 PM</span></p>
+                <p className="flex justify-between"><span>{t?.info?.hours_sunday_label || 'Sunday:'}</span><span className="font-bold">{t?.info?.hours_closed || 'Closed'}</span></p>
               </div>
             </div>
           </div>

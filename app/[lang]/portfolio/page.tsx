@@ -51,8 +51,8 @@ export default async function PortfolioPage({
       {/* ✅ JANGAN tambah <Navbar /> - udah ada di layout */}
       
       {/* Hero Section */}
-      <section className="pt-12 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 -mt-20 mb-20 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
             <span className="text-[var(--text-primary)]">{t.portfolio?.hero?.title_part1 || 'OUR '}</span>
             <span className="text-brand-dark dark:text-brand-lime">{t.portfolio?.hero?.title_part2 || 'PORTFOLIO'}</span>
@@ -81,7 +81,7 @@ export default async function PortfolioPage({
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]">
             {t.portfolio?.cta?.title_part1 || 'LIKE WHAT YOU SEE?'}
           </h2>

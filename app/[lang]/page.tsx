@@ -29,13 +29,13 @@ export default async function HomePage({
       {/* ✅ HAPUS <Navbar /> dari sini - udah ada di layout */}
       
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center pt-12 md:pt-0 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center pt-36 md:pt-36 px-4 sm:px-6 lg:px-8 relative overflow-hidden -mt-20">
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-brand-lime/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-[var(--border-color)]/30 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in">
             <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
               <span className="text-[var(--text-primary)]">{t.home?.hero?.title_part1 || 'WE CREATE'}</span>
@@ -82,7 +82,7 @@ export default async function HomePage({
 
       {/* Services Preview */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
             <span className="text-brand-dark dark:text-brand-lime">{t.home?.services?.title || 'WHAT WE DO'}</span>
           </h2>
@@ -111,7 +111,7 @@ export default async function HomePage({
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-lime">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-brand-dark">
             {t.home?.cta?.title || 'READY TO START YOUR PROJECT?'}
           </h2>

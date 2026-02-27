@@ -29,8 +29,8 @@ export default async function AboutPage({
       {/* ✅ JANGAN tambah <Navbar /> - udah ada di layout */}
       
       {/* Hero */}
-      <section className="pt-12 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 -mt-20">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
             <span className="text-[var(--text-primary)]">{t.about?.hero?.title_part1 || 'ABOUT'}</span>
             <br />
@@ -44,7 +44,7 @@ export default async function AboutPage({
 
       {/* Story Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="font-display text-3xl font-bold mb-6 text-brand-dark dark:text-brand-lime">
               {t.about?.story?.title || 'OUR STORY'}
@@ -69,7 +69,7 @@ export default async function AboutPage({
 
       {/* Values Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
             {t.about?.values?.title_part1 || 'OUR'} <span className="text-brand-dark dark:text-brand-lime">{t.about?.values?.title_part2 || 'VALUES'}</span>
           </h2>
@@ -95,7 +95,7 @@ export default async function AboutPage({
 
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-lime">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-brand-dark">
             {t.about?.cta?.title || 'LET\'S WORK TOGETHER'}
           </h2>

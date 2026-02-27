@@ -110,8 +110,8 @@ export default async function ProjectDetailPage({
       {/* ✅ JANGAN tambah <Navbar /> - udah ada di layout */}
 
       {/* Hero Section */}
-      <section className="pt-8 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime">
-        <div className="max-w-7xl mx-auto">
+      <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime -mt-20">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <Link 
             href={path(lang, 'portfolio')} 
             className="inline-flex items-center text-brand-dark hover:text-brand-dark/70 mb-6 font-bold transition-colors group"
@@ -137,7 +137,7 @@ export default async function ProjectDetailPage({
 
       {/* Project Info Bar */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { label: t.project?.client_label || 'Client', value: project.client },
             { label: t.project?.year_label || 'Year', value: project.year },
@@ -155,8 +155,8 @@ export default async function ProjectDetailPage({
       </section>
 
       {/* Main Content */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto space-y-20">
+      <section className="pt-8 py-18 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 space-y-6 md:space-y-18 lg:space-y-20">
           
           {/* Services Provided */}
           <div>

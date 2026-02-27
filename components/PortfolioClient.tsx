@@ -96,8 +96,8 @@ export default function PortfolioClient({
   return (
     <>
       {/* Filter Tabs */}
-      <section className="pb-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="pb-6 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <div className="flex flex-wrap gap-2 sm:gap-4 justify-center">
             {categories.map((cat) => (
               <button
@@ -118,7 +118,7 @@ export default function PortfolioClient({
 
       {/* Projects Grid */}
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <p className="text-center text-[var(--text-muted)] mb-8 font-medium">
             {t?.messages?.showing || 'Showing'} {displayedProjects.length} {t?.messages?.of || 'of'} {filteredProjects.length} {filteredProjects.length === 1 
               ? (t?.messages?.project || 'project') 

@@ -29,8 +29,8 @@ export default async function ServicesPage({
       {/* ✅ JANGAN tambah <Navbar /> - udah ada di layout */}
       
       {/* Hero */}
-      <section className="pt-12 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime">
-        <div className="max-w-7xl mx-auto text-center">
+      <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime -mt-20">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
           <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 animate-fade-in text-brand-dark">
             {t.services?.hero?.title || 'OUR SERVICES'}
           </h1>
@@ -42,7 +42,7 @@ export default async function ServicesPage({
 
       {/* Services Grid */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-20">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 space-y-20">
           
           {/* Graphic Design */}
           <div className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
@@ -199,7 +199,7 @@ export default async function ServicesPage({
 
       {/* Process Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
             {t.services?.process?.title_part1 || 'OUR'} <span className="text-brand-dark dark:text-brand-lime">{t.services?.process?.title_part2 || 'PROCESS'}</span>
           </h2>
