@@ -125,7 +125,7 @@ export default async function ProjectDetailPage({
             {project.category}
           </div>
           
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-brand-dark mb-6 leading-tight">
+          <h1 className="font-display text-3xl md:text-6xl lg:text-5xl font-bold text-brand-dark mb-2 leading-tight">
             {project.title}
           </h1>
           
@@ -160,14 +160,14 @@ export default async function ProjectDetailPage({
           
           {/* Services Provided */}
           <div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 text-[var(--text-primary)]">
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-2 text-[var(--text-primary)]">
               {t.project?.services_title || 'Services Provided'}
             </h2>
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-2">
               {project.services.map((service, idx) => (
                 <div 
                   key={idx} 
-                  className="flex items-start gap-3 p-4 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] border-2 border-[var(--border-color)] rounded-xl hover:border-brand-lime transition-colors duration-300 group"
+                  className="flex items-start gap-3 p-2 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] border-2 border-[var(--border-color)] rounded-xl hover:border-brand-lime transition-colors duration-300 group"
                 >
                   <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" aria-hidden="true">
                     <span className="text-brand-dark text-sm font-bold">✓</span>
@@ -180,7 +180,7 @@ export default async function ProjectDetailPage({
 
           {/* The Challenge */}
           <div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-[var(--text-primary)]">
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-2 text-[var(--text-primary)]">
               {t.project?.challenge_title || 'The Challenge'}
             </h2>
             <p className="text-[var(--text-muted)] text-lg leading-relaxed">
@@ -207,7 +207,7 @@ export default async function ProjectDetailPage({
 
           {/* Our Solution */}
           <div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-[var(--text-primary)]">
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-2 text-[var(--text-primary)]">
               {t.project?.solution_title || 'Our Solution'}
             </h2>
             <p className="text-[var(--text-muted)] text-lg leading-relaxed">
@@ -259,7 +259,7 @@ export default async function ProjectDetailPage({
           {/* Results & Impact */}
           <div className="bg-brand-lime p-8 md:p-12 rounded-2xl border-2 border-brand-dark relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-dark/5 rounded-full blur-3xl" aria-hidden="true"></div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-brand-dark relative z-10">
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-2 text-brand-dark relative z-10">
               {t.project?.results_title || 'Results & Impact'}
             </h2>
             <p className="text-brand-dark/90 text-lg leading-relaxed relative z-10">
@@ -272,10 +272,10 @@ export default async function ProjectDetailPage({
             <blockquote className="bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] p-8 md:p-12 rounded-2xl border-2 border-brand-lime relative">
               <span className="absolute top-8 left-8 text-brand-dark/20 dark:text-brand-lime/20 text-9xl font-display leading-none" aria-hidden="true">"</span>
               <div className="relative z-10">
-                <p className="text-xl md:text-2xl leading-relaxed mb-8 italic text-[var(--text-primary)]">
+                <p className="text-xl md:text-2xl leading-relaxed mb-2 italic text-[var(--text-primary)]">
                   {project.testimonial.quote}
                 </p>
-                <footer className="border-t-2 border-brand-dark/30 dark:border-brand-lime/30 pt-6">
+                <footer className="border-t-2 border-brand-dark/30 dark:border-brand-lime/30 pt-2">
                   <p className="font-display text-xl font-bold text-brand-dark dark:text-brand-lime">{project.testimonial.author}</p>
                   <p className="text-[var(--text-muted)]">{project.testimonial.position}</p>
                 </footer>
@@ -286,7 +286,7 @@ export default async function ProjectDetailPage({
           {/* External Links */}
           {project.externalLinks && Object.keys(project.externalLinks).length > 0 && (
             <div className="border-t-2 border-[var(--border-color)]/10 pt-12">
-              <h3 className="font-display text-2xl md:text-3xl font-bold mb-6 text-[var(--text-primary)]">
+              <h3 className="font-display text-xl md:text-2xl font-bold mb-2 text-[var(--text-primary)]">
                 {t.project?.external_links_title || 'View on Other Platforms'}
               </h3>
               <div className="flex flex-wrap gap-4">
@@ -310,7 +310,7 @@ export default async function ProjectDetailPage({
                       href={url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 px-2 py-1 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-semibold rounded-xl hover:bg-brand-lime hover:dark:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover:scale-105"
+                      className="inline-flex items-center gap-1 px-2 py-1 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-medium rounded-xl hover:bg-brand-lime hover:dark:text-brand-lime transition-all duration-300 border-1 border-[var(--border-color)] hover:scale-105"
                       aria-label={plat.label}
                     >
                       <span className="text-1xl" aria-hidden="true">{plat.icon}</span> 

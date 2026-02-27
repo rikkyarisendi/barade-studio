@@ -103,7 +103,7 @@ export default function PortfolioClient({
               <button
                 key={cat.key}
                 onClick={() => handleFilterChange(cat.key)}
-                className={`px-3 py-1 text-sm sm:px-4 sm:py-1 sm:text-base font-bold border-2 transition-all duration-300 rounded-lg ${
+                className={`px-3 py-1 text-xs sm:px-4 sm:py-1 sm:text-xs font-bold border-2 transition-all duration-300 rounded-lg ${
                   activeFilter === cat.key
                     ? 'bg-brand-lime text-brand-dark border-brand-dark'
                     : 'bg-[var(--bg-primary)] text-[var(--text-primary)] border-[var(--border-color)] hover:bg-[var(--border-color)] hover:text-brand-lime'
@@ -166,7 +166,7 @@ export default function PortfolioClient({
 
                 {/* Tags */}
                 {project.tags && project.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-2 mb-3">
+                  <div className="flex flex-wrap gap-2 mb-2">
                     {project.tags.slice(0, 4).map((tag, idx) => (
                       <span 
                         key={idx}
@@ -183,7 +183,7 @@ export default function PortfolioClient({
                   </div>
                 )}
 
-                <h3 className="font-display text-2xl font-bold mb-2 text-[var(--text-primary)]">
+                <h3 className="font-display text-xl font-bold text-[var(--text-primary)]">
                   {project.title}
                 </h3>
                 <p className="text-[var(--text-muted)] text-sm">
@@ -333,16 +333,16 @@ export default function PortfolioClient({
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={path(`portfolio/${selectedProject.slug}`)}
-                className="flex-1 bg-brand-lime text-brand-dark px-4 py-2 font-bold text-base md:text-lg text-center hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+                className="flex-1 bg-brand-lime text-brand-dark px-4 py-2 font-bold text-md md:text-md text-center hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
                 onClick={() => setSelectedProject(null)}
               >
-                {t?.modal?.view_case_study || 'VIEW FULL CASE STUDY'} →
+                {t?.modal?.view_case_study || 'View Case Study'} →
               </Link>
               <Link
                 href={path('contact')}
-                className="flex-1 bg-transparent text-[var(--text-primary)] px-4 py-2 font-bold text-base md:text-lg text-center hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+                className="flex-1 bg-transparent text-[var(--text-primary)] px-4 py-2 font-bold text-md md:text-md text-center hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
               >
-                {t?.modal?.start_project || 'START YOUR PROJECT'}
+                {t?.modal?.start_project || 'Start Your Project'}
               </Link>
             </div>
           </div>

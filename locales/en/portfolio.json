@@ -21,8 +21,8 @@
     "challenge": "Challenge:",
     "solution": "Solution:",
     "results": "Results:",
-    "view_case_study": "VIEW FULL CASE STUDY",
-    "start_project": "START YOUR PROJECT"
+    "view_case_study": "View Case Study",
+    "start_project": "Start Your Project"
   },
   "messages": {
     "showing": "Showing",
@@ -30,8 +30,8 @@
     "project": "project",
     "projects": "projects",
     "no_projects": "No projects found for this filter",
-    "load_more": "LOAD MORE PROJECTS",
-    "view_all": "VIEW ALL PROJECTS"
+    "load_more": "Load More Projects",
+    "view_all": "View All Projects"
   },
   "tags": {
     "branding": "Branding",

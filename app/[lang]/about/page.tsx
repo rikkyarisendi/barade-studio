@@ -104,7 +104,7 @@ export default async function AboutPage({
           </p>
           <Link 
             href={path(lang, '/contact')} 
-            className="inline-block bg-brand-dark text-brand-cream px-4 py-2 font-bold text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg"
+            className="inline-block bg-brand-dark text-brand-cream px-4 py-2 font-medium text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg"
           >
             {t.common?.buttons?.contact_now || 'CONTACT US NOW'}
           </Link>

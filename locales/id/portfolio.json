@@ -21,8 +21,8 @@
     "challenge": "Tantangan:",
     "solution": "Solusi:",
     "results": "Hasil:",
-    "view_case_study": "LIHAT STUDI KASUS LENGKAP",
-    "start_project": "MULAI PROYEK ANDA"
+    "view_case_study": "Lihat Studi Kasus",
+    "start_project": "Mulai Proyek Anda"
   },
   "messages": {
     "showing": "Menampilkan",
@@ -30,8 +30,8 @@
     "project": "proyek",
     "projects": "proyek",
     "no_projects": "Tidak ada proyek untuk filter ini",
-    "load_more": "MUAT LEBIH BANYAK PROYEK",
-    "view_all": "LIHAT SEMUA PROYEK"
+    "load_more": "Muat Lebih Banyak Proyek",
+    "view_all": "Lihat Semua Proyek"
   },
   "tags": {
     "branding": "Branding",

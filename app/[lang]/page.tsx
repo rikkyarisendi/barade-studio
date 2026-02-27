@@ -54,7 +54,7 @@ export default async function HomePage({
               </Link>
               <Link 
                 href={path(lang, '/contact')} 
-                className="bg-transparent text-[var(--text-primary)] px-4 py-2 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] w-full sm:w-auto text-center rounded-lg"
+                className="bg-transparent text-[var(--text-primary)] px-4 py-2 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] hover-lift w-full sm:w-auto text-center rounded-lg"
               >
                 {t.common?.buttons?.get_in_touch || 'GET IN TOUCH'}
               </Link>
@@ -120,7 +120,7 @@ export default async function HomePage({
           </p>
           <Link 
             href={path(lang, '/contact')} 
-            className="inline-block bg-brand-dark text-brand-cream px-4 py-2 font-bold text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg"
+            className="inline-block bg-brand-dark text-brand-cream px-4 py-2 font-medium text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg"
           >
             {t.common?.buttons?.contact_now || 'CONTACT US NOW'}
           </Link>

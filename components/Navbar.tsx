@@ -201,7 +201,7 @@ export default function Navbar({ lang, t }: NavbarProps) {
               
               <Link 
                 href={path('/contact')} 
-                className={`px-2 py-1 font-bold transition-all duration-300 border-2 rounded-lg ${
+                className={`px-2 py-1 font-medium transition-all duration-300 border-2 px-2 py-1  rounded-lg ${
                   isOverBrightBg
                     ? 'bg-brand-dark text-brand-lime border-brand-dark hover:bg-brand-lime hover:text-brand-dark'
                     : 'bg-brand-lime text-brand-dark border-[var(--border-color)] hover:bg-[var(--border-color)] hover:text-brand-lime'

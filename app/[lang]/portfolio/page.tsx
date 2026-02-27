@@ -90,7 +90,7 @@ export default async function PortfolioPage({
           </p>
           <Link
             href={path(lang, '/contact')}
-            className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+            className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-medium text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
           >
             {t.common?.buttons?.start_project || 'START YOUR PROJECT'}
           </Link>

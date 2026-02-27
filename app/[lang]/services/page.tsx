@@ -49,7 +49,7 @@ export default async function ServicesPage({
             <div className="order-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">01</div>
-                <h2 className="font-display text-3xl font-bold text-[var(--text-primary)]">
+                <h2 className="font-display text-2xl font-bold text-[var(--text-primary)]">
                   {t.services?.graphic_design?.title || 'GRAPHIC DESIGN'}
                 </h2>
               </div>
@@ -80,9 +80,9 @@ export default async function ServicesPage({
               </ul>
               <Link 
                 href={path(lang, '/contact')} 
-                className="inline-block bg-brand-lime text-brand-dark px-8 py-4 font-bold hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+                className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-bold hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
               >
-                {t.common?.buttons?.get_started || 'GET STARTED'}
+                {t.common?.buttons?.get_started || 'Get Started'}
               </Link>
             </div>
             
@@ -99,7 +99,7 @@ export default async function ServicesPage({
             <div className="order-1 md:order-2">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">02</div>
-                <h2 className="font-display text-3xl font-bold text-[var(--text-primary)]">
+                <h2 className="font-display text-2xl font-bold text-[var(--text-primary)]">
                   {t.services?.web_development?.title || 'WEB DEVELOPMENT'}
                 </h2>
               </div>
@@ -130,9 +130,9 @@ export default async function ServicesPage({
               </ul>
               <Link 
                 href={path(lang, '/contact')} 
-                className="inline-block bg-brand-lime text-brand-dark px-8 py-4 font-bold hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+                className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-bold hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
               >
-                {t.common?.buttons?.get_started || 'GET STARTED'}
+                {t.common?.buttons?.get_started || 'Get Started'}
               </Link>
             </div>
             
@@ -149,7 +149,7 @@ export default async function ServicesPage({
             <div className="order-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">03</div>
-                <h2 className="font-display text-3xl font-bold text-[var(--text-primary)]">
+                <h2 className="font-display text-2xl font-bold text-[var(--text-primary)]">
                   {t.services?.brand_strategy?.title || 'BRAND STRATEGY'}
                 </h2>
               </div>
@@ -180,9 +180,9 @@ export default async function ServicesPage({
               </ul>
               <Link 
                 href={path(lang, '/contact')} 
-                className="inline-block bg-brand-lime text-brand-dark px-8 py-4 font-bold hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+                className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-bold hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
               >
-                {t.common?.buttons?.get_started || 'GET STARTED'}
+                {t.common?.buttons?.get_started || 'Get Started'}
               </Link>
             </div>
             
