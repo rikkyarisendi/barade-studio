@@ -1,0 +1,89 @@
+[
+  {
+    "slug": "visual-identity",
+    "category": "design",
+    "icon": "🎨",
+    "featured": true,
+    "order": 1,
+    "title": {
+      "id": "Identitas Visual",
+      "en": "Visual Identity"
+    },
+    "description": {
+      "id": "Membangun identitas brand yang kuat dan konsisten melalui logo, tipografi, warna, dan sistem desain yang terstruktur.",
+      "en": "Building strong and consistent brand identities through logos, typography, colors, and structured design systems."
+    },
+    "features": [
+      "Logo Design",
+      "Brand Guidelines",
+      "Color & Typography System",
+      "Brand Assets & Mockups"
+    ],
+    "pricing": {
+      "id": "Mulai dari Rp 2.500.000",
+      "en": "Starting from $150"
+    },
+    "deliveryTime": {
+      "id": "7-14 hari",
+      "en": "7-14 days"
+    }
+  },
+  {
+    "slug": "web-development",
+    "category": "development",
+    "icon": "💻",
+    "featured": true,
+    "order": 2,
+    "title": {
+      "id": "Pengembangan Web",
+      "en": "Web Development"
+    },
+    "description": {
+      "id": "Website modern yang cepat, responsif, dan optimal untuk SEO. Dibangun dengan teknologi terkini untuk performa maksimal.",
+      "en": "Modern, fast, responsive, and SEO-optimized websites. Built with cutting-edge technology for maximum performance."
+    },
+    "features": [
+      "Landing Page",
+      "Company Profile",
+      "E-commerce Integration",
+      "CMS & Admin Panel"
+    ],
+    "pricing": {
+      "id": "Mulai dari Rp 5.000.000",
+      "en": "Starting from $300"
+    },
+    "deliveryTime": {
+      "id": "14-30 hari",
+      "en": "14-30 days"
+    }
+  },
+  {
+    "slug": "ui-ux-design",
+    "category": "design",
+    "icon": "✨",
+    "featured": true,
+    "order": 3,
+    "title": {
+      "id": "Desain Interface (UI/UX)",
+      "en": "Interface Design (UI/UX)"
+    },
+    "description": {
+      "id": "Pengalaman pengguna yang intuitif dan menarik. Fokus pada usability, accessibility, dan visual yang memukau.",
+      "en": "Intuitive and engaging user experiences. Focused on usability, accessibility, and stunning visuals."
+    },
+    "features": [
+      "User Research & Wireframes",
+      "Interactive Prototypes",
+      "UI Design System",
+      "Usability Testing"
+    ],
+    "pricing": {
+      "id": "Mulai dari Rp 3.500.000",
+      "en": "Starting from $200"
+    },
+    "deliveryTime": {
+      "id": "10-21 hari",
+      "en": "10-21 days"
+    }
+  }
+]

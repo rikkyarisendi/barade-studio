@@ -1,0 +1,254 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "common": {
+    "buttons": {
+      "view_work": "View Portfolio",
+      "get_in_touch": "Get In Touch",
+      "learn_more": "Learn More",
+      "contact_now": "Contact Now",
+      "send_message": "Send Message",
+      "back": "Back",
+      "get_started": "Get Started",
+      "start_project": "Start a Project"
+    },
+    "stats": {
+      "Projects Completed": "Projects Completed",
+      "Clients": "Clients",
+      "Years of Experience": "Years of Experience",
+      "Client Satisfaction": "Client Satisfaction"
+    },
+    "labels": {
+      "client": "Client",
+      "year": "Year",
+      "duration": "Duration",
+      "category": "Category",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    }
+  },
+  "home": {
+    "hero": {
+      "title_part1": "BUILDING",
+      "title_part2": "DIGITAL PRODUCTS",
+      "subtitle": "Transforming businesses through structured product design and visual identity. Focusing on function, structure, and impactful results."
+    },
+    "services": {
+      "title": "SERVICES"
+    },
+    "cta": {
+      "title": "READY TO DISCUSS?",
+      "subtitle": "Tell me about your project and let's build the right solution together."
+    }
+  },
+  "about": {
+    "hero": {
+      "title_part1": "ABOUT",
+      "title_part2": "US",
+      "subtitle": "An independent product design and visual identity partner based in Bandung, Indonesia. Helping businesses build a digital presence through functional and structured design."
+    },
+    "story": {
+      "title": "WORKING APPROACH",
+      "p1": "Established in 2020, Baradé Studio focuses on delivering consistent execution quality. I have observed many businesses with mature operations that yet lack a visual identity aligned with the quality of their services.",
+      "p2": "As a designer, my focus goes beyond aesthetics; I prioritize how design performs for your business. From User Interface (UI) design to User Experience (UX) structure, every element is constructed to strengthen branding and simplify customer interaction.",
+      "p3": "Working with Baradé Studio means you collaborate directly with the designer executing your project. This ensures every business vision is accurately translated into a digital product."
+    },
+    "values": {
+      "title_part1": "DESIGN",
+      "title_part2": "STANDARDS",
+      "excellence": {
+        "title": "Excellence",
+        "desc": "Committed to delivering the highest quality in every project."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "desc": "Working closely with clients to achieve the best results."
+      },
+      "innovation": {
+        "title": "Innovation",
+        "desc": "Always exploring new ideas and creative solutions."
+      }
+    },
+    "cta": {
+      "title": "START A DISCUSSION",
+      "subtitle": "Ready to strengthen your brand identity and digital presence?"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "SERVICES",
+      "subtitle": "Product design and digital development solutions focused on results and business effectiveness."
+    },
+    "graphic_design": {
+      "title": "VISUAL IDENTITY",
+      "description": "Building consistent impressions through robust design systems. From brand identity to marketing assets, every element is crafted to strengthen your message.",
+      "features": [
+        "Logo Design & Brand Identity",
+        "Typography & Color Systems",
+        "Social Media Assets",
+        "Packaging Design",
+        "Custom Graphics & Illustration"
+      ]
+    },
+    "web_development": {
+      "title": "WEB DEVELOPMENT",
+      "description": "Building a digital presence with modern, responsive websites. Focusing on speed, security, and user experience.",
+      "features": [
+        "Custom Website Development",
+        "E-commerce Solutions",
+        "Responsive & Mobile-First Design",
+        "System & CMS Integration",
+        "Maintenance & Technical Support"
+      ]
+    },
+    "brand_strategy": {
+      "title": "PRODUCT DESIGN (UI/UX)",
+      "description": "Designing efficient digital flows. I help businesses define user experiences that facilitate conversion and customer interaction.",
+      "features": [
+        "User Research & Analysis",
+        "User Flow & Wireframing",
+        "High-Fidelity Prototyping",
+        "Interactive Interface Design",
+        "UX Audit & Optimization"
+      ]
+    },
+    "process": {
+      "title_part1": "WORK",
+      "title_part2": "FLOW",
+      "steps": [
+        {
+          "num": 1,
+          "title": "Analysis",
+          "desc": "Dissecting business needs, target audience, and existing technical constraints."
+        },
+        {
+          "num": 2,
+          "title": "Architecture",
+          "desc": "Organizing information structure and visual strategy before moving to execution."
+        },
+        {
+          "num": 3,
+          "title": "Execution",
+          "desc": "Designing and developing the system with strictly maintained quality standards."
+        },
+        {
+          "num": 4,
+          "title": "Deployment",
+          "desc": "Product launch and monitoring to ensure optimal performance."
+        }
+      ]
+    }
+  },
+  "portfolio": {
+    "hero": {
+      "title_part1": "OUR",
+      "title_part2": "WORK",
+      "subtitle": "A collection of design and technical solutions developed to address various business challenges."
+    },
+    "filters": {
+      "all": "All Projects"
+    },
+    "messages": {
+      "showing": "Showing",
+      "project": "project",
+      "projects": "projects",
+      "no_results": "No projects found"
+    },
+    "empty_state": "No projects available yet. Check back soon!",
+    "cta": {
+      "title_part1": "READY TO BUILD YOUR PRODUCT?",
+      "subtitle": "Let's discuss how the right design and technical approach can strengthen your business."
+    },
+    "seo": {
+      "title": "Portfolio",
+      "description": "Explore our recent work in branding, web development, and digital design."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title_part1": "LET'S",
+      "title_part2": "TALK",
+      "subtitle": "Ready to start your project? Let's discuss how we can help bring your vision to life."
+    },
+    "form": {
+      "title": "SEND MESSAGE",
+      "name_label": "Name",
+      "name_placeholder": "Your full name",
+      "email_label": "Email",
+      "email_placeholder": "name@example.com",
+      "phone_label": "Phone",
+      "service_label": "Service Required",
+      "service_placeholder": "Select a category",
+      "services": {
+        "graphic_design": "Visual Identity",
+        "web_development": "Web Development",
+        "branding": "UI/UX Design",
+        "other": "Other"
+      },
+      "message_label": "Message",
+      "message_placeholder": "Briefly describe your project goals...",
+      "success_message": "Thank you! Your message has been sent.",
+      "send_message": "Send Message",
+      "sending": "Sending..."
+    },
+    "info": {
+      "title_part1": "GET IN",
+      "title_part2": "TOUCH",
+      "email_label": "Email",
+      "phone_label": "Phone",
+      "location_label": "Location",
+      "social_label": "Follow Us"
+    },
+    "map_placeholder": "Map Location",
+    "cta": {
+      "title_part1": "READY TO",
+      "title_part2": "START?",
+      "subtitle": "Let's build something amazing together."
+    }
+  },
+  "project": {
+    "back_to_portfolio": "Back to Portfolio",
+    "services_provided": "Services Provided",
+    "view_project": "View Project",
+    "client_label": "Client",
+    "year_label": "Year",
+    "duration_label": "Duration",
+    "category_label": "Category",
+    "services_title": "Services Provided",
+    "challenge_title": "The Challenge",
+    "solution_title": "The Approach",
+    "results_title": "Outcome & Impact",
+    "badge_showcase": "Project Showcase",
+    "badge_design": "Design Detail",
+    "badge_implementation": "Implementation",
+    "more_from_project": "More From This Project",
+    "external_links_title": "View on Other Platforms",
+    "view_all_projects": "View All Projects",
+    "more_title_part1": "More",
+    "more_title_part2": "Projects",
+    "cta_title_part1": "READY TO",
+    "cta_title_part2": "COLLABORATE?",
+    "cta_subtitle": "Let's discuss how the right product design and technical solutions can help achieve your business goals.",
+    "platforms": {
+      "behance": "View on Behance",
+      "dribbble": "View on Dribbble",
+      "website": "Visit Live Website",
+      "github": "View on GitHub",
+      "instagram": "View on Instagram"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} BARADE STUDIO. All rights reserved.",
+    "made_with": "Crafted with precision in Bandung",
+    "quick_links": "Quick Links",
+    "contact_info": "Contact",
+    "business_hours": "Business Hours",
+    "tagline": "Focusing on functional product design and visual identity to help businesses maintain a consistent and professional digital presence."
+  }
+}

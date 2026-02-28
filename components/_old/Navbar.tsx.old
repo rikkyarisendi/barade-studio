@@ -7,25 +7,32 @@ import { useState, useEffect } from 'react';
 import ThemeToggle from '@/components/ThemeToggle';
 import Logo from '@/components/Logo';
 import LanguageToggle from '@/components/LanguageToggle';
-import { getSiteConfig } from '@/lib/content';
-import type { Translations } from '@/types/content';
 
 interface NavbarProps {
   lang: string;
-  t: Translations;
+  t?: {
+    nav?: {
+      home?: string;
+      about?: string;
+      services?: string;
+      portfolio?: string;
+      contact?: string;
+    };
+  };
 }
 
 export default function Navbar({ lang, t }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [bgScheme, setBgScheme] = useState<'light' | 'dark' | 'lime'>('light');
   const pathname = usePathname();
-  const site = getSiteConfig();
 
+  // ✅ Helper: bikin path dengan locale prefix
   const path = (segment: string) => {
     if (segment === '/') return `/${lang}`;
     return `/${lang}${segment}`;
   };
 
+  // ✅ FIXED isActive: Handle locale-prefixed paths properly
   const isActive = (href: string) => {
     const homePath = `/${lang}`;
     if (href === homePath) {
@@ -34,17 +41,15 @@ export default function Navbar({ lang, t }: NavbarProps) {
     return pathname === href || pathname?.startsWith(`${href}/`);
   };
 
-  // ✅ Fix: Safe access dengan optional chaining + fallback
-  const menuItems = site.nav.items
-    .filter(item => item.show && item.key !== 'contact')
-    .sort((a, b) => a.order - b.order)
-    .map(item => ({
-      href: path(item.path),
-      label: t.nav?.[item.key] || item.key,
-    }));
+  // ✅ Menu items dengan translations
+  const menuItems = [
+    { href: path('/'), label: t?.nav?.home || 'Home' },
+    { href: path('/about'), label: t?.nav?.about || 'About' },
+    { href: path('/services'), label: t?.nav?.services || 'Services' },
+    { href: path('/portfolio'), label: t?.nav?.portfolio || 'Portfolio' },
+  ];
 
-  const contactItem = site.nav.items.find(item => item.key === 'contact' && item.show);
-
+  // Background detection effect
   useEffect(() => {
     const detectBackground = () => {
       const navbarHeight = 80;
@@ -108,6 +113,7 @@ export default function Navbar({ lang, t }: NavbarProps) {
     };
   }, []);
 
+  // Close mobile menu on scroll
   useEffect(() => {
     const handleCloseOnScroll = () => {
       if (isOpen) setIsOpen(false);
@@ -193,18 +199,16 @@ export default function Navbar({ lang, t }: NavbarProps) {
                 </Link>
               ))}
               
-              {contactItem && (
-                <Link 
-                  href={path(contactItem.path)} 
-                  className={`px-2 py-1 font-medium transition-all duration-300 border-2 px-2 py-1  rounded-lg ${
-                    isOverBrightBg
-                      ? 'bg-brand-dark text-brand-lime border-brand-dark hover:bg-brand-lime hover:text-brand-dark'
-                      : 'bg-brand-lime text-brand-dark border-[var(--border-color)] hover:bg-[var(--border-color)] hover:text-brand-lime'
-                  }`}
-                >
-                  {t.nav?.contact || 'Contact'}
-                </Link>
-              )}
+              <Link 
+                href={path('/contact')} 
+                className={`px-2 py-1 font-medium transition-all duration-300 border-2 px-2 py-1  rounded-lg ${
+                  isOverBrightBg
+                    ? 'bg-brand-dark text-brand-lime border-brand-dark hover:bg-brand-lime hover:text-brand-dark'
+                    : 'bg-brand-lime text-brand-dark border-[var(--border-color)] hover:bg-[var(--border-color)] hover:text-brand-lime'
+                }`}
+              >
+                {t?.nav?.contact || 'Contact'}
+              </Link>
               
               {/* ✅ Language Toggle + Theme Toggle berdampingan */}
               <div className="flex items-center gap-2 pl-2 border-l border-[var(--border-color)]/30">
@@ -276,21 +280,19 @@ export default function Navbar({ lang, t }: NavbarProps) {
                   </div>
                 </div>
                 
-                {contactItem && (
-                  <div className="menu-item pt-2" style={{ animationDelay: '0.25s' }}>
-                    <Link 
-                      href={path(contactItem.path)} 
-                      className={`block w-full px-4 py-2 font-bold text-center rounded-lg transition-all duration-300 border-2 ${
-                        isOverBrightBg
-                          ? 'bg-brand-dark text-brand-lime border-brand-dark'
-                          : 'bg-brand-lime text-brand-dark border-[var(--border-color)]'
-                      }`}
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {t.nav?.contact || 'Contact'}
-                    </Link>
-                  </div>
-                )}
+                <div className="menu-item pt-2" style={{ animationDelay: '0.25s' }}>
+                  <Link 
+                    href={path('/contact')} 
+                    className={`block w-full px-4 py-2 font-bold text-center rounded-lg transition-all duration-300 border-2 ${
+                      isOverBrightBg
+                        ? 'bg-brand-dark text-brand-lime border-brand-dark'
+                        : 'bg-brand-lime text-brand-dark border-[var(--border-color)]'
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t?.nav?.contact || 'Contact'}
+                  </Link>
+                </div>
               </div>
             </div>
           )}

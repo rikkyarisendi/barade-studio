@@ -1,0 +1,54 @@
+{
+  "brand": {
+    "name": "BARADE STUDIO",
+    "tagline": {
+      "id": "Desain Grafis & Pengembangan Web",
+      "en": "Creative Design & Web Development"
+    },
+    "logo": "/logo.svg",
+    "favicon": "/favicon.ico",
+    "developer": "Rikky Arisendi"
+  },
+  "nav": {
+    "items": [
+      { "key": "home", "path": "/", "show": true, "order": 1 },
+      { "key": "about", "path": "/about", "show": true, "order": 2 },
+      { "key": "services", "path": "/services", "show": true, "order": 3 },
+      { "key": "portfolio", "path": "/portfolio", "show": true, "order": 4 },
+      { "key": "contact", "path": "/contact", "show": true, "highlight": true, "order": 5 }
+    ]
+  },
+  "contact": {
+    "email": "baradedesign@gmail.com",
+    "phone": "+62 889 7090 9446",
+    "phoneDisplay": "+62 889 7090 9446",
+    "whatsapp": "6288970909446",
+    "location": "Bandung, West Java, Indonesia",
+    "hours": {
+      "weekday": "Monday - Friday: 9:00 AM - 6:00 PM",
+      "saturday": "Saturday: 10:00 AM - 4:00 PM",
+      "sunday": "Closed"
+    }
+  },
+  "social": {
+  "instagram": { "url": "https://instagram.com/baradestudio", "show": true },
+  "twitter": { "url": "https://twitter.com/baradestudio", "show": true },
+  "facebook": { "url": "https://facebook.com/baradestudio", "show": true },
+  "tiktok": { "url": "https://tiktok.com/@baradestudio", "show": true },
+  "linkedin": { "url": "https://linkedin.com/company/barade-studio", "show": true },
+  "behance": { "url": "https://behance.net/baradestudio", "show": false },
+  "github": { "url": "https://github.com/rikkyarisendi", "show": false }
+},
+  "stats": [
+    { "number": "150+", "key": "Projects Completed", "show": true, "order": 1 },
+    { "number": "50+", "key": "Clients", "show": true, "order": 2 },
+    { "number": "5+", "key": "Years of Experience", "show": true, "order": 3 },
+    { "number": "100%", "key": "Client Satisfaction", "show": true, "order": 4 }
+  ],
+  "features": {
+    "darkMode": true,
+    "languageToggle": true,
+    "newsletter": false,
+    "comments": false
+  }
+}

@@ -1,4 +1,5 @@
 // app/[lang]/portfolio/[slug]/page.tsx
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -11,26 +12,11 @@ import {
 import { getTranslations } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 
-// ============================================================================
-// ✅ HELPERS
-// ============================================================================
-
-/**
- * Helper: bikin path dengan locale prefix (fix double slash)
- */
 const path = (lang: string, segment: string): string => {
-  // Remove leading slash if exists, then add lang prefix
   const cleanSegment = segment.startsWith('/') ? segment.slice(1) : segment;
   return `/${lang}/${cleanSegment}`;
 };
 
-// ============================================================================
-// ✅ SUB-COMPONENTS
-// ============================================================================
-
-/**
- * Component untuk Additional Images (Grid Layout - Opsional)
- */
 function AdditionalImagesGrid({ 
   images, 
   title, 
@@ -38,14 +24,14 @@ function AdditionalImagesGrid({
 }: { 
   images: AdditionalImage[]; 
   title: string;
-  t?: { more_from_project?: string };
+  t: any;
 }) {
   if (!images || images.length === 0) return null;
 
   return (
     <div className="mt-20">
       <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 text-[var(--text-primary)]">
-        {t?.more_from_project || 'More From This Project'}
+        {t?.more_from_project}
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -73,52 +59,36 @@ function AdditionalImagesGrid({
   );
 }
 
-// ============================================================================
-// ✅ MAIN PAGE COMPONENT - Server Component (Next.js 14 Compatible)
-// ============================================================================
-
-export default async function ProjectDetailPage({ 
-  params 
-}: { 
-  params: { slug: string; lang: string } 
-}) {
-  // ✅ Next.js 14: JANGAN await params (params is NOT a Promise)
+export default async function ProjectDetailPage({ params }: { params: { slug: string; lang: string } }) {
   const { slug, lang } = params;
 
-  // ✅ Validasi locale
   if (!['id', 'en'].includes(lang)) {
     return <div>Locale not supported</div>;
   }
 
-  // ✅ Load project data dengan locale
   const project = getProjectBySlug(slug, lang);
 
   if (!project) {
     notFound();
   }
 
-  // ✅ Load translations
-  const t = {
-    common: await getTranslations(lang as Locale, 'common'),
-    project: await getTranslations(lang as Locale, 'project'),
-  };
+  // ✅ Load ALL translations (flat structure - no namespace)
+  const t = await getTranslations(lang as Locale);
 
   const relatedProjects = getRelatedProjects(project.slug, project.category, lang);
 
   return (
     <>
-      {/* ✅ JANGAN tambah <Navbar /> - udah ada di layout */}
-
       {/* Hero Section */}
       <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime -mt-20">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <Link 
             href={path(lang, 'portfolio')} 
             className="inline-flex items-center text-brand-dark hover:text-brand-dark/70 mb-6 font-bold transition-colors group"
-            aria-label={t.project?.back_to_portfolio || 'Back to Portfolio'}
+            aria-label={t.project?.back_to_portfolio}
           >
             <span className="mr-2 group-hover:-translate-x-1 transition-transform" aria-hidden="true">←</span> 
-            {t.project?.back_to_portfolio || 'Back to Portfolio'}
+            {t.project?.back_to_portfolio}
           </Link>
           
           <div className="ml-2 inline-block bg-brand-dark text-brand-lime px-2 py-1 text-sm font-bold mb-6 rounded-lg">
@@ -139,10 +109,10 @@ export default async function ProjectDetailPage({
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { label: t.project?.client_label || 'Client', value: project.client },
-            { label: t.project?.year_label || 'Year', value: project.year },
-            { label: t.project?.duration_label || 'Duration', value: project.duration },
-            { label: t.project?.category_label || 'Category', value: project.category },
+            { label: t.project?.client_label, value: project.client },
+            { label: t.project?.year_label, value: project.year },
+            { label: t.project?.duration_label, value: project.duration },
+            { label: t.project?.category_label, value: project.category },
           ].map((item, idx) => (
             <div key={idx}>
               <h3 className="font-display text-sm md:text-lg font-bold mb-2 text-brand-dark dark:text-brand-lime uppercase tracking-wide">
@@ -161,7 +131,7 @@ export default async function ProjectDetailPage({
           {/* Services Provided */}
           <div>
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-2 text-[var(--text-primary)]">
-              {t.project?.services_title || 'Services Provided'}
+              {t.project?.services_title}
             </h2>
             <div className="grid md:grid-cols-2 gap-2">
               {project.services.map((service, idx) => (
@@ -181,7 +151,7 @@ export default async function ProjectDetailPage({
           {/* The Challenge */}
           <div>
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-2 text-[var(--text-primary)]">
-              {t.project?.challenge_title || 'The Challenge'}
+              {t.project?.challenge_title}
             </h2>
             <p className="text-[var(--text-muted)] text-lg leading-relaxed">
               {project.challenge}
@@ -200,7 +170,7 @@ export default async function ProjectDetailPage({
                 sizes="100vw"
               />
               <figcaption className="absolute bottom-4 left-4 bg-brand-lime text-brand-dark px-2 py-0.5 rounded text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0">
-                {t.project?.badge_showcase || 'Project Showcase'}
+                {t.project?.badge_showcase}
               </figcaption>
             </figure>
           )}
@@ -208,7 +178,7 @@ export default async function ProjectDetailPage({
           {/* Our Solution */}
           <div>
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-2 text-[var(--text-primary)]">
-              {t.project?.solution_title || 'The Approach'}
+              {t.project?.solution_title}
             </h2>
             <p className="text-[var(--text-muted)] text-lg leading-relaxed">
               {project.solution}
@@ -228,7 +198,7 @@ export default async function ProjectDetailPage({
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <figcaption className="absolute bottom-4 left-4 bg-brand-lime text-brand-dark px-2 py-0.5 rounded text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0">
-                    {t.project?.badge_design || 'Design Detail'}
+                    {t.project?.badge_design}
                   </figcaption>
                 </figure>
               )}
@@ -242,7 +212,7 @@ export default async function ProjectDetailPage({
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <figcaption className="absolute bottom-4 left-4 bg-brand-lime text-brand-dark px-2 py-0.5 rounded text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0">
-                    {t.project?.badge_implementation || 'Implementation'}
+                    {t.project?.badge_implementation}
                   </figcaption>
                 </figure>
               )}
@@ -260,7 +230,7 @@ export default async function ProjectDetailPage({
           <div className="bg-brand-lime p-8 md:p-12 rounded-2xl border-2 border-brand-dark relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-dark/5 rounded-full blur-3xl" aria-hidden="true"></div>
             <h2 className="font-display text-2xl md:text-3xl font-bold mb-2 text-brand-dark relative z-10">
-              {t.project?.results_title || 'Outcome & Impact'}
+              {t.project?.results_title}
             </h2>
             <p className="text-brand-dark/90 text-lg leading-relaxed relative z-10">
               {project.results}
@@ -287,11 +257,10 @@ export default async function ProjectDetailPage({
           {project.externalLinks && Object.keys(project.externalLinks).length > 0 && (
             <div className="border-t-2 border-[var(--border-color)]/10 pt-12">
               <h3 className="font-display text-xl md:text-2xl font-bold mb-2 text-[var(--text-primary)]">
-                {t.project?.external_links_title || 'View on Other Platforms'}
+                {t.project?.external_links_title}
               </h3>
               <div className="flex flex-wrap gap-4">
                 {Object.entries(project.externalLinks).map(([platform, url]) => {
-                  // Skip non-URL fields like website_label
                   if (platform.endsWith('_label') || typeof url !== 'string') return null;
                   
                   const platformLabels: Record<string, { icon: string; label: string }> = {
@@ -329,7 +298,7 @@ export default async function ProjectDetailPage({
               className="inline-flex items-center gap-2 text-[var(--text-primary)] hover:text-brand-lime font-bold text-lg transition-colors group"
             >
               <span className="group-hover:-translate-x-1 transition-transform" aria-hidden="true">←</span>
-              {t.project?.view_all_projects || 'View All Projects'}
+              {t.project?.view_all_projects}
             </Link>
           </nav>
         </div>
@@ -340,7 +309,7 @@ export default async function ProjectDetailPage({
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]" aria-labelledby="related-projects-heading">
           <div className="max-w-7xl mx-auto">
             <h2 id="related-projects-heading" className="font-display text-3xl md:text-4xl font-bold mb-12 text-center text-[var(--text-primary)]">
-              {t.project?.more_title_part1 || 'More'} <span className="text-brand-dark dark:text-brand-lime">{project.category}</span> {t.project?.more_title_part2 || 'Projects'}
+              {t.project?.more_title_part1} <span className="text-brand-dark dark:text-brand-lime">{project.category}</span> {t.project?.more_title_part2}
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
@@ -361,7 +330,7 @@ export default async function ProjectDetailPage({
                       />
                       <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
                         <span className="text-brand-lime font-display text-xl font-bold">
-                          {t.project?.view_project || 'View Project'}
+                          {t.project?.view_project}
                         </span>
                       </div>
                     </div>
@@ -393,37 +362,26 @@ export default async function ProjectDetailPage({
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-primary)] dark:bg-[var(--bg-primary)]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]">
-            {t.project?.cta_title_part1 || 'READY TO'} <br/><span className="text-brand-lime bg-brand-dark rounded-lg py-0 px-2 dark:text-brand-lime">{t.project?.cta_title_part2 || 'COLLABORATE?'}</span>
+            {t.project?.cta_title_part1} <br/><span className="text-brand-lime bg-brand-dark rounded-lg py-0 px-2 dark:text-brand-lime">{t.project?.cta_title_part2}</span>
           </h2>
           <p className="text-xl text-[var(--text-muted)] mb-8 max-w-2xl mx-auto">
-            {t.project?.cta_subtitle || 'Let’s discuss how the right product design and technical solutions can help achieve your business goals.'}
+            {t.project?.cta_subtitle}
           </p>
           <Link 
             href={path(lang, 'contact')} 
             className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-bold text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg hover:scale-105"
           >
-            {t.common?.buttons?.start_project || 'Start a Project'} →
+            {t.common?.buttons?.start_project} →
           </Link>
         </div>
       </section>
-
-      {/* ✅ JANGAN tambah <Footer /> - udah ada di layout */}
     </>
   );
 }
 
-// ============================================================================
-// ✅ NEXT.JS DATA FUNCTIONS
-// ============================================================================
-
-/**
- * Generate static params untuk SSG (Next.js 14 Compatible + Optimized)
- */
 export async function generateStaticParams() {
-  // ✅ Pakai getAllProjectSlugs() - lebih cepat karena nggak parse content
   const slugs = getAllProjectSlugs();
   
-  // Generate params untuk semua kombinasi lang + slug
   return ['id', 'en'].flatMap((locale) =>
     slugs.map((slug) => ({
       lang: locale,
@@ -432,15 +390,11 @@ export async function generateStaticParams() {
   );
 }
 
-/**
- * Dynamic Metadata per project + locale (Next.js 14 Compatible + SEO Optimized)
- */
 export async function generateMetadata({ params }: { params: { slug: string; lang: string } }) {
-  // ✅ Next.js 14: JANGAN await params
   const { slug, lang } = params;
   
   const project = getProjectBySlug(slug, lang);
-  const t = await getTranslations(lang as Locale, 'project');
+  const t = await getTranslations(lang as Locale);
   
   if (!project) {
     return { 
@@ -454,7 +408,6 @@ export async function generateMetadata({ params }: { params: { slug: string; lan
   return {
     title: `${project.title} | Baradé Studio`,
     description: project.description,
-    // ✅ OpenGraph dengan locale
     openGraph: {
       title: `${project.title} | Baradé Studio`,
       description: project.description,
@@ -464,14 +417,12 @@ export async function generateMetadata({ params }: { params: { slug: string; lan
       images: project.projectShowcase ? [{ url: project.projectShowcase, width: 1200, height: 630, alt: project.title }] : undefined,
       siteName: 'Baradé Studio',
     },
-    // ✅ Twitter Card
     twitter: {
       card: 'summary_large_image',
       title: project.title,
       description: project.description,
       images: project.projectShowcase ? [project.projectShowcase] : undefined,
     },
-    // ✅ hreflang tags untuk SEO multilingual
     alternates: {
       canonical: `${baseUrl}/${lang}/portfolio/${slug}`,
       languages: {
@@ -479,7 +430,6 @@ export async function generateMetadata({ params }: { params: { slug: string; lan
         'en': `/en/portfolio/${slug}`,
       },
     },
-    // ✅ Robots
     robots: {
       index: true,
       follow: true,

@@ -1,0 +1,253 @@
+{
+  "nav": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "services": "Layanan",
+    "portfolio": "Portfolio",
+    "contact": "Kontak"
+  },
+  "common": {
+    "buttons": {
+      "view_work": "Lihat Portfolio",
+      "get_in_touch": "Hubungi Kami",
+      "learn_more": "Pelajari Selengkapnya",
+      "contact_now": "Kontak Sekarang",
+      "send_message": "Kirim Pesan",
+      "back": "Kembali",
+      "get_started": "Mulai Sekarang",
+      "start_project": "Mulai Proyek"
+    },
+    "stats": {
+      "Projects Completed": "Proyek Selesai",
+      "Clients": "Klien",
+      "Years of Experience": "Tahun Pengalaman",
+      "Client Satisfaction": "Kepuasan Klien"
+    },
+    "labels": {
+      "client": "Klien",
+      "year": "Tahun",
+      "duration": "Durasi",
+      "category": "Kategori",
+      "email": "Email",
+      "phone": "Telepon",
+      "location": "Lokasi"
+    }
+  },
+  "home": {
+    "hero": {
+      "title_part1": "MEMBANGUN",
+      "title_part2": "PRODUK DIGITAL",
+      "subtitle": "Mentransformasi bisnis melalui desain produk terstruktur dan identitas visual. Fokus pada fungsi, struktur, dan hasil yang berdampak."
+    },
+    "services": {
+      "title": "LAYANAN"
+    },
+    "cta": {
+      "title": "SIAP BERDISKUSI?",
+      "subtitle": "Ceritakan tentang proyek Anda dan mari bangun solusi yang tepat bersama."
+    }
+  },
+  "about": {
+    "hero": {
+      "title_part1": "TENTANG",
+      "title_part2": "KAMI",
+      "subtitle": "Mitra desain produk dan identitas visual independen yang berbasis di Bandung, Indonesia. Membantu bisnis membangun kehadiran digital melalui desain yang fungsional dan terstruktur."
+    },
+    "story": {
+      "title": "PENDEKATAN KERJA",
+      "p1": "Didirikan pada tahun 2020, Baradé Studio fokus pada pengiriman kualitas eksekusi yang konsisten. Saya telah mengamati banyak bisnis dengan operasi matang yang belum memiliki identitas visual yang sejalan dengan kualitas layanan mereka.",
+      "p2": "Sebagai desainer, fokus saya melampaui estetika; saya memprioritaskan bagaimana desain berkinerja untuk bisnis Anda. Dari desain User Interface (UI) hingga struktur User Experience (UX), setiap elemen dibangun untuk memperkuat branding dan menyederhanakan interaksi pelanggan.",
+      "p3": "Bekerja dengan Baradé Studio berarti Anda berkolaborasi langsung dengan desainer yang mengeksekusi proyek Anda. Ini memastikan setiap visi bisnis diterjemahkan secara akurat menjadi produk digital."
+    },
+    "values": {
+      "title_part1": "STANDAR",
+      "title_part2": "DESAIN",
+      "excellence": {
+        "title": "Keunggulan",
+        "desc": "Berkomitmen untuk memberikan kualitas tertinggi di setiap proyek."
+      },
+      "collaboration": {
+        "title": "Kolaborasi",
+        "desc": "Bekerja erat dengan klien untuk mencapai hasil terbaik."
+      },
+      "innovation": {
+        "title": "Inovasi",
+        "desc": "Selalu mengeksplorasi ide-ide baru dan solusi kreatif."
+      }
+    },
+    "cta": {
+      "title": "MULAI DISKUSI",
+      "subtitle": "Siap memperkuat identitas brand dan kehadiran digital Anda?"
+    }
+  },
+  "services": {
+    "hero": {
+      "title": "LAYANAN",
+      "subtitle": "Solusi desain produk dan pengembangan digital yang fokus pada hasil dan efektivitas bisnis."
+    },
+    "graphic_design": {
+      "title": "IDENTITAS VISUAL",
+      "description": "Membangun kesan konsisten melalui sistem desain yang kuat. Dari identitas brand hingga aset pemasaran, setiap elemen dirancang untuk memperkuat pesan Anda.",
+      "features": [
+        "Desain Logo & Identitas Brand",
+        "Sistem Tipografi & Warna",
+        "Aset Media Sosial",
+        "Desain Kemasan",
+        "Grafis & Ilustrasi Kustom"
+      ]
+    },
+    "web_development": {
+      "title": "PENGEMBANGAN WEB",
+      "description": "Membangun kehadiran digital dengan website modern yang responsif. Fokus pada kecepatan, keamanan, dan pengalaman pengguna.",
+      "features": [
+        "Pengembangan Website Kustom",
+        "Solusi E-commerce",
+        "Desain Responsif & Mobile-First",
+        "Integrasi Sistem & CMS",
+        "Maintenance & Dukungan Teknis"
+      ]
+    },
+    "brand_strategy": {
+      "title": "DESAIN PRODUK (UI/UX)",
+      "description": "Merancang alur digital yang efisien. Saya membantu bisnis mendefinisikan pengalaman pengguna yang memfasilitasi konversi dan interaksi pelanggan.",
+      "features": [
+        "Riset & Analisis Pengguna",
+        "User Flow & Wireframing",
+        "Prototyping High-Fidelity",
+        "Desain Interface Interaktif",
+        "Audit & Optimasi UX"
+      ]
+    },
+    "process": {
+      "title_part1": "ALUR",
+      "title_part2": "KERJA",
+      "steps": [
+        {
+          "num": 1,
+          "title": "Analisis",
+          "desc": "Membedah kebutuhan bisnis, target audiens, dan kendala teknis yang ada."
+        },
+        {
+          "num": 2,
+          "title": "Arsitektur",
+          "desc": "Mengorganisir struktur informasi dan strategi visual sebelum eksekusi."
+        },
+        {
+          "num": 3,
+          "title": "Eksekusi",
+          "desc": "Mendesain dan mengembangkan sistem dengan standar kualitas yang ketat."
+        },
+        {
+          "num": 4,
+          "title": "Deployment",
+          "desc": "Peluncuran produk dan monitoring untuk memastikan performa optimal."
+        }
+      ]
+    }
+  },
+  "portfolio": {
+    "hero": {
+      "title_part1": "KARYA",
+      "title_part2": "KAMI",
+      "subtitle": "Kumpulan solusi desain dan teknis yang dikembangkan untuk mengatasi berbagai tantangan bisnis."
+    },
+    "filters": {
+      "all": "Semua Proyek"
+    },
+    "messages": {
+      "showing": "Menampilkan",
+      "project": "proyek",
+      "projects": "proyek",
+      "no_results": "Tidak ada proyek ditemukan"
+    },
+    "empty_state": "Belum ada proyek yang tersedia. Periksa kembali segera!",
+    "cta": {
+      "title_part1": "SIAP MEMBANGUN PRODUK ANDA?",
+      "subtitle": "Mari diskusikan bagaimana pendekatan desain dan teknis yang tepat dapat memperkuat bisnis Anda."
+    },
+    "seo": {
+      "title": "Portfolio",
+      "description": "Jelajahi karya terbaru kami dalam branding, pengembangan web, dan desain digital."
+    }
+  },
+  "contact": {
+    "hero": {
+      "title_part1": "MARI",
+      "title_part2": "BERBICARA",
+      "subtitle": "Siap memulai proyek Anda? Mari diskusikan bagaimana kami dapat membantu mewujudkan visi Anda."
+    },
+    "form": {
+      "title": "KIRIM PESAN",
+      "name_label": "Nama",
+      "name_placeholder": "Nama lengkap Anda",
+      "email_label": "Email",
+      "email_placeholder": "nama@contoh.com",
+      "phone_label": "Telepon",
+      "service_label": "Layanan yang Dibutuhkan",
+      "service_placeholder": "Pilih kategori",
+      "services": {
+        "graphic_design": "Identitas Visual",
+        "web_development": "Pengembangan Web",
+        "branding": "Desain UI/UX",
+        "other": "Lainnya"
+      },
+      "message_label": "Pesan",
+      "message_placeholder": "Jelaskan secara singkat tujuan proyek Anda...",
+      "success_message": "Terima kasih! Pesan Anda telah terkirim.",
+      "send_message": "Kirim Pesan",
+      "sending": "Mengirim..."
+    },
+    "info": {
+      "title_part1": "HUBUNGI",
+      "title_part2": "KAMI",
+      "email_label": "Email",
+      "phone_label": "Telepon",
+      "location_label": "Lokasi",
+      "location_value": "Bandung, Jawa Barat, Indonesia",
+      "hours_title": "JAM OPERASIONAL",
+      "hours_weekday_label": "Senin - Jumat:",
+      "hours_saturday_label": "Sabtu:",
+      "hours_sunday_label": "Minggu:",
+      "hours_closed": "Tutup"
+    }
+  },
+  "project": {
+    "back_to_portfolio": "Kembali ke Portfolio",
+    "services_provided": "Layanan yang Diberikan",
+    "view_project": "Lihat Proyek",
+    "client_label": "Klien",
+    "year_label": "Tahun",
+    "duration_label": "Durasi",
+    "category_label": "Kategori",
+    "services_title": "Layanan yang Diberikan",
+    "challenge_title": "Tantangan",
+    "solution_title": "Pendekatan",
+    "results_title": "Hasil & Dampak",
+    "badge_showcase": "Project Showcase",
+    "badge_design": "Detail Desain",
+    "badge_implementation": "Implementasi",
+    "more_from_project": "Lebih Dari Proyek Ini",
+    "external_links_title": "Lihat di Platform Lain",
+    "view_all_projects": "Lihat Semua Proyek",
+    "more_title_part1": "Proyek",
+    "more_title_part2": "Lainnya",
+    "cta_title_part1": "SIAP UNTUK",
+    "cta_title_part2": "BERKOLABORASI?",
+    "cta_subtitle": "Mari diskusikan bagaimana desain produk dan solusi teknis yang tepat dapat membantu mencapai tujuan bisnis Anda.",
+    "platforms": {
+      "behance": "Lihat di Behance",
+      "dribbble": "Lihat di Dribbble",
+      "website": "Kunjungi Website",
+      "github": "Lihat di GitHub",
+      "instagram": "Lihat di Instagram"
+    }
+  },
+  "footer": {
+    "copyright": "© {{year}} BARADE STUDIO. Hak cipta dilindungi.",
+    "made_with": "Dikembangkan oleh {{developer}}",
+    "quick_links": "Tautan Cepat",
+    "contact_info": "Kontak",
+    "business_hours": "Jam Operasional",
+    "tagline": "Fokus pada desain produk fungsional dan identitas visual untuk membantu bisnis mempertahankan kehadiran digital yang konsisten dan profesional."
+  }
+}

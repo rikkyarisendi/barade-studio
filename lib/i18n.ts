@@ -1,12 +1,13 @@
 // lib/i18n.ts
 import 'server-only'
+import type { Locale, Translations } from '@/types/content'
 
 // ============================================================================
-// ✅ LOCALE CONFIGURATION (Original - JANGAN DIHAPUS!)
+// ✅ LOCALE CONFIGURATION
 // ============================================================================
 
 export const locales = ['id', 'en'] as const
-export type Locale = (typeof locales)[number]
+export type { Locale }
 export const defaultLocale: Locale = 'id'
 
 export function isValidLocale(locale: string): locale is Locale {
@@ -14,135 +15,31 @@ export function isValidLocale(locale: string): locale is Locale {
 }
 
 // ============================================================================
-// ✅ TRANSLATION INTERFACES (New - Type Safety)
+// ✅ MAIN FUNCTION: Load Translations (FLAT STRUCTURE)
 // ============================================================================
 
-export type CommonTranslations = {
-  nav?: Record<string, string>;
-  footer?: Record<string, string>;
-  buttons?: Record<string, string>;
-  stats?: Record<string, string>;
-  [key: string]: any;
-};
-
-export type HomeTranslations = {
-  hero?: {
-    title_part1?: string;
-    title_part2?: string;
-    subtitle?: string;
-  };
-  services?: Record<string, any>;
-  cta?: Record<string, string>;
-  [key: string]: any;
-};
-
-export type ContactTranslations = {
-  hero?: Record<string, string>;
-  info?: Record<string, string>;
-  form?: Record<string, any>;
-  errors?: {
-    invalid_email?: string;
-    invalid_country?: string;
-    invalid_phone?: string;
-  };
-  [key: string]: any;
-};
-
-export type AboutTranslations = {
-  hero?: Record<string, string>;
-  content?: Record<string, any>;
-  [key: string]: any;
-};
-
-export type ServicesTranslations = {
-  hero?: Record<string, string>;
-  content?: Record<string, any>;
-  [key: string]: any;
-};
-
-export type PortfolioTranslations = {
-  hero?: Record<string, string>;
-  filters?: Record<string, string>;
-  modal?: Record<string, string>;
-  messages?: Record<string, string>;
-  tags?: Record<string, string>;
-  [key: string]: any;
-};
-
-export type ProjectTranslations = {
-  back_to_portfolio?: string;
-  client_label?: string;
-  year_label?: string;
-  duration_label?: string;
-  category_label?: string;
-  services_title?: string;
-  challenge_title?: string;
-  solution_title?: string;
-  results_title?: string;
-  badge_showcase?: string;
-  badge_design?: string;
-  badge_implementation?: string;
-  more_from_project?: string;
-  external_links_title?: string;
-  view_all_projects?: string;
-  more_title_part1?: string;
-  more_title_part2?: string;
-  view_project?: string;
-  cta_title_part1?: string;
-  cta_title_part2?: string;
-  cta_subtitle?: string;
-  platforms?: Record<string, string>;
-  [key: string]: any;
-};
-
-// ============================================================================
-// ✅ MAIN FUNCTION: Load Translations
-// ============================================================================
-
-export type Namespace = 
-  | 'common' 
-  | 'home' 
-  | 'about' 
-  | 'services' 
-  | 'portfolio' 
-  | 'project' 
-  | 'contact';
-
-export type TranslationMap = {
-  common: CommonTranslations;
-  home: HomeTranslations;
-  about: AboutTranslations;
-  services: ServicesTranslations;
-  portfolio: PortfolioTranslations;
-  project: ProjectTranslations;
-  contact: ContactTranslations;
-};
-
-export async function getTranslations<T extends Namespace>(
-  locale: Locale, 
-  namespace: T
-): Promise<TranslationMap[T]> {
+export async function getTranslations(locale: Locale): Promise<Translations> {
   try {
-    const module = await import(`@/locales/${locale}/${namespace}.json`)
-    return module.default as TranslationMap[T]
+    const module = await import(`@/locales/${locale}.json`)
+    return module.default as Translations
   } catch (error) {
-    console.warn(`⚠️ Translation not found: locales/${locale}/${namespace}.json`)
+    console.warn(`⚠️ Translation not found: locales/${locale}.json`)
     
     // Fallback ke default locale
     if (locale !== defaultLocale) {
       try {
-        const fallback = await import(`@/locales/${defaultLocale}/${namespace}.json`)
-        return fallback.default as TranslationMap[T]
+        const fallback = await import(`@/locales/${defaultLocale}.json`)
+        return fallback.default as Translations
       } catch {
-        return {} as TranslationMap[T]
+        return {} as Translations
       }
     }
-    return {} as TranslationMap[T]
+    return {} as Translations
   }
 }
 
 // ============================================================================
-// ✅ HELPER FUNCTIONS (Original - JANGAN DIHAPUS!)
+// ✅ HELPER FUNCTIONS
 // ============================================================================
 
 export function formatDate(date: Date | string, locale: Locale): string {
@@ -164,9 +61,7 @@ export function formatNumber(num: number, locale: Locale, currency?: string): st
   return new Intl.NumberFormat(locale === 'id' ? 'id-ID' : 'en-US').format(num)
 }
 
-// ✅ Utility: Clear cache (untuk development)
 export function clearTranslationCache(): void {
-  // Next.js module cache handling (opsional)
   if (process.env.NODE_ENV === 'development') {
     console.log('[i18n] Translation cache cleared (dev mode)')
   }

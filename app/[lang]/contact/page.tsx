@@ -1,45 +1,31 @@
 // app/[lang]/contact/page.tsx
+
 import { getTranslations } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
-import ContactForm from './ContactForm'; // Import client component
+import ContactForm from './ContactForm';
 
-// Helper: bikin path dengan locale prefix
-const path = (lang: string, segment: string) => `/${lang}${segment}`;
-
-export default async function ContactPage({ 
-  params 
-}: { 
-  params: { lang: string } 
-}) {
+export default async function ContactPage({ params }: { params: { lang: string } }) {
   const { lang } = params;
 
-  // ✅ Validasi locale
   if (!['id', 'en'].includes(lang)) {
     return <div>Locale not supported</div>;
   }
 
-  // ✅ Load translations (server-side)
-  const t = {
-    common: await getTranslations(lang as Locale, 'common'),
-    contact: await getTranslations(lang as Locale, 'contact'),
-  };
+  // ✅ Load ALL translations (flat structure - no namespace)
+  const t = await getTranslations(lang as Locale);
 
   return (
     <>
       {/* ✅ JANGAN tambah <Navbar /> - udah ada di layout */}
       
       {/* Render Client Component dengan translations sebagai props */}
-      <ContactForm lang={lang} t={t.contact} />
+      <ContactForm lang={lang} t={t} />
       
       {/* ✅ JANGAN tambah <Footer /> - udah ada di layout */}
     </>
   );
 }
 
-// ✅ Generate static params untuk SSG
 export async function generateStaticParams() {
-  return [
-    { lang: 'id' },
-    { lang: 'en' },
-  ]
+  return [{ lang: 'id' }, { lang: 'en' }];
 }
