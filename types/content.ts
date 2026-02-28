@@ -72,7 +72,7 @@ export type SiteConfig = {
 };
 
 // ============================================================================
-// SERVICES (data/services.json)
+// SERVICES (data/services.json) - UPDATED!
 // ============================================================================
 
 export type Service = {
@@ -81,11 +81,12 @@ export type Service = {
   icon: string;
   featured: boolean;
   order: number;
-  title: TranslatedString;
-  description: TranslatedString;
+  title: string;              // ✅ Setelah translate, pasti string
+  description: string;        // ✅ Setelah translate, pasti string
   features: string[];
-  pricing: TranslatedString;
-  deliveryTime: TranslatedString;
+  // ✅ Dihapus karena nggak dipake di UI:
+  // pricing: TranslatedString;
+  // deliveryTime: TranslatedString;
 };
 
 // ============================================================================
@@ -167,6 +168,12 @@ export type ProjectFrontmatter = {
     author: string;
     position: TranslatedString;
   };
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string[];
+    image?: string;
+  };
 };
 
 // ============================================================================
@@ -243,9 +250,56 @@ export type Translations = {
     back_to_portfolio: string;
     services_provided: string;
     view_project: string;
-    client: string;
-    year: string;
-    duration: string;
-    category: string;
+    client_label: string;
+    year_label: string;
+    duration_label: string;
+    category_label: string;
+    services_title: string;
+    challenge_title: string;
+    solution_title: string;
+    results_title: string;
+    badge_showcase: string;
+    badge_design: string;
+    badge_implementation: string;
+    more_from_project: string;
+    external_links_title: string;
+    view_all_projects: string;
+    more_title_part1: string;
+    more_title_part2: string;
+    cta_title_part1: string;
+    cta_title_part2: string;
+    cta_subtitle: string;
+    platforms: {
+      behance?: string;
+      dribbble?: string;
+      website?: string;
+      github?: string;
+      instagram?: string;
+    };
+  };
+  footer: {
+    copyright: string;
+    made_with: string;
+    quick_links: string;
+    contact_info: string;
+    business_hours: string;
+    tagline: string;
+  };
+  services: {
+    graphic_design: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    web_development: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    brand_strategy: {
+      title: string;
+      description: string;
+      features: string[];
+    };
   };
 };

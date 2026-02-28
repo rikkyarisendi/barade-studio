@@ -405,24 +405,38 @@ export async function generateMetadata({ params }: { params: { slug: string; lan
   
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
   
+  // ✅ Pakai SEO dari project, fallback ke default
+  const seoTitle = project.seo?.title || `${project.title} | Baradé Studio`;
+  const seoDesc = project.seo?.description || project.description;
+  const seoImage = project.seo?.image || project.projectShowcase;
+  
   return {
-    title: `${project.title} | Baradé Studio`,
-    description: project.description,
+    title: seoTitle,
+    description: seoDesc,
+    keywords: project.seo?.keywords,
+    
     openGraph: {
-      title: `${project.title} | Baradé Studio`,
-      description: project.description,
+      title: seoTitle,
+      description: seoDesc,
       type: 'website',
       locale: lang === 'id' ? 'id_ID' : 'en_US',
       url: `${baseUrl}/${lang}/portfolio/${slug}`,
-      images: project.projectShowcase ? [{ url: project.projectShowcase, width: 1200, height: 630, alt: project.title }] : undefined,
       siteName: 'Baradé Studio',
+      images: seoImage ? [{ 
+        url: `${baseUrl}${seoImage}`, 
+        width: 1200, 
+        height: 630, 
+        alt: project.title 
+      }] : undefined,
     },
+    
     twitter: {
       card: 'summary_large_image',
-      title: project.title,
-      description: project.description,
-      images: project.projectShowcase ? [project.projectShowcase] : undefined,
+      title: seoTitle,
+      description: seoDesc,
+      images: seoImage ? [`${baseUrl}${seoImage}`] : undefined,
     },
+    
     alternates: {
       canonical: `${baseUrl}/${lang}/portfolio/${slug}`,
       languages: {
@@ -430,6 +444,7 @@ export async function generateMetadata({ params }: { params: { slug: string; lan
         'en': `/en/portfolio/${slug}`,
       },
     },
+    
     robots: {
       index: true,
       follow: true,

@@ -3,15 +3,17 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const projectsDirectory = path.join(process.cwd(), 'content/projects');
-
 export interface AdditionalImage {
   path: string;
   alt: string;
 }
 
+// ============================================================================
+// ✅ PROJECT INTERFACE (dengan SEO field)
+// ============================================================================
+
 export interface Project {
-  id?: number;  // ✅ Tetap optional, tapi kita handle dengan safe
+  id?: number;
   slug: string;
   title: string;
   date: string;
@@ -24,12 +26,11 @@ export interface Project {
   duration: string;
   services: string[];
   
-  // Full content untuk Detail Page (locale-specific)
+  // Content sections (locale-specific)
   challenge: string;
   solution: string;
   results: string;
   
-  // Short content untuk Quick View Modal
   challengeShort?: string;
   solutionShort?: string;
   resultsShort?: string;
@@ -41,6 +42,7 @@ export interface Project {
     author: string;
     position: string;
   };
+  
   externalLinks?: {
     behance?: string;
     dribbble?: string;
@@ -56,110 +58,75 @@ export interface Project {
   implementation?: string;
   additionalImages?: AdditionalImage[];
   images?: string[];
-}
-
-// ============================================================================
-// ✅ TYPES FOR HELPERS
-// ============================================================================
-
-interface SectionContent {
-  full: string;
-  short: string;
-}
-
-interface TestimonialData {
-  quote: any;
-  author: string;
-  position: any;
-}
-
-// ============================================================================
-// ✅ I18N HELPERS
-// ============================================================================
-
-function extractContentByLocale(content: string, locale: string): string {
-  if (!content) return '';
-  const idMatch = content.match(/<!--\s*id\s*-->([\s\S]*?)(?=<!--\s*en\s*-->|$)/i);
-  const enMatch = content.match(/<!--\s*en\s*-->([\s\S]*?)(?=<!--\s*id\s*-->|$)/i);
-  const idContent = idMatch ? idMatch[1].trim() : '';
-  const enContent = enMatch ? enMatch[1].trim() : '';
-  if (locale === 'en') return enContent || idContent || content;
-  return idContent || enContent || content;
-}
-
-function getTranslatedField(field: any, locale: string, fallback = ''): string {
-  if (field === null || field === undefined) return fallback;
-  if (typeof field === 'string') return field.trim();
-  if (typeof field === 'object' && !Array.isArray(field)) {
-    return (field[locale] || field.id || field.en || Object.values(field)[0] || fallback)?.toString().trim() || fallback;
-  }
-  return String(field).trim();
-}
-
-function extractSection(content: string, heading: string, maxLength = 100): SectionContent {
-  if (!content) return { full: '', short: '' };
-  const headingsMap: Record<string, string[]> = {
-    'The Challenge': ['The Challenge', 'Tantangan'],
-    'Our Solution': ['Our Solution', 'Solusi Kami'],
-    'Results': ['Results', 'Hasil'],
+  
+  // ✅ SEO / Metadata field
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string[];
+    image?: string;
   };
-  const headingList = headingsMap[heading] || [heading];
-  const pattern = headingList.map(h => `##\\s+${h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`).join('|');
+}
+
+// ============================================================================
+// ✅ HELPERS
+// ============================================================================
+
+function getProjectDir(locale: string = 'en'): string {
+  return path.join(process.cwd(), 'content/projects', locale);
+}
+
+function getProjectPath(slug: string, locale: string = 'en'): string {
+  return path.join(getProjectDir(locale), `${slug}.md`);
+}
+
+function extractSection(content: string, headings: string[], maxLength = 100): { full: string; short: string } {
+  if (!content) return { full: '', short: '' };
+  
+  const pattern = headings.map(h => `##\\s+${h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`).join('|');
   const regex = new RegExp(`(?:${pattern})\\r?\\n\\r?\\n([\\s\\S]*?)(?=\\r?\\n##\\s+|$)`, 'm');
   const match = content.match(regex);
-  const fullText = match ? match[1].trim() : '';
-  const shortText = fullText.length > maxLength ? fullText.substring(0, maxLength).trim() + '...' : fullText;
-  return { full: fullText, short: shortText };
-}
-
-function getWithFallback(
-  data: Record<string, any>, 
-  content: string, 
-  fieldName: string, 
-  heading: string,
-  locale: string
-): SectionContent {
-  const frontmatterValue = getTranslatedField(data[fieldName], locale);
-  if (frontmatterValue) {
-    const full = frontmatterValue;
-    const short = full.length > 100 ? full.substring(0, 100).trim() + '...' : full;
-    return { full, short };
-  }
-  return extractSection(content, heading);
+  
+  const full = match ? match[1].trim() : '';
+  const short = full.length > maxLength ? full.substring(0, maxLength).trim() + '...' : full;
+  
+  return { full, short };
 }
 
 // ============================================================================
 // ✅ PARSE PROJECT FILE
 // ============================================================================
 
-function parseProjectFile(filePath: string, locale: string = 'id'): Project | null {
+function parseProjectFile(filePath: string): Project | null {
   try {
+    if (!fs.existsSync(filePath)) return null;
+    
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContents);
-    const localeContent = extractContentByLocale(content, locale);
 
-    const challenge = getWithFallback(data, localeContent, 'challenge', 'The Challenge', locale);
-    const solution = getWithFallback(data, localeContent, 'solution', 'Our Solution', locale);
-    const results = getWithFallback(data, localeContent, 'results', 'Results', locale);
+    // Extract sections from markdown body
+    const challenge = extractSection(content, ['The Challenge', 'Tantangan']);
+    const solution = extractSection(content, ['The Approach', 'Our Solution', 'Solusi Kami']);
+    const results = extractSection(content, ['Outcome', 'Results', 'Hasil']);
 
     const project: Project = {
       // Required fields
       slug: data.slug || path.basename(filePath, '.md'),
-      title: getTranslatedField(data.title, locale, data.slug || ''),
-      description: getTranslatedField(data.description, locale, ''),
-      date: typeof data.date === 'string' ? data.date : '',
-      category: typeof data.category === 'string' ? data.category.trim() : 'Other',
-      color: typeof data.color === 'string' ? data.color : 'bg-gray-500/20',
-      client: typeof data.client === 'string' ? data.client : '',
-      year: typeof data.year === 'string' ? data.year : '',
-      duration: getTranslatedField(data.duration, locale, ''),
+      title: String(data.title || '').trim(),
+      description: String(data.description || '').trim(),
+      date: String(data.date || ''),
+      category: String(data.category || 'Other').trim(),
+      color: String(data.color || 'bg-gray-500/20'),
+      client: String(data.client || ''),
+      year: String(data.year || ''),
+      duration: String(data.duration || ''),
       
       // Arrays
-      tags: Array.isArray(data.tags) ? data.tags.map((t: any) => String(t)) : [],
-      services: Array.isArray(data.services) ? data.services.map((s: any) => String(s)) : [],
+      tags: Array.isArray(data.tags) ? data.tags.map((t: any) => String(t).trim()) : [],
+      services: Array.isArray(data.services) ? data.services.map((s: any) => String(s).trim()) : [],
       
       // Content sections
-      content: localeContent,
+      content,
       challenge: challenge.full,
       solution: solution.full,
       results: results.full,
@@ -168,21 +135,19 @@ function parseProjectFile(filePath: string, locale: string = 'id'): Project | nu
       resultsShort: results.short,
       
       // Images
-      thumbnail: typeof data.thumbnail === 'string' ? data.thumbnail : undefined,
-      quickViewImage: typeof data.quickViewImage === 'string' ? data.quickViewImage : undefined,
-      projectShowcase: typeof data.projectShowcase === 'string' ? data.projectShowcase : undefined,
-      designDetail: typeof data.designDetail === 'string' ? data.designDetail : undefined,
-      implementation: typeof data.implementation === 'string' ? data.implementation : undefined,
+      thumbnail: data.thumbnail ? String(data.thumbnail).trim() : undefined,
+      quickViewImage: data.quickViewImage ? String(data.quickViewImage).trim() : undefined,
+      projectShowcase: data.projectShowcase ? String(data.projectShowcase).trim() : undefined,
+      designDetail: data.designDetail ? String(data.designDetail).trim() : undefined,
+      implementation: data.implementation ? String(data.implementation).trim() : undefined,
       additionalImages: Array.isArray(data.additionalImages) ? data.additionalImages : [],
       images: Array.isArray(data.images) ? data.images : [],
       
       // Testimonial
       testimonial: data.testimonial ? {
-        quote: getTranslatedField((data.testimonial as TestimonialData)?.quote, locale),
-        author: typeof (data.testimonial as TestimonialData)?.author === 'string' 
-          ? (data.testimonial as TestimonialData).author 
-          : '',
-        position: getTranslatedField((data.testimonial as TestimonialData)?.position, locale),
+        quote: String(data.testimonial.quote || '').trim(),
+        author: String(data.testimonial.author || '').trim(),
+        position: String(data.testimonial.position || '').trim(),
       } : undefined,
       
       // External links
@@ -194,7 +159,14 @@ function parseProjectFile(filePath: string, locale: string = 'id'): Project | nu
           ) as Project['externalLinks']
         : undefined,
       
-      // Optional id (will be set later)
+      // ✅ SEO / Metadata
+      seo: data.seo ? {
+        title: data.seo.title ? String(data.seo.title).trim() : undefined,
+        description: data.seo.description ? String(data.seo.description).trim() : undefined,
+        keywords: Array.isArray(data.seo.keywords) ? data.seo.keywords.map((k: any) => String(k).trim()) : [],
+        image: data.seo.image ? String(data.seo.image).trim() : undefined,
+      } : undefined,
+      
       id: undefined,
     };
 
@@ -209,32 +181,33 @@ function parseProjectFile(filePath: string, locale: string = 'id'): Project | nu
 // ✅ MAIN FUNCTIONS
 // ============================================================================
 
-export function getAllProjects(locale: string = 'id'): Project[] {
+export function getAllProjects(locale: string = 'en'): Project[] {
   try {
-    if (!fs.existsSync(projectsDirectory)) {
-      console.warn(`[Projects Warning] Directory not found: ${projectsDirectory}`);
+    const projectsDir = getProjectDir(locale);
+    
+    // Fallback to English if locale directory doesn't exist
+    if (!fs.existsSync(projectsDir)) {
+      if (locale !== 'en') {
+        return getAllProjects('en');
+      }
       return [];
     }
 
-    const fileNames = fs.readdirSync(projectsDirectory);
+    const fileNames = fs.readdirSync(projectsDir);
+    const mdFiles = fileNames.filter(f => f.endsWith('.md'));
 
-    const projects = fileNames
-      .filter(f => f.endsWith('.md') && !f.includes('.id.') && !f.includes('.en.'))
+    const projects = mdFiles
       .map((fileName, index) => {
-        const fullPath = path.join(projectsDirectory, fileName);
-        const project = parseProjectFile(fullPath, locale);
+        const fullPath = path.join(projectsDir, fileName);
+        const project = parseProjectFile(fullPath);
         if (!project) return null;
-        // ✅ Set id dengan type assertion yang aman
         return { ...project, id: index + 1 } as Project;
       })
-      // ✅ Type guard yang aman untuk optional id
-      .filter((p): p is Project => p !== null && p !== undefined)
+      .filter((p): p is Project => p !== null)
       .sort((a, b) => {
-        // ✅ Safe sorting dengan null/undefined checks
         const dateA = a.date ? new Date(a.date).getTime() : 0;
         const dateB = b.date ? new Date(b.date).getTime() : 0;
         if (dateB !== dateA) return dateB - dateA;
-        // ✅ Handle optional id dengan fallback ke 0
         return (b.id ?? 0) - (a.id ?? 0);
       });
 
@@ -245,28 +218,30 @@ export function getAllProjects(locale: string = 'id'): Project[] {
   }
 }
 
-export function getProjectBySlug(slug: string, locale: string = 'id'): Project | undefined {
+export function getProjectBySlug(slug: string, locale: string = 'en'): Project | undefined {
   try {
-    const fileName = `${slug}.md`;
-    const fullPath = path.join(projectsDirectory, fileName);
+    // Try to get project in requested locale
+    let project = parseProjectFile(getProjectPath(slug, locale));
     
-    if (!fs.existsSync(fullPath)) {
-      return undefined;
+    // Fallback to English if not found
+    if (!project && locale !== 'en') {
+      project = parseProjectFile(getProjectPath(slug, 'en'));
     }
     
-    const project = parseProjectFile(fullPath, locale);
     if (!project) return undefined;
     
-    // Get index for ID without loading all projects
-    const allSlugs = fs.readdirSync(projectsDirectory)
-      .filter(f => f.endsWith('.md') && !f.includes('.id.') && !f.includes('.en.'))
-      .map(f => f.replace(/\.md$/, ''))
-      .sort();
+    // Calculate ID based on sorted slugs in the same locale
+    const projectsDir = getProjectDir(locale);
+    if (fs.existsSync(projectsDir)) {
+      const allSlugs = fs.readdirSync(projectsDir)
+        .filter(f => f.endsWith('.md'))
+        .map(f => f.replace(/\.md$/, ''))
+        .sort();
+      const index = allSlugs.indexOf(slug);
+      return { ...project, id: index >= 0 ? index + 1 : undefined };
+    }
     
-    const index = allSlugs.indexOf(slug);
-    
-    // ✅ Set id dengan nullish coalescing untuk optional field
-    return { ...project, id: index >= 0 ? index + 1 : undefined };
+    return project;
   } catch (error) {
     console.error(`[Project Error] Failed to load project: ${slug}`, error);
     return undefined;
@@ -277,7 +252,7 @@ export function getProjectBySlug(slug: string, locale: string = 'id'): Project |
 // ✅ HELPER FUNCTIONS
 // ============================================================================
 
-export function getAllTags(locale: string = 'id'): string[] {
+export function getAllTags(locale: string = 'en'): string[] {
   try {
     const projects = getAllProjects(locale);
     const tags = projects.flatMap(p => p.tags || []);
@@ -287,7 +262,7 @@ export function getAllTags(locale: string = 'id'): string[] {
   }
 }
 
-export function getProjectsByTag(tag: string, locale: string = 'id'): Project[] {
+export function getProjectsByTag(tag: string, locale: string = 'en'): Project[] {
   try {
     return getAllProjects(locale).filter(p => p.tags?.includes(tag));
   } catch {
@@ -298,7 +273,7 @@ export function getProjectsByTag(tag: string, locale: string = 'id'): Project[] 
 export function getRelatedProjects(
   currentSlug: string, 
   category: string, 
-  locale: string = 'id',
+  locale: string = 'en',
   limit = 3
 ): Project[] {
   try {
@@ -310,7 +285,7 @@ export function getRelatedProjects(
   }
 }
 
-export function getProjectsByCategory(category: string, locale: string = 'id'): Project[] {
+export function getProjectsByCategory(category: string, locale: string = 'en'): Project[] {
   try {
     return getAllProjects(locale).filter(p => p.category === category);
   } catch {
@@ -320,9 +295,12 @@ export function getProjectsByCategory(category: string, locale: string = 'id'): 
 
 export function getAllProjectSlugs(): string[] {
   try {
-    if (!fs.existsSync(projectsDirectory)) return [];
-    return fs.readdirSync(projectsDirectory)
-      .filter(f => f.endsWith('.md') && !f.includes('.id.') && !f.includes('.en.'))
+    // Always get slugs from English as the source of truth
+    const enDir = getProjectDir('en');
+    if (!fs.existsSync(enDir)) return [];
+    
+    return fs.readdirSync(enDir)
+      .filter(f => f.endsWith('.md'))
       .map(f => f.replace(/\.md$/, ''));
   } catch {
     return [];

@@ -1,6 +1,6 @@
 [
   {
-    "slug": "visual-identity",
+    "slug": "graphic-design",
     "category": "design",
     "icon": "🎨",
     "featured": true,
@@ -10,23 +10,16 @@
       "en": "Visual Identity"
     },
     "description": {
-      "id": "Membangun identitas brand yang kuat dan konsisten melalui logo, tipografi, warna, dan sistem desain yang terstruktur.",
-      "en": "Building strong and consistent brand identities through logos, typography, colors, and structured design systems."
+      "id": "Membangun kesan konsisten melalui sistem desain yang kuat. Dari identitas brand hingga aset pemasaran, setiap elemen dirancang untuk memperkuat pesan Anda.",
+      "en": "Building consistent impressions through robust design systems. From brand identity to marketing assets, every element is crafted to strengthen your message."
     },
     "features": [
-      "Logo Design",
-      "Brand Guidelines",
-      "Color & Typography System",
-      "Brand Assets & Mockups"
-    ],
-    "pricing": {
-      "id": "Mulai dari Rp 2.500.000",
-      "en": "Starting from $150"
-    },
-    "deliveryTime": {
-      "id": "7-14 hari",
-      "en": "7-14 days"
-    }
+      "Desain Logo & Identitas Brand",
+      "Sistem Tipografi & Warna",
+      "Aset Media Sosial",
+      "Desain Kemasan",
+      "Grafis & Ilustrasi Kustom"
+    ]
   },
   {
     "slug": "web-development",
@@ -39,51 +32,37 @@
       "en": "Web Development"
     },
     "description": {
-      "id": "Website modern yang cepat, responsif, dan optimal untuk SEO. Dibangun dengan teknologi terkini untuk performa maksimal.",
-      "en": "Modern, fast, responsive, and SEO-optimized websites. Built with cutting-edge technology for maximum performance."
+      "id": "Membangun kehadiran digital dengan website modern yang responsif. Fokus pada kecepatan, keamanan, dan pengalaman pengguna.",
+      "en": "Building a digital presence with modern, responsive websites. Focusing on speed, security, and user experience."
     },
     "features": [
-      "Landing Page",
-      "Company Profile",
-      "E-commerce Integration",
-      "CMS & Admin Panel"
-    ],
-    "pricing": {
-      "id": "Mulai dari Rp 5.000.000",
-      "en": "Starting from $300"
-    },
-    "deliveryTime": {
-      "id": "14-30 hari",
-      "en": "14-30 days"
-    }
+      "Pengembangan Website Kustom",
+      "Solusi E-commerce",
+      "Desain Responsif & Mobile-First",
+      "Integrasi Sistem & CMS",
+      "Maintenance & Dukungan Teknis"
+    ]
   },
   {
-    "slug": "ui-ux-design",
+    "slug": "brand-strategy",
     "category": "design",
     "icon": "✨",
     "featured": true,
     "order": 3,
     "title": {
-      "id": "Desain Interface (UI/UX)",
-      "en": "Interface Design (UI/UX)"
+      "id": "Desain Produk (UI/UX)",
+      "en": "Product Design (UI/UX)"
     },
     "description": {
-      "id": "Pengalaman pengguna yang intuitif dan menarik. Fokus pada usability, accessibility, dan visual yang memukau.",
-      "en": "Intuitive and engaging user experiences. Focused on usability, accessibility, and stunning visuals."
+      "id": "Merancang alur digital yang efisien. Saya membantu bisnis mendefinisikan pengalaman pengguna yang memfasilitasi konversi dan interaksi pelanggan.",
+      "en": "Designing efficient digital flows. I help businesses define user experiences that facilitate conversion and customer interaction."
     },
     "features": [
-      "User Research & Wireframes",
-      "Interactive Prototypes",
-      "UI Design System",
-      "Usability Testing"
-    ],
-    "pricing": {
-      "id": "Mulai dari Rp 3.500.000",
-      "en": "Starting from $200"
-    },
-    "deliveryTime": {
-      "id": "10-21 hari",
-      "en": "10-21 days"
-    }
+      "Riset & Analisis Pengguna",
+      "User Flow & Wireframing",
+      "Prototyping High-Fidelity",
+      "Desain Interface Interaktif",
+      "Audit & Optimasi UX"
+    ]
   }
 ]
