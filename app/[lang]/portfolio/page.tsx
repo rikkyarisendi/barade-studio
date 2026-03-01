@@ -6,6 +6,7 @@ import PortfolioClient from '@/components/PortfolioClient';
 import { getTranslations } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 import { Metadata } from 'next';
+import RevealOnScroll from '@/components/RevealOnScroll';
 
 const path = (lang: string, segment: string) => `/${lang}${segment}`;
 
@@ -43,23 +44,29 @@ export default async function PortfolioPage({ params }: { params: { lang: string
       {/* Hero Section */}
       <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 -mt-20 mb-20 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-          <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            <span className="text-[var(--text-primary)]">{t.portfolio?.hero?.title_part1}</span>
-            <span className="text-brand-dark dark:text-brand-lime">{t.portfolio?.hero?.title_part2}</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-[var(--text-muted)] max-w-3xl animate-slide-in">
-            {t.portfolio?.hero?.subtitle}
-          </p>
+          <RevealOnScroll animation="up" delay={0.1}>
+            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6">
+              <span className="text-[var(--text-primary)]">{t.portfolio?.hero?.title_part1}</span>
+              <span className="text-brand-dark dark:text-brand-lime">{t.portfolio?.hero?.title_part2}</span>
+            </h1>
+          </RevealOnScroll>
+          <RevealOnScroll animation="up" delay={0.25}>
+            <p className="text-xl md:text-2xl text-[var(--text-muted)] max-w-3xl">
+              {t.portfolio?.hero?.subtitle}
+            </p>
+          </RevealOnScroll>
         </div>
       </section>
 
       {/* Client Component - handles filter + modal */}
       {projects.length > 0 ? (
-        <PortfolioClient 
-          projects={projects} 
-          lang={lang}
-          t={t.portfolio}
-        />
+        <RevealOnScroll animation="up" delay={0.15}>
+          <PortfolioClient 
+            projects={projects} 
+            lang={lang}
+            t={t.portfolio}
+          />
+        </RevealOnScroll>
       ) : (
         <section className="py-20 px-4 text-center">
           <p className="text-xl text-[var(--text-muted)]/60">
@@ -71,18 +78,24 @@ export default async function PortfolioPage({ params }: { params: { lang: string
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]">
-            {t.portfolio?.cta?.title_part1}
-          </h2>
-          <p className="text-xl text-[var(--text-muted)] mb-8">
-            {t.portfolio?.cta?.subtitle}
-          </p>
-          <Link
-            href={path(lang, '/contact')}
-            className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-medium text-lg hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
-          >
-            {t.common?.buttons?.start_project}
-          </Link>
+          <RevealOnScroll animation="up" delay={0.1}>
+            <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]">
+              {t.portfolio?.cta?.title_part1}
+            </h2>
+          </RevealOnScroll>
+          <RevealOnScroll animation="up" delay={0.2}>
+            <p className="text-xl text-[var(--text-muted)] mb-8">
+              {t.portfolio?.cta?.subtitle}
+            </p>
+          </RevealOnScroll>
+          <RevealOnScroll animation="up" delay={0.3}>
+            <Link
+              href={path(lang, '/contact')}
+              className="btn-cta-lime group"
+            >
+              {t.common?.buttons?.start_project}
+            </Link>
+          </RevealOnScroll>
         </div>
       </section>
     </>

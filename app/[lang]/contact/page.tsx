@@ -3,6 +3,7 @@
 import { getTranslations } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 import ContactForm from './ContactForm';
+import RevealOnScroll from '@/components/RevealOnScroll';
 
 export default async function ContactPage({ params }: { params: { lang: string } }) {
   const { lang } = params;
@@ -19,7 +20,9 @@ export default async function ContactPage({ params }: { params: { lang: string }
       {/* ✅ JANGAN tambah <Navbar /> - udah ada di layout */}
       
       {/* Render Client Component dengan translations sebagai props */}
-      <ContactForm lang={lang} t={t} />
+      <RevealOnScroll animation="up" delay={0.1}>
+        <ContactForm lang={lang} t={t} />
+      </RevealOnScroll>
       
       {/* ✅ JANGAN tambah <Footer /> - udah ada di layout */}
     </>

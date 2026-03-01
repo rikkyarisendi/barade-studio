@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getTranslations } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
+import RevealOnScroll from '@/components/RevealOnScroll';
 
 const path = (lang: string, segment: string) => `/${lang}${segment}`;
 
@@ -22,14 +23,18 @@ export default async function AboutPage({ params }: { params: { lang: string } }
       {/* Hero */}
       <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 -mt-20">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-          <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
-            <span className="text-[var(--text-primary)]">{t.about?.hero?.title_part1}</span>
-            <br />
-            <span className="text-brand-dark dark:text-brand-lime">{t.about?.hero?.title_part2}</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-[var(--text-muted)] max-w-3xl animate-slide-in">
-            {t.about?.hero?.subtitle}
-          </p>
+          <RevealOnScroll animation="up" delay={0.1}>
+            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6">
+              <span className="text-[var(--text-primary)]">{t.about?.hero?.title_part1}</span>
+              <br />
+              <span className="text-brand-dark dark:text-brand-lime">{t.about?.hero?.title_part2}</span>
+            </h1>
+          </RevealOnScroll>
+          <RevealOnScroll animation="up" delay={0.25}>
+            <p className="text-xl md:text-2xl text-[var(--text-muted)] max-w-3xl">
+              {t.about?.hero?.subtitle}
+            </p>
+          </RevealOnScroll>
         </div>
       </section>
 
@@ -38,7 +43,7 @@ export default async function AboutPage({ params }: { params: { lang: string } }
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
           
           {/* ✅ TEXT - order-2 di mobile (bawah), order-1 di desktop (kiri) */}
-          <div className="order-2 md:order-1">
+          <RevealOnScroll animation="left" delay={0.1} className="order-2 md:order-1">
             <h2 className="font-display text-3xl font-bold mb-6 text-brand-dark dark:text-brand-lime">
               {t.about?.story?.title}
             </h2>
@@ -51,13 +56,12 @@ export default async function AboutPage({ params }: { params: { lang: string } }
             <p className="text-[var(--text-muted)]">
               {t.about?.story?.p3}
             </p>
-          </div>
+          </RevealOnScroll>
           
           {/* ✅ IMAGE - order-1 di mobile (atas), order-2 di desktop (kanan) */}
-          <div className="order-1 md:order-2 relative">
+          <RevealOnScroll animation="right" delay={0.15} className="order-1 md:order-2 relative">
             <div className="aspect-square bg-[var(--bg-primary)] dark:bg-[#1a1a1a] border-2 border-[var(--border-color)] rounded-lg overflow-hidden">
-              {/* ✅ GANTI INI DENGAN GAMBAR ASLI */}
-               <Image
+              <Image
                 src="https://placehold.co/800x800/DCF900/1a1a1a?text=Working+Approach"
                 alt="Working Approach - Baradé Studio"
                 fill
@@ -65,16 +69,18 @@ export default async function AboutPage({ params }: { params: { lang: string } }
                 priority
               />
             </div>
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 
       {/* Values Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
-            {t.about?.values?.title_part1} <span className="text-brand-dark dark:text-brand-lime">{t.about?.values?.title_part2}</span>
-          </h2>
+          <RevealOnScroll animation="up" delay={0.1}>
+            <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
+              {t.about?.values?.title_part1} <span className="text-brand-dark dark:text-brand-lime">{t.about?.values?.title_part2}</span>
+            </h2>
+          </RevealOnScroll>
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -84,11 +90,13 @@ export default async function AboutPage({ params }: { params: { lang: string } }
             ].map((value, i) => {
               const val = (t.about?.values as any)?.[value.key];
               return (
-                <div key={i} className="text-center p-8 border-2 border-[var(--border-color)] hover-lift rounded-xl bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
-                  <div className="text-5xl mb-4">{value.icon}</div>
-                  <h3 className="font-display text-2xl font-bold mb-4 text-[var(--text-primary)]">{val?.title}</h3>
-                  <p className="text-[var(--text-muted)]">{val?.desc}</p>
-                </div>
+                <RevealOnScroll key={i} animation="up" delay={0.1 * i}>
+                  <div className="text-center p-8 border-2 border-[var(--border-color)] hover-lift rounded-xl bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
+                    <div className="text-5xl mb-4">{value.icon}</div>
+                    <h3 className="font-display text-2xl font-bold mb-4 text-[var(--text-primary)]">{val?.title}</h3>
+                    <p className="text-[var(--text-muted)]">{val?.desc}</p>
+                  </div>
+                </RevealOnScroll>
               );
             })}
           </div>
@@ -98,18 +106,24 @@ export default async function AboutPage({ params }: { params: { lang: string } }
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-lime">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-brand-dark">
-            {t.about?.cta?.title}
-          </h2>
-          <p className="text-xl text-brand-dark/80 mb-8">
-            {t.about?.cta?.subtitle}
-          </p>
-          <Link 
-            href={path(lang, '/contact')} 
-            className="inline-block bg-brand-dark text-brand-cream px-4 py-2 font-medium text-lg hover:bg-brand-cream hover:text-brand-dark transition-all duration-300 border-2 border-brand-dark rounded-lg"
-          >
-            {t.common?.buttons?.contact_now}
-          </Link>
+          <RevealOnScroll animation="up" delay={0.1}>
+            <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-brand-dark">
+              {t.about?.cta?.title}
+            </h2>
+          </RevealOnScroll>
+          <RevealOnScroll animation="up" delay={0.2}>
+            <p className="text-xl text-brand-dark/80 mb-8">
+              {t.about?.cta?.subtitle}
+            </p>
+          </RevealOnScroll>
+          <RevealOnScroll animation="up" delay={0.3}>
+            <Link 
+              href={path(lang, '/contact')} 
+              className="btn-cta-lime group"
+            >
+              {t.common?.buttons?.contact_now}
+            </Link>
+          </RevealOnScroll>
         </div>
       </section>
     </>

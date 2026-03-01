@@ -100,8 +100,8 @@ export async function getTranslations(locale: Locale, namespace?: string) {
   }
   
   try {
-    const module = await import(`@/locales/${locale}.json`);
-    const translations = module.default;
+    const translationsModule = await import(`@/locales/${locale}.json`);
+    const translations = translationsModule.default;
     
     const result = namespace ? translations[namespace] : translations;
     

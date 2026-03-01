@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider"; // ✅ Import ini
+import { ThemeProvider } from "@/components/ThemeProvider";
+
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "BARADE STUDIO - Creative Design & Web Development",
-  description: "Professional graphic design and web development services. We bring your vision to life with stunning visuals and cutting-edge web solutions.",
-  keywords: "graphic design, web design, branding, logo design, web development, creative studio",
+  description:
+    "Professional graphic design and web development services. We bring your vision to life with stunning visuals and cutting-edge web solutions.",
+  keywords:
+    "graphic design, web design, branding, logo design, web development, creative studio",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({

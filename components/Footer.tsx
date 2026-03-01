@@ -4,11 +4,11 @@ import { getSiteConfig } from '@/lib/content';
 
 interface FooterProps {
   lang: string;
-  t: any; // Record<string, string> untuk footer labels
+  t: any; // Full translation object
 }
 
 export default function Footer({ lang, t }: FooterProps) {
-  const site = getSiteConfig(); // ✅ Ambil site config di dalam component
+  const site = getSiteConfig();
   const currentYear = new Date().getFullYear();
 
   const path = (segment: string) => {
@@ -33,7 +33,7 @@ export default function Footer({ lang, t }: FooterProps) {
     }));
 
   return (
-    <footer className="bg-brand-dark text-brand-cream border-t-4 border-brand-lime">
+    <footer className="bg-[var(--bg-primary)] text-[var(--text-primary)] border-t-4 border-[var(--accent-lime)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
@@ -41,11 +41,11 @@ export default function Footer({ lang, t }: FooterProps) {
           <div>
             <Link href={path('/')} className="flex items-center gap-2 group">
               <h3 className="font-display text-2xl font-bold mb-2">
-                <span className="text-brand-lime">BARADE</span>
-                <span className="text-brand-cream"> STUDIO</span>
+                <span className="text-[var(--accent-lime)]">BARADE</span>
+                <span className="text-[var(--text-primary)]"> STUDIO</span>
               </h3>
             </Link>
-            <p className="text-sm mb-4 text-brand-gray">
+            <p className="text-sm mb-4 text-[var(--text-muted)]">
               {t.footer?.tagline || 'Focusing on functional product design and visual identity to help businesses maintain a consistent and professional digital presence.'}
             </p>
             <div className="flex space-x-4">
@@ -55,7 +55,7 @@ export default function Footer({ lang, t }: FooterProps) {
                   href={social.url} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="hover:text-brand-lime transition-colors duration-300"
+                  className="text-[var(--text-muted)] hover:text-[var(--accent-lime)] transition-colors duration-300"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -66,7 +66,7 @@ export default function Footer({ lang, t }: FooterProps) {
 
           {/* Quick Links - Kolom 2 */}
           <div>
-            <h4 className="font-display text-lg font-bold mb-2 text-brand-lime">
+            <h4 className="font-display text-lg font-bold mb-2 text-[var(--accent-lime)]">
               {t.footer?.quick_links || 'Quick Links'}
             </h4>
             <ul className="space-y-2 text-sm">
@@ -74,7 +74,7 @@ export default function Footer({ lang, t }: FooterProps) {
                 <li key={link.href}>
                   <Link 
                     href={link.href} 
-                    className="hover:text-brand-lime transition-colors duration-300"
+                    className="text-[var(--text-muted)] hover:text-[var(--accent-lime)] transition-colors duration-300"
                   >
                     {link.label}
                   </Link>
@@ -85,25 +85,29 @@ export default function Footer({ lang, t }: FooterProps) {
 
           {/* Contact Info - Kolom 3 */}
           <div>
-            <h4 className="font-display text-lg font-bold mb-2 text-brand-lime">
+            <h4 className="font-display text-lg font-bold mb-2 text-[var(--accent-lime)]">
               {t.footer?.contact_info || 'Contact'}
             </h4>
-            <ul className="space-y-2 text-sm text-brand-gray">
-              <li>Email: {site.contact.email}</li>
-              <li>Phone: {site.contact.phoneDisplay}</li>
+            <ul className="space-y-2 text-sm text-[var(--text-muted)]">
+              <li>
+                Email: <a href={`mailto:${site.contact.email}`} className="hover:text-[var(--accent-lime)] transition-colors">{site.contact.email}</a>
+              </li>
+              <li>
+                Phone: <a href={`tel:${site.contact.phone}`} className="hover:text-[var(--accent-lime)] transition-colors">{site.contact.phoneDisplay}</a>
+              </li>
               <li>{site.contact.location}</li>
             </ul>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-brand-gray/20 mt-8 pt-8 text-center text-sm text-brand-gray">
+        <div className="border-t border-[var(--border-color)]/30 mt-8 pt-8 text-center text-sm text-[var(--text-muted)]">
           <p>
             {(t.footer?.copyright || '© {{year}} Barade Studio. All rights reserved.')
             .replace('{{year}}', currentYear.toString())}
           </p>
           {t.footer?.made_with && (
-            <p className="mt-2 text-xs text-brand-gray opacity-70">
+            <p className="mt-2 text-xs opacity-70">
              {t.footer.made_with.replace('{{developer}}', site.brand.developer || 'Rikky Arisendi')}
             </p>
           )}

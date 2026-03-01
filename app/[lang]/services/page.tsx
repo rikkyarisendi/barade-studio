@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { getTranslations } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
+import RevealOnScroll from '@/components/RevealOnScroll';
 
 const path = (lang: string, segment: string) => `/${lang}${segment}`;
 
@@ -21,12 +22,16 @@ export default async function ServicesPage({ params }: { params: { lang: string 
       {/* Hero */}
       <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime -mt-20">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 animate-fade-in text-brand-dark">
-            {t.services?.hero?.title}
-          </h1>
-          <p className="text-xl md:text-2xl text-brand-dark/80 max-w-3xl mx-auto animate-slide-in">
-            {t.services?.hero?.subtitle}
-          </p>
+          <RevealOnScroll animation="up" delay={0.1}>
+            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 text-brand-dark">
+              {t.services?.hero?.title}
+            </h1>
+          </RevealOnScroll>
+          <RevealOnScroll animation="up" delay={0.25}>
+            <p className="text-xl md:text-2xl text-brand-dark/80 max-w-3xl mx-auto">
+              {t.services?.hero?.subtitle}
+            </p>
+          </RevealOnScroll>
         </div>
       </section>
 
@@ -35,7 +40,7 @@ export default async function ServicesPage({ params }: { params: { lang: string 
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 space-y-20">
           
           {/* Graphic Design */}
-          <div className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
+          <RevealOnScroll animation="up" delay={0.1} className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
             <div className="order-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">01</div>
@@ -76,10 +81,10 @@ export default async function ServicesPage({ params }: { params: { lang: string 
                 <span className="font-display text-9xl font-bold text-brand-lime/20">🎨</span>
               </div>
             </div>
-          </div>
+          </RevealOnScroll>
 
           {/* Web Development */}
-          <div className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
+          <RevealOnScroll animation="up" delay={0.15} className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
             <div className="order-1 md:order-2">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">02</div>
@@ -120,10 +125,10 @@ export default async function ServicesPage({ params }: { params: { lang: string 
                 <span className="font-display text-9xl font-bold text-brand-lime/20">💻</span>
               </div>
             </div>
-          </div>
+          </RevealOnScroll>
 
           {/* Branding */}
-          <div className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
+          <RevealOnScroll animation="up" delay={0.2} className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
             <div className="order-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">03</div>
@@ -164,7 +169,7 @@ export default async function ServicesPage({ params }: { params: { lang: string 
                 <span className="font-display text-9xl font-bold text-brand-lime/20">✨</span>
               </div>
             </div>
-          </div>
+          </RevealOnScroll>
 
         </div>
       </section>
@@ -172,19 +177,23 @@ export default async function ServicesPage({ params }: { params: { lang: string 
       {/* Process Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-          <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
-            {t.services?.process?.title_part1} <span className="text-brand-dark dark:text-brand-lime">{t.services?.process?.title_part2}</span>
-          </h2>
+          <RevealOnScroll animation="up" delay={0.1}>
+            <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
+              {t.services?.process?.title_part1} <span className="text-brand-dark dark:text-brand-lime">{t.services?.process?.title_part2}</span>
+            </h2>
+          </RevealOnScroll>
           
           <div className="grid md:grid-cols-4 gap-8">
             {(t.services?.process?.steps || []).map((step: any, idx: number) => (
-              <div key={idx} className="text-center">
-                <div className="w-16 h-16 bg-brand-dark dark:bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-4 font-display text-2xl font-bold text-brand-lime dark:text-brand-dark">
-                  {step.num}
+              <RevealOnScroll key={idx} animation="up" delay={0.1 * idx}>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-brand-dark dark:bg-brand-lime rounded-full flex items-center justify-center mx-auto mb-4 font-display text-2xl font-bold text-brand-lime dark:text-brand-dark">
+                    {step.num}
+                  </div>
+                  <h3 className="font-display text-xl font-bold mb-3 text-brand-dark dark:text-brand-lime">{step.title}</h3>
+                  <p className="text-[var(--text-muted)]">{step.desc}</p>
                 </div>
-                <h3 className="font-display text-xl font-bold mb-3 text-brand-dark dark:text-brand-lime">{step.title}</h3>
-                <p className="text-[var(--text-muted)]">{step.desc}</p>
-              </div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>

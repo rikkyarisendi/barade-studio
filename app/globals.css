@@ -1,57 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================================================
+   🎨 ADAPTIVE COLOR SYSTEM - Single Source of Truth
+   ============================================================================ */
 :root {
+  /* Fonts */
   --font-display: 'Syne', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'Space Mono', monospace;
 
-  /* Light mode colors */
+  /* Brand tokens */
+  --brand-lime: #dcf900;
+  --brand-dark: #1a1a1a;
+  --brand-cream: #f9f9ed;
+
+  /* 🔆 LIGHT MODE */
   --bg-primary: #f9f9ed;
   --bg-secondary: #e4e4da;
-  --text-primary: #3f3f3f;
+  --bg-tertiary: #d4d3cc;
+
+  --text-primary: #1a1a1a;
   --text-secondary: #3f3f3f;
-  --text-muted: #3f3f3f/70;
+  --text-muted: rgba(26, 26, 26, 0.7);
+  --text-on-lime: #1a1a1a;
+  /* ✅ Dark text for lime background */
+  --text-on-dark: #faf9f6;
+  /* ✅ Light text for dark background */
+
   --border-color: #3f3f3f;
+  --border-subtle: #d4d3cc;
+
   --accent-lime: #DCF900;
+  --accent-lime-dark: #b8e600;
+  /* ✅ Slightly darker lime for dark mode */
+
+  /* Easing */
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Dark mode colors */
+/* 🌙 DARK MODE - Adaptive Values */
 .dark {
-  --bg-primary: #202020;
-  --bg-secondary: #2a2a2a;
-  --text-primary: #e5e5e5;
-  --text-secondary: #e5e5e5;
-  --text-muted: #e5e5e5/70;
+  --brand-lime: #b8e600;
+  --brand-dark: #0a0a0a;
+  --brand-cream: #f9f9ed;
+
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2a2a2a;
+
+  --text-primary: #faf9f6;
+  --text-secondary: #d4d3cc;
+  --text-muted: rgba(249, 249, 238, 0.7);
+  --text-on-lime: #0a0a0a;
+  /* ✅ Even darker text on lime in dark mode */
+  --text-on-dark: #faf9f6;
+
   --border-color: #4a4a4a;
-  --accent-lime: #DCF900;
+  --border-subtle: #2a2a2a;
+
+  --accent-lime: #b8e600;
+  /* ✅ Muted lime for better contrast */
+  --accent-lime-dark: #9cc400;
 }
 
-* {
+/* ============================================================================
+   🧱 BASE RESET & TYPOGRAPHY
+   ============================================================================ */
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.8s ease-out forwards;
+/* Font Utilities */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
 }
 
-@keyframes fadeIn {
+.font-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.7;
+}
+
+/* ============================================================================
+   ✨ ENTRANCE ANIMATIONS - MISSING!
+   ============================================================================ */
+
+/* Reveal Up - Main entrance animation for sections */
+@keyframes revealUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(32px);
   }
 
   to {
@@ -60,29 +127,60 @@ body {
   }
 }
 
-.animate-slide-in {
-  animation: slideIn 1s ease-out forwards;
+.animate-reveal-up {
+  opacity: 0;
+  animation: revealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-@keyframes slideIn {
+/* Bounce Slow - For scroll indicator */
+@keyframes bounceSlow {
+
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2.5s ease-in-out infinite;
+}
+
+/* Rotate Slow - For decorative circles */
+@keyframes rotateSlow {
   from {
-    opacity: 0;
-    transform: translateX(-30px);
+    transform: rotate(0deg);
   }
 
   to {
-    opacity: 1;
-    transform: translateX(0);
+    transform: rotate(360deg);
   }
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, var(--accent-lime) 0%, var(--text-primary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+@keyframes rotateSlower {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
 }
 
+.animate-rotate-slow {
+  animation: rotateSlow 20s linear infinite;
+}
+
+.animate-rotate-slower {
+  animation: rotateSlower 30s linear infinite;
+}
+
+/* ============================================================================
+   🎨 INTERACTIONS
+   ============================================================================ */
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -91,7 +189,33 @@ body {
   transform: translateY(-5px);
 }
 
-/* Custom scrollbar - Light mode */
+/* Smooth transitions */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: ease;
+  transition-duration: 200ms;
+}
+
+/* ============================================================================
+   🖱️ CURSOR - RESTORE DEFAULT
+   ============================================================================ */
+a,
+button,
+[role="button"],
+.cursor-pointer {
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--accent-lime);
+  color: var(--text-on-lime);
+}
+
+/* ============================================================================
+   🎨 SCROLLBAR - Adaptive
+   ============================================================================ */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -109,20 +233,30 @@ body {
   background: var(--accent-lime);
 }
 
-/* Custom scrollbar - Dark mode */
-.dark ::-webkit-scrollbar-track {
-  background: var(--bg-secondary);
+/* ============================================================================
+   🌾 GRAIN OVERLAY
+   ============================================================================ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  z-index: 9999;
+  mix-blend-mode: overlay;
+  opacity: 1;
+  transition: opacity 0.4s ease;
 }
 
-.dark ::-webkit-scrollbar-thumb {
-  background: var(--border-color);
+@media (max-width: 768px) {
+  body::before {
+    opacity: 0.02;
+  }
 }
 
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-lime);
-}
-
-/* Utility classes for common patterns */
+/* ============================================================================
+   🎯 UTILITY CLASSES - Adaptive
+   ============================================================================ */
 .bg-primary {
   background-color: var(--bg-primary);
 }
@@ -131,23 +265,229 @@ body {
   background-color: var(--bg-secondary);
 }
 
+.bg-tertiary {
+  background-color: var(--bg-tertiary);
+}
+
 .text-primary {
   color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
 }
 
 .text-muted {
   color: var(--text-muted);
 }
 
+.text-on-lime {
+  color: var(--text-on-lime);
+}
+
+.text-on-dark {
+  color: var(--text-on-dark);
+}
+
 .border-primary {
   border-color: var(--border-color);
 }
 
-/* Smooth transition for theme switch */
-*,
-*::before,
-*::after {
-  transition-property: background-color, border-color, color, fill, stroke;
-  transition-timing-function: ease;
-  transition-duration: 200ms;
+.border-subtle {
+  border-color: var(--border-subtle);
+}
+
+/* Legacy brand utility aliases (mapped ke CSS variables) */
+.bg-brand-lime {
+  background-color: var(--brand-lime);
+}
+
+.text-brand-lime {
+  color: var(--brand-lime);
+}
+
+.border-brand-lime {
+  border-color: var(--brand-lime);
+}
+
+.bg-brand-dark {
+  background-color: var(--brand-dark);
+}
+
+.text-brand-dark {
+  color: var(--brand-dark);
+}
+
+.border-brand-dark {
+  border-color: var(--brand-dark);
+}
+
+.bg-brand-cream {
+  background-color: var(--brand-cream);
+}
+
+.text-brand-cream {
+  color: var(--brand-cream);
+}
+
+/* ============================================================================
+   🎨 BUTTON VARIANTS - Adaptive & Contrast-Safe
+   ============================================================================ */
+
+/* Premium Button Base */
+.btn-premium {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text-primary);
+  overflow: hidden;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.btn-premium::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent-lime);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.4s var(--ease-smooth);
+  z-index: -1;
+}
+
+.btn-premium:hover {
+  border-color: var(--accent-lime);
+  color: var(--text-primary);
+}
+
+.btn-premium:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Outline Variant */
+.btn-premium.btn-outline {
+  border-color: var(--border-color);
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.btn-premium.btn-outline::after {
+  background: var(--accent-lime);
+}
+
+.btn-premium.btn-outline:hover {
+  border-color: var(--accent-lime);
+  color: var(--text-primary);
+}
+
+/* Dark Variant (For Lime Backgrounds - CTA Section) */
+.btn-premium.btn-dark {
+  background: var(--bg-primary);
+  border-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.btn-premium.btn-dark::after {
+  background: var(--accent-lime);
+}
+
+.btn-premium.btn-dark:hover {
+  border-color: var(--accent-lime);
+  color: var(--text-on-lime);
+  /* ✅ Guaranteed contrast on lime */
+}
+
+.btn-premium.btn-dark:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* CTA Lime Variant (Home-style Contact Now) */
+.btn-cta-lime {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 0.75rem;
+  border: 2px solid var(--text-on-lime);
+  background: var(--text-on-lime);
+  color: var(--accent-lime);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.btn-cta-lime:hover {
+  background: transparent;
+  color: var(--text-on-lime);
+}
+
+/* ============================================================================
+   🧱 CARD COMPONENTS - Global, Adaptive
+   ============================================================================ */
+
+.card {
+  position: relative;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  transition:
+    border-color 0.3s var(--ease-smooth),
+    box-shadow 0.3s var(--ease-smooth),
+    transform 0.3s var(--ease-smooth),
+    background-color 0.3s var(--ease-smooth);
+}
+
+.card--hoverable:hover {
+  border-color: var(--accent-lime);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+  transform: translateY(-4px);
+}
+
+/* ============================================================================
+   ♿ ACCESSIBILITY - Reduced Motion
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-reveal-up,
+  .animate-bounce-slow,
+  .animate-rotate-slow,
+  .animate-rotate-slower {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .text-gradient,
+  .animate-pulse-slow,
+  .animate-pulse-slower {
+    animation: none !important;
+  }
 }

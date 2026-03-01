@@ -1,355 +1,559 @@
-# BARADE STUDIO - Creative Digital Agency Website
+# **Baradé Studio** 🎨
 
-Professional portfolio website for Barade Studio built with **Next.js 14** and markdown-based content management.
+> Portfolio website for Baradé Studio — Independent product design and visual identity partner based in Bandung, Indonesia.
 
-**Live Demo:** [barade-studio.vercel.app](https://barade-studio.vercel.app)
-
----
-
-## Brand Identity
-
-### Colors
-- **Lime (Primary):** `#DCF900`
-- **Dark:** `#3f3f3f`
-- **Gray:** `#d9d9d9`
-- **Cream:** `#f9f9ed`
-
-### Typography
-- **Display:** Syne (Google Fonts)
-- **Mono:** Space Mono (Google Fonts)
+[![Next.js](https://img.shields.io/badge/Next.js-14.2.35-black?style=flat&logo=next.js)](https://nextjs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat&logo=typescript)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com)
+[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=flat&logo=vercel)](https://vercel.com)
 
 ---
 
-## Features
+## **✨ Features**
 
-### Portfolio System
-- **Filter by Category** - Web Development, Branding, Graphic Design, etc.
-- **Tags System** - Multiple labels per project for flexible filtering
-- **Quick View Modal** - Preview projects in 16:9 modal without leaving page
-- **Load More** - Automatic pagination (6 projects per page)
-- **Responsive Grid** - 1 column (mobile), 2 columns (tablet), 3 columns (desktop)
-
-### Case Study Pages
-Each project has a dedicated page with:
-- **Project Showcase** (16:9 landscape)
-- **Design Detail** (1:1 square)
-- **Implementation** (1:1 square)
-- **Additional Images** (auto grid layout)
-- **Client Testimonial**
-- **External Links** (Behance, Dribbble, Website, GitHub, Instagram)
-- **Related Projects** - Other projects in the same category
-
-### Content Management
-- **Markdown-based** - Easy content updates without coding
-- **YAML Frontmatter** - Structured project metadata
-- **Auto Sorting** - Sort by date (newest projects first)
-- **Image Optimization** - Next.js Image component for optimal performance
-
-### Design Features
-- **Responsive Design** - Mobile-first approach
-- **Smooth Animations** - Hover effects & transitions
-- **Modern UI/UX** - Clean & professional aesthetic
-- **SEO Friendly** - Meta tags & semantic HTML
+- 🌐 **Bilingual Support** — Full Indonesian (ID) & English (EN) localization with file-based translations
+- 📱 **Fully Responsive** — Mobile-first design that scales beautifully across all devices
+- 🎨 **Custom Brand System** — Syne + Plus Jakarta Sans fonts, brand-lime (#dcf900), brand-dark (#1a1a1a)
+- 🚀 **Performance Optimized** — Next.js App Router, React Server Components, automatic image optimization
+- 🔍 **SEO Ready** — Dynamic metadata per project, Open Graph tags, structured data
+- 🎬 **Smooth Animations** — framer-motion for polished UI interactions
+- 📝 **Markdown Content** — Project content managed via MD files with frontmatter metadata
+- 🧩 **Component Architecture** — Reusable, type-safe components with TypeScript
+- 🌓 **Dark Mode Ready** — CSS variables system for easy theme customization
 
 ---
 
-## Tech Stack
+## **🛠 Tech Stack**
 
-- **Framework:** Next.js 14 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
-- **Content:** Markdown + gray-matter
-- **Deployment:** Vercel
-- **Version Control:** Git & GitHub
+| Category | Technology |
+|----------|-----------|
+| **Framework** | Next.js 14.2.35 (App Router) |
+| **Language** | TypeScript 5.x |
+| **Styling** | Tailwind CSS 3.x + CSS Variables |
+| **Fonts** | next/font/google (Syne, Plus Jakarta Sans) |
+| **Animations** | framer-motion |
+| **Content** | Markdown + gray-matter |
+| **i18n** | File-based JSON translations (`locales/*.json`) |
+| **Deployment** | Vercel |
+| **Package Manager** | npm / pnpm |
 
 ---
 
-## Folder Structure
+## **📁 Project Structure**
 
 ```
 barade-studio/
 ├── app/
-│   ├── page.tsx                 # Home page
-│   ├── about/page.tsx           # About page
-│   ├── services/page.tsx        # Services page
-│   ├── portfolio/
-│   │   ├── page.tsx            # Portfolio listing
-│   │   └── [slug]/page.tsx     # Dynamic case study page
-│   ├── contact/page.tsx         # Contact page
-│   ├── layout.tsx               # Root layout
-│   └── globals.css              # Global styles
+│   ├── [lang]/                    # Dynamic locale routing
+│   │   ├── about/page.tsx         # About page (bilingual)
+│   │   ├── contact/page.tsx       # Contact page with form
+│   │   ├── portfolio/
+│   │   │   ├── page.tsx           # Portfolio listing with filters
+│   │   │   └── [slug]/page.tsx    # Project detail (dynamic SEO)
+│   │   ├── services/page.tsx      # Services overview
+│   │   ├── layout.tsx             # Root layout with i18n + fonts
+│   │   └── page.tsx               # Home page
+│   ├── globals.css                # Global styles + CSS variables
+│   └── layout.tsx                 # Root HTML layout
 ├── components/
-│   ├── Navbar.tsx               # Navigation
-│   ├── Footer.tsx               # Footer
-│   └── PortfolioClient.tsx      # Portfolio grid & filter (Client Component)
-├── lib/
-│   └── projects.ts              # Functions to fetch & parse markdown
+│   ├── Navbar.tsx                 # Dynamic client-side navbar
+│   ├── Footer.tsx                 # Static footer
+│   ├── LanguageToggle.tsx         # ID/EN language switcher
+│   ├── ThemeToggle.tsx            # Light/dark theme toggle
+│   ├── Logo.tsx                   # Brand logo component
+│   └── ClientOnly.tsx             # Client-side render wrapper
 ├── content/
-│   └── projects/                # Markdown files for each project
-│       ├── project-1.md
-│       ├── project-2.md
-│       └── ...
+│   └── projects/
+│       ├── en/                    # English project content
+│       │   ├── brotrher-boots.md
+│       │   ├── misil-tactical.md
+│       │   └── sba-transport.md
+│       └── id/                    # Indonesian project content
+│           ├── brotrher-boots.md
+│           ├── misil-tactical.md
+│           └── sba-transport.md
+├── data/
+│   ├── services.json              # Services configuration
+│   ├── site.json                  # Site-wide config (nav, contact, social)
+│   └── categories.json            # Project categories & tags
+├── lib/
+│   ├── content.ts                 # Content fetching utilities
+│   ├── i18n.ts                    # Translation loader + types
+│   └── projects.ts                # Project MDX parser + SEO support
+├── locales/
+│   ├── en.json                    # English translations
+│   └── id.json                    # Indonesian translations
 ├── public/
-│   └── projects/                # Images for each project
-│       ├── project-1/
-│       │   ├── thumb.png
-│       │   ├── hero.png
-│       │   ├── detail-1.png
-│       │   └── detail-2.png
-│       └── project-2/
-├── package.json
-├── tailwind.config.ts
-└── tsconfig.json
+│   ├── projects/                  # Project images (organized by slug)
+│   ├── images/                    # General images
+│   ├── logo.svg                   # Brand logo
+│   └── favicon.ico                # Site favicon
+├── types/
+│   └── content.ts                 # TypeScript type definitions
+├── next.config.mjs                # Next.js configuration
+├── tailwind.config.ts             # Tailwind + brand colors config
+├── tsconfig.json                  # TypeScript configuration
+└── package.json                   # Dependencies + scripts
 ```
 
 ---
 
-## How to Add New Project
+## **🚀 Getting Started**
 
-### 1. Create Markdown File
+### **Prerequisites**
 
-Create new file in `content/projects/nama-project.md`:
+- Node.js 18.x or higher
+- npm, yarn, or pnpm
+
+### **Installation**
+
+```bash
+# 1. Clone repository
+git clone https://github.com/rikkyarisendi/barade-studio.git
+cd barade-studio
+
+# 2. Install dependencies
+npm install
+
+# 3. Copy environment example
+cp .env.example .env.local
+
+# 4. Start development server
+npm run dev
+```
+
+### **Available Scripts**
+
+| Command | Description |
+|---------|------------|
+| `npm run dev` | Start development server (<http://localhost:3000>) |
+| `npm run build` | Build for production |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint + TypeScript checks |
+| `npm run type-check` | Run TypeScript compiler only |
+
+---
+
+## **🌐 Adding a New Project**
+
+### **Step 1: Create Markdown Files**
+
+```bash
+# Create locale folders if not exist
+mkdir -p content/projects/en content/projects/id
+
+# Create English version
+touch content/projects/en/my-new-project.md
+
+# Create Indonesian version
+touch content/projects/id/my-new-project.md
+```
+
+### **Step 2: Add Frontmatter (EN Example)**
 
 ```yaml
 ---
-# ============================================
-# BASIC INFO
-# ============================================
-title: "Project Name"
-slug: "project-name"              # Must be unique & same as filename
-date: "2024-01-15"                # Format: YYYY-MM-DD (for sorting)
-
-# ============================================
-# CATEGORY & TAGS
-# ============================================
-category: "Web Development"       # Main category (required)
-tags:                             # Additional labels (multiple)
-  - "E-Commerce"
-  - "Indonesian Brand"
-  - "UI/UX Design"
-
-# ============================================
-# DESCRIPTION & PROJECT INFO
-# ============================================
-description: "Short project description..."
-color: "bg-zinc-900"              # Background color for placeholder
+# Basic Info
+slug: "my-new-project"
+date: "2024-01-15"
+category: "Web Development"
+tags: ["E-Commerce", "UI/UX"]
+color: "bg-blue-900"
 client: "Client Name"
 year: "2024"
+
+# Images
+thumbnail: "/projects/my-new-project/thumb.png"
+quickViewImage: "/projects/my-new-project/quick.png"
+projectShowcase: "/projects/my-new-project/showcase.png"
+designDetail: "/projects/my-new-project/detail1.png"
+implementation: "/projects/my-new-project/detail2.png"
+
+# Content (English)
+title: "My New Project - Short Title"
+description: "Brief description of the project in English."
 duration: "3 months"
 
-# ============================================
-# IMAGE STRUCTURE
-# ============================================
-thumbnail: "/projects/project-name/thumb.png"          # Card (1:1)
-quickViewImage: "/projects/project-name/hero.png"      # Modal (16:9)
-projectShowcase: "/projects/project-name/hero.png"     # Showcase (16:9)
-designDetail: "/projects/project-name/detail-1.png"    # Detail (1:1)
-implementation: "/projects/project-name/detail-2.png"  # Implementation (1:1)
-
-# Optional: Additional images for grid
-# additionalImages:
-#   - path: "/projects/project-name/extra-1.jpg"
-#     alt: "Description 1"
-#   - path: "/projects/project-name/extra-2.jpg"
-#     alt: "Description 2"
-
-# ============================================
-# SERVICES & CONTENT
-# ============================================
+# Services provided
 services:
   - "Web Development"
   - "UI/UX Design"
-  - "Frontend Development"
+  - "Brand Identity"
 
+# Testimonial
 testimonial:
-  quote: "Client testimonial..."
+  quote: "Amazing work! Highly recommended."
   author: "Client Name"
-  position: "Position"
+  position: "CEO"
 
+# External links
 externalLinks:
-  website: "https://example.com"
-  behance: "https://behance.net/..."
-  instagram: "https://instagram.com/..."
+  website: "https://client-website.com"
+  instagram: "https://instagram.com/client"
+
+# SEO Metadata
+seo:
+  title: "My New Project - E-Commerce Platform | Baradé Studio"
+  description: "Baradé Studio built a modern e-commerce platform for Client Name with intuitive UX and scalable architecture."
+  keywords:
+    - "e-commerce development"
+    - "web design Bandung"
+    - "UI/UX project"
+  image: "/projects/my-new-project/og-image.png"
 ---
 
 ## The Challenge
 
-Description about challenge in this project...
+Describe the client's problem or business challenge here...
 
-## Our Solution
+## The Approach
 
-Solution we implemented...
+Explain your solution methodology and process...
 
-## Results
+## Outcome
 
-Results achieved from this project...
+Share the results and impact of your work...
 ```
 
-### 2. Upload Images
+### **Step 3: Add Indonesian Version**
 
-Upload all images to `public/projects/project-name/`:
-- `thumb.png` - Thumbnail for card (1:1 square, min 800x800px)
-- `hero.png` - Hero image for modal & showcase (16:9, min 1200x675px)
-- `detail-1.png` - Design detail (1:1 square, min 800x800px)
-- `detail-2.png` - Implementation (1:1 square, min 800x800px)
+Same structure, but translate `title`, `description`, `duration`, `testimonial`, and markdown body content to Indonesian.
 
-### 3. Save & Reload
+### **Step 4: Add Images**
 
-Save file, development server will auto-reload. New project will appear in portfolio.
+Place project images in `public/projects/my-new-project/`:
+
+```
+public/projects/my-new-project/
+├── thumb.png          # 400x300px - Portfolio grid thumbnail
+├── quick.png          # 800x600px - Quick view modal
+├── showcase.png       # 1200x800px - Hero showcase
+├── detail1.png        # Design detail image
+├── detail2.png        # Implementation screenshot
+└── og-image.png       # 1200x630px - Social sharing preview
+```
+
+### **Step 5: Test Locally**
+
+```bash
+# Visit project pages
+http://localhost:3000/en/portfolio/my-new-project
+http://localhost:3000/id/portfolio/my-new-project
+```
 
 ---
 
-## Installation & Development
+## **🌍 Managing Translations**
 
-### Prerequisites
-- Node.js 18+ installed
-- npm or yarn package manager
+### **Adding New Translation Keys**
 
-### Installation
+1. **Edit `locales/en.json` and `locales/id.json`**:
 
-```bash
-# Clone repository
-git clone https://github.com/rikkyarisendi/barade-studio.git
+    ```json
+    {
+      "mySection": {
+        "newKey": {
+          "en": "English text",
+          "id": "Teks bahasa Indonesia"
+        }
+      }
+    }
+    ```
 
-# Navigate to project
-cd barade-studio
+2. **Update `types/content.ts`** if adding new nested structures:
 
-# Install dependencies
-npm install
+    ```typescript
+    export type Translations = {
+      // ... existing types
+      mySection: {
+        newKey: {
+          en: string;
+          id: string;
+        };
+      };
+    };
+    ```
 
-# Run development server
-npm run dev
+3. **Use in components**:
+
+    ```tsx
+    {t.mySection?.newKey?.[lang]}
+    // or with fallback:
+    {t.mySection?.newKey?.[lang] || 'Fallback text'}
+    ```
+
+### **Translation File Structure**
+
+```
+locales/
+├── en.json  # All English strings
+└── id.json  # All Indonesian strings
 ```
 
-Website will run at **http://localhost:3000**
+Keys are organized by section: `nav`, `common`, `home`, `about`, `services`, `portfolio`, `contact`, `project`, `footer`.
 
-### Development Commands
+---
+
+## **🎨 Brand Guidelines**
+
+### **Colors**
+
+```css
+/* tailwind.config.ts */
+{
+  theme: {
+    extend: {
+      colors: {
+        'brand-lime': '#dcf900',    // Primary accent
+        'brand-dark': '#1a1a1a',    // Primary dark
+        'brand-cream': '#f5f5f0',   // Light background
+      }
+    }
+  }
+}
+```
+
+### **Typography**
+
+```tsx
+// app/[lang]/layout.tsx
+import { Syne, Plus_Jakarta_Sans } from 'next/font/google';
+
+const syne = Syne({ variable: '--font-syne', subsets: ['latin'] });
+const jakartaSans = Plus_Jakarta_Sans({ variable: '--font-jakarta-sans', subsets: ['latin'] });
+
+// Usage:
+// Headings: className="font-display" (Syne)
+// Body: className="font-sans" (Plus Jakarta Sans)
+```
+
+### **CSS Variables**
+
+```css
+/* app/globals.css */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
+  --text-primary: #1a1a1a;
+  --text-muted: #666666;
+  --border-color: #e5e5e5;
+}
+
+.dark {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #1a1a1a;
+  --text-primary: #f5f5f0;
+  --text-muted: #999999;
+  --border-color: #333333;
+}
+```
+
+---
+
+## **🔍 SEO Configuration**
+
+### **Per-Project SEO**
+
+Each project markdown supports custom SEO via frontmatter:
+
+```yaml
+seo:
+  title: "Custom Title | Baradé Studio"
+  description: "Custom meta description for search engines"
+  keywords: ["keyword1", "keyword2"]
+  image: "/path/to/og-image.png"
+```
+
+### **Default Metadata**
+
+Configured in `app/[lang]/layout.tsx`:
+
+```tsx
+export async function generateMetadata() {
+  return {
+    title: { template: '%s | Baradé Studio', default: 'Baradé Studio' },
+    description: 'Product design and visual identity studio based in Bandung.',
+    alternates: { languages: { id: '/id', en: '/en' } },
+  };
+}
+```
+
+### **Open Graph / Twitter Cards**
+
+Automatically generated from `project.seo.image` or fallback to `projectShowcase`.
+
+---
+
+## **🧩 Component Guidelines**
+
+### **Client vs Server Components**
+
+```tsx
+// ✅ Server Component (default)
+// app/[lang]/about/page.tsx
+export default async function AboutPage() {
+  const t = await getTranslations('en');
+  return <div>{t.about.title}</div>;
+}
+
+// ✅ Client Component (needs 'use client')
+// components/Navbar.tsx
+'use client';
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  return <nav>...</nav>;
+}
+```
+
+### **Dynamic Imports for Client-Only Components**
+
+```tsx
+// app/[lang]/layout.tsx
+import dynamic from 'next/dynamic';
+
+const Navbar = dynamic(() => import('@/components/Navbar'), { 
+  ssr: false,  // Skip server render to avoid hydration issues
+  loading: () => <div className="h-20 bg-[var(--bg-primary)]" />
+});
+```
+
+### **Type-Safe Props**
+
+```tsx
+// components/MyComponent.tsx
+interface MyComponentProps {
+  lang: Locale;
+  t: any; // Translation object
+  className?: string;
+}
+
+export default function MyComponent({ lang, t, className }: MyComponentProps) {
+  return <div className={className}>{t.myKey}</div>;
+}
+```
+
+---
+
+## **🚢 Deployment (Vercel)**
+
+### **Automatic Deploy**
+
+1. Connect GitHub repo to Vercel
+2. Set build command: `npm run build`
+3. Set output directory: `.next`
+4. Add environment variables in Vercel dashboard:
+
+    ```
+    NEXT_PUBLIC_SITE_URL=https://your-domain.com
+    ```
+
+### **Manual Deploy**
 
 ```bash
-# Run dev server
-npm run dev
-
-# Build for production
+# Build and preview locally
 npm run build
+npm run start
 
-# Start production server
-npm start
+# Push to main branch for auto-deploy
+git checkout main
+git merge your-feature-branch
+git push origin main
+```
 
-# Lint code
-npm run lint
+### **Preview Deployments**
+
+Every PR to `main` automatically creates a preview URL for testing.
+
+---
+
+## **🐛 Troubleshooting**
+
+### **Hydration Errors**
+
+```
+Error: Hydration failed because the initial UI does not match what was rendered on the server.
+```
+
+**Solution**: Wrap browser-only components with `dynamic` + `ssr: false`:
+
+```tsx
+const Navbar = dynamic(() => import('@/components/Navbar'), { ssr: false });
+```
+
+### **TypeScript Errors After Type Changes**
+
+```
+Property 'xyz' does not exist on type '...'
+```
+
+**Solution**: Restart TypeScript server in VS Code:
+
+1. `Ctrl+Shift+P` → "TypeScript: Restart TS Server"
+2. Or restart VS Code entirely
+
+### **Images Not Loading**
+
+```
+404: Image not found
+```
+
+**Solution**:
+
+1. Ensure image is in `public/` folder (not `src/`)
+2. Use absolute path: `src="/projects/slug/image.png"`
+3. Clear Next.js cache: `rm -rf .next`
+
+### **Translations Not Updating**
+
+```
+Text still shows in old language after changing JSON
+```
+
+**Solution**:
+
+1. Verify both `en.json` and `id.json` have the key
+2. Clear cache: `rm -rf .next`
+3. Restart dev server: `npm run dev`
+
+---
+
+## **🤝 Contributing**
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feat/your-feature`
+3. Commit changes: `git commit -m 'feat: add your feature'`
+4. Push to branch: `git push origin feat/your-feature`
+5. Open a Pull Request
+
+### **Commit Convention**
+
+```
+feat:     New feature
+fix:      Bug fix
+docs:     Documentation changes
+style:    Code style changes (formatting, etc)
+refactor: Code refactoring
+test:     Adding or updating tests
+chore:    Maintenance tasks
 ```
 
 ---
 
-## Deployment
+## **📄 License**
 
-### Deploy to Vercel (Recommended)
+© {{year}} Baradé Studio. All rights reserved.
 
-1. **Install Vercel CLI:**
-   ```bash
-   npm install -g vercel
-   ```
-
-2. **Deploy:**
-   ```bash
-   vercel
-   ```
-
-3. **Follow instructions** in terminal
-
-4. **Update production:**
-   ```bash
-   vercel --prod
-   ```
-
-### Deploy via GitHub + Vercel (Auto-deploy)
-
-1. Push code to GitHub repository
-2. Connect repository to [Vercel Dashboard](https://vercel.com/dashboard)
-3. Every push to `main` branch = auto deploy
-
-### Deploy to Other Platforms
-
-- **Netlify:** Build first (`npm run build`), then upload `.next` folder
-- **Railway/Render:** Connect GitHub repository
-- **Self-hosted:** Build & serve with `npm start`
+This project is proprietary and confidential. Unauthorized copying, distribution, or use of this codebase is strictly prohibited.
 
 ---
 
-## Advanced Features
+## **📬 Contact**
 
-### Filter Tags
-Projects can be filtered by tags. For example, clicking tag **"Indonesian Brand"** will display all projects with that tag, even if categories are different.
-
-### Auto-generate ID
-Project ID is auto-generated based on file order. No manual setting needed.
-
-### Date-based Sorting
-Projects automatically sorted by `date` field in frontmatter (newest first).
-
-### Responsive Images
-All images use Next.js Image component for:
-- Auto optimization
-- Lazy loading
-- Responsive sizing
-- Modern format (WebP)
+- **Email**: <hello@barade.studio>
+- **Website**: [barade.studio](https://barade.studio)
+- **Instagram**: [@barade.studio](https://instagram.com/barade.studio)
+- **Location**: Bandung, Indonesia
 
 ---
 
-## Performance
-
-This website is optimized for:
-- **Fast Loading** - Image optimization & code splitting
-- **Mobile Friendly** - Responsive on all devices
-- **Accessible** - Semantic HTML & ARIA labels
-- **SEO Optimized** - Meta tags & structured data
-
----
-
-## Troubleshooting
-
-### Port 3000 already in use
-```bash
-# Use different port
-npm run dev -- -p 3001
-```
-
-### Images not showing
-- Make sure image path in markdown is correct
-- Check if file exists in `public/projects/` folder
-- Clear browser cache (Ctrl+Shift+R)
-
-### Build error
-```bash
-# Clean install
-rm -rf node_modules .next
-npm install
-npm run build
-```
-
----
-
-## Resources
-
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
-- [Markdown Guide](https://www.markdownguide.org/)
-
----
-
-## Support
-
-Need help or have questions?
-
-- **GitHub Issues:** [Create an issue](https://github.com/rikkyarisendi/barade-studio/issues)
-
----
-
-## License
-
-Free to use for personal and commercial projects.
-
----
-
-**Made for BARADE STUDIO**
+> Built with ❤️ by **Rikky Arisendi** using Next.js, TypeScript, and Tailwind CSS.

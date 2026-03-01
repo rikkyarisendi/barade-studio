@@ -8,7 +8,6 @@ import ThemeToggle from '@/components/ThemeToggle';
 import Logo from '@/components/Logo';
 import LanguageToggle from '@/components/LanguageToggle';
 import { getSiteConfig } from '@/lib/content';
-import type { Translations } from '@/types/content';
 
 interface NavbarProps {
   lang: string;
@@ -34,7 +33,6 @@ export default function Navbar({ lang, t }: NavbarProps) {
     return pathname === href || pathname?.startsWith(`${href}/`);
   };
 
-  // ✅ Fix: Safe access dengan optional chaining + fallback
   const menuItems = site.nav.items
     .filter(item => item.show && item.key !== 'contact')
     .sort((a, b) => a.order - b.order)
@@ -45,6 +43,7 @@ export default function Navbar({ lang, t }: NavbarProps) {
 
   const contactItem = site.nav.items.find(item => item.key === 'contact' && item.show);
 
+  // Background detection for navbar styling
   useEffect(() => {
     const detectBackground = () => {
       const navbarHeight = 80;
@@ -66,13 +65,15 @@ export default function Navbar({ lang, t }: NavbarProps) {
         const bgColor = window.getComputedStyle(targetElement).backgroundColor;
         
         if (bgColor && bgColor !== 'rgba(0, 0, 0, 0)' && bgColor !== 'transparent') {
-          if (bgColor.includes('220, 249, 0')) {
+          // ✅ Check for lime background (adaptive)
+          if (bgColor.includes('220, 249, 0') || bgColor.includes('184, 230, 0')) {
             setBgScheme('lime');
             return;
           } else if (
             bgColor.includes('26, 26, 26') ||
             bgColor.includes('32, 32, 32') ||
-            bgColor.includes('42, 42, 42')
+            bgColor.includes('42, 42, 42') ||
+            bgColor.includes('10, 10, 10')
           ) {
             setBgScheme('dark');
             return;
@@ -108,6 +109,7 @@ export default function Navbar({ lang, t }: NavbarProps) {
     };
   }, []);
 
+  // Close menu on scroll
   useEffect(() => {
     const handleCloseOnScroll = () => {
       if (isOpen) setIsOpen(false);
@@ -144,36 +146,35 @@ export default function Navbar({ lang, t }: NavbarProps) {
         .menu-item:nth-child(5) { animation-delay: 0.25s; }
       `}</style>
 
+      {/* ✅ Navbar: 100% Adaptive Colors */}
       <nav className={`fixed w-full top-0 z-50 border-b-2 transition-all duration-300 ${
         isOverBrightBg
-          ? 'bg-brand-lime/80 backdrop-blur-lg border-brand-dark' 
-          : isDarkMode
-            ? 'bg-[var(--bg-primary)]/80 backdrop-blur-lg border-[var(--border-color)]'
-            : 'bg-[var(--bg-primary)]/80 backdrop-blur-lg border-[var(--border-color)]'
+          ? 'bg-[var(--accent-lime)]/80 backdrop-blur-lg border-[var(--border-color)]' 
+          : 'bg-[var(--bg-primary)]/80 backdrop-blur-lg border-[var(--border-color)]'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
 
-            {/* Logo */}
+            {/* Logo - Adaptive Colors */}
             <Link href={path('/')} className="flex items-center gap-2 sm:gap-3 group">
               <Logo 
                 className={`h-10 sm:h-11 w-auto transition-colors duration-300 ${
-                  isOverBrightBg ? 'text-brand-dark' : 'text-[var(--text-primary)]'
+                  isOverBrightBg ? 'text-[var(--text-on-lime)]' : 'text-[var(--text-primary)]'
                 }`} 
               />
               <div className="relative">
                 <span className={`font-display text-xl sm:text-2xl md:text-3xl font-bold tracking-tight transition-colors duration-300 ${
-                  isOverBrightBg ? 'text-brand-dark' : 'text-[var(--text-primary)]'
+                  isOverBrightBg ? 'text-[var(--text-on-lime)]' : 'text-[var(--text-primary)]'
                 }`}>
                   BARADE STUDIO
                 </span>
                 <div className={`absolute -bottom-1 left-0 h-0.5 ${
-                  isOverBrightBg ? 'bg-brand-dark' : 'bg-brand-lime'
+                  isOverBrightBg ? 'bg-[var(--text-on-lime)]' : 'bg-[var(--accent-lime)]'
                 } w-0 group-hover:w-full transition-all duration-300`}></div>
               </div>
             </Link>
 
-            {/* Desktop Menu */}
+            {/* Desktop Menu - Adaptive Colors */}
             <div className="hidden md:flex items-center space-x-4">
               {menuItems.map((item) => (
                 <Link 
@@ -181,11 +182,11 @@ export default function Navbar({ lang, t }: NavbarProps) {
                   href={item.href} 
                   className={`transition-colors duration-300 ${
                     isActive(item.href) 
-                      ? `font-bold ${isDarkMode ? 'text-brand-lime' : 'text-brand-dark'}`
-                      : `font-medium ${
+                      ? `font-bold ${isOverBrightBg ? 'text-[var(--text-on-lime)]' : 'text-[var(--accent-lime)]'}`
+                      : `${
                           isOverBrightBg 
-                            ? 'text-brand-dark hover:text-brand-dark/70' 
-                            : 'text-[var(--text-primary)] hover:text-brand-lime'
+                            ? 'text-[var(--text-on-lime)] hover:text-[var(--text-on-lime)]/70' 
+                            : 'text-[var(--text-primary)] hover:text-[var(--accent-lime)]'
                         }`
                   }`}
                 >
@@ -193,57 +194,57 @@ export default function Navbar({ lang, t }: NavbarProps) {
                 </Link>
               ))}
               
+              {/* Contact Button - Adaptive Colors with Guaranteed Contrast */}
               {contactItem && (
                 <Link 
                   href={path(contactItem.path)} 
-                  className={`px-2 py-1 font-medium transition-all duration-300 border-2 px-2 py-1  rounded-lg ${
+                  className={`px-3 py-1.5 font-medium transition-all duration-300 border-2 rounded-lg ${
                     isOverBrightBg
-                      ? 'bg-brand-dark text-brand-lime border-brand-dark hover:bg-brand-lime hover:text-brand-dark'
-                      : 'bg-brand-lime text-brand-dark border-[var(--border-color)] hover:bg-[var(--border-color)] hover:text-brand-lime'
+                      ? 'bg-[var(--text-on-lime)] text-[var(--accent-lime)] border-[var(--text-on-lime)] hover:bg-[var(--accent-lime)] hover:text-[var(--text-on-lime)]'
+                      : 'bg-[var(--accent-lime)] text-[var(--text-on-lime)] border-[var(--border-color)] hover:bg-[var(--border-color)] hover:text-[var(--accent-lime)]'
                   }`}
                 >
                   {t.nav?.contact || 'Contact'}
                 </Link>
               )}
               
-              {/* ✅ Language Toggle + Theme Toggle berdampingan */}
-              <div className="flex items-center gap-2 pl-2 border-l border-[var(--border-color)]/30">
+              {/* Language Toggle + Theme Toggle */}
+              <div className="flex items-center gap-2 pl-3 border-l border-[var(--border-color)]/30">
                 <LanguageToggle currentLang={lang} bgScheme={bgScheme} />
                 <ThemeToggle bgScheme={bgScheme} />
               </div>
             </div>
 
-            {/* ✅ Mobile Menu Button + Theme Toggle ONLY */}
+            {/* Mobile: Theme Toggle + Hamburger - Adaptive Colors */}
             <div className="md:hidden flex items-center gap-2">
               <ThemeToggle bgScheme={bgScheme} />
               
-              {/* Hamburger Button */}
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className={`flex flex-col justify-center items-center w-10 h-10 space-y-1.5 transition-transform duration-200 active:scale-90 ${
-                  isOverBrightBg ? 'text-brand-dark' : 'text-[var(--text-primary)]'
+                  isOverBrightBg ? 'text-[var(--text-on-lime)]' : 'text-[var(--text-primary)]'
                 }`}
                 aria-label="Toggle menu"
               >
                 <span className={`w-6 h-0.5 transition-all duration-300 ${
-                  isOverBrightBg ? 'bg-brand-dark' : 'bg-[var(--text-primary)]'
+                  isOverBrightBg ? 'bg-[var(--text-on-lime)]' : 'bg-[var(--text-primary)]'
                 } ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
                 <span className={`w-6 h-0.5 transition-all duration-300 ${
-                  isOverBrightBg ? 'bg-brand-dark' : 'bg-[var(--text-primary)]'
+                  isOverBrightBg ? 'bg-[var(--text-on-lime)]' : 'bg-[var(--text-primary)]'
                 } ${isOpen ? 'opacity-0' : ''}`}></span>
                 <span className={`w-6 h-0.5 transition-all duration-300 ${
-                  isOverBrightBg ? 'bg-brand-dark' : 'bg-[var(--text-primary)]'
+                  isOverBrightBg ? 'bg-[var(--text-on-lime)]' : 'bg-[var(--text-primary)]'
                 } ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
               </button>
             </div>
           </div>
 
-          {/* Mobile Menu */}
+          {/* Mobile Menu - Adaptive Colors */}
           {isOpen && (
             <div 
               className={`md:hidden px-4 pb-4 border-t-2 overflow-hidden ${
                 isOverBrightBg 
-                  ? 'bg-brand-lime/95 backdrop-blur-md border-brand-dark' 
+                  ? 'bg-[var(--accent-lime)]/95 backdrop-blur-md border-[var(--border-color)]' 
                   : 'bg-[var(--bg-primary)]/95 backdrop-blur-md border-[var(--border-color)]'
               } menu-open`}
             >
@@ -252,13 +253,13 @@ export default function Navbar({ lang, t }: NavbarProps) {
                   <Link 
                     key={item.href}
                     href={item.href} 
-                    className={`menu-item block py-3 pl-2 font-medium transition-colors duration-200 border-l-2 border-transparent hover:border-brand-lime ${
+                    className={`menu-item block py-3 pl-2 font-medium transition-colors duration-200 border-l-2 border-transparent hover:border-[var(--accent-lime)] ${
                       isActive(item.href)
-                        ? `font-bold ${isDarkMode ? 'text-brand-lime border-brand-lime' : 'text-brand-dark border-brand-dark'}`
+                        ? `font-bold ${isOverBrightBg ? 'text-[var(--text-on-lime)] border-[var(--text-on-lime)]' : 'text-[var(--accent-lime)] border-[var(--accent-lime)]'}`
                         : `${
                             isOverBrightBg 
-                              ? 'text-brand-dark hover:text-brand-dark/70' 
-                              : 'text-[var(--text-primary)] hover:text-brand-lime'
+                              ? 'text-[var(--text-on-lime)] hover:text-[var(--text-on-lime)]/70' 
+                              : 'text-[var(--text-primary)] hover:text-[var(--accent-lime)]'
                           }`
                     }`}
                     style={{ animationDelay: `${0.05 + index * 0.05}s` }}
@@ -268,7 +269,7 @@ export default function Navbar({ lang, t }: NavbarProps) {
                   </Link>
                 ))}
                 
-                {/* ✅ Mobile Menu: Language Toggle di dalam dropdown */}
+                {/* Language Toggle in Mobile Menu */}
                 <div className="menu-item pt-3 pb-2" style={{ animationDelay: '0.2s' }}>
                   <div className="flex items-center justify-center gap-3 py-2">
                     <span className="text-xs text-[var(--text-muted)] font-medium">Language:</span>
@@ -276,14 +277,15 @@ export default function Navbar({ lang, t }: NavbarProps) {
                   </div>
                 </div>
                 
+                {/* Contact Button in Mobile Menu - Adaptive */}
                 {contactItem && (
                   <div className="menu-item pt-2" style={{ animationDelay: '0.25s' }}>
                     <Link 
                       href={path(contactItem.path)} 
                       className={`block w-full px-4 py-2 font-bold text-center rounded-lg transition-all duration-300 border-2 ${
                         isOverBrightBg
-                          ? 'bg-brand-dark text-brand-lime border-brand-dark'
-                          : 'bg-brand-lime text-brand-dark border-[var(--border-color)]'
+                          ? 'bg-[var(--text-on-lime)] text-[var(--accent-lime)] border-[var(--text-on-lime)]'
+                          : 'bg-[var(--accent-lime)] text-[var(--text-on-lime)] border-[var(--border-color)]'
                       }`}
                       onClick={() => setIsOpen(false)}
                     >

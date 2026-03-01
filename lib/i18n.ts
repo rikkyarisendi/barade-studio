@@ -20,8 +20,8 @@ export function isValidLocale(locale: string): locale is Locale {
 
 export async function getTranslations(locale: Locale): Promise<Translations> {
   try {
-    const module = await import(`@/locales/${locale}.json`)
-    return module.default as Translations
+    const translationsModule = await import(`@/locales/${locale}.json`)
+    return translationsModule.default as Translations
   } catch (error) {
     console.warn(`⚠️ Translation not found: locales/${locale}.json`)
     
