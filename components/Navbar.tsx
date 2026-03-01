@@ -12,7 +12,7 @@ import type { Translations } from '@/types/content';
 
 interface NavbarProps {
   lang: string;
-  t: Translations;
+  t: any;
 }
 
 export default function Navbar({ lang, t }: NavbarProps) {

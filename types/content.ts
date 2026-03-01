@@ -44,6 +44,7 @@ export type Brand = {
   tagline: TranslatedString;
   logo: string;
   favicon: string;
+  developer?: string;
 };
 
 export type Stat = {
@@ -72,7 +73,7 @@ export type SiteConfig = {
 };
 
 // ============================================================================
-// SERVICES (data/services.json) - UPDATED!
+// SERVICES (data/services.json)
 // ============================================================================
 
 export type Service = {
@@ -84,9 +85,6 @@ export type Service = {
   title: string;              // ✅ Setelah translate, pasti string
   description: string;        // ✅ Setelah translate, pasti string
   features: string[];
-  // ✅ Dihapus karena nggak dipake di UI:
-  // pricing: TranslatedString;
-  // deliveryTime: TranslatedString;
 };
 
 // ============================================================================
@@ -177,16 +175,18 @@ export type ProjectFrontmatter = {
 };
 
 // ============================================================================
-// TRANSLATIONS (locales/*.json)
+// TRANSLATIONS (locales/*.json) - ✅ FULL UPDATED
 // ============================================================================
 
 export type Translations = {
   nav: Record<string, string>;
+  
   common: {
     buttons: Record<string, string>;
     stats: Record<string, string>;
     labels: Record<string, string>;
   };
+  
   home: {
     hero: {
       title_part1: string;
@@ -201,20 +201,77 @@ export type Translations = {
       subtitle: string;
     };
   };
+  
   about: {
     hero: {
       title_part1: string;
       title_part2: string;
+      subtitle: string;  // ✅ Added
     };
-    content: {
+    story: {
       title: string;
-      body: string;
+      p1: string;
+      p2: string;
+      p3: string;
+    };
+    values: {
+      title_part1: string;
+      title_part2: string;
+      excellence: {
+        title: string;
+        desc: string;
+      };
+      collaboration: {
+        title: string;
+        desc: string;
+      };
+      innovation: {
+        title: string;
+        desc: string;
+      };
+    };
+    cta: {
+      title: string;
+      subtitle: string;
     };
   };
+  
+  services: {
+    hero: {
+      title: string;
+      subtitle: string;
+    };
+    graphic_design: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    web_development: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    brand_strategy: {
+      title: string;
+      description: string;
+      features: string[];
+    };
+    process: {
+      title_part1: string;
+      title_part2: string;
+      steps: Array<{
+        num: number;
+        title: string;
+        desc: string;
+      }>;
+    };
+  };
+  
   portfolio: {
     hero: {
       title_part1: string;
       title_part2: string;
+      subtitle: string;  // ✅ Added - ini yang bikin error sebelumnya
     };
     filters: {
       all: string;
@@ -225,18 +282,43 @@ export type Translations = {
       projects: string;
       no_results: string;
     };
+    empty_state: string;
+    cta: {
+      title_part1: string;
+      subtitle: string;
+    };
+    seo: {  // ✅ Added
+      title: string;
+      description: string;
+    };
   };
+  
   contact: {
     hero: {
       title_part1: string;
       title_part2: string;
+      subtitle: string;  // ✅ Added
     };
     form: {
       title: string;
       name_label: string;
+      name_placeholder: string;
       email_label: string;
+      email_placeholder: string;
+      phone_label: string;
+      service_label: string;
+      service_placeholder: string;
+      services: {
+        graphic_design: string;
+        web_development: string;
+        branding: string;
+        other: string;
+      };
       message_label: string;
+      message_placeholder: string;
       success_message: string;
+      send_message: string;
+      sending: string;
     };
     info: {
       title_part1: string;
@@ -244,8 +326,16 @@ export type Translations = {
       email_label: string;
       phone_label: string;
       location_label: string;
+      social_label: string;
+    };
+    map_placeholder: string;
+    cta: {
+      title_part1: string;
+      title_part2: string;
+      subtitle: string;
     };
   };
+  
   project: {
     back_to_portfolio: string;
     services_provided: string;
@@ -277,6 +367,7 @@ export type Translations = {
       instagram?: string;
     };
   };
+  
   footer: {
     copyright: string;
     made_with: string;
@@ -284,22 +375,5 @@ export type Translations = {
     contact_info: string;
     business_hours: string;
     tagline: string;
-  };
-  services: {
-    graphic_design: {
-      title: string;
-      description: string;
-      features: string[];
-    };
-    web_development: {
-      title: string;
-      description: string;
-      features: string[];
-    };
-    brand_strategy: {
-      title: string;
-      description: string;
-      features: string[];
-    };
   };
 };

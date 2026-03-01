@@ -1,6 +1,7 @@
 // app/[lang]/about/page.tsx
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { getTranslations } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 
@@ -35,7 +36,9 @@ export default async function AboutPage({ params }: { params: { lang: string } }
       {/* Story Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          
+          {/* ✅ TEXT - order-2 di mobile (bawah), order-1 di desktop (kiri) */}
+          <div className="order-2 md:order-1">
             <h2 className="font-display text-3xl font-bold mb-6 text-brand-dark dark:text-brand-lime">
               {t.about?.story?.title}
             </h2>
@@ -49,9 +52,18 @@ export default async function AboutPage({ params }: { params: { lang: string } }
               {t.about?.story?.p3}
             </p>
           </div>
-          <div className="relative">
-            <div className="aspect-square bg-[var(--bg-primary)] dark:bg-[#1a1a1a] border-2 border-[var(--border-color)] rounded-lg flex items-center justify-center">
-              <span className="font-display text-9xl font-bold text-brand-lime/30">B</span>
+          
+          {/* ✅ IMAGE - order-1 di mobile (atas), order-2 di desktop (kanan) */}
+          <div className="order-1 md:order-2 relative">
+            <div className="aspect-square bg-[var(--bg-primary)] dark:bg-[#1a1a1a] border-2 border-[var(--border-color)] rounded-lg overflow-hidden">
+              {/* ✅ GANTI INI DENGAN GAMBAR ASLI */}
+              <image
+                src="https://placehold.co/800x800/DCF900/1a1a1a?text=Working+Approach"
+                alt="Working Approach"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>
