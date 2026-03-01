@@ -57,9 +57,9 @@ export default async function AboutPage({ params }: { params: { lang: string } }
           <div className="order-1 md:order-2 relative">
             <div className="aspect-square bg-[var(--bg-primary)] dark:bg-[#1a1a1a] border-2 border-[var(--border-color)] rounded-lg overflow-hidden">
               {/* ✅ GANTI INI DENGAN GAMBAR ASLI */}
-              <image
+               <Image
                 src="https://placehold.co/800x800/DCF900/1a1a1a?text=Working+Approach"
-                alt="Working Approach"
+                alt="Working Approach - Baradé Studio"
                 fill
                 className="object-cover"
                 priority
