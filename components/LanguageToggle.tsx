@@ -27,20 +27,20 @@ export default function LanguageToggle({ currentLang, bgScheme, className = '' }
 
   // ✅ Adaptive colors based on bgScheme (SAME LOGIC AS NAVBAR ITEMS)
   const isOverBrightBg = bgScheme === 'lime';
+  const isEn = currentLang === 'en';
+  const baseTextClass = isOverBrightBg
+    ? 'text-[var(--text-on-lime)]'
+    : 'text-[var(--text-primary)]';
+  const borderClass = isOverBrightBg ? 'border-brand-dark' : 'border-brand-lime';
+  const weightClass = isEn ? 'font-bold' : 'font-medium';
 
   return (
     <div className={`relative ${className}`}>
       <button
         onClick={() => switchLanguage(currentLang === 'id' ? 'en' : 'id')}
-        className={`relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-          // ✅ Active state: filled with lime + dark text/border
-          (currentLang === 'en' && !isOverBrightBg) || (currentLang === 'id' && isOverBrightBg)
-            ? 'bg-brand-lime text-brand-dark border-brand-dark hover:bg-[var(--border-color)] hover:text-brand-lime'
-            : // ✅ Inactive state: transparent + adaptive colors
-              isOverBrightBg
-              ? 'bg-transparent border-brand-dark text-brand-dark hover:bg-brand-lime hover:text-brand-dark'
-              : 'bg-transparent border-[var(--border-color)] text-[var(--text-primary)] hover:border-brand-lime hover:text-brand-lime'
-        }`}
+        className={`relative inline-flex items-center gap-2 px-3 py-1.5 rounded-full border-2 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2
+          ${baseTextClass} ${borderClass} ${weightClass}
+          hover:bg-brand-lime hover:text-brand-dark`}
         aria-label={`Switch to ${currentLang === 'id' ? 'English' : 'Bahasa Indonesia'}`}
         title={currentLang === 'id' ? 'Switch to English' : 'Beralih ke Bahasa Indonesia'}
       >
@@ -61,10 +61,8 @@ export default function LanguageToggle({ currentLang, bgScheme, className = '' }
           />
         </svg>
         
-        {/* Language Text - Adaptive color */}
-        <span className={`text-xs font-bold transition-colors duration-300 ${
-          isOverBrightBg ? 'text-brand-dark' : 'text-current'
-        }`}>
+        {/* Language Text */}
+        <span className="text-xs transition-colors duration-300">
           {currentLang === 'id' ? 'ID' : 'EN'}
         </span>
       </button>

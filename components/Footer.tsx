@@ -33,7 +33,7 @@ export default function Footer({ lang, t }: FooterProps) {
     }));
 
   return (
-    <footer className="bg-[var(--bg-primary)] text-[var(--text-primary)] border-t-4 border-[var(--accent-lime)]">
+    <footer className="bg-[var(--bg-primary)] text-[var(--text-primary)] border-t-2 border-[var(--accent-lime)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
@@ -41,7 +41,7 @@ export default function Footer({ lang, t }: FooterProps) {
           <div>
             <Link href={path('/')} className="flex items-center gap-2 group">
               <h3 className="font-display text-2xl font-bold mb-2">
-                <span className="text-[var(--accent-lime)]">BARADE</span>
+                <span className="text-[var(--text-primary)] dark:text-[var(--accent-lime)]">BARADE</span>
                 <span className="text-[var(--text-primary)]"> STUDIO</span>
               </h3>
             </Link>
@@ -66,7 +66,7 @@ export default function Footer({ lang, t }: FooterProps) {
 
           {/* Quick Links - Kolom 2 */}
           <div>
-            <h4 className="font-display text-lg font-bold mb-2 text-[var(--accent-lime)]">
+            <h4 className="font-display text-lg font-bold mb-2 text-[var(--text-primary)] dark:text-[var(--accent-lime)]">
               {t.footer?.quick_links || 'Quick Links'}
             </h4>
             <ul className="space-y-2 text-sm">
@@ -85,7 +85,7 @@ export default function Footer({ lang, t }: FooterProps) {
 
           {/* Contact Info - Kolom 3 */}
           <div>
-            <h4 className="font-display text-lg font-bold mb-2 text-[var(--accent-lime)]">
+            <h4 className="font-display text-lg font-bold mb-2 text-[var(--text-primary)] dark:text-[var(--accent-lime)]">
               {t.footer?.contact_info || 'Contact'}
             </h4>
             <ul className="space-y-2 text-sm text-[var(--text-muted)]">

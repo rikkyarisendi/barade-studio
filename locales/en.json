@@ -147,7 +147,7 @@
   },
   "portfolio": {
     "hero": {
-      "title_part1": "OUR",
+      "title_part1": "OUR ",
       "title_part2": "WORK",
       "subtitle": "A collection of design and technical solutions developed to address various business challenges."
     },
@@ -244,8 +244,8 @@
     }
   },
   "footer": {
-    "copyright": "© {{year}} BARADE STUDIO. All rights reserved.",
-    "made_with": "Crafted with precision in Bandung",
+    "copyright": "© {{year}} Barade Studio. All rights reserved.",
+    "made_with": "Developed by {{developer}}",
     "quick_links": "Quick Links",
     "contact_info": "Contact",
     "business_hours": "Business Hours",

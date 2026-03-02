@@ -42,8 +42,14 @@ export default async function PortfolioPage({ params }: { params: { lang: string
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 -mt-20 mb-20 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <section className="min-h-screen flex items-center pt-36 pb-20 px-4 sm:px-6 lg:px-8 -mt-20 mb-20 bg-[var(--bg-secondary)] relative overflow-hidden">
+        {/* Blobs - hero */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="blob-base blob-float-a absolute -top-28 left-[-8%] w-80 h-80 bg-[var(--accent-lime)]/18" />
+          <div className="blob-base blob-float-b absolute bottom-[-8rem] right-[-6rem] w-96 h-96 bg-[var(--bg-primary)]/20" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
           <RevealOnScroll animation="up" delay={0.1}>
             <h1 className="font-display text-5xl md:text-7xl font-bold mb-6">
               <span className="text-[var(--text-primary)]">{t.portfolio?.hero?.title_part1}</span>
@@ -76,8 +82,14 @@ export default async function PortfolioPage({ params }: { params: { lang: string
       )}
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
+      <section className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] relative overflow-hidden">
+        {/* Blobs - CTA */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="blob-base blob-float-a absolute -top-24 right-[-10%] w-80 h-80 bg-[var(--accent-lime)]/18" />
+          <div className="blob-base blob-float-b absolute bottom-[-10rem] left-[-6rem] w-96 h-96 bg-[var(--bg-primary)]/22" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center relative z-10">
           <RevealOnScroll animation="up" delay={0.1}>
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]">
               {t.portfolio?.cta?.title_part1}
@@ -91,7 +103,7 @@ export default async function PortfolioPage({ params }: { params: { lang: string
           <RevealOnScroll animation="up" delay={0.3}>
             <Link
               href={path(lang, '/contact')}
-              className="btn-cta-lime group"
+              className="btn-cta-dark group"
             >
               {t.common?.buttons?.start_project}
             </Link>

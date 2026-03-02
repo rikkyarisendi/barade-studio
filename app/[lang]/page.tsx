@@ -21,13 +21,9 @@ export default async function HomePage({ params }: { params: { lang: string } })
       {/* Hero Section */}
       <Section className="min-h-screen flex items-center justify-center pt-36 px-4 sm:px-6 lg:px-8 relative overflow-hidden -mt-20">
         {/* Background Blobs */}
-        <div className="absolute inset-0 -z-10">
-          <RevealOnScroll animation="scale" duration={2} delay={0}>
-            <div className="absolute top-20 left-10 w-72 h-72 bg-[var(--accent-lime)]/20 rounded-full blur-3xl" />
-          </RevealOnScroll>
-          <RevealOnScroll animation="scale" duration={2} delay={0.5}>
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-[var(--border-color)]/20 rounded-full blur-3xl" />
-          </RevealOnScroll>
+        <div className="absolute inset-0 -z-10 pointer-events-none">
+          <div className="blob-base blob-float-a absolute -top-24 -left-10 w-72 h-72 bg-[var(--accent-lime)]/22" />
+          <div className="blob-base blob-float-b absolute bottom-[-5rem] right-[-3rem] w-96 h-96 bg-[var(--border-color)]/18" />
         </div>
 
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center relative z-10">
@@ -74,12 +70,14 @@ export default async function HomePage({ params }: { params: { lang: string } })
             </div>
           </RevealOnScroll>
 
-          {/* Stats */}
+          {/* Stats – muncul setelah tombol, masih dalam hero */}
           <RevealOnScroll animation="up" delay={0.7}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-20 md:mt-32 pb-16">
-              {site.stats.filter(s => s.show).sort((a, b) => a.order - b.order).map((stat, i) => (
-                <RevealOnScroll key={stat.key} animation="up" delay={0.1 * i}>
-                  <div className="text-center group">
+              {site.stats
+                .filter((s) => s.show)
+                .sort((a, b) => a.order - b.order)
+                .map((stat) => (
+                  <div key={stat.key} className="text-center group">
                     <p className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] group-hover:text-[var(--accent-lime)] transition-colors duration-300">
                       {stat.number}
                     </p>
@@ -88,17 +86,22 @@ export default async function HomePage({ params }: { params: { lang: string } })
                     </p>
                     <div className="h-px w-0 group-hover:w-full mx-auto mt-3 bg-[var(--accent-lime)] transition-all duration-500" />
                   </div>
-                </RevealOnScroll>
-              ))}
+                ))}
             </div>
           </RevealOnScroll>
         </div>
       </Section>
 
       {/* Services Section */}
-      <Section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)]">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-          
+      <Section className="min-h-screen flex items-center py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] relative overflow-hidden">
+        {/* Blurred color blobs (services) */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="blob-base blob-float-a absolute -top-32 -left-24 w-80 h-80 bg-[var(--accent-lime)]/20" />
+          <div className="blob-base blob-float-b absolute bottom-[-6rem] right-[-4rem] w-96 h-96 bg-[var(--bg-primary)]/18" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
+
           <RevealOnScroll animation="up" delay={0}>
             <div className="text-center mb-16 md:mb-20">
               <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-primary)]">
@@ -140,7 +143,13 @@ export default async function HomePage({ params }: { params: { lang: string } })
       </Section>
 
       {/* CTA Section - Adaptive dengan Guaranteed Contrast */}
-<Section className="py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[var(--accent-lime)] relative overflow-hidden">
+<Section className="min-h-screen flex items-center py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[var(--accent-lime)] relative overflow-hidden">
+  {/* Blurred color blobs – CTA */}
+  <div className="pointer-events-none absolute inset-0 -z-10">
+    <div className="blob-base blob-float-a absolute -top-24 left-[-10%] w-80 h-80 bg-[var(--bg-primary)]/24" />
+    <div className="blob-base blob-float-b absolute bottom-[-20%] right-[-5%] w-96 h-96 bg-[var(--border-color)]/28" />
+  </div>
+
   {/* Pattern Overlay - Adaptive */}
   <div className="absolute inset-0 opacity-10">
     <div className="absolute inset-0" style={{

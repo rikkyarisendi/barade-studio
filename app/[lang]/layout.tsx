@@ -6,6 +6,7 @@ import { Syne, Plus_Jakarta_Sans } from 'next/font/google';
 import { getTranslations } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 import Footer from '@/components/Footer';
+import ScrollToTop from '@/components/ScrollToTop';
 import '../globals.css';
 
 // ✅ Fonts
@@ -71,7 +72,7 @@ export default async function RootLayout({
         
         {/* ✅ Kirim FULL t object juga */}
         <Footer lang={lang} t={t} />
-        
+        <ScrollToTop />
       </body>
     </html>
   );

@@ -17,6 +17,7 @@ interface NavbarProps {
 export default function Navbar({ lang, t }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [bgScheme, setBgScheme] = useState<'light' | 'dark' | 'lime'>('light');
+  const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
   const site = getSiteConfig();
 
@@ -109,6 +110,27 @@ export default function Navbar({ lang, t }: NavbarProps) {
     };
   }, []);
 
+  // Scroll progress bar
+  useEffect(() => {
+    const updateProgress = () => {
+      if (typeof window === 'undefined' || typeof document === 'undefined') return;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight =
+        document.documentElement.scrollHeight - document.documentElement.clientHeight || 1;
+      const progress = Math.min(Math.max((scrollTop / docHeight) * 100, 0), 100);
+      setScrollProgress(progress);
+    };
+
+    updateProgress();
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+
+    return () => {
+      window.removeEventListener('scroll', updateProgress);
+      window.removeEventListener('resize', updateProgress);
+    };
+  }, []);
+
   // Close menu on scroll
   useEffect(() => {
     const handleCloseOnScroll = () => {
@@ -176,32 +198,34 @@ export default function Navbar({ lang, t }: NavbarProps) {
 
             {/* Desktop Menu - Adaptive Colors */}
             <div className="hidden md:flex items-center space-x-4">
-              {menuItems.map((item) => (
-                <Link 
-                  key={item.href}
-                  href={item.href} 
-                  className={`transition-colors duration-300 ${
-                    isActive(item.href) 
-                      ? `font-bold ${isOverBrightBg ? 'text-[var(--text-on-lime)]' : 'text-[var(--accent-lime)]'}`
-                      : `${
-                          isOverBrightBg 
-                            ? 'text-[var(--text-on-lime)] hover:text-[var(--text-on-lime)]/70' 
-                            : 'text-[var(--text-primary)] hover:text-[var(--accent-lime)]'
-                        }`
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {menuItems.map((item) => {
+                const active = isActive(item.href);
+                const baseText =
+                  isOverBrightBg ? 'text-[var(--text-on-lime)]' : 'text-[var(--text-primary)]';
+                const hoverText =
+                  isOverBrightBg ? 'hover:text-[var(--text-on-lime)]/75' : 'hover:text-[var(--text-secondary)]';
+
+                return (
+                  <Link 
+                    key={item.href}
+                    href={item.href} 
+                    className={`transition-colors duration-300 ${baseText} ${hoverText} ${
+                      active ? 'font-bold' : 'font-medium'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
               
-              {/* Contact Button - Adaptive Colors with Guaranteed Contrast */}
+              {/* Contact Button - Outline, adaptif ke background */}
               {contactItem && (
                 <Link 
                   href={path(contactItem.path)} 
-                  className={`px-3 py-1.5 font-medium transition-all duration-300 border-2 rounded-lg ${
+                  className={`px-3 py-1.5 font-medium rounded-lg border-2 transition-all duration-300 ${
                     isOverBrightBg
-                      ? 'bg-[var(--text-on-lime)] text-[var(--accent-lime)] border-[var(--text-on-lime)] hover:bg-[var(--accent-lime)] hover:text-[var(--text-on-lime)]'
-                      : 'bg-[var(--accent-lime)] text-[var(--text-on-lime)] border-[var(--border-color)] hover:bg-[var(--border-color)] hover:text-[var(--accent-lime)]'
+                      ? 'bg-transparent border-brand-dark text-[var(--text-on-lime)] hover:bg-brand-lime hover:text-brand-dark'
+                      : 'bg-transparent border-brand-lime text-[var(--text-primary)] hover:bg-brand-lime hover:text-brand-dark'
                   }`}
                 >
                   {t.nav?.contact || 'Contact'}
@@ -249,25 +273,27 @@ export default function Navbar({ lang, t }: NavbarProps) {
               } menu-open`}
             >
               <div className="space-y-1 pt-3">
-                {menuItems.map((item, index) => (
-                  <Link 
-                    key={item.href}
-                    href={item.href} 
-                    className={`menu-item block py-3 pl-2 font-medium transition-colors duration-200 border-l-2 border-transparent hover:border-[var(--accent-lime)] ${
-                      isActive(item.href)
-                        ? `font-bold ${isOverBrightBg ? 'text-[var(--text-on-lime)] border-[var(--text-on-lime)]' : 'text-[var(--accent-lime)] border-[var(--accent-lime)]'}`
-                        : `${
-                            isOverBrightBg 
-                              ? 'text-[var(--text-on-lime)] hover:text-[var(--text-on-lime)]/70' 
-                              : 'text-[var(--text-primary)] hover:text-[var(--accent-lime)]'
-                          }`
-                    }`}
-                    style={{ animationDelay: `${0.05 + index * 0.05}s` }}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {menuItems.map((item, index) => {
+                  const active = isActive(item.href);
+                  const baseText =
+                    isOverBrightBg ? 'text-[var(--text-on-lime)]' : 'text-[var(--text-primary)]';
+                  const hoverText =
+                    isOverBrightBg ? 'hover:text-[var(--text-on-lime)]/75' : 'hover:text-[var(--text-secondary)]';
+
+                  return (
+                    <Link 
+                      key={item.href}
+                      href={item.href} 
+                      className={`menu-item block py-3 pl-2 border-l-2 border-transparent font-medium transition-colors duration-200 ${baseText} ${hoverText} ${
+                        active ? 'font-bold' : ''
+                      }`}
+                      style={{ animationDelay: `${0.05 + index * 0.05}s` }}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
                 
                 {/* Language Toggle in Mobile Menu */}
                 <div className="menu-item pt-3 pb-2" style={{ animationDelay: '0.2s' }}>
@@ -296,6 +322,14 @@ export default function Navbar({ lang, t }: NavbarProps) {
               </div>
             </div>
           )}
+        </div>
+
+        {/* Scroll progress bar */}
+        <div className="h-0.5 w-full bg-transparent">
+          <div
+            className="h-0.5 bg-brand-lime transition-[width] duration-150 ease-out"
+            style={{ width: `${scrollProgress}%` }}
+          />
         </div>
       </nav>
     </>

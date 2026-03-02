@@ -99,7 +99,39 @@ function PhoneInput({
             </div>
           </div>
           <div className="flex-1 overflow-y-auto max-h-56">
-            {filteredCountries.length > 0 ? (filteredCountries.map((country) => (<button key={country.code} type="button" onClick={() => handleCountryChange(country)} className={`w-full flex items-center gap-3 px-4 py-2.5 hover:bg-[var(--border-color)]/10 transition-colors text-left ${selectedCountry.code === country.code ? 'bg-brand-lime/10 text-brand-dark dark:text-brand-lime font-medium' : 'text-[var(--text-primary)]'}`}><span className="text-lg flex-shrink-0">{country.flag}</span><span className="flex-1 truncate">{country.name}</span><span className="text-sm text-[var(--text-muted)] flex-shrink-0">{country.dialCode}</span></button>))) : (<div className="px-4 py-6 text-center text-[var(--text-muted)]"><svg className="w-8 h-8 mx-auto mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><p className="text-sm">No countries found</p><button type="button" onClick={() => setSearchQuery('')} className="mt-2 text-brand-dark dark:text-brand-lime text-sm hover:underline">Clear search</button></div>)}
+            {filteredCountries.length > 0 ? (
+              filteredCountries.map((country) => (
+                <button
+                  key={country.code}
+                  type="button"
+                  onClick={() => handleCountryChange(country)}
+                  className={`w-full flex items-center gap-3 px-4 py-2.5 transition-colors text-left
+                    ${
+                      selectedCountry.code === country.code
+                        ? 'bg-brand-lime/10 text-brand-dark dark:text-brand-lime font-medium'
+                        : 'text-[var(--text-primary)] hover:bg-brand-lime/10 hover:text-brand-dark dark:hover:text-brand-lime'
+                    }`}
+                >
+                  <span className="text-lg flex-shrink-0">{country.flag}</span>
+                  <span className="flex-1 truncate">{country.name}</span>
+                  <span className="text-sm text-[var(--text-muted)] flex-shrink-0">{country.dialCode}</span>
+                </button>
+              ))
+            ) : (
+              <div className="px-4 py-6 text-center text-[var(--text-muted)]">
+                <svg className="w-8 h-8 mx-auto mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <p className="text-sm">No countries found</p>
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="mt-2 text-brand-dark dark:text-brand-lime text-sm hover:underline"
+                >
+                  Clear search
+                </button>
+              </div>
+            )}
           </div>
           <div className="sticky bottom-0 px-4 py-2 border-t border-[var(--border-color)] bg-[var(--bg-primary)] dark:bg-[#1a1a1a] text-xs text-[var(--text-muted)] text-center">{filteredCountries.length} of {COUNTRIES.length} countries</div>
         </div>
@@ -185,10 +217,10 @@ function ServiceSelect({
                 onChange(service.value);
                 setIsOpen(false);
               }}
-              className={`w-full flex items-center gap-3 px-4 py-3 hover:bg-[var(--border-color)]/10 transition-colors text-left ${
+              className={`w-full flex items-center gap-3 px-4 py-3 transition-colors text-left ${
                 value === service.value
                   ? 'bg-brand-lime/10 text-brand-dark dark:text-brand-lime font-medium'
-                  : 'text-[var(--text-primary)]'
+                  : 'text-[var(--text-primary)] hover:bg-brand-lime/10 hover:text-brand-dark dark:hover:text-brand-lime'
               }`}
             >
               <span className="text-xl">{service.icon}</span>
@@ -306,14 +338,14 @@ export default function ContactForm({
           <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 animate-fade-in text-brand-dark">
             {t?.contact?.hero?.title || 'LET\'S TALK'}
           </h1>
-          <p className="text-xl md:text-2xl text-brand-dark/80 max-w-3xl mx-auto animate-slide-in">
+          <p className="text-xl md:text-2xl text-brand-dark max-w-3xl mx-auto animate-slide-in">
             {t?.contact?.hero?.subtitle || 'Have a project idea or a technical challenge? Get in touch to start a discussion about your needs.'}
           </p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-primary)] dark:bg-[var(--bg-secondary)]">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 space-y-6 md:space-y-18 lg:space-y-20 grid md:grid-cols-2 gap-12">
           
           {/* Contact Info */}

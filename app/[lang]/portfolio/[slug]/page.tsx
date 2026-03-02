@@ -41,19 +41,18 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
       <section className="pt-28 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime -mt-20">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
           <RevealOnScroll animation="up" delay={0.05}>
-            <Link 
-              href={path(lang, 'portfolio')} 
-              className="inline-flex items-center text-brand-dark hover:text-brand-dark/70 mb-6 font-bold transition-colors group"
-              aria-label={t.project?.back_to_portfolio}
-            >
-              <span className="mr-2 group-hover:-translate-x-1 transition-transform" aria-hidden="true">←</span> 
-              {t.project?.back_to_portfolio}
-            </Link>
-          </RevealOnScroll>
-          
-          <RevealOnScroll animation="up" delay={0.1}>
-            <div className="ml-2 inline-block bg-brand-dark text-brand-lime px-2 py-1 text-sm font-bold mb-6 rounded-lg">
-              {project.category}
+            <div className="flex items-center gap-3 mb-6">
+              <Link 
+                href={path(lang, 'portfolio')} 
+                className="inline-flex items-center text-brand-dark hover:text-brand-dark/70 font-bold transition-colors group"
+                aria-label={t.project?.back_to_portfolio}
+              >
+                <span className="mr-2 group-hover:-translate-x-1 transition-transform" aria-hidden="true">←</span> 
+                {t.project?.back_to_portfolio}
+              </Link>
+              <div className="inline-block bg-brand-dark text-brand-lime px-2 py-1 text-xs sm:text-sm font-bold rounded-lg">
+                {project.category}
+              </div>
             </div>
           </RevealOnScroll>
           
@@ -64,7 +63,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
           </RevealOnScroll>
           
           <RevealOnScroll animation="up" delay={0.25}>
-            <p className="text-xl md:text-2xl text-brand-dark/80 max-w-4xl leading-relaxed">
+            <p className="text-xl md:text-2xl text-brand-dark max-w-4xl leading-relaxed">
               {project.description}
             </p>
           </RevealOnScroll>
@@ -72,7 +71,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
       </section>
 
       {/* Project Info Bar */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)]">
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { label: t.project?.client_label, value: project.client },
@@ -204,10 +203,10 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
               <blockquote className="bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] p-8 md:p-12 rounded-2xl border-2 border-brand-lime relative">
                 <span className="absolute top-8 left-8 text-brand-dark/20 dark:text-brand-lime/20 text-9xl font-display leading-none" aria-hidden="true">&ldquo;</span>
                 <div className="relative z-10">
-                  <p className="text-xl md:text-2xl leading-relaxed mb-2 italic text-[var(--text-primary)]">
+                  <p className="text-xl md:text-2xl leading-relaxed mb-6 italic text-[var(--text-primary)]">
                     {project.testimonial.quote}
                   </p>
-                  <footer className="border-t-2 border-brand-dark/30 dark:border-brand-lime/30 pt-2">
+                  <footer className="border-t-2 border-brand-dark/30 dark:border-brand-lime/30 pt-6">
                     <p className="font-display text-xl font-bold text-brand-dark dark:text-brand-lime">{project.testimonial.author}</p>
                     <p className="text-[var(--text-muted)]">{project.testimonial.position}</p>
                   </footer>
@@ -219,7 +218,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
           {/* External Links */}
           {project.externalLinks && Object.keys(project.externalLinks).length > 0 && (
             <RevealOnScroll animation="up" delay={0.5}>
-              <div className="border-t-2 border-[var(--border-color)]/10 pt-12">
+              <div className="border-t-2 border-[var(--border-color)]/10 pt-8 ">
                 <h3 className="font-display text-xl md:text-2xl font-bold mb-2 text-[var(--text-primary)]">
                   {t.project?.external_links_title}
                 </h3>
@@ -243,7 +242,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 px-2 py-1 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] text-[var(--text-primary)] font-medium rounded-xl hover:bg-brand-lime hover:dark:text-brand-lime transition-all duration-300 border-1 border-[var(--border-color)] hover:scale-105"
+                        className="inline-flex items-center gap-1 px-2 py-1 bg-[var(--bg-secondary)] dark:bg-[var(--bg-secondary)] text-[var(--text-primary)] font-medium rounded-lg hover:bg-brand-lime hover:dark:text-brand-lime transition-all duration-300 border-1 border-[var(--border-color)]"
                         aria-label={plat.label}
                       >
                         <span className="text-1xl" aria-hidden="true">{plat.icon}</span> 
@@ -258,7 +257,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
 
           {/* Project Navigation */}
           <RevealOnScroll animation="up" delay={0.55}>
-            <nav className="border-t-4 border-[var(--border-color)]/10 pt-12" aria-label="Project navigation">
+            <nav className="border-t-2 border-[var(--border-color)]/10 pt-12 pb-12" aria-label="Project navigation">
               <Link 
                 href={path(lang, 'portfolio')}
                 className="inline-flex items-center gap-2 text-[var(--text-primary)] hover:text-brand-lime font-bold text-lg transition-colors group"
@@ -314,7 +313,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
                     <div className="inline-block bg-brand-lime px-3 py-1 text-xs font-bold mb-2 rounded dark:text-brand-dark">
                       {relatedProject.category}
                     </div>
-                    <h3 className="font-display text-xl font-bold mb-2 text-[var(--text-primary)] group-hover:text-brand-lime transition-colors">
+                    <h3 className="font-display text-xl font-bold mb-2 text-[var(--text-primary)]  transition-colors">
                       {relatedProject.title}
                     </h3>
                     <p className="text-[var(--text-muted)] text-sm">
@@ -329,7 +328,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
       )}
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-primary)] dark:bg-[var(--bg-primary)]">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[var(--bg-secondary)]">
         <div className="max-w-4xl mx-auto text-center">
           <RevealOnScroll animation="up" delay={0.1}>
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-[var(--text-primary)]">
@@ -344,7 +343,7 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
           <RevealOnScroll animation="up" delay={0.3}>
             <Link 
               href={path(lang, 'contact')} 
-              className="btn-premium btn-dark"
+              className="btn-premium btn-cta-dark"
             >
               {t.common?.buttons?.start_project} →
             </Link>

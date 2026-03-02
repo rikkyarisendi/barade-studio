@@ -20,15 +20,21 @@ export default async function ServicesPage({ params }: { params: { lang: string 
   return (
     <>
       {/* Hero */}
-      <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime -mt-20">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
+      <section className="min-h-screen flex items-center pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime -mt-20 relative overflow-hidden">
+        {/* Blobs - hero */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="blob-base blob-float-a absolute -top-24 -left-10 w-72 h-72 bg-[var(--bg-primary)]/28" />
+          <div className="blob-base blob-float-b absolute bottom-[-6rem] right-[-4rem] w-96 h-96 bg-[var(--border-color)]/24" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center relative z-10">
           <RevealOnScroll animation="up" delay={0.1}>
             <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 text-brand-dark">
               {t.services?.hero?.title}
             </h1>
           </RevealOnScroll>
           <RevealOnScroll animation="up" delay={0.25}>
-            <p className="text-xl md:text-2xl text-brand-dark/80 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-brand-dark max-w-3xl mx-auto">
               {t.services?.hero?.subtitle}
             </p>
           </RevealOnScroll>
@@ -36,8 +42,14 @@ export default async function ServicesPage({ params }: { params: { lang: string 
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 space-y-20">
+      <section className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Blobs - services grid */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="blob-base blob-float-a absolute -top-32 -left-24 w-80 h-80 bg-[var(--accent-lime)]/18" />
+          <div className="blob-base blob-float-b absolute bottom-[-8rem] right-[-6rem] w-96 h-96 bg-[var(--bg-secondary)]/22" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 space-y-20 relative z-10">
           
           {/* Graphic Design */}
           <RevealOnScroll animation="up" delay={0.1} className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
@@ -175,8 +187,14 @@ export default async function ServicesPage({ params }: { params: { lang: string 
       </section>
 
       {/* Process Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <section className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] relative overflow-hidden">
+        {/* Blobs - process */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="blob-base blob-float-a absolute -top-24 right-[-8%] w-80 h-80 bg-[var(--accent-lime)]/18" />
+          <div className="blob-base blob-float-b absolute bottom-[-10rem] left-[-6rem] w-96 h-96 bg-[var(--bg-primary)]/20" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
           <RevealOnScroll animation="up" delay={0.1}>
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
               {t.services?.process?.title_part1} <span className="text-brand-dark dark:text-brand-lime">{t.services?.process?.title_part2}</span>

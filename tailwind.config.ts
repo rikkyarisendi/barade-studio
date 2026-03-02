@@ -10,12 +10,11 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
-      // ❌ REMOVE static brand colors (cause contrast issues)
-      // 'brand-lime': '#DCF900',
-      // 'brand-dark': '#1a1a1a',
-      // 'brand-cream': '#f9f9ed',
-      
-      // ✅ USE CSS variables instead via className="bg-[var(--...)]"
+      colors: {
+        'brand-lime': '#dcf900',
+        'brand-dark': '#1a1a1a',
+        'brand-cream': '#f5f5f0',
+      },
       
       fontFamily: {
         display: ['var(--font-display)'],

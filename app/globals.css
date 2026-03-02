@@ -13,58 +13,51 @@
   --font-body: 'Plus Jakarta Sans', sans-serif;
   --font-mono: 'Space Mono', monospace;
 
-  /* Brand tokens */
+  /* Brand palette (single source of truth) */
   --brand-lime: #dcf900;
-  --brand-dark: #1a1a1a;
-  --brand-cream: #f9f9ed;
+  --brand-dark: #2b2a2a;
+  --brand-cream: #f5f5f0;
 
   /* 🔆 LIGHT MODE */
   --bg-primary: #f9f9ed;
-  --bg-secondary: #e4e4da;
-  --bg-tertiary: #d4d3cc;
+  --bg-secondary: #f1f1db;
+  --bg-tertiary: #d9d9d9;
 
   --text-primary: #1a1a1a;
   --text-secondary: #3f3f3f;
   --text-muted: rgba(26, 26, 26, 0.7);
-  --text-on-lime: #1a1a1a;
+  --text-on-lime: #2b2a2a;
   /* ✅ Dark text for lime background */
   --text-on-dark: #faf9f6;
   /* ✅ Light text for dark background */
 
   --border-color: #3f3f3f;
-  --border-subtle: #d4d3cc;
+  --border-subtle: #d9d9d9;
 
-  --accent-lime: #DCF900;
-  --accent-lime-dark: #b8e600;
-  /* ✅ Slightly darker lime for dark mode */
+  /* Accent just reuses brand-lime so palette tetap konsisten */
+  --accent-lime: var(--brand-lime);
+  --accent-lime-dark: var(--brand-lime);
 
   /* Easing */
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* 🌙 DARK MODE - Adaptive Values */
+/* 🌙 DARK MODE - Pakai palette yang sama, beda cuma mapping bg/text */
 .dark {
-  --brand-lime: #b8e600;
-  --brand-dark: #0a0a0a;
-  --brand-cream: #f9f9ed;
-
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #1a1a1a;
-  --bg-tertiary: #2a2a2a;
+  /* Brand colors TETAP sama dengan light mode */
+  --bg-primary: var(--brand-dark);
+  --bg-secondary: #252525;
+  --bg-tertiary: #1f1f1f;
 
   --text-primary: #faf9f6;
   --text-secondary: #d4d3cc;
   --text-muted: rgba(249, 249, 238, 0.7);
-  --text-on-lime: #0a0a0a;
+  --text-on-lime: #1a1a1a;
   /* ✅ Even darker text on lime in dark mode */
   --text-on-dark: #faf9f6;
 
   --border-color: #4a4a4a;
   --border-subtle: #2a2a2a;
-
-  --accent-lime: #b8e600;
-  /* ✅ Muted lime for better contrast */
-  --accent-lime-dark: #9cc400;
 }
 
 /* ============================================================================
@@ -176,6 +169,65 @@ body {
 
 .animate-rotate-slower {
   animation: rotateSlower 30s linear infinite;
+}
+
+/* Floating blob animation */
+@keyframes blobFloatA {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18px, -22px, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-12px, 16px, 0) scale(0.96);
+  }
+}
+
+@keyframes blobFloatB {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-24px, 18px, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(14px, -14px, 0) scale(0.98);
+  }
+}
+
+.blob-base {
+  border-radius: 9999px;
+  filter: blur(40px);
+  opacity: 0.9;
+}
+
+.blob-float-a {
+  animation: blobFloatA 32s ease-in-out infinite alternate;
+}
+
+.blob-float-b {
+  animation: blobFloatB 40s ease-in-out infinite alternate;
+}
+
+/* Scroll-to-top idle breathing */
+@keyframes scrollTopBreath {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+.scrolltop-arrow {
+  animation: scrollTopBreath 2.4s ease-in-out infinite;
+}
+
+.group:hover .scrolltop-arrow {
+  animation: none;
+  transform: translateY(0);
 }
 
 /* ============================================================================
@@ -434,6 +486,28 @@ body::before {
 .btn-cta-lime:hover {
   background: transparent;
   color: var(--text-on-lime);
+}
+
+/* CTA on dark backgrounds: lime pill on dark */
+.btn-cta-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 0.75rem;
+  border: 2px solid var(--brand-lime);
+  background: var(--brand-lime);
+  color: var(--brand-dark);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.btn-cta-dark:hover {
+  background: var(--brand-dark);
+  color: var(--brand-lime);
 }
 
 /* ============================================================================

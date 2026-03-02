@@ -21,8 +21,14 @@ export default async function AboutPage({ params }: { params: { lang: string } }
   return (
     <>
       {/* Hero */}
-      <section className="pt-36 pb-20 px-4 sm:px-6 lg:px-8 -mt-20">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <section className="min-h-screen flex items-center pt-36 pb-20 px-4 sm:px-6 lg:px-8 -mt-20 relative overflow-hidden">
+        {/* Blurred blobs - hero */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="blob-base blob-float-a absolute -top-24 -left-16 w-72 h-72 bg-[var(--accent-lime)]/22" />
+          <div className="blob-base blob-float-b absolute bottom-[-6rem] right-[-4rem] w-96 h-96 bg-[var(--border-color)]/18" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
           <RevealOnScroll animation="up" delay={0.1}>
             <h1 className="font-display text-5xl md:text-7xl font-bold mb-6">
               <span className="text-[var(--text-primary)]">{t.about?.hero?.title_part1}</span>
@@ -39,8 +45,14 @@ export default async function AboutPage({ params }: { params: { lang: string } }
       </section>
 
       {/* Story Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+      <section className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] relative overflow-hidden">
+        {/* Blurred blobs - story */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="blob-base blob-float-a absolute -top-32 -left-24 w-80 h-80 bg-[var(--accent-lime)]/18" />
+          <div className="blob-base blob-float-b absolute bottom-[-6rem] right-[-4rem] w-96 h-96 bg-[var(--bg-primary)]/20" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center relative z-10">
           
           {/* ✅ TEXT - order-2 di mobile (bawah), order-1 di desktop (kiri) */}
           <RevealOnScroll animation="left" delay={0.1} className="order-2 md:order-1">
@@ -74,8 +86,14 @@ export default async function AboutPage({ params }: { params: { lang: string } }
       </section>
 
       {/* Values Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <section className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Blurred blobs - values */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="blob-base blob-float-a absolute -top-24 right-[-10%] w-72 h-72 bg-[var(--accent-lime)]/18" />
+          <div className="blob-base blob-float-b absolute bottom-[-8rem] left-[-6rem] w-96 h-96 bg-[var(--bg-secondary)]/22" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
           <RevealOnScroll animation="up" delay={0.1}>
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-12 text-center text-[var(--text-primary)]">
               {t.about?.values?.title_part1} <span className="text-brand-dark dark:text-brand-lime">{t.about?.values?.title_part2}</span>
@@ -91,7 +109,7 @@ export default async function AboutPage({ params }: { params: { lang: string } }
               const val = (t.about?.values as any)?.[value.key];
               return (
                 <RevealOnScroll key={i} animation="up" delay={0.1 * i}>
-                  <div className="text-center p-8 border-2 border-[var(--border-color)] hover-lift rounded-xl bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
+                  <div className="text-center p-8 hover-lift rounded-xl bg-[var(--bg-secondary)] dark:--bg-secondary">
                     <div className="text-5xl mb-4">{value.icon}</div>
                     <h3 className="font-display text-2xl font-bold mb-4 text-[var(--text-primary)]">{val?.title}</h3>
                     <p className="text-[var(--text-muted)]">{val?.desc}</p>
@@ -104,15 +122,21 @@ export default async function AboutPage({ params }: { params: { lang: string } }
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-brand-lime">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
+      <section className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-brand-lime relative overflow-hidden">
+        {/* Blurred blobs - CTA */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="blob-base blob-float-a absolute -top-24 left-[-10%] w-80 h-80 bg-[var(--bg-primary)]/20" />
+          <div className="blob-base blob-float-b absolute bottom-[-20%] right-[-5%] w-96 h-96 bg-[var(--border-color)]/26" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center relative z-10">
           <RevealOnScroll animation="up" delay={0.1}>
             <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-brand-dark">
               {t.about?.cta?.title}
             </h2>
           </RevealOnScroll>
           <RevealOnScroll animation="up" delay={0.2}>
-            <p className="text-xl text-brand-dark/80 mb-8">
+            <p className="text-xl text-brand-dark mb-8">
               {t.about?.cta?.subtitle}
             </p>
           </RevealOnScroll>

@@ -147,7 +147,7 @@
   },
   "portfolio": {
     "hero": {
-      "title_part1": "KARYA",
+      "title_part1": "KARYA ",
       "title_part2": "KAMI",
       "subtitle": "Kumpulan solusi desain dan teknis yang dikembangkan untuk mengatasi berbagai tantangan bisnis."
     },
@@ -243,7 +243,7 @@
     }
   },
   "footer": {
-    "copyright": "© {{year}} BARADE STUDIO. Hak cipta dilindungi.",
+    "copyright": "© {{year}} Barade Studio. Hak cipta dilindungi.",
     "made_with": "Dikembangkan oleh {{developer}}",
     "quick_links": "Tautan Cepat",
     "contact_info": "Kontak",
