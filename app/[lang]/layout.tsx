@@ -7,6 +7,7 @@ import { getTranslations } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import PageTransition from '@/components/PageTransition';
 import '../globals.css';
 
 // ✅ Fonts
@@ -68,7 +69,9 @@ export default async function RootLayout({
         {/* ✅ Kirim FULL t object, biar component bisa akses t.nav, t.footer, dll */}
         <Navbar lang={lang} t={t} />
         
-        <main className="flex-1 pt-20 mt-0">{children}</main>
+        <main className="flex-1 pt-20 mt-0">
+          <PageTransition>{children}</PageTransition>
+        </main>
         
         {/* ✅ Kirim FULL t object juga */}
         <Footer lang={lang} t={t} />

@@ -2,15 +2,14 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef, ReactNode } from 'react';
+import { useRef, ReactNode, HTMLAttributes } from 'react';
 
-interface SectionProps {
+interface SectionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
-  className?: string;
   delay?: number;
 }
 
-export default function Section({ children, className = '', delay = 0 }: SectionProps) {
+export default function Section({ children, className = '', delay = 0, ...rest }: SectionProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -28,6 +27,7 @@ export default function Section({ children, className = '', delay = 0 }: Section
         ease: [0.22, 1, 0.36, 1],
       }}
       className={className}
+      {...rest}
     >
       {children}
     </motion.section>

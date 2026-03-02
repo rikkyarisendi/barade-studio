@@ -112,6 +112,8 @@ export default function Navbar({ lang, t }: NavbarProps) {
 
   // Scroll progress bar
   useEffect(() => {
+    let frame: number | null = null;
+
     const updateProgress = () => {
       if (typeof window === 'undefined' || typeof document === 'undefined') return;
       const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -121,13 +123,24 @@ export default function Navbar({ lang, t }: NavbarProps) {
       setScrollProgress(progress);
     };
 
+    const onScrollOrResize = () => {
+      if (frame !== null) return;
+      frame = window.requestAnimationFrame(() => {
+        updateProgress();
+        frame = null;
+      });
+    };
+
     updateProgress();
-    window.addEventListener('scroll', updateProgress, { passive: true });
-    window.addEventListener('resize', updateProgress);
+    window.addEventListener('scroll', onScrollOrResize, { passive: true });
+    window.addEventListener('resize', onScrollOrResize);
 
     return () => {
-      window.removeEventListener('scroll', updateProgress);
-      window.removeEventListener('resize', updateProgress);
+      if (frame !== null) {
+        window.cancelAnimationFrame(frame);
+      }
+      window.removeEventListener('scroll', onScrollOrResize);
+      window.removeEventListener('resize', onScrollOrResize);
     };
   }, []);
 
@@ -327,7 +340,7 @@ export default function Navbar({ lang, t }: NavbarProps) {
         {/* Scroll progress bar */}
         <div className="h-0.5 w-full bg-transparent">
           <div
-            className="h-0.5 bg-brand-lime transition-[width] duration-150 ease-out"
+            className="h-0.5 bg-brand-lime transition-[width] duration-75 ease-out"
             style={{ width: `${scrollProgress}%` }}
           />
         </div>

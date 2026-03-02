@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { getTranslations } from '@/lib/i18n';
 import { getSiteConfig, getServices } from '@/lib/content';
 import type { Locale } from '@/lib/i18n';
-import RevealOnScroll from '@/components/RevealOnScroll';  // ✅ Import
-import Section from '@/components/Section';  // ✅ Import
+import RevealOnScroll from '@/components/RevealOnScroll';
+import Section from '@/components/Section';
+import TiltCard from '@/components/TiltCard';
 
 const path = (lang: string, segment: string) => `/${lang}${segment}`;
 
@@ -22,8 +23,8 @@ export default async function HomePage({ params }: { params: { lang: string } })
       <Section className="min-h-screen flex items-center justify-center pt-36 px-4 sm:px-6 lg:px-8 relative overflow-hidden -mt-20">
         {/* Background Blobs */}
         <div className="absolute inset-0 -z-10 pointer-events-none">
-          <div className="blob-base blob-float-a absolute -top-24 -left-10 w-72 h-72 bg-[var(--accent-lime)]/22" />
-          <div className="blob-base blob-float-b absolute bottom-[-5rem] right-[-3rem] w-96 h-96 bg-[var(--border-color)]/18" />
+          <div className="blob-base blob-float-a absolute -top-24 -left-10 w-72 h-72 bg-[var(--accent-lime)]/32" />
+          <div className="blob-base blob-float-b absolute bottom-[-5rem] right-[-3rem] w-96 h-96 bg-[var(--border-color)]/22" />
         </div>
 
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center relative z-10">
@@ -48,7 +49,7 @@ export default async function HomePage({ params }: { params: { lang: string } })
           
           {/* Buttons */}
           <RevealOnScroll animation="up" delay={0.5}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-6 sm:mt-8">
               <Link 
                 href={path(lang, '/portfolio')} 
                 className="btn-premium rounded-lg group"
@@ -72,16 +73,16 @@ export default async function HomePage({ params }: { params: { lang: string } })
 
           {/* Stats – muncul setelah tombol, masih dalam hero */}
           <RevealOnScroll animation="up" delay={0.7}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mt-20 md:mt-32 pb-16">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-10 md:mt-16 pb-10 md:pb-16">
               {site.stats
                 .filter((s) => s.show)
                 .sort((a, b) => a.order - b.order)
                 .map((stat) => (
                   <div key={stat.key} className="text-center group">
-                    <p className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] group-hover:text-[var(--accent-lime)] transition-colors duration-300">
+                    <p className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] group-hover:text-[var(--accent-lime)] transition-colors duration-300">
                       {stat.number}
                     </p>
-                    <p className="text-[var(--text-muted)] text-sm md:text-base mt-3 font-medium uppercase tracking-wider">
+                    <p className="text-[var(--text-muted)] text-xs sm:text-sm md:text-base mt-2 md:mt-3 font-medium uppercase tracking-wider">
                       {t.common?.stats?.[stat.key]}
                     </p>
                     <div className="h-px w-0 group-hover:w-full mx-auto mt-3 bg-[var(--accent-lime)] transition-all duration-500" />
@@ -96,8 +97,8 @@ export default async function HomePage({ params }: { params: { lang: string } })
       <Section className="min-h-screen flex items-center py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] relative overflow-hidden">
         {/* Blurred color blobs (services) */}
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="blob-base blob-float-a absolute -top-32 -left-24 w-80 h-80 bg-[var(--accent-lime)]/20" />
-          <div className="blob-base blob-float-b absolute bottom-[-6rem] right-[-4rem] w-96 h-96 bg-[var(--bg-primary)]/18" />
+          <div className="blob-base blob-float-a absolute -top-32 -left-24 w-80 h-80 bg-[var(--accent-lime)]/30" />
+          <div className="blob-base blob-float-b absolute bottom-[-6rem] right-[-4rem] w-96 h-96 bg-[var(--bg-primary)]/24" />
         </div>
 
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
@@ -111,33 +112,46 @@ export default async function HomePage({ params }: { params: { lang: string } })
           </RevealOnScroll>
           
           <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-            {services.filter(s => s.featured).sort((a, b) => a.order - b.order).map((service, i) => (
-              <RevealOnScroll key={service.slug} animation="up" delay={0.15 * i}>
-                <div className="group card card--hoverable h-full flex flex-col">
-                  <div className="text-5xl mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
-                    {service.icon}
-                  </div>
-                  <h3 className="font-display text-2xl font-bold mb-4 text-[var(--text-primary)]">
-                    {service.title}
-                  </h3>
-                  <p className="text-[var(--text-muted)] flex-grow mb-6 font-body leading-relaxed">
-                    {service.description}
-                  </p>
-                  <Link 
-                    href={path(lang, '/services')} 
-                    className="inline-flex items-center gap-2 text-[var(--text-primary)] font-semibold group/link mt-auto"
-                  >
-                    <span className="relative">
-                      Learn More
-                      <span className="absolute bottom-0 left-0 h-px w-0 bg-[var(--accent-lime)] group-hover/link:w-full transition-all duration-300" />
-                    </span>
-                    <svg className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </Link>
-                </div>
-              </RevealOnScroll>
-            ))}
+            {services
+              .filter((s) => s.featured)
+              .sort((a, b) => a.order - b.order)
+              .map((service, i) => (
+                <RevealOnScroll key={service.slug} animation="up" delay={0.15 * i}>
+                  <TiltCard className="group card card--hoverable h-full flex flex-col">
+                    <div className="text-5xl mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
+                      {service.icon}
+                    </div>
+                    <h3 className="font-display text-2xl font-bold mb-4 text-[var(--text-primary)]">
+                      {service.title}
+                    </h3>
+                    <p className="text-[var(--text-muted)] flex-grow mb-6 font-body leading-relaxed">
+                      {service.description}
+                    </p>
+                    <Link
+                      href={path(lang, '/services')}
+                      className="inline-flex items-center gap-2 text-[var(--text-primary)] font-semibold group/link mt-auto"
+                    >
+                      <span className="relative">
+                        Learn More
+                        <span className="absolute bottom-0 left-0 h-px w-0 bg-[var(--accent-lime)] group-hover/link:w-full transition-all duration-300" />
+                      </span>
+                      <svg
+                        className="w-4 h-4 transform group-hover/link:translate-x-1 transition-transform"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </Link>
+                  </TiltCard>
+                </RevealOnScroll>
+              ))}
           </div>
         </div>
       </Section>
@@ -146,8 +160,8 @@ export default async function HomePage({ params }: { params: { lang: string } })
 <Section className="min-h-screen flex items-center py-24 md:py-32 px-4 sm:px-6 lg:px-8 bg-[var(--accent-lime)] relative overflow-hidden">
   {/* Blurred color blobs – CTA */}
   <div className="pointer-events-none absolute inset-0 -z-10">
-    <div className="blob-base blob-float-a absolute -top-24 left-[-10%] w-80 h-80 bg-[var(--bg-primary)]/24" />
-    <div className="blob-base blob-float-b absolute bottom-[-20%] right-[-5%] w-96 h-96 bg-[var(--border-color)]/28" />
+    <div className="blob-base blob-float-a absolute -top-24 left-[-10%] w-80 h-80 bg-[var(--bg-primary)]/32" />
+    <div className="blob-base blob-float-b absolute bottom-[-20%] right-[-5%] w-96 h-96 bg-[var(--border-color)]/36" />
   </div>
 
   {/* Pattern Overlay - Adaptive */}

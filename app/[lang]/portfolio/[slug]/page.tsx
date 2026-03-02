@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import ImageWithLightbox from '@/components/ImageWithLightbox';  // ✅ Client component
 import ProjectGallery from '@/components/ProjectGallery';  // ✅ Client component
+import TiltCard from '@/components/TiltCard';
 import { notFound } from 'next/navigation';
 import { 
   getProjectBySlug, 
@@ -285,10 +286,14 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
                 <RevealOnScroll key={relatedProject.id} animation="up" delay={0.1 * (index + 1)}>
                   <Link
                     href={path(lang, `portfolio/${relatedProject.slug}`)}
-                    className="group cursor-pointer hover-lift block"
+                    className="group cursor-pointer block"
                   >
                     {relatedProject.thumbnail ? (
-                      <div className="relative aspect-square rounded-xl mb-4 border-2 border-[var(--border-color)] overflow-hidden bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]">
+                      <TiltCard
+                        className="relative project-thumb aspect-square rounded-xl mb-4 border-2 border-[var(--border-color)] overflow-hidden bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]"
+                        intensity={10}
+                        scale={1.05}
+                      >
                         <Image 
                           src={relatedProject.thumbnail} 
                           alt={relatedProject.title} 
@@ -301,13 +306,17 @@ export default async function ProjectDetailPage({ params }: { params: { slug: st
                             {t.project?.view_project}
                           </span>
                         </div>
-                      </div>
+                      </TiltCard>
                     ) : (
-                      <div className={`${relatedProject.color} aspect-square rounded-xl mb-4 flex items-center justify-center border-2 border-[var(--border-color)] bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]`}>
+                      <TiltCard
+                        className={`${relatedProject.color} project-thumb aspect-square rounded-xl mb-4 flex items-center justify-center border-2 border-[var(--border-color)] bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]`}
+                        intensity={10}
+                        scale={1.05}
+                      >
                         <span className="font-display text-5xl font-bold text-[var(--text-muted)]" aria-hidden="true">
                           {String(relatedProject.id || 0).padStart(2, '0')}
                         </span>
-                      </div>
+                      </TiltCard>
                     )}
                     
                     <div className="inline-block bg-brand-lime px-3 py-1 text-xs font-bold mb-2 rounded dark:text-brand-dark">

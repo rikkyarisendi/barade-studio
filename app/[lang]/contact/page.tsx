@@ -19,8 +19,8 @@ export default async function ContactPage({ params }: { params: { lang: string }
     <main className="min-h-screen py-10 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Blobs - contact */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="blob-base blob-float-a absolute -top-24 -left-10 w-80 h-80 bg-[var(--accent-lime)]/18" />
-        <div className="blob-base blob-float-b absolute bottom-[-10rem] right-[-6rem] w-96 h-96 bg-[var(--bg-secondary)]/22" />
+        <div className="blob-base blob-float-a absolute -top-24 -left-10 w-80 h-80 bg-[var(--accent-lime)]/32" />
+        <div className="blob-base blob-float-b absolute bottom-[-10rem] right-[-6rem] w-96 h-96 bg-[var(--bg-secondary)]/30" />
       </div>
 
       {/* ✅ JANGAN tambah <Navbar /> - udah ada di layout */}

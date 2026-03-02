@@ -45,8 +45,8 @@ export default async function PortfolioPage({ params }: { params: { lang: string
       <section className="min-h-screen flex items-center pt-36 pb-20 px-4 sm:px-6 lg:px-8 -mt-20 mb-20 bg-[var(--bg-secondary)] relative overflow-hidden">
         {/* Blobs - hero */}
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="blob-base blob-float-a absolute -top-28 left-[-8%] w-80 h-80 bg-[var(--accent-lime)]/18" />
-          <div className="blob-base blob-float-b absolute bottom-[-8rem] right-[-6rem] w-96 h-96 bg-[var(--bg-primary)]/20" />
+          <div className="blob-base blob-float-a absolute -top-28 left-[-8%] w-80 h-80 bg-[var(--accent-lime)]/32" />
+          <div className="blob-base blob-float-b absolute bottom-[-8rem] right-[-6rem] w-96 h-96 bg-[var(--bg-primary)]/28" />
         </div>
 
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
@@ -85,8 +85,8 @@ export default async function PortfolioPage({ params }: { params: { lang: string
       <section className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] relative overflow-hidden">
         {/* Blobs - CTA */}
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="blob-base blob-float-a absolute -top-24 right-[-10%] w-80 h-80 bg-[var(--accent-lime)]/18" />
-          <div className="blob-base blob-float-b absolute bottom-[-10rem] left-[-6rem] w-96 h-96 bg-[var(--bg-primary)]/22" />
+          <div className="blob-base blob-float-a absolute -top-24 right-[-10%] w-80 h-80 bg-[var(--accent-lime)]/32" />
+          <div className="blob-base blob-float-b absolute bottom-[-10rem] left-[-6rem] w-96 h-96 bg-[var(--bg-primary)]/30" />
         </div>
 
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center relative z-10">

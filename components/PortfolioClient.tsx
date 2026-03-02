@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { Project } from '@/lib/projects';
+import TiltCard from './TiltCard';
 
 // ✅ Interface dengan props i18n
 interface PortfolioClientProps {
@@ -117,8 +118,14 @@ export default function PortfolioClient({
       </section>
 
       {/* Projects Grid */}
-      <section className="pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <section className="pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        {/* Blurred blobs - grid */}
+        <div className="pointer-events-none absolute inset-0 -z-10">
+          <div className="blob-base blob-float-a absolute -top-24 left-[-8%] w-72 h-72 bg-[var(--accent-lime)]/32" />
+          <div className="blob-base blob-float-b absolute bottom-[-8rem] right-[-6rem] w-96 h-96 bg-[var(--bg-secondary)]/30" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 relative z-10">
           <p className="text-center text-[var(--text-muted)] mb-8 font-medium">
             {t?.messages?.showing || 'Showing'} {displayedProjects.length} {t?.messages?.of || 'of'} {filteredProjects.length} {filteredProjects.length === 1 
               ? (t?.messages?.project || 'project') 
@@ -129,15 +136,19 @@ export default function PortfolioClient({
             {displayedProjects.map((project, index) => (
               <div
                 key={project.slug}
-                className="group cursor-pointer hover-lift animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="group cursor-pointer animate-fade-in"
+                style={{ animationDelay: `${index * 0.08}s` }}
                 onClick={() => setSelectedProject(project)}
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => e.key === 'Enter' && setSelectedProject(project)}
               >
-                {/* Card Thumbnail */}
-                <div className={`${project.color} aspect-square rounded-xl mb-3 border-2 border-[var(--border-color)] overflow-hidden relative flex items-center justify-center bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]`}>
+                {/* Card Thumbnail (tilt + hover hanya di area gambar) */}
+                <TiltCard
+                  className={`${project.color} project-thumb aspect-square rounded-xl mb-3 border-2 border-[var(--border-color)] overflow-hidden relative flex items-center justify-center bg-[var(--bg-secondary)] dark:bg-[#2a2a2a]`}
+                  intensity={10}
+                  scale={1.05}
+                >
                   {project.thumbnail ? (
                     <Image
                       src={project.thumbnail}
@@ -162,7 +173,7 @@ export default function PortfolioClient({
                       {t?.modal?.quick_view || 'Quick Detail'}
                     </span>
                   </div>
-                </div>
+                </TiltCard>
 
                 {/* Tags */}
                 {project.tags && project.tags.length > 0 && (
