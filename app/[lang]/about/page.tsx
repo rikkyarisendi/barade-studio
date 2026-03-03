@@ -73,15 +73,17 @@ export default async function AboutPage({ params }: { params: { lang: string } }
           
           {/* ✅ IMAGE - order-1 di mobile (atas), order-2 di desktop (kanan) */}
           <RevealOnScroll animation="right" delay={0.15} className="order-1 md:order-2 relative">
-            <div className="aspect-square bg-[var(--bg-primary)] dark:bg-[#1a1a1a] border-2 border-[var(--border-color)] rounded-lg overflow-hidden">
+          <TiltCard className="rounded-xl bg-[var(--bg-secondary)] dark:--bg-secondary">
+            <div className=" aspect-square md:block relative bg-[var(--bg-primary)] dark:bg-[#1a1a1a] rounded-2xl border-2 border-[var(--border-color)] overflow-hidden">
               <Image
-                src="https://placehold.co/800x800/DCF900/1a1a1a?text=Working+Approach"
+                src="/images/about.jpeg"
                 alt="Working Approach - Baradé Studio"
                 fill
                 className="object-cover"
                 priority
               />
             </div>
+            </TiltCard>
           </RevealOnScroll>
         </div>
       </section>
@@ -110,7 +112,7 @@ export default async function AboutPage({ params }: { params: { lang: string } }
               const val = (t.about?.values as any)?.[value.key];
               return (
                 <RevealOnScroll key={i} animation="up" delay={0.1 * i}>
-                  <TiltCard className="text-center p-8 hover-lift rounded-xl bg-[var(--bg-secondary)] dark:--bg-secondary">
+                  <TiltCard className="text-center p-8 hover-lift card--hoverable rounded-xl bg-[var(--bg-secondary)] dark:--bg-secondary">
                     <div className="text-5xl mb-4">{value.icon}</div>
                     <h3 className="font-display text-2xl font-bold mb-4 text-[var(--text-primary)]">
                       {val?.title}

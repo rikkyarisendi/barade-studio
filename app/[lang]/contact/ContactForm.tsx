@@ -273,19 +273,30 @@ export default function ContactForm({
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '', message: '' });
   const [errors, setErrors] = useState<{ email?: string; phone?: string }>({});
   const [state, formAction] = useFormState<ContactFormResponse, FormData>(submitContactForm, { success: false });
-  const [isSuccess, setIsSuccess] = useState(false);
   const [formKey, setFormKey] = useState(0);
+  const [toast, setToast] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
   useEffect(() => {
-    if (state?.success && !isSuccess) {
-      setIsSuccess(true);
-      setFormKey(prev => prev + 1);
+    if (state?.success) {
+      setFormKey((prev) => prev + 1);
       setFormData({ name: '', email: '', phone: '', service: '', message: '' });
       setErrors({});
-      const timer = setTimeout(() => setIsSuccess(false), 3000);
+      setToast({
+        type: 'success',
+        message:
+          t?.contact?.form?.success_message ||
+          'Thank you. I have received your message and will get back to you shortly.',
+      });
+      const timer = setTimeout(() => setToast(null), 3500);
       return () => clearTimeout(timer);
     }
-  }, [state, isSuccess]);
+
+    if (state?.error) {
+      setToast({ type: 'error', message: state.error });
+      const timer = setTimeout(() => setToast(null), 3500);
+      return () => clearTimeout(timer);
+    }
+  }, [state, t]);
 
   // ✅ Validation functions
   const validateEmail = (email: string): string | undefined => {
@@ -438,8 +449,7 @@ export default function ContactForm({
               </div>
 
               {/* Status Messages */}
-              {state?.error && (<p className="text-red-500 font-medium text-center bg-red-500/10 px-4 py-2 rounded-lg border border-red-500/30">❌ {state.error}</p>)}
-              {isSuccess && (<p className="text-brand-dark dark:text-brand-lime font-medium text-center bg-brand-lime/10 px-4 py-2 rounded-lg border border-brand-lime/30">✅ {t?.contact?.form?.success_message || 'Thank you. I have received your message and will get back to you shortly.'}</p>)}
+              {/* Inline status removed (use toast instead) */}
 
               {/* Submit Button */}
               <SubmitButton t={t?.contact?.form} />
@@ -447,6 +457,26 @@ export default function ContactForm({
           </div>
         </div>
       </section>
+
+      {/* Toast */}
+      {toast && (
+        <div className="toast-stack" role="status" aria-live="polite">
+          <div className={`toast ${toast.type === 'success' ? 'toast--success' : 'toast--error'}`}>
+            <div className="toast__icon" aria-hidden="true">
+              {toast.type === 'success' ? '✓' : '!'}
+            </div>
+            <div className="toast__msg">{toast.message}</div>
+            <button
+              type="button"
+              className="toast__close"
+              onClick={() => setToast(null)}
+              aria-label="Dismiss message"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }

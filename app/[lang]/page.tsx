@@ -6,6 +6,7 @@ import { getTranslations } from '@/lib/i18n';
 import { getSiteConfig, getServices } from '@/lib/content';
 import type { Locale } from '@/lib/i18n';
 import RevealOnScroll from '@/components/RevealOnScroll';
+import RevealOnMount from '@/components/RevealOnMount';
 import Section from '@/components/Section';
 import TiltCard from '@/components/TiltCard';
 
@@ -49,7 +50,7 @@ export default async function HomePage({ params }: { params: { lang: string } })
           
           {/* Buttons */}
           <RevealOnScroll animation="up" delay={0.5}>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-6 sm:mt-8">
+            <div className="flex flex-row gap-3 sm:gap-4 justify-center items-center mt-6 sm:mt-8">
               <Link 
                 href={path(lang, '/portfolio')} 
                 className="btn-premium rounded-lg group"
@@ -72,7 +73,7 @@ export default async function HomePage({ params }: { params: { lang: string } })
           </RevealOnScroll>
 
           {/* Stats – muncul setelah tombol, masih dalam hero */}
-          <RevealOnScroll animation="up" delay={0.7}>
+          <RevealOnMount animation="up" delay={0.7}>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-10 md:mt-16 pb-10 md:pb-16">
               {site.stats
                 .filter((s) => s.show)
@@ -89,7 +90,7 @@ export default async function HomePage({ params }: { params: { lang: string } })
                   </div>
                 ))}
             </div>
-          </RevealOnScroll>
+          </RevealOnMount>
         </div>
       </Section>
 

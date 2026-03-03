@@ -1,6 +1,7 @@
 // app/[lang]/services/page.tsx
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { getTranslations } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 import RevealOnScroll from '@/components/RevealOnScroll';
@@ -14,14 +15,12 @@ export default async function ServicesPage({ params }: { params: { lang: string 
     return <div>Locale not supported</div>;
   }
 
-  // ✅ Load ALL translations (flat structure - no namespace)
   const t = await getTranslations(lang as Locale);
 
   return (
     <>
       {/* Hero */}
       <section className="min-h-screen flex items-center pt-36 pb-20 px-4 sm:px-6 lg:px-8 bg-brand-lime -mt-20 relative overflow-hidden">
-        {/* Blobs - hero */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="blob-base blob-float-a absolute -top-24 -left-10 w-72 h-72 bg-[var(--bg-primary)]/36" />
           <div className="blob-base blob-float-b absolute bottom-[-6rem] right-[-4rem] w-96 h-96 bg-[var(--border-color)]/30" />
@@ -43,7 +42,6 @@ export default async function ServicesPage({ params }: { params: { lang: string 
 
       {/* Services Grid */}
       <section className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        {/* Blobs - services grid */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="blob-base blob-float-a absolute -top-32 -left-24 w-80 h-80 bg-[var(--accent-lime)]/30" />
           <div className="blob-base blob-float-b absolute bottom-[-8rem] right-[-6rem] w-96 h-96 bg-[var(--bg-secondary)]/32" />
@@ -51,19 +49,15 @@ export default async function ServicesPage({ params }: { params: { lang: string 
 
         <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 space-y-20 relative z-10">
           
-          {/* Graphic Design */}
+          {/* 01 GRAPHIC DESIGN */}
           <RevealOnScroll animation="up" delay={0.1} className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
-            <div className="order-1">
+            {/* Desktop: Text LEFT */}
+            <div className="hidden md:block">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">01</div>
                 <h2 className="font-display text-2xl font-bold text-[var(--text-primary)]">
                   {t.services?.graphic_design?.title}
                 </h2>
-              </div>
-              
-              {/* Image Placeholder - Mobile */}
-              <div className="md:hidden relative h-80 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] rounded-2xl border-2 border-[var(--border-color)] flex items-center justify-center mb-6">
-                <span className="font-display text-8xl font-bold text-brand-lime/20">🎨</span>
               </div>
               
               <p className="text-[var(--text-muted)] mb-6">
@@ -86,28 +80,86 @@ export default async function ServicesPage({ params }: { params: { lang: string 
                 {t.common?.buttons?.get_started}
               </Link>
             </div>
-            
-            {/* Image Placeholder - Desktop */}
-            <div className="hidden md:block order-2">
-              <div className="relative h-96 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] rounded-2xl border-2 border-[var(--border-color)] flex items-center justify-center">
-                <span className="font-display text-9xl font-bold text-brand-lime/20">🎨</span>
+
+            {/* Desktop: Image RIGHT */}
+            <div className="hidden md:block relative h-96 rounded-2xl border-2 border-[var(--border-color)] overflow-hidden">
+              <Image
+                src="/images/visual-identity.jpeg"
+                alt={t.services?.graphic_design?.title || 'Graphic Design'}
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 50vw, 100vw"
+              />
+            </div>
+
+            {/* MOBILE LAYOUT - Sesuai referensi */}
+            <div className="md:hidden w-full">
+              {/* Number + Title */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">01</div>
+                <h2 className="font-display text-2xl font-bold text-[var(--text-primary)]">
+                  {t.services?.graphic_design?.title}
+                </h2>
               </div>
+
+              {/* Image */}
+              <div className="relative h-80 rounded-2xl border-2 border-[var(--border-color)] mb-6 overflow-hidden">
+                <Image
+                  src="/images/visual-identity.jpeg"
+                  alt={t.services?.graphic_design?.title || 'Graphic Design'}
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                />
+              </div>
+
+              {/* Description */}
+              <p className="text-[var(--text-muted)] mb-6">
+                {t.services?.graphic_design?.description}
+              </p>
+
+              {/* Features */}
+              <ul className="space-y-3 mb-8">
+                {(t.services?.graphic_design?.features || []).map((feature: string, idx: number) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+                      <span className="text-brand-dark text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-[var(--text-primary)]">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Button */}
+              <Link 
+                href={path(lang, '/contact')} 
+                className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-bold hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+              >
+                {t.common?.buttons?.get_started}
+              </Link>
             </div>
           </RevealOnScroll>
 
-          {/* Web Development */}
+          {/* 02 WEB DEVELOPMENT */}
           <RevealOnScroll animation="up" delay={0.15} className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
-            <div className="order-1 md:order-2">
+            {/* Desktop: Image LEFT */}
+            <div className="hidden md:block relative h-96 rounded-2xl border-2 border-[var(--border-color)] overflow-hidden">
+              <Image
+                src="/images/web-development.jpeg"
+                alt={t.services?.web_development?.title || 'Web Development'}
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 50vw, 100vw"
+              />
+            </div>
+
+            {/* Desktop: Text RIGHT */}
+            <div className="hidden md:block">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">02</div>
                 <h2 className="font-display text-2xl font-bold text-[var(--text-primary)]">
                   {t.services?.web_development?.title}
                 </h2>
-              </div>
-              
-              {/* Image Placeholder - Mobile */}
-              <div className="md:hidden relative h-80 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] rounded-2xl border-2 border-[var(--border-color)] flex items-center justify-center mb-6">
-                <span className="font-display text-8xl font-bold text-brand-lime/20">💻</span>
               </div>
               
               <p className="text-[var(--text-muted)] mb-6">
@@ -130,28 +182,64 @@ export default async function ServicesPage({ params }: { params: { lang: string 
                 {t.common?.buttons?.get_started}
               </Link>
             </div>
-            
-            {/* Image Placeholder - Desktop */}
-            <div className="hidden md:block order-2 md:order-1">
-              <div className="relative h-96 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] rounded-2xl border-2 border-[var(--border-color)] flex items-center justify-center">
-                <span className="font-display text-9xl font-bold text-brand-lime/20">💻</span>
+
+            {/* MOBILE LAYOUT - Sesuai referensi */}
+            <div className="md:hidden w-full">
+              {/* Number + Title */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">02</div>
+                <h2 className="font-display text-2xl font-bold text-[var(--text-primary)]">
+                  {t.services?.web_development?.title}
+                </h2>
               </div>
+
+              {/* Image */}
+              <div className="relative h-80 rounded-2xl border-2 border-[var(--border-color)] mb-6 overflow-hidden">
+                <Image
+                  src="/images/web-development.jpeg"
+                  alt={t.services?.web_development?.title || 'Web Development'}
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                />
+              </div>
+
+              {/* Description */}
+              <p className="text-[var(--text-muted)] mb-6">
+                {t.services?.web_development?.description}
+              </p>
+
+              {/* Features */}
+              <ul className="space-y-3 mb-8">
+                {(t.services?.web_development?.features || []).map((feature: string, idx: number) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+                      <span className="text-brand-dark text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-[var(--text-primary)]">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Button */}
+              <Link 
+                href={path(lang, '/contact')} 
+                className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-bold hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+              >
+                {t.common?.buttons?.get_started}
+              </Link>
             </div>
           </RevealOnScroll>
 
-          {/* Branding */}
+          {/* 03 BRAND STRATEGY */}
           <RevealOnScroll animation="up" delay={0.2} className="md:grid md:grid-cols-2 md:gap-12 md:items-center space-y-8 md:space-y-0">
-            <div className="order-1">
+            {/* Desktop: Text LEFT */}
+            <div className="hidden md:block">
               <div className="flex items-center gap-4 mb-6">
                 <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">03</div>
                 <h2 className="font-display text-2xl font-bold text-[var(--text-primary)]">
                   {t.services?.brand_strategy?.title}
                 </h2>
-              </div>
-              
-              {/* Image Placeholder - Mobile */}
-              <div className="md:hidden relative h-80 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] rounded-2xl border-2 border-[var(--border-color)] flex items-center justify-center mb-6">
-                <span className="font-display text-8xl font-bold text-brand-lime/20">✨</span>
               </div>
               
               <p className="text-[var(--text-muted)] mb-6">
@@ -174,12 +262,63 @@ export default async function ServicesPage({ params }: { params: { lang: string 
                 {t.common?.buttons?.get_started}
               </Link>
             </div>
-            
-            {/* Image Placeholder - Desktop */}
-            <div className="hidden md:block order-2">
-              <div className="relative h-96 bg-[var(--bg-secondary)] dark:bg-[#2a2a2a] rounded-2xl border-2 border-[var(--border-color)] flex items-center justify-center">
-                <span className="font-display text-9xl font-bold text-brand-lime/20">✨</span>
+
+            {/* Desktop: Image RIGHT */}
+            <div className="hidden md:block relative h-96 rounded-2xl border-2 border-[var(--border-color)] overflow-hidden">
+              <Image
+                src="/images/brand-strategy.jpeg"
+                alt={t.services?.brand_strategy?.title || 'Brand Strategy'}
+                fill
+                className="object-cover"
+                sizes="(min-width: 768px) 50vw, 100vw"
+              />
+            </div>
+
+            {/* MOBILE LAYOUT - Sesuai referensi */}
+            <div className="md:hidden w-full">
+              {/* Number + Title */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-brand-lime px-4 py-2 font-bold rounded text-brand-dark">03</div>
+                <h2 className="font-display text-2xl font-bold text-[var(--text-primary)]">
+                  {t.services?.brand_strategy?.title}
+                </h2>
               </div>
+
+              {/* Image */}
+              <div className="relative h-80 rounded-2xl border-2 border-[var(--border-color)] mb-6 overflow-hidden">
+                <Image
+                  src="/images/brand-strategy.jpeg"
+                  alt={t.services?.brand_strategy?.title || 'Brand Strategy'}
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                />
+              </div>
+
+              {/* Description */}
+              <p className="text-[var(--text-muted)] mb-6">
+                {t.services?.brand_strategy?.description}
+              </p>
+
+              {/* Features */}
+              <ul className="space-y-3 mb-8">
+                {(t.services?.brand_strategy?.features || []).map((feature: string, idx: number) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-brand-lime flex items-center justify-center flex-shrink-0">
+                      <span className="text-brand-dark text-sm font-bold">✓</span>
+                    </div>
+                    <span className="text-[var(--text-primary)]">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Button */}
+              <Link 
+                href={path(lang, '/contact')} 
+                className="inline-block bg-brand-lime text-brand-dark px-4 py-2 font-bold hover:bg-[var(--border-color)] hover:text-brand-lime transition-all duration-300 border-2 border-[var(--border-color)] rounded-lg"
+              >
+                {t.common?.buttons?.get_started}
+              </Link>
             </div>
           </RevealOnScroll>
 
@@ -188,7 +327,6 @@ export default async function ServicesPage({ params }: { params: { lang: string 
 
       {/* Process Section */}
       <section className="min-h-screen flex items-center py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)] relative overflow-hidden">
-        {/* Blobs - process */}
         <div className="pointer-events-none absolute inset-0 -z-10">
           <div className="blob-base blob-float-a absolute -top-24 right-[-8%] w-80 h-80 bg-[var(--accent-lime)]/30" />
           <div className="blob-base blob-float-b absolute bottom-[-10rem] left-[-6rem] w-96 h-96 bg-[var(--bg-primary)]/28" />
